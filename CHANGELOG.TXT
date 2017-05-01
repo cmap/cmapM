@@ -1,0 +1,104 @@
+4-30-2017 (v1.2)
+-----------
+Code Refactoring
+L1000 data processing code in the package cmapm.Pipeline
+Added script to summarize replicate signatures (Level 4 to Level 5)
+
+11-10-2015 Updates (v1.1)
+------------------
+1. Data processing scripts
+
+Added scripts and dependencies for running L1000 data
+processing pipeline. These scripts allow users to take
+a plate of data through the various L1000 data levels.
+See the README for more information and instructions
+on how to run the scripts. Many new files were added
+with these changes, but the highlights are summarized
+below.
+
+Code:
+matlab/data_pipeline/process_plate.m
+matlab/data_pipeline/level1_to_level2.m
+matlab/data_pipeline/level2_to_level3.m
+matlab/data_pipeline/level3_to_level4.m
+
+Data:
+matlab/data_pipeline/results
+
+
+5-14-2013 Updates
+-----------------
+1. Added GCTX write support
+
+Code:
+R/cmap/io.R
+
+
+11-18-2012 Updates
+-------------------
+1. Support for GCTX format
+
+The L1000 project uses a binary format based on the open source HDF5
+format, to store matrix data.  This format has been designed as a
+drop-in replacement to the commonly used text-based GCT format and
+provides efficient random access subsets of large matrices. We've
+added Matlab and python routines to parse GCTX files. Additionally
+open-source drivers in a number of languages are available at
+www.hdfgroup.org/hdf5.
+
+Code:
+matlab/parse_gctx.m
+python/code_snippets/example_gctx_methods.py
+
+2. Improvements to peak detection
+
+The standard peak detection algorithm (dpeak) assigns values to each
+gene pair associated with an analyte based on the readings from single
+sample. Improvements in peak detection accuracy can be obtained by
+examining the distributions of expression and bead counts for each
+pair of genes across all samples in a detection plate.
+
+This can be regarded as a classification problem with noisy
+inputs. Assuming that the expression and counts were determined
+correctly for the majority of wells in the plate and that "reciprocal
+flips" between the two unrelated genes are unlikely, one can build a
+classifier that identifies and corrects 'reciprocal flips'.
+
+Code:
+matlab/code_snippets/iterative_flip_adjust_2d.m
+matlab/code_snippets/flip_correction_nd.m
+
+3. Signature generation using robust z-scores
+
+A robust zscore metric is used to define pertubational signatures from
+L1000 data. Two variants are currently supported:
+
+a) plate population based reference: the zscore is computed relative
+to all samples measured in a plate
+
+b) vehicle based reference: the zscore in computed relative to a group
+of designated vehicle treatment samples. For example DMSO treated
+wells in the case of compound treatments.
+
+Code:
+matlab/code_snippets/robust_zscore.m
+
+2012-Feb-29: Updates
+---------------------
+New tools:
+    Normalization routines
+	l1kt_liss.m: Apply L1000 invariant set scaling
+	l1kt_qnorm.m: Perform quantile normalization
+    Inference
+	l1kt_infer.m: Apply inference model to a set of normalized landmark profiles.
+Renamed 3 tools:
+	dpeak -> l1kt_dpeak
+	parse_lxb -> l1kt_parse_lxb
+	plot_peaks -> l1kt_plot_peaks
+Additions to the data folder:
+	epsilon_cal.gmx : list of invariant genesets used for normalization.
+	log_ybio_epsilon.gct : Affymetrix reference values for invariant genesets
+	HG_U133A.chip : Probeset to gene mappings
+
+2011-Dec-31: Initial Release
+-----------------------------
