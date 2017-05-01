@@ -1,14 +1,19 @@
 function s = parse_lxbbin(fname, varargin)
-% PARSE_LXBBIN Parse an LXB (binary) file
-%   LXB = PARSE_LXBBIN(LXBFILE) Returns a sructure (LXB) with fieldnames set 
-%   to header labels in row one of LXBFILE.
-%
-% examples:
+% PARSE_LXBBIN Parse a binary luminex LXB file
+%   LXB = PARSE_LXBBIN(LXBFILE) Returns a sructure (LXB) with data from all 
+%   detected beads in a single LXB file with the following fields:
+%   'RID', The identity of each bead [1-500], unassigned beads have RID=0
+%   'RP1', corresponding fluorescent intensities of each bead
 % 
-% s=parse_lxbbin('A1.lxb', 'analyte_idx','1:100');
-
-% $Author: Rajiv Narayan [narayan@broadinstitute.org]
-% $Date: Jul.01.2010 12:01:46 EDT
+%    LXB = PARSE_LXBBIN(LXBFILE, 'param1', value1,...) Specify optional
+%    parameter/value pairs:
+%
+%   'allfields' boolean, returns additional experimental 
+%       parameters from the LXB file if true. Default is false.
+%
+% Examples:
+% 
+% S=PARSE_LXBBIN('A1.lxb')
 
 pnames = {'allfields'};
 dflts = {false};
@@ -37,4 +42,5 @@ fn = {'DDG', 'DBL', 'DD', 'RP1ATT', 'CL1', 'CL2', 'CL3', 'Aux1', 'TIME'};
         ds = org.broadinstitute.cancer.io.luminex.LXBUtil.loadLXB(fname, fn{ii});
         s.(fn{ii}) = ds.getArray;
     end
+end
 end
