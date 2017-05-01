@@ -8,7 +8,7 @@ function format_mapfile(mapfile)
 % read in the map
 [~, f] = fileparts(mapfile);
 plate_info = parse_platename(f, 'verify', false);
-unimap_file = fullfile(cmappath, 'resources', 'uni_det_wells.txt');
+unimap_file = fullfile(cmapmpath, 'resources', 'uni_det_wells.txt');
 map = parse_tbl(mapfile, 'detect_numeric', false, 'outfmt', 'record');
 changed = false;
 

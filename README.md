@@ -1,11 +1,11 @@
-# CMapM: Connectivity Map Analysis in Matlab
+# CMapM: Connectivity Map Analysis in MATLAB&reg;
 
 Copyright (c) 2017, Connectivity Map (CMap) at the Broad Institute. All rights reserved.
 
-Matlab routines for working with data from CMap
+A collection of MATLAB routines for working with data from the Connectivity Map project.
 
 ### Initial setup
-After cloning the cmapM github repo. Change to the cmapM folder and run the
+After cloning the `cmapM` github repo. Change to the cmapM folder and run the
 following from the Matlab command window to setup environment variables,
 add cmapM to the Matlab search path, and download asset files:
 ```matlab
