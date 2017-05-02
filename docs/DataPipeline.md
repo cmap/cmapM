@@ -10,7 +10,7 @@ Processing an entire 384 well plate can take a long time depending on the machin
 % Download sample dataset
 cmapm.Pipeline.download_test_data;
 ```
-This will download and unpack the sample data to the `test_data` folder. A directory of example Level 1 data in the form of .lxb files from a LINCS Joint Project (LJP) plate under the `test_data/level1_data` directory. We also provide pre-computed results in `test_data/pipeline_results` to enable viewing the outputs without running the pipeline and/or to compare their results with CMap's. These outputs are described in the section below.
+This will download and unpack the sample data to the `test_data` folder. A directory of example Level 1 data in the form of .lxb files is available at `test_data/level1_data` directory. We also provide pre-computed results in `test_data/pipeline_results` to enable viewing the outputs without running the pipeline and/or to compare their results with CMap's. These outputs are described in more detail the section below.
 
 ### Running the standard CMap data processing pipeline
 All routines are contained within the `cmapm.Pipeline` Matlab package. By default all outputs are saved in the current working directory, but this can be overridden using the `plate_path` argument to any of the scripts below.
@@ -28,10 +28,10 @@ map_path = fullfile(cmapmpath, 'test_data', 'plate_maps');
 % Results folder
 plate_path = pwd;
 
-% Run the full pipeline on a plate of data
+%% Run the full pipeline on a plate of data from Level1 to Level 4
 [gex_ds, qnorm_ds, inf_ds, zs_ds_qnorm, zs_ds_inf] = cmapm.Pipeline.process_plate('plate', plate_name, 'raw_path', raw_path, 'map_path', map_path);
 
-% Run specific components of the pipeline
+%% Alternatively Run specific components of the pipeline
 % Convert a directory of LXB files (level 1) into gene expression (GEX, level 2) matrix.
 % here, using example data
 gex_ds = cmapm.Pipeline.level1_to_level2('plate', plate_name, 'raw_path', raw_path, 'map_path', map_path)
@@ -44,7 +44,7 @@ gex_ds = cmapm.Pipeline.level1_to_level2('plate', plate_name, 'raw_path', raw_pa
 % same procedure can be performed using INF matrix (not shown).
 zs_ds = cmapm.Pipeline.level3_to_level4(qnorm_ds, 'plate', plate_name, 'plate_path', plate_path)
 
-% Apply moderated z-scoring to level4_to_level5
+%% Apply moderated z-scoring to summarize replicate signatures
 zsrep_file = fullfile(cmapmpath, 'test_data', 'level4_data', 'TEST_A375_24H_ZSPCINF_n67x22268.gctx' )
 col_meta_file = fullfile(cmapmpath, 'test_data', 'level4_data', 'TEST_A375_24H_ZSPCINF.map');
 landmark_file = fullfile(cmapmpath, 'resources', 'L1000_EPSILON.R2.chip');
@@ -58,7 +58,7 @@ modz_ds = cmapm.Pipeline.level4_to_level5(zsrep_file, col_meta_file, landmark_fi
 [gex_ds, qnorm_ds, inf_ds, zs_ds_qnorm, zs_ds_inf] = cmapm.Pipeline.process_plate('plate', plate_name, 'raw_path', raw_path, 'map_path', map_path, 'rndseed', fullfile(cmapmpath, 'test_data', 'rndseed.mat');
 ```
 
-#### Description of Pipeline Outputs
+### Description of Pipeline Output
 
 | File | Data Level | Gene Space | Description |
 | ---- | ----------- | ----------- | ---------- |
@@ -75,38 +75,16 @@ modz_ds = cmapm.Pipeline.level4_to_level5(zsrep_file, col_meta_file, landmark_fi
 | calibplot.png |  n/a | n/a | Plot of invariant gene sets for each sample |
 | quantile_plots.png |  n/a | n/a | Plot of the normalized and non-normalized expression quantiles |
 
+### Common data analysis tasks
 
----
-#### Other Tools and Demos (under matlab/demos_and_examples)
-* **l1kt_dpeak.m**: Performs peak deconvolution for all analytes in a single LXB file, and outputs a report of the detected peaks.
-* **l1kt_plot_peaks.m**: Plots intensity distributions for one or more analytes in an LXB file.
-* **l1kt_parse_lxb.m**:	Reads an LXB file and returns the RID and RP1 values.
-* **l1kt_liss.m**: Performs Luminex Invariant Set Smoothing on a raw (GEX) input .gct file
-* **l1kt_qnorm.m**:	Performs quantile normalization on an input .gct file
-* **l1kt_infer.m**:	Infers expression of target genes from expression of landmark genes in an input .gct file
+#### Reading / converting .lxb files
+To read an .lxb into the MATLAB workspace, use the `cmapm.Pipeline.parse_lxb` function.
 
-See the documentation included with each script for a details on usage
-and input parameters.
+#### Reading .gct and .gctx files
+Use the `cmapm.Pipeline.mkgct` and `cmapm.Pipeline.parse_gctx` functions.
 
-#### Demo
-* **dpeak_demo.m**: Demo of peak detection. To run the demo, start Matlab, change to the folder containing dpeak_demo and
-type dpeak_demo in the Command Window. This will read a sample LXB
-file (A10.lxb), generate a number of intensity distribution plots and create a
-text report of the statistics of the detected peaks (A10_pkstats.txt).
+#### Creating .gct and .gctx files
+Use the `cmapm.Pipeline.mkgct` and `cmapm.Pipeline.mkgctx` functions.
 
-* **example_methods.m**: Reads in a .gct and a .gctx file, z-score the data in the .gctx file, and read in an .lxb file. To run the demo, start Matlab, change to the folder containing example_methods and type example_methods at the command line.
-
----
-## Common data analysis tasks
-
-### Reading .gct and .gctx files
-* **MATLAB**: Use the `parse_gctx` function.
-
-### Creating .gct and .gctx files
-* **MATLAB**: Use the `mkgct` and `mkgctx` functions.
-
-### Z-Scoring a data set
-* **MATLAB**: Use the `robust_zscore` function. Also see the `example_methods.m` script.
-
-### Reading / converting .lxb files
-* **MATLAB**: To read an .lxb into the MATLAB workspace, use the `l1kt_parse_lxb` function.
+#### Apply robust z-scoring to a data set
+Use the `cmapm.Pipeline.robust_zscore` function.

@@ -1,7 +1,9 @@
 function [lxb, pkstats] = dpeak_demo
 % DPEAK_DEMO Demo of peak detection.
-% Performs peak detection on data from a single well
-% Generates histograms for a few analytes showing the detected peaks
+% [LXB, PKSTATS] = DPEAK_DEMO Performs peak detection on data from a single
+% well Generates histograms for a few analytes showing the detected peaks
+% and returns raw data structure (LXB) and a stucture with statistics of
+% the detected peaks for all analytes (PKSTATS)
 
 lxbfile = fullfile(cmapmpath, 'test_data', 'A10.lxb');
 sample_analytes = [15, 25, 100, 200, 300];
