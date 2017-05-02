@@ -30,6 +30,7 @@ classdef Pipeline
         ds = parse_tbl(fname,varargin);
         
         % Writers
+        ds = mkgctstruct(mat, varargin);
         ds = mkgct(fname, gct_struct, varargin);
         ds = mkgctx(fname, gct_struct, varargin);
         ds = mkgmt(fname);
