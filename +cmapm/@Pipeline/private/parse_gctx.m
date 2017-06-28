@@ -96,6 +96,7 @@ elseif isfileexist(dsfile)
                         if ~args.annot_only
                             % data matrix
                             if ~isempty(args.rid) || ~isempty(args.cid)
+                                %Load a subset
                                 if ~isempty(args.rid)
                                     rid = parse_grp(args.rid);
                                     rmap = list2dict(ds.rid);
@@ -119,8 +120,11 @@ elseif isfileexist(dsfile)
                                     cidx = [];
                                 end
                                 [ds.mat, attr] = read_matrix(fid, dmid, ridx, cidx);
-                                ds.h5name = attr('name');
-                                %Load a subset
+                                if isKey(attr, 'name')
+                                    ds.h5name = attr('name');                                    
+                                else
+                                    ds.h5name='unnamed';
+                                end                                
                             else
                                 %Load full matrix
                                 [ds.mat, attr] = read_matrix(fid, dmid, [], []);
