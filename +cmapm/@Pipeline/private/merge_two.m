@@ -1,5 +1,6 @@
 function combods = merge_two(ds1, ds2, isverbose)
 % MERGE_TWO Combine two datasets
+% COMBODS = MERGE_TWO(DS1, DS2)
 
 if isvarexist('isverbose')
     isverbose = logical(isverbose);

@@ -81,7 +81,7 @@ modz_ds = cmapm.Pipeline.level4_to_level5(zsrep_file, col_meta_file, landmark_fi
 To read an .lxb into the MATLAB workspace, use the `cmapm.Pipeline.parse_lxb` function.
 
 #### Reading .gct and .gctx files
-Use the `cmapm.Pipeline.mkgct` and `cmapm.Pipeline.parse_gctx` functions.
+Use the `cmapm.Pipeline.parse_gct` and `cmapm.Pipeline.parse_gctx` functions.
 
 #### Creating .gct and .gctx files
 Use the `cmapm.Pipeline.mkgct` and `cmapm.Pipeline.mkgctx` functions.

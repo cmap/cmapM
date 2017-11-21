@@ -33,7 +33,7 @@ if iscell(fname)
 %         end
     end
     ie = status;
-else    
+elseif ischar(fname)  
     % file or dir (default)
     ie = exist(fname, 'file')>0;
     switch ftype                    
@@ -42,5 +42,6 @@ else
         case 'dir'
             ie = ie & isdir(fname);
     end
-    
+else
+    ie = false;
 end

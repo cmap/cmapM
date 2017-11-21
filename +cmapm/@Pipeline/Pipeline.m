@@ -37,6 +37,24 @@ classdef Pipeline
         ds = mkgrp(fname);
         ds = mktbl(fname, varargin);
         
+        %Utilities        
+        % Combine two GCT structures
+        combods = ds_merge(ds1, ds2, isverbose);
+        % Transpose a GCT structure      
+        ds = ds_transpose(ds);
+
+        % Extract metadata fields from GCT structure 
+        metadata = ds_get_meta(ds, dim, meta, varargin);
+        % Add metadata to a GCT structure
+        metadata = ds_add_meta(ds, dim, hd, meta);
+        % Remove metadata from a GCT structure
+        metadata = ds_delete_meta(ds, dim, hd);
+        
+        % Extract a subset of data from a GCT structure.
+        ds = ds_slice(ds, varargin);
+        % Compute pairwise correlations for a dataset.
+        cc = ds_corr(ds, varargin);
+
         %% Common analysis
         [z, mu, sigma] = robust_zscore(x, dim, varargin);
     end
