@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Working with annotated matrices using the GCTx data formats</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-22"><meta name="DC.source" content="gctx_tutorial.m"><style type="text/css">
+      --><title>Working with annotated matrices using the GCT and GCTX data formats in MATLAB</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-22"><meta name="DC.source" content="gctx_tutorial.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Working with annotated matrices using the GCTx data formats</h1><!--introduction--><p>Script used to genrated this tutorial <a href="gctx_tutorial.m">gctx_tutorial.m</a></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Reading a GCT or GCTX file</a></li><li><a href="#2">GCT data representation</a></li><li><a href="#3">Layout of the GCT structure</a></li><li><a href="#4">For large files, it can be useful to read just the metadata</a></li><li><a href="#5">Extracting a subset of data from a GCTX file</a></li><li><a href="#6">Working with metadata</a></li><li><a href="#7">List all available row metadata fields</a></li><li><a href="#8">Read all row metadata into a structure</a></li><li><a href="#9">Annotate a dataset from a structure</a></li><li><a href="#10">Read contents of metadata field</a></li><li><a href="#11">Add metadata fields from cell arrays</a></li><li><a href="#12">Remove metadata fields</a></li><li><a href="#13">Merging GCT/x files</a></li><li><a href="#14">Slicing GCT/x files</a></li><li><a href="#15">Transpose a GCT/x</a></li><li><a href="#16">Writing GCT/x files</a></li><li><a href="#17">Compute correlations</a></li><li><a href="#18">Clean-up</a></li></ul></div><h2>Reading a GCT or GCTX file<a name="1"></a></h2><p>GCT and GCTx files can be read in the same way. We'll use the same two files throughout this tutorial.</p><pre class="codeinput">gct_file_location = fullfile(cmapmpath, <span class="string">'resources'</span>, <span class="string">'example.gct'</span>);
+  </style></head><body><div class="content"><h1>Working with annotated matrices using the GCT and GCTX data formats in MATLAB</h1><!--introduction--><p>Script used to generate this tutorial: <a href="gctx_tutorial.m">gctx_tutorial.m</a></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Reading a GCT or GCTX file</a></li><li><a href="#2">GCT data representation</a></li><li><a href="#3">Layout of the GCT structure</a></li><li><a href="#4">For large files, it can be useful to read just the metadata</a></li><li><a href="#5">Extracting a subset of data from a GCTX file</a></li><li><a href="#6">Working with metadata</a></li><li><a href="#7">List all available row metadata fields</a></li><li><a href="#8">Read all row metadata into a structure</a></li><li><a href="#9">Annotate a dataset from a structure</a></li><li><a href="#10">Read contents of metadata field</a></li><li><a href="#11">Add metadata fields from cell arrays</a></li><li><a href="#12">Remove metadata fields</a></li><li><a href="#13">Merging GCT/x files</a></li><li><a href="#14">Slicing GCT/x files</a></li><li><a href="#15">Transpose a GCT/x</a></li><li><a href="#16">Writing GCT/x files</a></li><li><a href="#17">Compute correlations</a></li><li><a href="#18">Clean-up</a></li></ul></div><h2>Reading a GCT or GCTX file<a name="1"></a></h2><p>GCT and GCTx files can be read in the same way. We'll use the same two files throughout this tutorial.</p><pre class="codeinput">gct_file_location = fullfile(cmapmpath, <span class="string">'resources'</span>, <span class="string">'example.gct'</span>);
 gctx_file_location = fullfile(cmapmpath, <span class="string">'resources'</span>, <span class="string">'example.gctx'</span>);
 ds1 = cmapm.Pipeline.parse_gctx(gct_file_location);
 ds2 = cmapm.Pipeline.parse_gctx(gctx_file_location);
@@ -76,12 +76,12 @@ read:978/978
 Done.
 
 Reading /Users/narayan/workspace/cmapM/resources/example.gctx [978x1476]
-Done [0.80 s].
+Done [0.77 s].
 </pre><h2>GCT data representation<a name="2"></a></h2><p>GCT and GCTx files are both represented in memory as structures.</p><pre class="codeinput">disp(class(ds1));
 disp(class(ds2));
 </pre><pre class="codeoutput">struct
 struct
-</pre><h2>Layout of the GCT structure<a name="3"></a></h2><p>The GCT structure comprises of the following fields: * mat : Numeric data matrix [RxC] * rid : Cell array of row ids * rhd : Cell array of row annotation fieldnames * rdict : Dictionary of row annotation fieldnames to indices * rdesc : Cell array of row annotations * cid : Cell array of column ids * chd : Cell array of column annotation fieldnames * cdict : Dictionary of column annotation fieldnames to indices * cdesc : Cell array of column annotations</p><pre class="codeinput">disp(ds2);
+</pre><h2>Layout of the GCT structure<a name="3"></a></h2><p>The GCT structure comprises of the following fields:</p><div><ul><li>mat : Numeric data matrix [RxC]</li><li>rid : Cell array of row ids</li><li>rhd : Cell array of row annotation fieldnames</li><li>rdict : Dictionary of row annotation fieldnames to indices</li><li>rdesc : Cell array of row annotations</li><li>cid : Cell array of column ids</li><li>chd : Cell array of column annotation fieldnames</li><li>cdict : Dictionary of column annotation fieldnames to indices</li><li>cdesc : Cell array of column annotations</li></ul></div><pre class="codeinput">disp(ds2);
 </pre><pre class="codeoutput">        mat: [978x1476 double]
         rid: {978x1 cell}
         rhd: {11x1 cell}
@@ -99,7 +99,7 @@ struct
 </pre><h2>For large files, it can be useful to read just the metadata<a name="4"></a></h2><pre class="codeinput">ds_with_only_meta = cmapm.Pipeline.parse_gctx(gctx_file_location, <span class="string">'annot_only'</span>, true);
 disp(ds_with_only_meta);
 <span class="comment">% Note that the mat field is empty, but the metadata is the same as above</span>
-</pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx Done [0.81 s].
+</pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx Done [0.76 s].
         mat: []
         rid: {978x1 cell}
         rhd: {11x1 cell}
@@ -121,7 +121,7 @@ my_cids = ds_with_only_meta.cid(5);
 ds_subset = cmapm.Pipeline.parse_gctx(gctx_file_location, <span class="string">'rid'</span>, my_rids, <span class="string">'cid'</span>, my_cids);
 </pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx [3x1]
 Performing 3 hyperslab selections
-Done [0.78 s].
+Done [0.77 s].
 </pre><h2>Working with metadata<a name="6"></a></h2><p>We provide several convenience functions to operate on the metadata in a dataset.</p><p>Note that while you can modify the attributes of a dataset object directly, it is not recommended since it could affect the integrity of the data structure.</p><h2>List all available row metadata fields<a name="7"></a></h2><pre class="codeinput">row_fields = ds_subset.rhd;
 col_fields = ds_subset.chd;
 
@@ -230,7 +230,7 @@ length(dmso_cids)
 sliced = cmapm.Pipeline.ds_slice(ds, <span class="string">'rid'</span>, dp52_rids, <span class="string">'cid'</span>, dmso_cids);
 disp(size(sliced.mat));
 </pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx [978x1476]
-Done [0.78 s].
+Done [0.76 s].
 
 ans =
 
@@ -259,7 +259,7 @@ Saved.
 Saving HDF5 dataset to: example_out_n1476x978.gctx...
 Disabling compression.
 Setting chunk size to: 978x268
-done [0.28s].
+done [0.26s].
 </pre><h2>Compute correlations<a name="17"></a></h2><p>Compute pairwise spearman correlations between columns of dataset</p><pre class="codeinput">cc = cmapm.Pipeline.ds_corr(ds);
 
 <span class="comment">% cc is itself a GCT structure</span>
@@ -275,8 +275,9 @@ disp(cc.mat(1:5, 1:5));
 delete(out_gctx)
 </pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-%% Working with annotated matrices using the GCTx data formats
-% Script used to genrated this tutorial <gctx_tutorial.m> 
+%% Working with annotated matrices using the GCT and GCTX data formats in MATLAB
+% Script used to generate this tutorial:
+% <gctx_tutorial.m> 
 %% Reading a GCT or GCTX file
 % GCT and GCTx files can be read in the same way.
 % We'll use the same two files throughout this tutorial.
@@ -293,6 +294,7 @@ disp(class(ds2));
 
 %% Layout of the GCT structure
 % The GCT structure comprises of the following fields:
+%
 % * mat : Numeric data matrix [RxC]
 % * rid : Cell array of row ids
 % * rhd : Cell array of row annotation fieldnames
@@ -302,6 +304,7 @@ disp(class(ds2));
 % * chd : Cell array of column annotation fieldnames
 % * cdict : Dictionary of column annotation fieldnames to indices
 % * cdesc : Cell array of column annotations
+
 disp(ds2);
 
 %% For large files, it can be useful to read just the metadata

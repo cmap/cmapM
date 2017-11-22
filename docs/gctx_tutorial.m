@@ -1,5 +1,6 @@
-%% Working with annotated matrices using the GCTx data formats
-% Script used to genrated this tutorial <gctx_tutorial.m> 
+%% Working with annotated matrices using the GCT and GCTX data formats in MATLAB
+% Script used to generate this tutorial:
+% <gctx_tutorial.m> 
 %% Reading a GCT or GCTX file
 % GCT and GCTx files can be read in the same way.
 % We'll use the same two files throughout this tutorial.
@@ -16,6 +17,7 @@ disp(class(ds2));
 
 %% Layout of the GCT structure
 % The GCT structure comprises of the following fields:
+%
 % * mat : Numeric data matrix [RxC]
 % * rid : Cell array of row ids
 % * rhd : Cell array of row annotation fieldnames
@@ -25,6 +27,7 @@ disp(class(ds2));
 % * chd : Cell array of column annotation fieldnames
 % * cdict : Dictionary of column annotation fieldnames to indices
 % * cdesc : Cell array of column annotations
+
 disp(ds2);
 
 %% For large files, it can be useful to read just the metadata
