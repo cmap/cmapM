@@ -12,12 +12,13 @@ After cloning the `cmapM` github repo. Change to the cmapM folder and run the
 following from the Matlab command window to setup environment variables,
 add cmapM to the Matlab search path, and download asset files:
 ```matlab
-setup_env
+setup
 ```
 
 Contents
 --------
 * [Working with CMap data formats](docs/Formats.md)
+* [Working with annotated matrices in GCTX and GCT formats](docs/gctx_tutorial.html)
 * [L1000 data-processing pipeline](docs/DataPipeline.md)
 
 Software Requirements

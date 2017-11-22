@@ -1,0 +1,413 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Working with annotated matrices using the GCTx data formats</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-22"><meta name="DC.source" content="gctx_tutorial.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Working with annotated matrices using the GCTx data formats</h1><!--introduction--><p>Script used to genrated this tutorial <a href="gctx_tutorial.m">gctx_tutorial.m</a></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Reading a GCT or GCTX file</a></li><li><a href="#2">GCT data representation</a></li><li><a href="#3">Layout of the GCT structure</a></li><li><a href="#4">For large files, it can be useful to read just the metadata</a></li><li><a href="#5">Extracting a subset of data from a GCTX file</a></li><li><a href="#6">Working with metadata</a></li><li><a href="#7">List all available row metadata fields</a></li><li><a href="#8">Read all row metadata into a structure</a></li><li><a href="#9">Annotate a dataset from a structure</a></li><li><a href="#10">Read contents of metadata field</a></li><li><a href="#11">Add metadata fields from cell arrays</a></li><li><a href="#12">Remove metadata fields</a></li><li><a href="#13">Merging GCT/x files</a></li><li><a href="#14">Slicing GCT/x files</a></li><li><a href="#15">Transpose a GCT/x</a></li><li><a href="#16">Writing GCT/x files</a></li><li><a href="#17">Compute correlations</a></li><li><a href="#18">Clean-up</a></li></ul></div><h2>Reading a GCT or GCTX file<a name="1"></a></h2><p>GCT and GCTx files can be read in the same way. We'll use the same two files throughout this tutorial.</p><pre class="codeinput">gct_file_location = fullfile(cmapmpath, <span class="string">'resources'</span>, <span class="string">'example.gct'</span>);
+gctx_file_location = fullfile(cmapmpath, <span class="string">'resources'</span>, <span class="string">'example.gctx'</span>);
+ds1 = cmapm.Pipeline.parse_gctx(gct_file_location);
+ds2 = cmapm.Pipeline.parse_gctx(gctx_file_location);
+</pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gct [978x377]
+class:single
+read:978/978
+Done.
+
+Reading /Users/narayan/workspace/cmapM/resources/example.gctx [978x1476]
+Done [0.80 s].
+</pre><h2>GCT data representation<a name="2"></a></h2><p>GCT and GCTx files are both represented in memory as structures.</p><pre class="codeinput">disp(class(ds1));
+disp(class(ds2));
+</pre><pre class="codeoutput">struct
+struct
+</pre><h2>Layout of the GCT structure<a name="3"></a></h2><p>The GCT structure comprises of the following fields: * mat : Numeric data matrix [RxC] * rid : Cell array of row ids * rhd : Cell array of row annotation fieldnames * rdict : Dictionary of row annotation fieldnames to indices * rdesc : Cell array of row annotations * cid : Cell array of column ids * chd : Cell array of column annotation fieldnames * cdict : Dictionary of column annotation fieldnames to indices * cdesc : Cell array of column annotations</p><pre class="codeinput">disp(ds2);
+</pre><pre class="codeoutput">        mat: [978x1476 double]
+        rid: {978x1 cell}
+        rhd: {11x1 cell}
+      rdesc: {978x11 cell}
+        cid: {1476x1 cell}
+        chd: {35x1 cell}
+      cdesc: {1476x35 cell}
+      rdict: [11x1 containers.Map]
+      cdict: [35x1 containers.Map]
+        src: '/Users/narayan/workspace/cmapM/resources/example.gctx'
+    version: 'GCTX1.0'
+     h5path: '/0/DATA/0/matrix'
+     h5name: 'unnamed'
+
+</pre><h2>For large files, it can be useful to read just the metadata<a name="4"></a></h2><pre class="codeinput">ds_with_only_meta = cmapm.Pipeline.parse_gctx(gctx_file_location, <span class="string">'annot_only'</span>, true);
+disp(ds_with_only_meta);
+<span class="comment">% Note that the mat field is empty, but the metadata is the same as above</span>
+</pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx Done [0.81 s].
+        mat: []
+        rid: {978x1 cell}
+        rhd: {11x1 cell}
+      rdesc: {978x11 cell}
+        cid: {1476x1 cell}
+        chd: {35x1 cell}
+      cdesc: {1476x35 cell}
+      rdict: [11x1 containers.Map]
+      cdict: [35x1 containers.Map]
+        src: '/Users/narayan/workspace/cmapM/resources/example.gctx'
+    version: 'GCTX1.0'
+     h5path: '/0/DATA/0/matrix'
+
+</pre><h2>Extracting a subset of data from a GCTX file<a name="5"></a></h2><p>The GCTX format supports reading subsets of data from large files.</p><pre class="codeinput"><span class="comment">% Get row ids and column ids from ds_with_only_meta</span>
+my_rids = ds_with_only_meta.rid(3:5);
+my_cids = ds_with_only_meta.cid(5);
+
+<span class="comment">% Use my_rids and my_cids to read a subset of the data</span>
+ds_subset = cmapm.Pipeline.parse_gctx(gctx_file_location, <span class="string">'rid'</span>, my_rids, <span class="string">'cid'</span>, my_cids);
+</pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx [3x1]
+Performing 3 hyperslab selections
+Done [0.78 s].
+</pre><h2>Working with metadata<a name="6"></a></h2><p>We provide several convenience functions to operate on the metadata in a dataset.</p><p>Note that while you can modify the attributes of a dataset object directly, it is not recommended since it could affect the integrity of the data structure.</p><h2>List all available row metadata fields<a name="7"></a></h2><pre class="codeinput">row_fields = ds_subset.rhd;
+col_fields = ds_subset.chd;
+
+disp(row_fields);
+disp(col_fields);
+</pre><pre class="codeoutput">    'pr_analyte_id'
+    'pr_analyte_num'
+    'pr_bset_id'
+    'pr_gene_id'
+    'pr_gene_symbol'
+    'pr_gene_title'
+    'pr_is_bing'
+    'pr_is_inf'
+    'pr_is_lmark'
+    'pr_lua_id'
+    'pr_pool_id'
+
+    'bead_batch'
+    'bead_revision'
+    'bead_set'
+    'cell_id'
+    'count_cv'
+    'count_mean'
+    'det_mode'
+    'det_plate'
+    'det_well'
+    'mfc_plate_dim'
+    'mfc_plate_id'
+    'mfc_plate_name'
+    'mfc_plate_quad'
+    'mfc_plate_well'
+    'pert_dose'
+    'pert_dose_unit'
+    'pert_id'
+    'pert_id_vendor'
+    'pert_idose'
+    'pert_iname'
+    'pert_itime'
+    'pert_mfc_desc'
+    'pert_mfc_id'
+    'pert_time'
+    'pert_time_unit'
+    'pert_type'
+    'pert_vehicle'
+    'pool_id'
+    'provenance_code'
+    'qc_f_logp'
+    'qc_iqr'
+    'qc_slope'
+    'rna_plate'
+    'rna_well'
+    'x_hmsl_id'
+
+</pre><h2>Read all row metadata into a structure<a name="8"></a></h2><pre class="codeinput">row_meta = cmapm.Pipeline.ds_get_annotations(ds_subset, <span class="string">'row'</span>);
+<span class="comment">% display the first entry</span>
+disp(row_meta(1));
+</pre><pre class="codeoutput">               rid: '217140_s_at'
+     pr_analyte_id: 'Analyte 12'
+    pr_analyte_num: 12
+        pr_bset_id: 'dp53'
+        pr_gene_id: 7416
+    pr_gene_symbol: 'VDAC1'
+     pr_gene_title: 'voltage-dependent anion channel 1'
+        pr_is_bing: 1
+         pr_is_inf: 1
+       pr_is_lmark: 1
+         pr_lua_id: 'LUA-4000'
+        pr_pool_id: 'epsilon'
+
+</pre><h2>Annotate a dataset from a structure<a name="9"></a></h2><pre class="codeinput">new_meta = struct(<span class="string">'rid'</span>, ds_subset.rid, <span class="string">'new_field1'</span>, {<span class="string">'A'</span>;<span class="string">'B'</span>;<span class="string">'C'</span>}, <span class="string">'new_field2'</span>, {1;2;3});
+ds_subset = cmapm.Pipeline.ds_set_annotations(ds_subset, new_meta, <span class="string">'dim'</span>, <span class="string">'row'</span>);
+<span class="comment">% verify if the new fields have been added</span>
+assert(all(ismember({<span class="string">'new_field1'</span>, <span class="string">'new_field2'</span>}, ds_subset.rhd)));
+</pre><h2>Read contents of metadata field<a name="10"></a></h2><pre class="codeinput">gene_symbol = cmapm.Pipeline.ds_get_meta(ds_subset, <span class="string">'row'</span>, <span class="string">'pr_gene_symbol'</span>);
+disp(gene_symbol);
+</pre><pre class="codeoutput">    'VDAC1'
+    'SORBS3'
+    'SPDEF'
+
+</pre><h2>Add metadata fields from cell arrays<a name="11"></a></h2><pre class="codeinput">ds_subset = cmapm.Pipeline.ds_add_meta(ds_subset, <span class="string">'row'</span>, <span class="string">'new_field3'</span>, {<span class="string">'X'</span>;<span class="string">'Y'</span>;<span class="string">'Z'</span>});
+<span class="comment">% verify if the new field has been added</span>
+assert(all(ismember({<span class="string">'new_field3'</span>}, ds_subset.rhd)));
+</pre><h2>Remove metadata fields<a name="12"></a></h2><pre class="codeinput">ds_subset = cmapm.Pipeline.ds_delete_meta(ds_subset, <span class="string">'row'</span>, {<span class="string">'new_field1'</span>, <span class="string">'new_field2'</span>, <span class="string">'new_field3'</span>});
+<span class="comment">% verify if the new fields have been removed</span>
+assert(all(~ismember({<span class="string">'new_field1'</span>, <span class="string">'new_field2'</span>, <span class="string">'new_field3'</span>}, ds_subset.rhd)));
+</pre><h2>Merging GCT/x files<a name="13"></a></h2><p>You can merge 2 datasets together if they have compatible ids. i.e they have the same row ids but different column ids or vice versa</p><pre class="codeinput">merged = cmapm.Pipeline.ds_merge(ds1, ds2);
+
+<span class="comment">% Confirm that the # of columns in merged is equal to the # of columns in ds1 plus the # of columns in ds2.</span>
+assert(isequal(size(merged.mat, 2), size(ds1.mat, 2) + size(ds2.mat, 2)))
+</pre><pre class="codeoutput">Appending cols
+</pre><h2>Slicing GCT/x files<a name="14"></a></h2><p>Let's say you want to slice a GCT/x file to keep only "dp52" probes and only "DMSO" samples.</p><pre class="codeinput">ds = cmapm.Pipeline.parse_gctx(gctx_file_location);
+
+<span class="comment">% Get rids corresponding to dp52 probes.</span>
+beadset_ids = cmapm.Pipeline.ds_get_meta(ds, <span class="string">'row'</span>, <span class="string">'pr_bset_id'</span>);
+dp52_bool_array = strcmp(<span class="string">'dp52'</span>, beadset_ids);
+dp52_rids = ds.rid(dp52_bool_array);
+length(dp52_rids)
+
+<span class="comment">% Get cids corresponding to DMSO samples.</span>
+pert_inames = cmapm.Pipeline.ds_get_meta(ds, <span class="string">'column'</span>, <span class="string">'pert_iname'</span>);
+dmso_bool_array = strcmp(<span class="string">'DMSO'</span>, pert_inames);
+dmso_cids = ds.cid(dmso_bool_array);
+length(dmso_cids)
+
+<span class="comment">% Confirm that the size of sliced is correct: 489 probes x 100 samples.</span>
+sliced = cmapm.Pipeline.ds_slice(ds, <span class="string">'rid'</span>, dp52_rids, <span class="string">'cid'</span>, dmso_cids);
+disp(size(sliced.mat));
+</pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx [978x1476]
+Done [0.78 s].
+
+ans =
+
+   489
+
+
+ans =
+
+   100
+
+   489   100
+
+</pre><h2>Transpose a GCT/x<a name="15"></a></h2><pre class="codeinput">transposed = cmapm.Pipeline.ds_transpose(ds);
+assert(isequal(size(ds.mat, 1), size(transposed.mat, 2)));
+assert(isequal(size(ds.mat, 2), size(transposed.mat, 1)));
+</pre><h2>Writing GCT/x files<a name="16"></a></h2><pre class="codeinput">out_gct = cmapm.Pipeline.mkgct(<span class="string">'example_out.gct'</span>, ds);
+out_gctx = cmapm.Pipeline.mkgctx(<span class="string">'example_out.gctx'</span>, ds);
+
+<span class="comment">% Note that the same dataset object can be written out as either a GCT or GCTx.</span>
+<span class="comment">% Note alsa that for convenience the dimensions of the matrix is automatically appended to</span>
+<span class="comment">% the filename, and the columns go first.</span>
+</pre><pre class="codeoutput">Saving file to example_out_n1476x978.gct
+Dimensions of matrix: [978x1476]
+Setting precision to 4
+Saved.
+Saving HDF5 dataset to: example_out_n1476x978.gctx...
+Disabling compression.
+Setting chunk size to: 978x268
+done [0.28s].
+</pre><h2>Compute correlations<a name="17"></a></h2><p>Compute pairwise spearman correlations between columns of dataset</p><pre class="codeinput">cc = cmapm.Pipeline.ds_corr(ds);
+
+<span class="comment">% cc is itself a GCT structure</span>
+<span class="comment">% Examine its contents</span>
+disp(cc.mat(1:5, 1:5));
+</pre><pre class="codeoutput">    1.0000    0.9042    0.8794    0.8476    0.8184
+    0.9042    1.0000    0.9022    0.8620    0.8363
+    0.8794    0.9022    1.0000    0.8636    0.8455
+    0.8476    0.8620    0.8636    1.0000    0.8187
+    0.8184    0.8363    0.8455    0.8187    1.0000
+
+</pre><h2>Clean-up<a name="18"></a></h2><pre class="codeinput">delete(out_gct)
+delete(out_gctx)
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Working with annotated matrices using the GCTx data formats
+% Script used to genrated this tutorial <gctx_tutorial.m> 
+%% Reading a GCT or GCTX file
+% GCT and GCTx files can be read in the same way.
+% We'll use the same two files throughout this tutorial.
+
+gct_file_location = fullfile(cmapmpath, 'resources', 'example.gct');
+gctx_file_location = fullfile(cmapmpath, 'resources', 'example.gctx');
+ds1 = cmapm.Pipeline.parse_gctx(gct_file_location);
+ds2 = cmapm.Pipeline.parse_gctx(gctx_file_location);
+
+%% GCT data representation
+% GCT and GCTx files are both represented in memory as structures.
+disp(class(ds1));
+disp(class(ds2));
+
+%% Layout of the GCT structure
+% The GCT structure comprises of the following fields:
+% * mat : Numeric data matrix [RxC]
+% * rid : Cell array of row ids
+% * rhd : Cell array of row annotation fieldnames
+% * rdict : Dictionary of row annotation fieldnames to indices
+% * rdesc : Cell array of row annotations
+% * cid : Cell array of column ids
+% * chd : Cell array of column annotation fieldnames
+% * cdict : Dictionary of column annotation fieldnames to indices
+% * cdesc : Cell array of column annotations
+disp(ds2);
+
+%% For large files, it can be useful to read just the metadata
+ds_with_only_meta = cmapm.Pipeline.parse_gctx(gctx_file_location, 'annot_only', true);
+disp(ds_with_only_meta);
+% Note that the mat field is empty, but the metadata is the same as above
+
+%% Extracting a subset of data from a GCTX file
+% The GCTX format supports reading subsets of data from large files.
+
+% Get row ids and column ids from ds_with_only_meta
+my_rids = ds_with_only_meta.rid(3:5);
+my_cids = ds_with_only_meta.cid(5);
+
+% Use my_rids and my_cids to read a subset of the data
+ds_subset = cmapm.Pipeline.parse_gctx(gctx_file_location, 'rid', my_rids, 'cid', my_cids);
+
+%% Working with metadata
+% We provide several convenience functions to operate on the metadata in a
+% dataset. 
+%
+% Note that while you can modify the attributes of a dataset object
+% directly, it is not recommended since it could affect the integrity of
+% the data structure.
+
+%% List all available row metadata fields
+row_fields = ds_subset.rhd;
+col_fields = ds_subset.chd;
+
+disp(row_fields);
+disp(col_fields);
+%% Read all row metadata into a structure
+row_meta = cmapm.Pipeline.ds_get_annotations(ds_subset, 'row');
+% display the first entry
+disp(row_meta(1));
+
+%% Annotate a dataset from a structure
+new_meta = struct('rid', ds_subset.rid, 'new_field1', {'A';'B';'C'}, 'new_field2', {1;2;3});
+ds_subset = cmapm.Pipeline.ds_set_annotations(ds_subset, new_meta, 'dim', 'row');
+% verify if the new fields have been added
+assert(all(ismember({'new_field1', 'new_field2'}, ds_subset.rhd)));
+
+%% Read contents of metadata field
+gene_symbol = cmapm.Pipeline.ds_get_meta(ds_subset, 'row', 'pr_gene_symbol');
+disp(gene_symbol);
+%% Add metadata fields from cell arrays
+ds_subset = cmapm.Pipeline.ds_add_meta(ds_subset, 'row', 'new_field3', {'X';'Y';'Z'});
+% verify if the new field has been added
+assert(all(ismember({'new_field3'}, ds_subset.rhd)));
+
+%% Remove metadata fields
+ds_subset = cmapm.Pipeline.ds_delete_meta(ds_subset, 'row', {'new_field1', 'new_field2', 'new_field3'});
+% verify if the new fields have been removed
+assert(all(~ismember({'new_field1', 'new_field2', 'new_field3'}, ds_subset.rhd)));
+%% Merging GCT/x files
+% You can merge 2 datasets together if they have compatible ids.
+% i.e they have the same row ids but different column ids or vice versa
+merged = cmapm.Pipeline.ds_merge(ds1, ds2);
+
+% Confirm that the # of columns in merged is equal to the # of columns in ds1 plus the # of columns in ds2.
+assert(isequal(size(merged.mat, 2), size(ds1.mat, 2) + size(ds2.mat, 2)))
+
+%% Slicing GCT/x files
+% Let's say you want to slice a GCT/x file to keep only "dp52" probes and
+% only "DMSO" samples.
+ds = cmapm.Pipeline.parse_gctx(gctx_file_location);
+
+% Get rids corresponding to dp52 probes.
+beadset_ids = cmapm.Pipeline.ds_get_meta(ds, 'row', 'pr_bset_id');
+dp52_bool_array = strcmp('dp52', beadset_ids);
+dp52_rids = ds.rid(dp52_bool_array);
+length(dp52_rids)
+
+% Get cids corresponding to DMSO samples.
+pert_inames = cmapm.Pipeline.ds_get_meta(ds, 'column', 'pert_iname');
+dmso_bool_array = strcmp('DMSO', pert_inames);
+dmso_cids = ds.cid(dmso_bool_array);
+length(dmso_cids)
+
+% Confirm that the size of sliced is correct: 489 probes x 100 samples.
+sliced = cmapm.Pipeline.ds_slice(ds, 'rid', dp52_rids, 'cid', dmso_cids);
+disp(size(sliced.mat));
+
+%% Transpose a GCT/x
+transposed = cmapm.Pipeline.ds_transpose(ds);
+assert(isequal(size(ds.mat, 1), size(transposed.mat, 2)));
+assert(isequal(size(ds.mat, 2), size(transposed.mat, 1)));
+%% Writing GCT/x files
+out_gct = cmapm.Pipeline.mkgct('example_out.gct', ds);
+out_gctx = cmapm.Pipeline.mkgctx('example_out.gctx', ds);
+
+% Note that the same dataset object can be written out as either a GCT or GCTx.
+% Note alsa that for convenience the dimensions of the matrix is automatically appended to
+% the filename, and the columns go first. 
+
+%% Compute correlations
+% Compute pairwise spearman correlations between columns of dataset
+cc = cmapm.Pipeline.ds_corr(ds);
+
+% cc is itself a GCT structure
+% Examine its contents 
+disp(cc.mat(1:5, 1:5));
+
+%% Clean-up
+delete(out_gct)
+delete(out_gctx)
+
+##### SOURCE END #####
+--></body></html>

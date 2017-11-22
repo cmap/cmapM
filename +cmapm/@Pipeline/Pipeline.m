@@ -37,7 +37,7 @@ classdef Pipeline
         ds = mkgrp(fname);
         ds = mktbl(fname, varargin);
         
-        %Utilities        
+        % Utilities        
         % Combine two GCT structures
         combods = ds_merge(ds1, ds2, isverbose);
         % Transpose a GCT structure      
@@ -49,6 +49,10 @@ classdef Pipeline
         metadata = ds_add_meta(ds, dim, hd, meta);
         % Remove metadata from a GCT structure
         metadata = ds_delete_meta(ds, dim, hd);
+        % Annotate rows or columns in a dataset.
+        ds = ds_set_annotations(ds, annot, varargin);
+        % Extract all rows or column annotations from a dataset.
+        meta = ds_get_annotations(ds, dim);
         
         % Extract a subset of data from a GCT structure.
         ds = ds_slice(ds, varargin);
