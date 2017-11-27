@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Working with annotated matrices using the GCT and GCTX data formats in MATLAB</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-22"><meta name="DC.source" content="gctx_tutorial.m"><style type="text/css">
+      --><title>Working with annotated matrices using the GCT and GCTX data formats in MATLAB</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-27"><meta name="DC.source" content="gctx_tutorial.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>Working with annotated matrices using the GCT and GCTX data formats in MATLAB</h1><!--introduction--><p>Script used to generate this tutorial: <a href="gctx_tutorial.m">gctx_tutorial.m</a></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Reading a GCT or GCTX file</a></li><li><a href="#2">GCT data representation</a></li><li><a href="#3">Layout of the GCT structure</a></li><li><a href="#4">For large files, it can be useful to read just the metadata</a></li><li><a href="#5">Extracting a subset of data from a GCTX file</a></li><li><a href="#6">Working with metadata</a></li><li><a href="#7">List all available row metadata fields</a></li><li><a href="#8">Read all row metadata into a structure</a></li><li><a href="#9">Annotate a dataset from a structure</a></li><li><a href="#10">Read contents of metadata field</a></li><li><a href="#11">Add metadata fields from cell arrays</a></li><li><a href="#12">Remove metadata fields</a></li><li><a href="#13">Merging GCT/x files</a></li><li><a href="#14">Slicing GCT/x files</a></li><li><a href="#15">Transpose a GCT/x</a></li><li><a href="#16">Writing GCT/x files</a></li><li><a href="#17">Compute correlations</a></li><li><a href="#18">Clean-up</a></li></ul></div><h2>Reading a GCT or GCTX file<a name="1"></a></h2><p>GCT and GCTx files can be read in the same way. We'll use the same two files throughout this tutorial.</p><pre class="codeinput">gct_file_location = fullfile(cmapmpath, <span class="string">'resources'</span>, <span class="string">'example.gct'</span>);
+  </style></head><body><div class="content"><h1>Working with annotated matrices using the GCT and GCTX data formats in MATLAB</h1><!--introduction--><p>Script used to generate this tutorial: <a href="gctx_tutorial.m">gctx_tutorial.m</a></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Reading a GCT or GCTX file</a></li><li><a href="#2">GCT data representation</a></li><li><a href="#3">Layout of the GCT structure</a></li><li><a href="#4">For large files, it can be useful to read just the metadata</a></li><li><a href="#5">Extracting a subset of data from a GCTX file</a></li><li><a href="#6">Working with metadata</a></li><li><a href="#7">List all available row metadata fields</a></li><li><a href="#8">Read all row metadata into a structure</a></li><li><a href="#9">Annotate a dataset from a structure</a></li><li><a href="#10">Read contents of a metadata field</a></li><li><a href="#11">Add metadata fields from cell arrays</a></li><li><a href="#12">Remove metadata fields</a></li><li><a href="#13">Merging GCT/x files</a></li><li><a href="#14">Slicing GCT/x files</a></li><li><a href="#15">Transpose a GCT/x</a></li><li><a href="#16">Writing GCT/x files</a></li><li><a href="#17">Compute correlations</a></li><li><a href="#18">Clean-up</a></li></ul></div><h2>Reading a GCT or GCTX file<a name="1"></a></h2><p>GCT and GCTx files can be read in the same way. We'll use the same two files throughout this tutorial.</p><pre class="codeinput">gct_file_location = fullfile(cmapmpath, <span class="string">'resources'</span>, <span class="string">'example.gct'</span>);
 gctx_file_location = fullfile(cmapmpath, <span class="string">'resources'</span>, <span class="string">'example.gctx'</span>);
 ds1 = cmapm.Pipeline.parse_gctx(gct_file_location);
 ds2 = cmapm.Pipeline.parse_gctx(gctx_file_location);
@@ -76,7 +76,7 @@ read:978/978
 Done.
 
 Reading /Users/narayan/workspace/cmapM/resources/example.gctx [978x1476]
-Done [0.77 s].
+Done [0.78 s].
 </pre><h2>GCT data representation<a name="2"></a></h2><p>GCT and GCTx files are both represented in memory as structures.</p><pre class="codeinput">disp(class(ds1));
 disp(class(ds2));
 </pre><pre class="codeoutput">struct
@@ -99,7 +99,7 @@ struct
 </pre><h2>For large files, it can be useful to read just the metadata<a name="4"></a></h2><pre class="codeinput">ds_with_only_meta = cmapm.Pipeline.parse_gctx(gctx_file_location, <span class="string">'annot_only'</span>, true);
 disp(ds_with_only_meta);
 <span class="comment">% Note that the mat field is empty, but the metadata is the same as above</span>
-</pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx Done [0.76 s].
+</pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx Done [0.73 s].
         mat: []
         rid: {978x1 cell}
         rhd: {11x1 cell}
@@ -121,7 +121,7 @@ my_cids = ds_with_only_meta.cid(5);
 ds_subset = cmapm.Pipeline.parse_gctx(gctx_file_location, <span class="string">'rid'</span>, my_rids, <span class="string">'cid'</span>, my_cids);
 </pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx [3x1]
 Performing 3 hyperslab selections
-Done [0.77 s].
+Done [0.76 s].
 </pre><h2>Working with metadata<a name="6"></a></h2><p>We provide several convenience functions to operate on the metadata in a dataset.</p><p>Note that while you can modify the attributes of a dataset object directly, it is not recommended since it could affect the integrity of the data structure.</p><h2>List all available row metadata fields<a name="7"></a></h2><pre class="codeinput">row_fields = ds_subset.rhd;
 col_fields = ds_subset.chd;
 
@@ -195,7 +195,7 @@ disp(row_meta(1));
 ds_subset = cmapm.Pipeline.ds_set_annotations(ds_subset, new_meta, <span class="string">'dim'</span>, <span class="string">'row'</span>);
 <span class="comment">% verify if the new fields have been added</span>
 assert(all(ismember({<span class="string">'new_field1'</span>, <span class="string">'new_field2'</span>}, ds_subset.rhd)));
-</pre><h2>Read contents of metadata field<a name="10"></a></h2><pre class="codeinput">gene_symbol = cmapm.Pipeline.ds_get_meta(ds_subset, <span class="string">'row'</span>, <span class="string">'pr_gene_symbol'</span>);
+</pre><h2>Read contents of a metadata field<a name="10"></a></h2><pre class="codeinput">gene_symbol = cmapm.Pipeline.ds_get_meta(ds_subset, <span class="string">'row'</span>, <span class="string">'pr_gene_symbol'</span>);
 disp(gene_symbol);
 </pre><pre class="codeoutput">    'VDAC1'
     'SORBS3'
@@ -218,29 +218,18 @@ assert(isequal(size(merged.mat, 2), size(ds1.mat, 2) + size(ds2.mat, 2)))
 beadset_ids = cmapm.Pipeline.ds_get_meta(ds, <span class="string">'row'</span>, <span class="string">'pr_bset_id'</span>);
 dp52_bool_array = strcmp(<span class="string">'dp52'</span>, beadset_ids);
 dp52_rids = ds.rid(dp52_bool_array);
-length(dp52_rids)
 
 <span class="comment">% Get cids corresponding to DMSO samples.</span>
 pert_inames = cmapm.Pipeline.ds_get_meta(ds, <span class="string">'column'</span>, <span class="string">'pert_iname'</span>);
 dmso_bool_array = strcmp(<span class="string">'DMSO'</span>, pert_inames);
 dmso_cids = ds.cid(dmso_bool_array);
-length(dmso_cids)
 
-<span class="comment">% Confirm that the size of sliced is correct: 489 probes x 100 samples.</span>
+<span class="comment">% Confirm that the dimensions of sliced is correct: 489 probes x 100 samples.</span>
 sliced = cmapm.Pipeline.ds_slice(ds, <span class="string">'rid'</span>, dp52_rids, <span class="string">'cid'</span>, dmso_cids);
+assert(isequal(size(sliced.mat), [length(dp52_rids), length(dmso_cids)]), <span class="string">'Dimension mismatch'</span>);
 disp(size(sliced.mat));
 </pre><pre class="codeoutput">Reading /Users/narayan/workspace/cmapM/resources/example.gctx [978x1476]
-Done [0.76 s].
-
-ans =
-
-   489
-
-
-ans =
-
-   100
-
+Done [0.75 s].
    489   100
 
 </pre><h2>Transpose a GCT/x<a name="15"></a></h2><pre class="codeinput">transposed = cmapm.Pipeline.ds_transpose(ds);
@@ -250,7 +239,7 @@ assert(isequal(size(ds.mat, 2), size(transposed.mat, 1)));
 out_gctx = cmapm.Pipeline.mkgctx(<span class="string">'example_out.gctx'</span>, ds);
 
 <span class="comment">% Note that the same dataset object can be written out as either a GCT or GCTx.</span>
-<span class="comment">% Note alsa that for convenience the dimensions of the matrix is automatically appended to</span>
+<span class="comment">% Note also that for convenience the dimensions of the matrix is automatically appended to</span>
 <span class="comment">% the filename, and the columns go first.</span>
 </pre><pre class="codeoutput">Saving file to example_out_n1476x978.gct
 Dimensions of matrix: [978x1476]
@@ -262,16 +251,17 @@ Setting chunk size to: 978x268
 done [0.26s].
 </pre><h2>Compute correlations<a name="17"></a></h2><p>Compute pairwise spearman correlations between columns of dataset</p><pre class="codeinput">cc = cmapm.Pipeline.ds_corr(ds);
 
-<span class="comment">% cc is itself a GCT structure</span>
-<span class="comment">% Examine its contents</span>
-disp(cc.mat(1:5, 1:5));
-</pre><pre class="codeoutput">    1.0000    0.9042    0.8794    0.8476    0.8184
-    0.9042    1.0000    0.9022    0.8620    0.8363
-    0.8794    0.9022    1.0000    0.8636    0.8455
-    0.8476    0.8620    0.8636    1.0000    0.8187
-    0.8184    0.8363    0.8455    0.8187    1.0000
+<span class="comment">% cc is a square and symmetric GCT structure</span>
+assert(isequal(size(cc.mat), [size(ds.mat, 2), size(ds.mat, 2)]), <span class="string">'CC is not square'</span>);
+assert(isequal(cc.mat, cc.mat'), <span class="string">'CC is not symmetric'</span>);
 
-</pre><h2>Clean-up<a name="18"></a></h2><pre class="codeinput">delete(out_gct)
+<span class="comment">% Examine its contents</span>
+imagesc(cc.mat(1:20, 1:20));
+colorbar
+caxis([0.5, 1]);
+axis <span class="string">square</span>
+title(<span class="string">'Pairwise Spearman Correlation'</span>);
+</pre><img vspace="5" hspace="5" src="gctx_tutorial_01.png" alt=""> <h2>Clean-up<a name="18"></a></h2><pre class="codeinput">delete(out_gct)
 delete(out_gctx)
 </pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
@@ -347,7 +337,7 @@ ds_subset = cmapm.Pipeline.ds_set_annotations(ds_subset, new_meta, 'dim', 'row')
 % verify if the new fields have been added
 assert(all(ismember({'new_field1', 'new_field2'}, ds_subset.rhd)));
 
-%% Read contents of metadata field
+%% Read contents of a metadata field
 gene_symbol = cmapm.Pipeline.ds_get_meta(ds_subset, 'row', 'pr_gene_symbol');
 disp(gene_symbol);
 %% Add metadata fields from cell arrays
@@ -376,16 +366,15 @@ ds = cmapm.Pipeline.parse_gctx(gctx_file_location);
 beadset_ids = cmapm.Pipeline.ds_get_meta(ds, 'row', 'pr_bset_id');
 dp52_bool_array = strcmp('dp52', beadset_ids);
 dp52_rids = ds.rid(dp52_bool_array);
-length(dp52_rids)
 
 % Get cids corresponding to DMSO samples.
 pert_inames = cmapm.Pipeline.ds_get_meta(ds, 'column', 'pert_iname');
 dmso_bool_array = strcmp('DMSO', pert_inames);
 dmso_cids = ds.cid(dmso_bool_array);
-length(dmso_cids)
 
-% Confirm that the size of sliced is correct: 489 probes x 100 samples.
+% Confirm that the dimensions of sliced is correct: 489 probes x 100 samples.
 sliced = cmapm.Pipeline.ds_slice(ds, 'rid', dp52_rids, 'cid', dmso_cids);
+assert(isequal(size(sliced.mat), [length(dp52_rids), length(dmso_cids)]), 'Dimension mismatch');
 disp(size(sliced.mat));
 
 %% Transpose a GCT/x
@@ -397,16 +386,23 @@ out_gct = cmapm.Pipeline.mkgct('example_out.gct', ds);
 out_gctx = cmapm.Pipeline.mkgctx('example_out.gctx', ds);
 
 % Note that the same dataset object can be written out as either a GCT or GCTx.
-% Note alsa that for convenience the dimensions of the matrix is automatically appended to
+% Note also that for convenience the dimensions of the matrix is automatically appended to
 % the filename, and the columns go first. 
 
 %% Compute correlations
 % Compute pairwise spearman correlations between columns of dataset
 cc = cmapm.Pipeline.ds_corr(ds);
 
-% cc is itself a GCT structure
+% cc is a square and symmetric GCT structure
+assert(isequal(size(cc.mat), [size(ds.mat, 2), size(ds.mat, 2)]), 'CC is not square');
+assert(isequal(cc.mat, cc.mat'), 'CC is not symmetric');
+
 % Examine its contents 
-disp(cc.mat(1:5, 1:5));
+imagesc(cc.mat(1:20, 1:20));
+colorbar
+caxis([0.5, 1]);
+axis square
+title('Pairwise Spearman Correlation');
 
 %% Clean-up
 delete(out_gct)

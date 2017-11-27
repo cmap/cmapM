@@ -70,7 +70,7 @@ ds_subset = cmapm.Pipeline.ds_set_annotations(ds_subset, new_meta, 'dim', 'row')
 % verify if the new fields have been added
 assert(all(ismember({'new_field1', 'new_field2'}, ds_subset.rhd)));
 
-%% Read contents of metadata field
+%% Read contents of a metadata field
 gene_symbol = cmapm.Pipeline.ds_get_meta(ds_subset, 'row', 'pr_gene_symbol');
 disp(gene_symbol);
 %% Add metadata fields from cell arrays
@@ -99,16 +99,15 @@ ds = cmapm.Pipeline.parse_gctx(gctx_file_location);
 beadset_ids = cmapm.Pipeline.ds_get_meta(ds, 'row', 'pr_bset_id');
 dp52_bool_array = strcmp('dp52', beadset_ids);
 dp52_rids = ds.rid(dp52_bool_array);
-length(dp52_rids)
 
 % Get cids corresponding to DMSO samples.
 pert_inames = cmapm.Pipeline.ds_get_meta(ds, 'column', 'pert_iname');
 dmso_bool_array = strcmp('DMSO', pert_inames);
 dmso_cids = ds.cid(dmso_bool_array);
-length(dmso_cids)
 
-% Confirm that the size of sliced is correct: 489 probes x 100 samples.
+% Confirm that the dimensions of sliced is correct: 489 probes x 100 samples.
 sliced = cmapm.Pipeline.ds_slice(ds, 'rid', dp52_rids, 'cid', dmso_cids);
+assert(isequal(size(sliced.mat), [length(dp52_rids), length(dmso_cids)]), 'Dimension mismatch');
 disp(size(sliced.mat));
 
 %% Transpose a GCT/x
@@ -120,16 +119,23 @@ out_gct = cmapm.Pipeline.mkgct('example_out.gct', ds);
 out_gctx = cmapm.Pipeline.mkgctx('example_out.gctx', ds);
 
 % Note that the same dataset object can be written out as either a GCT or GCTx.
-% Note alsa that for convenience the dimensions of the matrix is automatically appended to
+% Note also that for convenience the dimensions of the matrix is automatically appended to
 % the filename, and the columns go first. 
 
 %% Compute correlations
 % Compute pairwise spearman correlations between columns of dataset
 cc = cmapm.Pipeline.ds_corr(ds);
 
-% cc is itself a GCT structure
+% cc is a square and symmetric GCT structure
+assert(isequal(size(cc.mat), [size(ds.mat, 2), size(ds.mat, 2)]), 'CC is not square');
+assert(isequal(cc.mat, cc.mat'), 'CC is not symmetric');
+
 % Examine its contents 
-disp(cc.mat(1:5, 1:5));
+imagesc(cc.mat(1:20, 1:20));
+colorbar
+caxis([0.5, 1]);
+axis square
+title('Pairwise Spearman Correlation');
 
 %% Clean-up
 delete(out_gct)

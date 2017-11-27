@@ -18,7 +18,6 @@ setup
 Contents
 --------
 * [Working with CMap data formats](docs/Formats.md)
-* [Working with annotated matrices in GCTX and GCT formats](docs/gctx_tutorial.html)
 * [L1000 data-processing pipeline](docs/DataPipeline.md)
 
 Software Requirements
