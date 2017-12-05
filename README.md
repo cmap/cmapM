@@ -29,3 +29,8 @@ Software Requirements
 Contributions
 -------------
 Bug reports, fixes and pull requests are welcome.
+
+Citation
+--------
+
+If you use GCTx and/or cmapM in your work, please cite [Enache et al.](https://www.biorxiv.org/content/early/2017/11/30/227041)
