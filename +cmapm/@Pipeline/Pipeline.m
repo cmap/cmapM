@@ -23,6 +23,7 @@ classdef Pipeline
         %% I/O functions for common file formats
         % Parsers
         ds = parse_lxb(fname, varargin);
+        ds = parse_csv(fname, varargin);
         ds = parse_gct(fname,varargin);
         ds = parse_gctx(fname,varargin);
         ds = parse_gmt(fname);
