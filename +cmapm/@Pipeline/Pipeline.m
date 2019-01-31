@@ -38,6 +38,11 @@ classdef Pipeline
         ds = mkgrp(fname);
         ds = mktbl(fname, varargin);
         
+        % Plots
+        %fh = plot_calib(calibmat, varargin);
+        H = plot_platemap(X, W, varargin);
+        
+        
         %% Common analysis
         [z, mu, sigma] = robust_zscore(x, dim, varargin);
     end
