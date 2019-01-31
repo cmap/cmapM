@@ -114,8 +114,9 @@ if ~isempty(annot_hdr)
                 if nkeep>0
                     newdesc(:, (1:nkeep)+nannot) = ds.rdesc(:, keepidx);
                 end
-                if ncmn>0
-                    newdesc(:, annot_dict(cmnhd)) = ds.rdesc(:, cmnidx);
+                if ncmn>0                    
+                    newcmnidx = cell2mat(annot_dict.values(cmnhd));
+                    newdesc(:, newcmnidx) = ds.rdesc(:, cmnidx);
                 end
             else
                 ds.rhd = annot_hdr;

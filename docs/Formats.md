@@ -10,8 +10,9 @@ Handling common data formats used in CMapM
 
 Datasets
 --
-The majority of data generated via the Connectivity Map
-tab-delimited text GCT files with the file extension .gct and binary equivalent files called GCTX with file extension .gctx
+The majority of data generated via the Connectivity Map are supplied as tab-delimited text GCT files with the file extension .gct and binary equivalent files called GCTX with file extension .gctx
+
+* [Working with annotated matrices in GCTX and GCT formats](gctx_tutorial.html)
 
 Lists
 -----

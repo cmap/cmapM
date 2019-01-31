@@ -39,10 +39,30 @@ classdef Pipeline
         ds = mktbl(fname, varargin);
         
         % Plots
-        %fh = plot_calib(calibmat, varargin);
         H = plot_platemap(X, W, varargin);
         
+        % Utilities        
+        % Combine two GCT structures
+        combods = ds_merge(ds1, ds2, isverbose);
+        % Transpose a GCT structure      
+        ds = ds_transpose(ds);
+
+        % Extract metadata fields from GCT structure 
+        metadata = ds_get_meta(ds, dim, meta, varargin);
+        % Add metadata to a GCT structure
+        metadata = ds_add_meta(ds, dim, hd, meta);
+        % Remove metadata from a GCT structure
+        metadata = ds_delete_meta(ds, dim, hd);
+        % Annotate rows or columns in a dataset.
+        ds = ds_set_annotations(ds, annot, varargin);
+        % Extract all rows or column annotations from a dataset.
+        meta = ds_get_annotations(ds, dim);
         
+        % Extract a subset of data from a GCT structure.
+        ds = ds_slice(ds, varargin);
+        % Compute pairwise correlations for a dataset.
+        cc = ds_corr(ds, varargin);
+
         %% Common analysis
         [z, mu, sigma] = robust_zscore(x, dim, varargin);
     end

@@ -12,7 +12,7 @@ After cloning the `cmapM` github repo. Change to the cmapM folder and run the
 following from the Matlab command window to setup environment variables,
 add cmapM to the Matlab search path, and download asset files:
 ```matlab
-setup_env
+setup
 ```
 
 Contents
@@ -29,3 +29,8 @@ Software Requirements
 Contributions
 -------------
 Bug reports, fixes and pull requests are welcome.
+
+Citation
+--------
+
+If you use GCTx and/or cmapM in your work, please cite [Enache et al.](https://www.biorxiv.org/content/early/2017/11/30/227041)

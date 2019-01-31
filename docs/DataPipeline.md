@@ -55,7 +55,7 @@ modz_ds = cmapm.Pipeline.level4_to_level5(zsrep_file, col_meta_file, landmark_fi
 
 ```matlab
 % Reproduce provided results
-[gex_ds, qnorm_ds, inf_ds, zs_ds_qnorm, zs_ds_inf] = cmapm.Pipeline.process_plate('plate', plate_name, 'raw_path', raw_path, 'map_path', map_path, 'rndseed', fullfile(cmapmpath, 'test_data', 'rndseed.mat');
+[gex_ds, qnorm_ds, inf_ds, zs_ds_qnorm, zs_ds_inf] = cmapm.Pipeline.process_plate('plate', plate_name, 'raw_path', raw_path, 'map_path', map_path, 'rndseed', fullfile(cmapmpath, 'test_data', 'rndseed.mat'));
 ```
 
 ### Description of Pipeline Output
@@ -81,7 +81,7 @@ modz_ds = cmapm.Pipeline.level4_to_level5(zsrep_file, col_meta_file, landmark_fi
 To read an .lxb into the MATLAB workspace, use the `cmapm.Pipeline.parse_lxb` function.
 
 #### Reading .gct and .gctx files
-Use the `cmapm.Pipeline.mkgct` and `cmapm.Pipeline.parse_gctx` functions.
+Use the `cmapm.Pipeline.parse_gct` and `cmapm.Pipeline.parse_gctx` functions.
 
 #### Creating .gct and .gctx files
 Use the `cmapm.Pipeline.mkgct` and `cmapm.Pipeline.mkgctx` functions.

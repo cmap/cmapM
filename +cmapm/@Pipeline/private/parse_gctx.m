@@ -96,6 +96,7 @@ elseif isfileexist(dsfile)
                         if ~args.annot_only
                             % data matrix
                             if ~isempty(args.rid) || ~isempty(args.cid)
+                                %Load a subset
                                 if ~isempty(args.rid)
                                     rid = parse_grp(args.rid);
                                     rmap = list2dict(ds.rid);
@@ -119,8 +120,11 @@ elseif isfileexist(dsfile)
                                     cidx = [];
                                 end
                                 [ds.mat, attr] = read_matrix(fid, dmid, ridx, cidx);
-                                ds.h5name = attr('name');
-                                %Load a subset
+                                if isKey(attr, 'name')
+                                    ds.h5name = attr('name');
+                                else
+                                    ds.h5name='unnamed';
+                                end
                             else
                                 %Load full matrix
                                 [ds.mat, attr] = read_matrix(fid, dmid, [], []);
@@ -202,8 +206,8 @@ if isempty(ridx) && isempty(cidx)
     mem_space_id = 'H5S_ALL';
     file_space_id = 'H5S_ALL';
 else
-%subset
-    if ~isempty(cidx)        
+    %subset
+    if ~isempty(cidx)
         [srt_cid, unsrt_cid] = sort_indices(cidx);
         [c_start, c_count] = compute_hs_extents(srt_cid);
         nslab_c = length(c_start);
@@ -213,7 +217,7 @@ else
         c_count = dims(1);
         nslab_c = 1;
         dimc = dims(1);
-    end    
+    end
     if ~isempty(ridx)
         [srt_rid, unsrt_rid] = sort_indices(ridx);
         [r_start, r_count] = compute_hs_extents(srt_rid);
@@ -271,52 +275,58 @@ end
 
 function [id, desc, hd] = read_annot(fid, annot_group, args)
 % READ_ANNOT Read row and column annotations from HDF5 data format.
-    gid = H5G.open(fid, annot_group);
-    info = H5G.get_info(gid);
-    nlinks = info.nlinks;        
-    id = [];
+gid = H5G.open(fid, annot_group);
+info = H5G.get_info(gid);
+nlinks = info.nlinks;
+id = [];
 
-    desc = {};
-    hd = cell(nlinks-1, 1);
-    dctr = 0;
-    for ii=0:nlinks-1
-        link_name = H5L.get_name_by_idx(fid, annot_group, 'H5_INDEX_NAME', 'H5_ITER_NATIVE', ii, 'H5P_DEFAULT');
-        if strcmpi('id', link_name)
-            isid = true;
-        else
-            isid = false;
-            dctr = dctr+1;
-            hd{dctr} = link_name;
-        end
-        dset_id = H5D.open(gid, link_name);
-        data = H5D.read(dset_id, 'H5ML_DEFAULT','H5S_ALL','H5S_ALL','H5P_DEFAULT')';
-        H5D.close(dset_id);
-        if ischar(data)
-            data = cellstr(data);
-        else
-            if args.detect_numeric
-                data = num2cell(data);
-            else
-                data = num2cellstr(data, 'precision', args.annot_precision);
-            end
-        end
-        if isequal(dctr, 1) && ~isid
-            desc = cell(length(data), nlinks-1);
-        end
+desc = {};
+hd = cell(nlinks-1, 1);
+dctr = 0;
+for ii=0:nlinks-1
+    link_name = H5L.get_name_by_idx(fid, annot_group, 'H5_INDEX_NAME', 'H5_ITER_NATIVE', ii, 'H5P_DEFAULT');
+    if strcmpi('id', link_name)
+        isid = true;
+    else
+        isid = false;
+        dctr = dctr+1;
+        hd{dctr} = link_name;
+    end
+    dset_id = H5D.open(gid, link_name);
+    data = H5D.read(dset_id, 'H5ML_DEFAULT','H5S_ALL','H5S_ALL','H5P_DEFAULT')';
+    H5D.close(dset_id);
+    if ischar(data)
+        data = cellstr(data);
+    else
         if isid
-            id = data;
+            % cast to string
+            msgid=sprintf('%s:NonStringID', mfilename);
+            fprintf(1, '\n');
+            warning(msgid, 'Casting non-string id to string');
+            data = strrep(cellstr(num2str(data(:))),' ', '');
+        elseif args.detect_numeric
+            data = num2cell(data);
         else
-            desc(:, dctr) = data;
+            data = num2cellstr(data, 'precision', args.annot_precision);
         end
     end
-    if args.detect_numeric
-        desc = detect_numeric(desc);
+    if isequal(dctr, 1) && ~isid
+        desc = cell(length(data), nlinks-1);
     end
-    H5G.close(gid)
-    if isempty(id)
-        H5F.close(fid)
-        error('Id not specified for annotation')
+    if isid
+        id = data;
+    else
+        desc(:, dctr) = data;
     end
+end
+if args.detect_numeric
+    desc = detect_numeric(desc);
+end
+H5G.close(gid)
+if isempty(id)
+    H5F.close(fid)
+    error('Id not specified for annotation')
+end
 end
 
 function cleanid = strip_ids(id)
@@ -326,7 +336,7 @@ function cleanid = strip_ids(id)
 
 cleanid = cell(length(id), 1);
 for ii=1:length(id)
-    [~, cleanid{ii}] = fileparts(id{ii});    
+    [~, cleanid{ii}] = fileparts(id{ii});
 end
 end
 
@@ -375,7 +385,7 @@ n = length(links);
 isexist = zeros(n, 1);
 for ii=1:n
     isexist(ii) = linkcheck(fid, links{ii});
-end    
+end
 end
 
 function status = linkcheck(fid, gpname)
