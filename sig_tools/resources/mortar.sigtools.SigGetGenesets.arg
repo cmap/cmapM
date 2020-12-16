@@ -1,0 +1,99 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_getgenesets_tool
+   summary: Extract top and botton N genes from dataset
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+   Returns the top and bottom N genesets for the score dataset DS sorted 
+   according to --sort_order. SORTORDER can be 'descend' or 'ascend'.
+   UP and DN are structures with length equal to the number of columns in DS.
+   Supports subsetting to specified row_space before extracting genesets with
+   --row_space option.
+
+   Outputs a GMT file.
+
+   Each row in the structure has the the following fields:
+   hd : String header, same as the column id in DS with either '_UP' or
+       '_DN' appended.
+   desc :  String descriptor. Set to ''.
+   entry : Cell array of N row identifiers in DS.
+
+    Examples:
+
+    % Get top and bottom 50 genes of each column in given dataset
+
+    #name#('--ds', 'raw_data.gctx', '--set_size', 50);
+
+    % Get top and bottom 50 landmark genes of each column in given gene id dataset
+
+    #name#('--ds', 'raw_data.gctx', '--set_size', 50, '--row_space', 'lm');
+
+    % Get top and bottom 50 landmark genes of each column in given affy id dataset
+
+    #name#('--ds', 'raw_data.gctx', '--set_size', 50, '--row_space', 'lm_probeset');
+
+    "
+-
+   name: --ds
+   default: ''
+   help: Input dataset
+- 
+   name: --set_size
+   default: 50
+   help: Integer, size of each geneset
+-
+   name: --cid
+   default: ''
+   help: List of column ids to extract as a GRP file or cell array.
+-
+   name: --rid
+   default: ''
+   help: List of row ids to extract as a GRP file or cell array
+-
+   name: --row_space
+   default: 'custom'
+   choices: ['lm', 'lm_probeset', 'bing', 'bing_probeset', 'full', 'custom']
+   help: Common row-id spaces to extract. Use '_probeset' if affy_ids present.
+-
+   name: --sort_order
+   default: 'descend'
+   choices: ['descend', 'ascend']
+   help: String, sort order of gene expression
+-
+   name: --es_tail
+   default: 'both'
+   choices: ['both', 'up', 'down']
+   help: String, specifies which tail to return.
+-
+   name: --id_field
+   default: '_id'
+   help: String, specifies an alternate metadata field to use for
+                 selecting features instead of ids.
+-
+   name: --desc_field
+   default: ''
+   help: String, specifies a metadata field to use for the output desc field.
+-
+   name: --suffix
+   default: ''
+   help: String, Append string to each set name.
+- 
+   name: --dim
+   default: 'column'
+   choices: ['column', 'row']
+   help: String, Dimension of matrix to operate on.
+- 
+   name: --enforce_set_size
+   default: true
+   help: Boolean, Assert if set sizes match N exactly.
+                 A set size of less than N can result in cases where an
+                 alternate id_field is specified and there are duplicate
+                 entries. Set to false to disable this constraint.
+- 
+   name: --min_set_size
+   default: 0
+   help: Integer, minimum set size. Sets with fewer members are
+            excluded from the ouput. 

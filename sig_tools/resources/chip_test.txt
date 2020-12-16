@@ -1,0 +1,42 @@
+-
+  platform: l1000
+  file: /cmap/data/vdb/chip/l1kaig.chip
+  space: [all,  aig, bing, lm, aignolm, bingnolm]
+  desc:
+    - L1000 All inferred genes + landmarks
+    - L1000 All inferred genes + landmarks
+    - L1000 Best inferred genes + landmarks
+    - L1000 Landmarks only
+    - L1000 All inferred genes only
+    - L1000 Best inferred genes only
+-
+  platform: affx_u133
+  file: /cmap/data/vdb/chip/affx.chip
+  space:
+    - all
+    - l1000
+  desc:
+    - All Affymetrix U133 probesets
+    - Affymetrix probesets used in L1000 assay
+
+-
+   platform: entrez
+   file: /cmap/data/vdb/chip/entrez.chip
+   space:
+      - all
+   desc:
+      - Entrez gene ids
+-
+   platform: ensembl
+   file: /cmap/data/vdb/chip/ensembl.chip
+   space:
+     - all
+   desc:
+     - Ensembl gene ids
+-
+   platform: pr500_cs5
+   file: /cmap/data/vdb/chip/PRISM-Pr500_cell_info.txt
+   space:
+     - all
+   desc:
+     - PR500 All cell lines in cell set 5

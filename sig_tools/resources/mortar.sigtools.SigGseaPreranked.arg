@@ -1,0 +1,83 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_gseapreranked_tool
+   summary: Run pre-ranked GSEA on a ranked matrix
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "The tool computes set-based enrichment analysis against a 
+    user-defined rank-ordered dataset.  It determines whether a priori 
+    defined sets show statistically significant enrichment at either end of the ranking.
+
+    # Examples:
+
+    % Run preRanked GSEA
+
+    #name# --up 'up.gmt' --score 'score.gctx'
+
+    # Citation: Subramanian, A., et al. Gene set enrichment analysis:
+a knowledge-based approach for interpreting genome-wide expression profiles. 
+    PNAS (2005).
+    "
+
+-
+  name: [--up, --uptag]
+  default: '' 
+  dest: up
+  help: Geneset(s) to use for the up portion of the query
+  
+-
+  name: --score
+  default: ''
+  help: Custom dataset of differential expression scores (e.g. zscores) in
+        GCT(X) format. Use in combination with rank parameter.
+-
+  name: --rank
+  default: ''
+  help: Custom dataset of ranks corresponding to the score matrix in
+        GCT(X) format. Use in combination with score parameter. 
+
+-
+  name: --sig_meta
+  default: ''
+  help: "Signature metadata for each column in the score matrix. This is a required field.
+        The first field must match the column id field in the score matrix."
+-
+  name: --metric
+  default: 'wtcs'
+  choices: ['wtcs', 'cs']
+  help: Similarity metric
+
+-
+  name: --es_tail
+  default: 'up'
+  choices: ['up', 'down']
+  help: Specify direction of one-tailed statistic for enrichment metrics
+
+-
+  name: --num_perm
+  default: 500
+  help: Number of null permutations per unique set size
+
+-
+  name: --query_meta
+  default: ''
+  help: "Metadata for each query."
+
+-
+  name: --save_minimal
+  default: true
+  help: "Save minimal output to optimize storage requirements. For enrichment based 
+metrics only the combined scores are saved"
+
+-
+  name: --save_digests
+  default: true
+  help: "Save per-query digests"
+
+-
+  name: --max_col
+  default: 25000
+  help: "Maximum number of columns of the score/rank matrices to read at a time"
+
+

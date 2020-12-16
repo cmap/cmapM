@@ -1,0 +1,4 @@
+SAMPLE_NAME	cal_range	cal_fold_change	qc_slope	qc_f_logp	qc_iqr	mean_int	std_int	gap35_ratio	act35_ratio	spike_int	is_spike_ascend	array	num_features	pcall_percent
+GSM249813	2627	187.3	41	7.6	8.76	302.7	928.7	1.02	1.84	169|616|2426|10398	Y	HG-U133_Plus_2	54675	64
+GSM37476	985	100.3	45	6.7	7.38	134.9	309.4	0.95	1.21	77|221|1363|3861	Y	HG-U133A_2	22277	43
+GSM37477	1012	84.5	46	6.7	7.87	140.8	354.6	1.00	1.25	101|269|1586|4592	Y	HG-U133A_2	22277	45

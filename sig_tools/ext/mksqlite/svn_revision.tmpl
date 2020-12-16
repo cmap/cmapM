@@ -1,0 +1,10 @@
+#ifndef __SVN_REVISION_H
+#define __SVN_REVISION_H
+
+#if $WCMODS?1:0$
+#define SVNREV "build:$WCREV$ (modified)"
+#else
+#define SVNREV "build:$WCREV$"
+#endif
+
+#endif // __SVN_REVISION_H

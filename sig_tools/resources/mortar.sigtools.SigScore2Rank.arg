@@ -1,0 +1,66 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_score2rank_tool
+   summary: Generate rank matrix from score matrix
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    Examples:
+
+    % Calculate ranks of input score matrix
+
+    #name#('--ds', 'raw_data.gctx');
+
+    "
+-
+   name: --ds
+   default: ''
+   help: Input score matrix to compute ranks
+-
+   name: --outfile
+   default: ''
+   help: Output filename of rank matrix.
+-
+   name: --dim
+   default: 'column'
+   choices: ['column', 'row']
+   help: Dimension to operate on. 
+-
+   name: --sort_order
+   default: 'descend'
+   choices: ['descend', 'ascend']
+   help: Sort order
+-
+   name: --ignore_nan
+   default: 1
+   help: Ignore NaNs when ranking. Note that ignoring NaNs is slower
+-
+   name: --as_fraction
+   default: 0
+   help: Logical, returns ranks as a fraction of total rows
+-
+   name: --as_percentile
+   default: 0
+   help: Logical, returns ranks as a percentile of total rows
+-
+   name: --fix_ties
+   default: 0
+   help: Logical, adjusts for ties (is false by default).
+-
+   name: --use_gctx
+   default: 1
+   help: Use GCTX file format
+
+-
+   name: --read_mode
+   default: full
+   choices: [full, iterative]
+   help: "Specify how to process the input matrix. If full is specified 
+         the complete matrix is processed enmasse. If iterative the input 
+         matrix is processed in blocks"
+-
+   name: --block_size
+   default: 50000
+   help: size of blocks to process if the read_mode is iterative

@@ -1,0 +1,18 @@
+#!/bin/bash
+# Execute os-specific binary
+
+bin_path=$(dirname ${BASH_SOURCE[0]})
+case $OSTYPE in 
+    linux*)
+	# Linux
+	LD_LIBRARY_PATH=/cmap/tools/opt/openblas-0.2.14/lib:$LD_LIBRARY_PATH
+	$bin_path/bh_tsne_linux $@
+	;;
+    darwin*)
+	# MacOSX
+	$bin_path/bh_tsne_macosx $@
+	;;
+    *)
+	echo No binary available for $OSTYPE 
+	;;
+esac

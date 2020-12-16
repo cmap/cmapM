@@ -1,0 +1,89 @@
+# Input arguments for runPCLTouchstone
+-
+   # Preamble
+   ispreamble: true
+   name: runPCLTouchstone
+   summary: Compute connectivity of PCLs against Touchstone perturbagens
+   # Note quotes to allow special chars
+   description: "This tool examines pre-computed connectivities of gene 
+   expression signatures of touchstone 
+   perturbagens for concordance of pre-defined perturbational classes.  
+   It takes pertubagen-cell and perturbagen-summary level datasets of 
+   normalized connectivity scores and a collection of PCLs as input, and 
+   computes connectivity scores for each query across all specified PCLs.
+   
+   Outputs include matrices of summarized PCL connectivity scores.
+   
+   Description of outputs:
+
+   Examples:
+       
+       % Run PCL analysis on a set of queries and PCLs       
+       res = runPCLTouchstone('ns_pert_cell', 'ns_pert_cell.gctx',...
+                        'ns_pert_summary', 'ns_pert_summary.gctx',...
+                        'pcl_set', 'pcl.gmt', 'pcl_field', 'pert_id')
+       "          
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file
+
+-
+  name: --ns_pert_cell
+  default: ''
+  required: true
+  help: Path to normalized connectivity scores of perturbagen-cell level dataset
+
+-
+  name: --ns_pert_summary
+  default: ''
+  required: true
+  help: Path to normalized connectivity scores of perturbagen-summary level dataset
+
+-
+   name: --pcl_set
+   default: ''
+   required: true
+   help: PCL set(s) can be in GMT, GMX or GRP format
+
+-
+   name: --pcl_field
+   default: pert_id
+   help: The dataset annotation field to match entries in the PCL file
+
+-
+  name: --ts_path
+  default: '/cmap/data/vdb/touchstone_v2/matched'
+  help: Touchstone signature definition dataset
+  isrequired: true
+
+-
+  name: --aggregate_method
+  default: 'maxq'
+  help: Aggregation method to use for summarization.
+  isrequired: true  
+  choices: [maxq]
+
+-
+  name: --aggregate_param
+  default:
+    q_low: 33
+    q_high: 67
+  help: Parameters to use for aggregation method
+  isrequired: true
+
+-
+  name: --num_permutation
+  default: 1000
+  help: Number of permutations to use for computing p-values
+
+-
+  name: --cid
+  default: ''
+  help: Subset of column ids to use while running the analysis.
+
+-
+  name: [-v, --verbose]
+  default: true
+  help: Enable debugging information

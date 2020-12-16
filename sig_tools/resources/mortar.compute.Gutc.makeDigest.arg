@@ -1,0 +1,47 @@
+-
+  name: gutc_path
+  default: '' 
+  help: Path to GUTC results
+  required: true
+
+-
+  name: out_path
+  default: '' 
+  help: Output path
+  required: true
+
+-
+  name: --col_meta
+  default: '' 
+  help: Column meta data table
+  
+-
+  name: --col_keyfield
+  default: 'sig_id'
+  help: Keyfield of column meta data to use when joining the table to the dataset
+
+-
+  name: --digest_group
+  default: 'pert_id'
+  help: Column meta-data fields(s) to use to group columns for each digest
+
+-
+  name: --digest_header
+  default: 'cell_id'
+  help: Column meta-data field(s) to use for the data columns of each digest
+
+-
+  name: --index_header
+  default: ['pert_id', 'pert_iname', 'pert_type']
+  help: Column meta-data fields(s) to include in the index
+
+-
+  name: --verbose
+  default: true
+  help: Print debugging messages
+  
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file

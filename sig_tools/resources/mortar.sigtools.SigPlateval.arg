@@ -1,0 +1,42 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_plateval_tool
+   summary: Validate inputs to the Espresso pipeline
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    Examples:
+
+    % Run algorithm on a dataset
+
+    #name#('--plate', 'CPC006_MCF7_24H_X1', '--map_src_path', '/path/to/map/src', '--lxb_path', '/path/to/lxb/folders');
+
+    "
+-
+   name: --plate
+   default: ''
+   help: "
+    string, detection plate name, should follow according to CMap 
+    naming conventions i.e. the name should comprise 5 underscore-delimited 
+    tokens in the following sequence: PertPlate_CellID_Timepoint_ReplicateID_BeadSetID
+    "
+   
+-
+   name: --map_src_path
+   default: ''
+   help: Path to folder containing map source files. The names of map 
+    source files should match the perturbagen plate name 
+
+-
+   name: --lxb_path
+   default: ''
+   help: Path to folder containing LXB files. The path should contain a 
+    folder that matches the plate name.
+
+-
+   name: --required_map_src_fields
+   default: [pert_plate, pert_well, pert_id, pert_iname, pert_type, pert_idose, pert_dose, pert_dose_unit, pert_mfc_id, pert_mfc_desc]
+   help: Required fields in the map src file
+

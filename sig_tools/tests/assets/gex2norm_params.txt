@@ -1,0 +1,22 @@
+gex2norm: Parameters
+res: [22268x3 ds] unnamed
+overwrite: 0
+out: 
+yref: /cmap/data/vdb/roast/log_ybio_epsilon.gct
+invset: /cmap/data/vdb/spaces/inv_eps_n80_probes.gmx
+verbose: 1
+rpt: gex2norm
+islog2: 0
+fitmodel: power
+precision: 4
+minval: 0
+maxval: 15
+mkcalplot: 1
+lowmem: 0
+censorbad: 1
+showfig: 1
+use_sketch: 0
+target_sketch: /cmap/data/vdb/sketch/sketch20k_median_n1x22268.gctx
+use_gctx: 0
+save_output: 1
+save_matrix: 1

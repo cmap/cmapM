@@ -1,0 +1,143 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * General page setup
+ */
+/* Query Tool preview table */
+#query_preview td {
+	font: 0.85em "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	}
+
+/* Summly tables */
+#summly td {
+	font: 0.85em "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+#summly #container {
+	width: 800px;
+	margin: 15px auto;
+	padding: 0;
+}
+
+
+#summly #footer {
+	margin: 50px auto 0 auto;
+	padding: 0;
+}
+
+#summly #demo {
+	margin: 30px auto 0 auto;
+}
+
+#summly .demo_jui {
+	margin: 30px auto 0 auto;
+}
+
+#summly .big {
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 1.6em;
+	color: #4E6CA3;
+}
+
+#summly .spacer {
+	height: 20px;
+	clear: both;
+}
+
+#summly .clear {
+	clear: both;
+}
+
+#summly pre {
+	padding: 15px;
+	background-color: #F5F5F5;
+	border: 1px solid #CCCCCC;
+}
+
+#summly h1 {
+	margin-top: 2em;
+	font-size: 1.3em;
+	font-weight: normal;
+	line-height: 1.6em;
+	color: #000000;
+	border-bottom: 1px solid #B0BED9;
+	clear: both;
+}
+
+#summly h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.6em;
+	color: #000000;
+	clear: both;
+}
+
+/*not sure we need this - CJF*/
+/*#summly a {
+	color: #0063DC;
+	text-decoration: none;
+}
+
+#summly a:hover {
+	text-decoration: underline;
+}*/
+
+#summly ul {
+	color: #4E6CA3;
+}
+
+.css_right {
+	float: right;
+}
+
+.css_left {
+	float: left;
+}
+
+#summly code {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	padding: 2px 4px !important;
+	white-space: nowrap;
+	font-size: 0.9em;
+
+	color: #D14;
+	background-color: #F7F7F9;
+
+	border: 1px solid #E1E1E8;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+}
+
+/* Summly link bar */
+#linkbar ul
+{
+    list-style-type:none;
+    font-size: 0.9em;
+    margin:0;
+    padding:0;
+    padding-top:3px;
+    padding-bottom:3px;
+    border-bottom: 1px solid #B0BED9;
+}
+#linkbar li
+{
+    display:inline;
+}
+#linkbar a:link,a:visited
+{
+    text-align:center;
+    padding:5px;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+#linkbar a:hover,a:active
+{
+    text-decoration: underline;
+}
+
+#param_content table td {
+    padding: 5px;
+    border: 1px solid #808080;
+    font-size: 85%;
+}

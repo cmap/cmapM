@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+# This script shows the total space wasted by duplicate files
+# as reported by findup (pipe `findup --summary`to this).
+
+import sys
+
+def sizes():
+    for line in sys.stdin:
+        (num, mul, size, rest) = line.split(None,3)
+        num=int(num)
+        size=int(size)
+        num -= 1
+        size *= num
+        yield size
+
+print "Total wasted space: %d bytes" % sum(sizes())

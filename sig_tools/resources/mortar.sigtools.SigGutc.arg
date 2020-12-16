@@ -1,0 +1,179 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_gutc_tool
+   summary: Compute similarity of input queries to CMap perturbagens
+   include: [sigClassOptions.arg, ]
+   # Note quotes to allow special chars
+   description: "Sig GUTC computes the similarity between input genesets
+     (queries) and perturbational gene expression signatures in the CMap 
+    database. The results are transformed to a percentile scale and 
+    reported at different levels of granularity to aid interpretation.
+
+    Briefly the algorithm operates as follows. First raw similarity scores 
+    between a query and CMap signatures are computed. While the method is 
+    agnostic to the specific similarity metric used, the default choice is 
+    a two-tailed weighted enrichment score. 
+
+    The raw scores are then scaled (Normalized) to adjust for co-variates 
+    like cell line and the type of perturbation. The normalized scores are 
+    transformed to percentile scores by comparing the test scores to those 
+    of a reference collection of signatures called Touchstone. 
+
+    The per-signature normalized connectivity scores are summarized to 
+    yield connectivity to individual perturbagens within a cell line, 
+    across-cell lines and for perturbational classes (PCLs). Any summary 
+    statistic can be employed, but in practice the maximal-quantile (MAXQ) 
+    score is used. Given a set of scores X and a pair of percentiles PL and 
+    PU, MAXQ returns the percentile value of X that has the maximum 
+    absolute value (By default GUTC uses PL=33 and PU=67). 
+
+    At each level of summarization, percentile scores are re-computed by 
+    comparing to the corresponding results when applied to the Touchstone 
+    signatures. For a given connection, the percentiles are computed within
+    perturbagens with the cell type that the connection corresponds to.
+
+    An important variant of GUTC is the matched mode specified by the 
+    is_matched parameter. Matched mode incorporates cell-line information 
+    when query data has been generated systematically in cell types 
+    that match the touchstone signatures. Currently this includes the 
+    following 9 cell types : 
+    [A375, A549, HEPG2, HCC515, HA1E, HT29, MCF7, PC3, VCAP]. To run GUTC 
+    in this mode, the is_matched flag should be set to true. Also, the 
+    required metadata should be provided using the query_meta argument. 
+    Note that the the tool expects 1 query per cell-line for each unique 
+    [pert_id, pert_idose, pert_itime] combination. The default query 
+    grouping variables can be changed using the match_group argument.
+
+
+    Examples:
+
+    % Run queries and apply GUTC
+
+    #name#('--up', 'up.gmt', '--down', 'down.gmt')
+
+    % Apply GUTC on pre-computed query results
+
+    #name#('--query_result', '/path/to/sig_query/results/wtcs.gctx')
+
+    % Run GUTC in cell-line matched mode
+
+    #name#('--query_result', '/path/to/sig_query/results/wtcs.gctx', '--query_meta', '/path/to/query_info.txt', '--is_matched', true)
+
+    % Run GUTC using a custom dataset, Expects that 
+    #name#('--bkg_path', '/path/to/gutc_background', '--score', '/path/to/modzs.gctx', '--rank', '/path/to/rank.gctx', '--up', 'up.gmt', '--down', 'down.gmt')
+
+
+    "
+
+-
+  name: --query_result
+  default: ''
+  help: Load pre-computed query results from supplied connectivity matrix.
+
+-
+  name: [--up, --uptag]
+  default: '' 
+  dest: up
+  help: Geneset(s) to use for the up portion of the query
+  
+-
+  name: [--down, --dntag]
+  default: ''
+  dest: down
+  help: Geneset(s) to use for the down portion of the query
+
+-
+  name: --query_meta
+  default: ''
+  help: "Metadata for each query. This is required for matched_mode. The 
+        following fields are required for matching with default parameters: 
+        [pert_id, cell_id, pert_idose, pert_itime]"
+
+-
+  name: --is_matched
+  default: false
+  help: If true, compute GUTC in cell-line matched mode
+
+-
+  name: --match_group
+  default: [pert_id, pert_idose, pert_itime]
+  help: Query grouping variable(s) for cell-line matching. Note that the 
+        tool expects 1 query per cell-line for each unique grouping
+
+-
+  name: --metric
+  default: 'wtcs'
+  choices: ['wtcs']
+  help: Similarity metric
+
+-
+  name: --es_tail
+  default: 'both'
+  choices: ['both', 'up', 'down']
+  help: Specify two-tailed or one-tailed statistic for enrichment metrics
+
+-
+  name: --score
+  default: ''
+  help: Custom dataset of differential expression scores (e.g. zscores) in
+        GCT(X) format. Use in combination with rank parameter.
+
+-
+  name: --rank
+  default: ''
+  help: Custom dataset of ranks corresponding to the score matrix in
+        GCT(X) format. Use in combination with score parameter. Note that if
+
+-
+  name: --build_id
+  default: 'a2geneid'
+  choices: ['a2', 'a2geneid']
+  help: Data build identifier. a2 refers to the GSE92742 dataset with 
+        Affymetrix feature ids. a2geneid is the same dataset mapped to
+        Entrez GeneIDs
+
+-
+  name: --feature_space
+  default: 'bing'
+  choices: ['lm', 'bing', 'full']
+  help: Feature space for query comparisions. Select lm for landmark 
+        space, bing for best-inferred gene space or full for 
+        complete genespace
+
+-
+   name: --sample_space
+   default: 'full'
+   choices: ['full']
+   help: Signature space
+
+-
+   name: --pcl_set
+   default: '/cmap/data/vdb/touchstone_v1.1/matched/annot/pcl_n171_20170201.gmt'
+   help: Perturbational classes in GMT format
+  
+-
+  name: --bkg_path
+  default: '/cmap/data/vdb/touchstone_v1.1/matched'
+  help: Path to background signature definition and percentile transforms
+  isrequired: true
+
+-
+  name: --save_matrices
+  default: true
+  help: Save result matrices
+
+-
+  name: --save_digests
+  default: true
+  help: Save per-query digest folders
+
+#-
+#  name: --aggregate_param
+#  default:
+#    q_low: 33
+#    q_high: 67
+#  help: Parameters to use for aggregation method
+#  isrequired: true
+
+

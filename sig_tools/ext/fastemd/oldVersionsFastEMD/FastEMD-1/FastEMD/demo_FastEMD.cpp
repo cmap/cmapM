@@ -1,0 +1,226 @@
+#include "EMD_DEFS.hpp"
+#include "emd_hat.hpp"
+#include "emd_hat_signatures_interface.hpp"
+#include "tictoc.hpp"
+#include <vector>
+#include <iostream>
+#include <fstream>
+#include <stdlib.h>
+#ifdef COMPUTE_RUBNER_VERSION
+#include "rubner_emd/emd.h"
+#endif
+
+std::vector< std::vector<NUM_T> > cost_mat; // for emd_hat version
+#ifdef COMPUTE_RUBNER_VERSION
+float cost_mat_dist(feature_t *F1, feature_t *F2) { return cost_mat[*F1][*F2]; } // for Rubner's version
+#endif
+NUM_T cost_mat_dist_NUM_T(feature_tt *F1, feature_tt *F2) { return cost_mat[*F1][*F2]; } // for emd_hat_signatures_interface
+
+//--------------------------------------------------------------------------------------------
+// Read images of the format:
+// im_rows_num im_columns_num
+// im_pixels ...
+void readImage(const char* im_name,
+               unsigned int& im_R,
+               unsigned int& im_C,
+               std::vector<NUM_T>& im) {
+    
+    std::fstream fin(im_name);
+    if (!fin) goto readImageErrLabel;
+    
+    fin >> im_R;
+    if (!fin) goto readImageErrLabel;
+    fin >> im_C;
+    if (!fin) goto readImageErrLabel;
+    
+    NUM_T tmp;
+    while (fin >> tmp) {
+        im.push_back(tmp);
+    }
+    
+    if (im.size()==im_R*im_C) return;
+readImageErrLabel:
+    std::cerr << "Image " << im_name << " has a problem in its format" << std::endl;
+    exit(1);
+    
+} // readImage
+//--------------------------------------------------------------------------------------------
+
+
+
+
+int main( int argc, char* argv[]) {
+
+    //-----------------------------------------------
+    // Read images
+    const char* im1_name= "cameraman.txt";
+    const char* im2_name= "rice.txt";
+    unsigned int im1_R, im1_C, im2_R, im2_C;
+    std::vector<NUM_T> im1,im2;
+    readImage(im1_name, im1_R, im1_C, im1);
+    readImage(im2_name, im2_R, im2_C, im2);
+    if ( (im1_R!=im2_R) || (im1_C!=im2_C) ) {
+        std::cerr << "Images should be of the same size" << std::endl;
+    }
+    //-----------------------------------------------
+
+    
+    //-----------------------------------------------
+    // The ground distance - thresholded euclidean distance.
+    // Since everything is ints, we multiply by COST_MULT_FACTOR.
+    const NUM_T COST_MULT_FACTOR= 1000;
+    const NUM_T THRESHOLD= 3*COST_MULT_FACTOR;
+    // std::vector< std::vector<NUM_T> > cost_mat; // here it's defined as global for Rubner's interfaces.
+                                                   // If you do not use Rubner's interface it's a better idea
+                                                   // not to use globals.
+    std::vector<NUM_T> cost_mat_row(im1_R*im1_C);
+    for (NODE_T i=0; i<im1_R*im1_C; ++i) cost_mat.push_back(cost_mat_row);
+    NUM_T max_cost_mat= -1;
+    int j= -1;
+    for (unsigned int c1=0; c1<im1_C; ++c1) {
+        for (unsigned int r1=0; r1<im1_R; ++r1) {
+            ++j;
+            int i= -1;
+            for (unsigned int c2=0; c2<im1_C; ++c2) {
+                for (unsigned int r2=0; r2<im1_R; ++r2) {
+                    ++i;
+                    cost_mat[i][j]= std::min(THRESHOLD,static_cast<NUM_T>(COST_MULT_FACTOR*sqrt((r1-r2)*(r1-r2)+(c1-c2)*(c1-c2))));
+                    if (cost_mat[i][j]>max_cost_mat) max_cost_mat= cost_mat[i][j];
+                }
+            }
+		}
+	}
+    //-----------------------------------------------
+    
+    
+    //-----------------------------------------------
+    // convert to rubner
+    //-----------------------------------------------
+    #ifdef COMPUTE_RUBNER_VERSION
+    signature_t Psig;
+    signature_t Qsig;
+    Psig.n= im1_R*im1_C;
+    Qsig.n= im1_R*im1_C;
+    Psig.Features= new feature_t[im1_R*im1_C];
+    Qsig.Features= new feature_t[im1_R*im1_C];
+    for (NODE_T i=0; i<im1_R*im1_C; ++i) {
+        Psig.Features[i]= i;
+        Qsig.Features[i]= i;
+    }
+    Psig.Weights= new float[im1_R*im1_C];
+    Qsig.Weights= new float[im1_R*im1_C];
+    for (NODE_T i=0; i<im1_R*im1_C; ++i) {
+        Psig.Weights[i]= im1[i];
+        Qsig.Weights[i]= im2[i];
+    }
+    #endif
+    //-----------------------------------------------
+
+    //-----------------------------------------------
+    // convert to fast emd with rubner's interface
+    //-----------------------------------------------
+    signature_tt Psig2;
+    signature_tt Qsig2;
+    Psig2.n= im1_R*im1_C;
+    Qsig2.n= im1_R*im1_C;
+    Psig2.Features= new feature_tt[im1_R*im1_C];
+    Qsig2.Features= new feature_tt[im1_R*im1_C];
+    for (NODE_T i=0; i<im1_R*im1_C; ++i) {
+        Psig2.Features[i]= i;
+        Qsig2.Features[i]= i;
+    }
+    Psig2.Weights= new NUM_T[im1_R*im1_C];
+    Qsig2.Weights= new NUM_T[im1_R*im1_C];
+    for (NODE_T i=0; i<im1_R*im1_C; ++i) {
+        Psig2.Weights[i]= im1[i];
+        Qsig2.Weights[i]= im2[i];
+    }
+    //-----------------------------------------------
+    
+    tictoc timer;
+    timer.tic();
+    NUM_T emd_hat_metric_val= emd_hat_metric(im1,im2, cost_mat,THRESHOLD);
+    timer.toc();
+    std::cout << "emd_hat_metric time in seconds: " << timer.totalTimeSec() << std::endl;
+
+    timer.clear();
+    timer.tic();
+    NUM_T emd_hat_val= emd_hat(im1,im2, cost_mat,THRESHOLD);
+    timer.toc();
+    std::cout << "emd_hat time in seconds: " << timer.totalTimeSec() << std::endl;
+
+    timer.clear();
+    timer.tic();
+    NUM_T emd_hat_signatures_interface_val= emd_hat_signature_interface(&Psig2, &Qsig2, cost_mat_dist_NUM_T,-1);
+    timer.toc();
+    std::cout << "emd_hat_signatures_interface time in seconds: " << timer.totalTimeSec() << std::endl;
+
+    #ifdef COMPUTE_RUBNER_VERSION
+    timer.clear();
+    timer.tic();
+    NUM_T sumBig= 0;
+    NUM_T sumSmall= 0;
+    for (NODE_T i=0; i<im1.size(); ++i) {
+        sumBig+= im1[i];
+        sumSmall+= im2[i];
+    }
+    if (sumSmall>sumBig) {
+        std::swap(sumSmall,sumBig);
+    }
+    NUM_T emd_rubner_val= static_cast<NUM_T>((sumSmall*emd(&Psig, &Qsig, cost_mat_dist, NULL, NULL)) +
+                                             (sumBig-sumSmall)*max_cost_mat);
+    timer.toc();
+    std::cout << "emd_rubner time in seconds: " << timer.totalTimeSec() << std::endl;
+    #endif
+    
+    #ifdef COMPUTE_RUBNER_VERSION
+    delete[] Psig.Features;
+    delete[] Qsig.Features;
+    delete[] Psig.Weights;
+    delete[] Qsig.Weights;
+    #endif
+    delete[] Psig2.Features;
+    delete[] Qsig2.Features;
+    delete[] Psig2.Weights;
+    delete[] Qsig2.Weights;
+
+    if (emd_hat_metric_val!=emd_hat_val||
+        emd_hat_metric_val!=emd_hat_signatures_interface_val
+        #ifdef COMPUTE_RUBNER_VERSION
+        || emd_hat_metric_val!=emd_rubner_val
+        #endif
+        ) {
+        std::cerr << "EMDs that were computed with different interfaces are different!" << std::endl;
+        return 1;
+    }
+} // end main
+    
+    
+
+// Copyright (2009-2010), The Hebrew University of Jerusalem.
+// All Rights Reserved.
+
+// Created by Ofir Pele
+// The Hebrew University of Jerusalem
+
+// This software is being made available for individual non-profit research use only.
+// Any commercial use of this software requires a license from the Hebrew University
+// of Jerusalem.
+
+// For further details on obtaining a commercial license, contact Ofir Pele
+// (ofirpele@cs.huji.ac.il) or Yissum, the technology transfer company of the
+// Hebrew University of Jerusalem.
+
+// THE HEBREW UNIVERSITY OF JERUSALEM MAKES NO REPRESENTATIONS OR WARRANTIES OF
+// ANY KIND CONCERNING THIS SOFTWARE.
+
+// IN NO EVENT SHALL THE HEBREW UNIVERSITY OF JERUSALEM BE LIABLE TO ANY PARTY FOR
+// DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST
+// PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF
+// THE THE HEBREW UNIVERSITY OF JERUSALEM HAS BEEN ADVISED OF THE POSSIBILITY OF
+// SUCH DAMAGE. THE HEBREW UNIVERSITY OF JERUSALEM SPECIFICALLY DISCLAIMS ANY
+// WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED
+// HEREUNDER IS ON AN "AS IS" BASIS, AND THE HEBREW UNIVERSITY OF JERUSALEM HAS NO
+// OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR
+// MODIFICATIONS.

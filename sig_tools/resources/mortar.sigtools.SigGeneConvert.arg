@@ -1,0 +1,76 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_geneconvert_tool
+   summary: Convert gene identifiers to L1000 compatible ids
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "The convertor uses a predefined lookup table to 
+        preferentially map the input ids to L1000 landmark genes, followed 
+        by best inferred genes and finally other genes.
+
+        Note that except for the landmark genes, the mapping of a gene to 
+        L1000 id can be one to many.
+
+    Examples:
+
+    % Convert gene symbols to L1000 ids
+
+    #name#('--gset', 'gene_id.gmt', '--input_id', 'gene_symbol');
+
+    % Convert Entrez gene ids to L1000 ids restricted to landmark space
+
+    #name#('--gset', 'gene_id.gmt', '--input_id', 'gene_id', '--feature_space', 'lm');
+
+    % Convert a matrix with affy ids row ids to gene_ids in landmark space
+    #name#('--ds', 'affy_ids.gctx', '--feature_space', 'lm');
+
+    % Convert a matrix with gene_ids row ids to gene symbol
+    #name#('--ds', 'gene_id.gctx', '--input_id', 'gene_id', '--ouput_id', 'gene_symbol');
+    
+
+
+    "
+-
+   name: --gset
+   default: ''
+   help: Input geneset in GMT or GMX format
+
+-
+   name: --ds
+   default: ''
+   help: Input matrix in GCT or GCTX format
+
+-
+   name: --input_id
+   default: 'affx'
+   choices: [gene_id, gene_symbol, affx]
+   help: Identifier type of the input geneset
+
+-
+   name: --output_id
+   default: 'gene_id'
+   choices: [gene_id, affx, gene_symbol]
+   help: Identifier type of the input geneset
+
+-
+   name: --feature_space
+   default: 'bing'
+   choices: [lm, bing, aig, aignolm, bingnolm]
+   help: Output L1000 feature space
+-
+   name: --min_set_size
+   default: 3
+   help: Minimum set size for the converted sets. Sets with fewer members
+         will be filtered out
+
+-
+   name: --max_set_size
+   default: 1e6
+   help: Maximum set size for the converted sets. Sets with more members
+         will be filtered out
+
+-
+    name: --chip_file
+    default: '/cmap/data/vdb/chip/l1kaig.chip'
+    help: Table containing feature mapping

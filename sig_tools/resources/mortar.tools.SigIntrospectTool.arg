@@ -1,0 +1,10 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sigIntrospectTool
+   include: [mortar.compute.Connectivity.runIntrospect.arg]
+   summary: Compute pairwise connectivities between signatures
+   # Note quotes to allow special chars
+   description: 
+   
+

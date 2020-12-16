@@ -1,0 +1,187 @@
+# sig_summly_tool arguments
+-
+   # Preamble
+   ispreamble: true
+   name: sig_summly_tool
+   summary: Summarize CMap query results.
+   # Note quotes to allow special chars
+   description: "
+        *** DEPRECATION NOTICE ***
+
+        THIS TOOL HAS BEEN DEPRECATED AND ITS USE IS NOT RECOMMENDED
+
+        Please use sig_gutc_tool instead.
+
+        ***************************
+
+        The summly tool performs a meta-analysis of CMap query
+        results. It takes a set of signature-level connections and
+        returns a set of perturbagen-level connections ranked by
+        consistent connectivity across cell lines within a given
+        perturbation type.
+
+        By default summly operates in independent mode, where each
+        query result (a column in the query_tool connectivity score
+        matrix), produces a separate summly report. Optionally, summly
+        can be run in matched mode (set group_query to true) where one
+        report is produced for a group of related signatures. By
+        default the signatures from different cell lines for a given
+        perturbagen id are grouped together.  Note this mode requires
+        that there be at most one query result per cell line.
+
+        The summarization algorithm works as follows: A query result
+        is first grouped by cell line and perturbagen type (small
+        molecule, consensus gene knockdown or overexpression) . The
+        connectivity scores are then normalized by dividing by the
+        signed mean score of each group. The scores are converted to
+        percentile ranks within each group. For convenience,
+        percentile ranks are linearly transformed to rankpoint scale
+        that range [-100, +100]. For each unique perturbagen a summly
+        score is computed as the weighted enrichment score of the best
+        N connected cell types. In addition the mean rankpoint for the
+        best N cell types is reported.
+
+        The output is a table of summly scores and rankpoints for each
+        unique perturbagen id. In addition a HTML report of the
+        connections is generated along with rankpoint raster plots.
+
+        Examples:
+
+        % Run summly in independent mode\n
+        sig_summly_tool('/path/to/query/folder')
+
+        % Run summly in matched mode\n
+        sig_summly_tool('/path/to/query/folder', '--group_query', true)
+
+          "
+
+-
+  name: --build_id
+  default: 'a2'
+  choices: ['a2', 'custom']
+  help: Build identifier
+
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file.
+
+-
+  name: --group_query
+  default: false
+  help: Match the queries and results by cell line if true
+
+-
+  name: --ignore_missing_sig
+  default: false
+  help: Ignore signatures in sig_space that are missing in the query result
+
+-
+   name: --mkdir   
+   default: true
+   help: Create standard output folders
+
+-
+  name: --mongo_location
+  default: 'aws_a2'
+  help: Mongodb location
+
+-
+  name: --out
+  default: '.'
+  help: Output folder
+
+-
+  name: query_result
+  default: ''
+  help: 'Query result output from sig_query_tool'
+
+-
+  name: --query_space
+  default: ''
+  help: List of query ids to use. Default is all
+
+-
+  name: --quest_mode
+  default: false
+  help: Used from quest_tool
+
+-
+  name: --rank_group
+  default: ['cell_id', 'pert_type']
+  help: Grouping field(s) used to rank a query result
+
+-
+   name: --rpt
+   default: 'my_analysis'
+   help: Prefix label for analysis report folder
+
+-
+  name: --save_full
+  default: false
+  help: Save full report
+
+-
+  name: --save_figures
+  default: true
+  help: Generate figures
+
+-
+  name: --sig_info
+  default: ''
+  help: 'Alternate signature annotations, overrides Mongo. 
+  	A table with at least the following fields:
+	sig_id, pert_id, pert_iname, cell_id'
+
+-
+  name: --sig_space
+  default: '/cmap/data/vdb/summly/sigspace_n69761.grp'
+  help: 'sig_ids'
+
+-
+  name: --sort_field
+  default: 'mean_rankpt_4'
+  help: Field to sort on for selecting top connections
+
+-
+  name: --summly_group
+  default: ['pert_id']
+  help: Grouping field(s) for the summly report
+
+-
+  name: --topn
+  default: 100
+  help: Number of connections to display
+
+-
+  name: --topn_figures
+  default: 20
+  help: Number of images to generate
+
+-
+  name: --use_cache_annot
+  default: false
+  help: Use cached annotations for rows (faster)
+
+-
+  name: --annot_cache
+  default: '/cmap/data/vdb/summly/sigspace_n69761.mat'
+  help: 'Cached annotations, used if use_cache_annot is true'
+
+-
+  name: --use_gctx
+  default: true
+  help: 'save as GCTX.'
+
+-
+  name: [-v, --verbose]
+  default: true
+  help: Enable debugging information
+
+
+
+
+
+
+

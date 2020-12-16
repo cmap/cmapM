@@ -1,0 +1,62 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_tani_tool
+   summary: Calculate Tanimoto coefficients for a given set of compounds.
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "Calculate Tanimoto coefficients for a given set of compounds. 
+    Compounds from the Touchstone set can be included in the calculations.
+    
+    % ADD EXAMPLES OF USAGE HERE
+
+    Examples:
+
+    % Run algorithm on a dataset from a GCTX input file and add Touchstone 
+      compounds to the calculations and save the resuls to a GCTX file.
+
+    #name#('--igctx', 'input_binary_fingerprints.gctx', '--ogctx', 'output_tanimoto.gctx', '--ts', 1);
+
+    % Run algorithm on a dataset from a JSON input file without adding 
+      Touchstone compounds to the calculations (default) and save the resuls to a GCT file.
+
+    #name#('--igctx', 'input_binary_fingerprints.gctx', '--ogct', 'output_tanimoto.gct', '--ts', false);
+
+    "
+-
+   name: --igctx
+   default: ''
+   help: GCTX file containing binary fingerprints. This file can be generated from SMILES strings using sig_smi2fp_tool.
+
+#-
+#   name: --ijson
+#   default: ''
+#   help: JSON file containing binary fingerprints. This file can be generated from SMILES strings using sig_smi2fp_tool.
+#
+#-
+#   name: --icsv
+#   default: ''
+#   help: CSV file containing binary fingerprints. This file can be generated from SMILES strings using sig_smi2fp_tool.
+
+-  
+   name: --ogctx
+   default: ''
+   help: Output GCTX file with NxN matrix of Tanimoto coefficients for N compounds provided in the dataset input file.
+
+-  
+   name: --ogct
+   default: ''
+   help: Output GCT file with NxN matrix of Tanimoto coefficients for N compounds provided in the dataset input file.
+
+-  
+   name: --ts
+   default: 'false'
+   choice: [false, true]
+   help: A flag whether to include compounds from the Touchstone set to calculations of the Tanimot coefficients
+
+-
+   name: --ts_fpt
+   default: 'FP2'
+   choice: ['FP2','FP3','FP4','MACCS']
+   help: Standard of binary fingerprints for the Touchstone set. Needs to match the standard of dataset provided with --igctx
+

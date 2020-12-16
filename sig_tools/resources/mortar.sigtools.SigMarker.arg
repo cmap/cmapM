@@ -1,0 +1,142 @@
+ # Arguments for marker selection`
+-
+   # Preamble
+   ispreamble: true
+   name: sig_marker_tool
+   summary: Identify differentially expressed genes using
+            two-class marker selection.
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "#name# compares the expression profiles of 
+          two predetermined classes, computes differential expression 
+          scores and selects the most differentially expressed 
+          features (markers).
+
+          Note data is assumed to be in log2 scale. For data in 
+          natural scale set the --islog2 flag to transform the data 
+          before computing the scores.
+
+          Examples:
+
+          % Run marker selection on the expression datatset EXP_FILE 
+            for the classes specified in CLASS_FILE
+
+            #name#('--ds', EXP_FILE, '--phenotype', CLASS_FILE)
+
+          "
+-
+    name: --ds
+    default: ''
+    help: Dataset of gene expression profiles [GCT or GCTX]
+
+
+-
+    name: --col_meta
+    default: ''
+    help: Optional column metadata table
+
+-
+    name: --row_meta
+    default: ''
+    help: Optional row metadata table
+
+-
+    name: --phenotype
+    default: ''
+    help: "Phenotype class definition file [TSV]. It should include sample_id, 
+          and class_id and sig_id fields and optionally class_label. 
+          The sample_id field corresponds 
+          to column identifiers in the supplied dataset. The following 
+          convention is preferred class_id = A denotes the treatment class 
+          or class of interest and class_id = B is the control class. The 
+          sig_id field specifies the name of the output signature. 
+          Here is an example:
+
+          sample_id\tclass_id\tclass_label\tsig_id\n
+          \ts1\tA\tEstradiol treatment\tEstradiol vs DMSO treatment\n
+          \ts2\tA\tEstradiol treatment\tEstradiol vs DMSO treatment\n
+          \ts3\tA\tEstradiol treatment\tEstradiol vs DMSO treatment\n
+          \ts4\tB\tDMSO treatment\tEstradiol vs DMSO treatment\n
+          \ts4\tB\tDMSO treatment\tEstradiol vs DMSO treatment\n
+          \ts6\tB\tDMSO treatment\tEstradiol vs DMSO treatment\n"
+-
+    name: --metric
+    default: s2n
+    choices: [s2n, s2n_robust, fc]
+    help: "Test statistic to use when computing differential expression.
+          The signal to noise metric (S2N) is used by default and is defined as:
+
+          S2N = (mean of class A - mean of class B) / (stdev of A + stdev of B)
+
+          The following adjustments for low variance are applied when
+          computing the class standard deviations:
+
+            When the number of samples in a class is < 10, then
+
+            \tmin_stdev = Max(0.025*class_mean, 0.025)
+
+            \tclass_stdev = Max(class_stdev, min_stdev)
+
+            else 
+               
+                \tThe class standard deviation should be at least 0.025
+
+        If the metric is 's2n_robust' median and MAD are used in place of 
+        the class mean and stdev in the formula above.
+        If the metric is 'fc' the fold-change is computed as follows:
+        
+        FC = mean of class A - mean of class B
+"
+
+-
+   name: --feature_space
+   default: 'all'
+   choices: [all, lm, bing, aig, lm_probeset, bing_probeset, full_probeset]
+   help: "Subset to a predefined feature space before performing marker 
+          selection. If 'all' is specified, all features are used without 
+          subsetting"
+
+-
+   name: --feature_id
+   default: ''
+   help: Custom feature space to use for marker selection, specified as a 
+         GRP file of feature ids. This flag overrides feature_space.
+
+-
+    name: --ignore_missing_features
+    default: false
+    help: Will ignore missing features if true
+
+-
+    name: --islog2
+    default: TRUE
+    help: Specify if the data is log2 transformed
+
+-
+    name: --nmarker
+    default: 100
+    help: Number of markers to select
+
+-
+    name: --fix_low_var
+    default: TRUE
+    help: Adjust for low variance genes
+
+-
+    name: --min_sample_size
+    default: 3
+    help: Minimum number of samples per class
+-
+    name: --use_gctx
+    default: TRUE
+    help: Output results as binary GCTX files. If false output as text 
+          GCT files instead
+
+-
+    name: --skip_rpt
+    default: FALSE
+    help: Skip creation of individual folders for each sig_id. Saves time
+-
+    name: --add_heatmap_fields
+    default: ''
+    help: Additional row metadata fields to include in the generated heatmap

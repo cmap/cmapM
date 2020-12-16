@@ -1,0 +1,94 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_zscore_tool
+   summary: "Compute robust and conventional standardized scores"
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+    The #name# returns a z-scored version on the input matrix X, 
+    the same dimensions as X. Two methods for computing Z-scores are 
+    currently supported. The default is to compute a 
+    robust z-score as: (X-NANMEDIAN(X))./(MAD(X)*1.4826). Alternatively a 
+    standard zscore can be specified and is computed as: 
+    (X-NANMEAN(X))./ NANSTD(X). In addition adjustments are made to account
+    for low variance based on heuristics controlled via the var_adjustment 
+    parameter.
+
+    Examples:
+
+    % Run row-wise z-scoring using the entire dataset
+
+    #name#('--ds', 'raw_data.gctx');
+    
+    % Run column-wise z-scoring using a custom background space
+
+    #name#('--ds', 'raw_data.gctx', '--dim', 'column', '--bkg_space', 'rowids.grp');
+
+    "
+-
+    name: --ds
+    default: ''
+    required: true
+    help: Path to input dataset
+
+- 
+    name: --dim
+    default: 'row'
+    choices: ['row', 'column']
+    help: Choose whether to z-score along on the rows or columns
+-
+    name: --bkg_space
+    default: ''
+    help: Filepath for GRP file listing a subset of column or row-ids of 
+          the input dataset that should be used to estimate the location 
+          and dispersion parameters. The ids are dependent on the 
+          '--dim' attribute, if dim is row, column-ids should be specified, 
+          otherwise row-ids should be used. Default is to use the all 
+          values in the row (or column) as the background.
+-
+    name: --min_var
+    default: 0.1
+    help: Minimum variation as estimated by MAD or standard deviation 
+         for robust and standard zscore methods respectively
+-
+    name: --var_adjustment
+    default: 'fixed'
+    choices: ['estimate', 'fixed', 'none']
+    help:  "Adjustment for low variance. Valid options are:
+            
+            'estimate' - estimate the minimum variance from the data using: 
+
+                         EST_VAR = PRCTILE(SIGMA, est_prct),
+                         where SIGMA is a vector of variation (e.g. MAD, stdev) 
+                         computed along dim for the entire dataset.
+                         The minimum variance is set to MAX(EST_VAR, MIN_VAR);
+
+            'fixed' - Default value. Use 'min_var' for minimum variance. 
+            
+            'none' - Assume min_var is zero
+
+            "
+-
+    name: --estimate_prct
+    default: 1
+    type: 'double'
+    help: Percentile to consider when estimating the minimum 
+          variance from the data. Only used when '--var_adjustment' is set 
+          set to 'estimate'
+- 
+    name: --zscore_method
+    default: 'robust'
+    choices: ['robust', 'standard']
+    help: Determines the type of z-scoring is performed. 
+
+            'robust' -  uses median and median absolute deviation (MAD) to 
+                        calculate z-scores as (X-NANMEDIAN(X))./(MAD(X)*1.4826)
+
+            'standard' - uses the mean and std to calculate z-scores as
+                        (X-NANMEAN(X))./ NANSTD(X)
+-
+    name: --use_gctx
+    default: true
+    choices: [true, false]
+    help: Save file in binary GCTX format if 1 else save as a text GCT

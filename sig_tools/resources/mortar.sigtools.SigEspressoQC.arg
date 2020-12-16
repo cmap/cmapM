@@ -1,0 +1,26 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_espressoqc_tool
+   summary: Generate QC reports for plates processed via the Espresso pipeline
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    Examples:
+
+    % Run QC on a list of plates
+
+    #name#('--plate_list', 'det_plates.grp');
+
+    "
+-
+   name: --plate_list
+   default: ''
+   help: GRP file with list of detection plates to process.
+
+
+-
+   name: --proj_base_dir
+   default: '/cmap/obelix/pod/custom'
+   help: Base directory containing all projects

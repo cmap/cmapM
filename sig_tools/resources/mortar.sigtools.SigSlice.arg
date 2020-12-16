@@ -1,0 +1,71 @@
+-
+   # Preamble
+   ispreamble: true
+   name: SigSliceTool
+   summary: Extract a subset from a larger dataset
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "This tool extracts a subset of rows and columns 
+    from a larger dataset.
+
+    Examples:
+
+    % Extract a subset of columns from a larger dataset
+
+    #name#('--ds', 'data.gctx', '--cid', 'column_ids.grp', '--rid', 'row_ids.grp')
+
+    % Extract only landmark genes for a subset of columns
+
+    #name#('--ds', 'data.gctx', '--cid', 'columns.grp', '--row_space', 'lm')
+
+    "
+## Main args
+-
+   name: --ds
+   default: ''
+   required: true
+   help: Dataset in GCT or GCTX format
+
+-
+   name: --cid
+   default: ''
+   help: List of column ids to extract as a GRP file or cell array.
+
+-
+  name: --rid
+  default: ''
+  help: List of row ids to extract as a GRP file or cell array
+
+-
+  name: --row_space
+  default: 'custom'
+  choices: ['lm', 'lm_probeset', 'bing', 'bing_probeset', 'aig', 'full_probeset', 'custom']
+  help: Common row-id spaces to extract. '_probeset' refers to affy ids
+
+-
+  name: --row_meta
+  default: ''
+  help: Row metadata as a TSV text file. If provided the rows in the output 
+        dataset will be annotated using the first field as the key to join  
+        with the row-ids
+
+-
+  name: --col_meta
+  default: ''
+  help: Column metadata as a TSV text file. If provided the columns in the 
+        output dataset will be annotated using the first field as the key 
+        to join with the column-ids
+
+-
+   name: --use_gctx
+   default: true
+   help: Save results in GCTX format if true or GCT otherwise
+
+-
+   name: --num_digits
+   default: 4
+   help: Number of digits to use when writing to GCT format
+-
+   name: --ignore_missing
+   default: false
+   help: If false, program will fail when missing any specified rids or cids

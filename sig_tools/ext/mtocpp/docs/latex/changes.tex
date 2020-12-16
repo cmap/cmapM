@@ -1,0 +1,348 @@
+Changelog and new feature list for mtoc++
+
+Here are all the changes/new features sorted by versions of mtoc++\+:
+\begin{DoxyItemize}
+\item \hyperlink{newfeat0_1}{New features in mtoc++ 0.\+1} -\/ \hyperlink{changelog0_1}{Changes in mtoc++ 0.\+1}
+\item \hyperlink{newfeat1_2}{New features in mtoc++ 1.\+2} -\/ \hyperlink{changelog1_2}{Changes in mtoc++ 1.\+2}
+\item \hyperlink{newfeat1_3}{New features in mtoc++ 1.\+3} -\/ \hyperlink{changelog1_3}{Changes in mtoc++ 1.\+3}
+\item \hyperlink{newfeat1_4}{New features in mtoc++ 1.\+4} -\/ \hyperlink{changelog1_4}{Changes in mtoc++ 1.\+4}
+\item \hyperlink{newfeat1_5}{New features in mtoc++ 1.\+5} -\/ \hyperlink{changelog1_5}{Changes in mtoc++ 1.\+5}
+\end{DoxyItemize}
+
+\begin{DoxyAttention}{Attention}
+The repeated occurence of the new features/changes in this specific site below is just due to the fact that the mtoc++ features/changes themselves have to be written down somewhere. Under usual circumstances those tags below would be placed inside the Mat\+Lab files/functions/classes where the actual change happened; see the comments from the \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} as an example. So the list below is not necessarily complete, but the sites referenced above contain all new features / changes!
+\end{DoxyAttention}
+\begin{DoxyRefDesc}{New in 1.\+5}
+\item[\hyperlink{newfeat1_5__newfeat1_5000001}{New in 1.\+5}](\hyperlink{developers_dw}{Daniel Wirtz}, 2013-\/02-\/21) Added \textquotesingle{}$\ast$.mex\textquotesingle{} files to the types of files parsed by default in Doxyfile.\+template\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+4}
+\item[\hyperlink{changelog1_4__changelog1_4000006}{Change in 1.\+4}](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/10-\/17)
+\begin{DoxyItemize}
+\item Using the new css-\/style from doxygen 1.\+8 for own docs
+\item Added some troubleshooting feedback
+\item Checked the C\+Make procedure on a Mac platform (Mac\+Book pro), worked neatly.
+\item Added an extra section \hyperlink{tools_tools_direct}{Using mtoc++ directly} for instructions on how to directly use mtoc++
+\item Fixed broken links to Mat\+Lab method/property attributes in mtoc++ output
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+4}
+\item[\hyperlink{changelog1_4__changelog1_4000007}{Change in 1.\+4}](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/09-\/27) Optimized compilation under Visual Studio 2010, now can also build the mtoc++ documentation locally.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+4}
+\item[\hyperlink{changelog1_4__changelog1_4000008}{Change in 1.\+4}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/09-\/27)
+\begin{DoxyItemize}
+\item Added check for H\+A\+V\+E\+\_\+\+D\+O\+T in doxygen.\+conf.\+in
+\item Bugfix for function-\/only M-\/files reported by Francois Rongere
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+4}
+\item[\hyperlink{newfeat1_4__newfeat1_4000002}{New in 1.\+4}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/17)
+\begin{DoxyItemize}
+\item Started mtoc++ 1.\+4.
+\item Added alias for an \char`\"{}events\char`\"{} tag, creating a page of all events in default documentation
+\item Changed naming convention for alias-\/tags new and change as newer doxygen versions seem not to recognize \textbackslash{}1\textbackslash{}2-\/like combinations of arguments any more (?) now pages named \char`\"{}newfeat\textbackslash{}1\+\_\+\textbackslash{}2\char`\"{} with underscore are created, please update your static references in your misc documentation files
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000021}{Change in 1.\+3}](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/01-\/16) Changed the {\ttfamily S\+H\+O\+W\+\_\+\+F\+I\+L\+E\+S} default value in the doxygen configuration file from \char`\"{}\+N\+O\char`\"{} to \char`\"{}\+Y\+E\+S\char`\"{}.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000022}{Change in 1.\+3}](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/01-\/16) Bugfix\+: The setting {\ttfamily E\+X\+T\+R\+A\+\_\+\+P\+A\+C\+K\+A\+G\+E\+S} in the doxygen configuration file was given the wrong path format, as latex follows the unix file separation using only forwardslashes \char`\"{}/\char`\"{}, so the inclusion failed on Windows platforms. We fixed this by passing the correctly transformed path. Also a new placeholder \char`\"{}\+\_\+\+File\+Sep\+\_\+\char`\"{} which is being processed by \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} (any any tools to come) and set to the correct file separator character for your platform.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000023}{Change in 1.\+3}](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/01-\/14) Bugfix\+: Moved the mtoc++ developers page declaration into a separate file inside the tools/config folder, so that error messages like \char`\"{}changelog1\+:13\+: warning\+: unable to resolve reference to
+ `dw\textquotesingle{} for \textbackslash{}ref command\char`\"{} do not appear anymore.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000024}{Change in 1.\+3}](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/12-\/08) Bugfix\+: The C\+U\+S\+T\+O\+M\+\_\+\+D\+O\+C\+\_\+\+D\+I\+R path is not longer extended by a {\ttfamily docs/} folder.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000025}{Change in 1.\+3}](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/29) Added the new fake classes varargin and varargout to the \hyperlink{class__substitutes_8c_source}{class\+\_\+substitutes.\+c} file with links to the Mat\+Lab online documentation.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+3}
+\item[\hyperlink{newfeat1_3__newfeat1_3000004}{New in 1.\+3}](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/28) Started mtoc++ 1.\+3.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+2}
+\item[\hyperlink{newfeat1_2__newfeat1_2000003}{New in 1.\+2}](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/27) Reordered the Doxyfile.\+m4 so that changes from our side are all collected to the bottom. This makes keeping custom settings over different versions easier.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+2}
+\item[\hyperlink{newfeat1_2__newfeat1_2000004}{New in 1.\+2}](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/25) Included a file \hyperlink{class__substitutes_8c_source}{class\+\_\+substitutes.\+c} into the config directory that introduces fake classes for common matlab data types.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+2}
+\item[\hyperlink{changelog1_2__changelog1_2000010}{Change in 1.\+2}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) Updated the test reference files\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+2}
+\item[\hyperlink{newfeat1_2__newfeat1_2000005}{New in 1.\+2}](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/07) Created the initial mtoc++ documentation structure\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+2}
+\item[\hyperlink{changelog1_2__changelog1_2000011}{Change in 1.\+2}](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/07) Reordered the source code files and tools in more concise folders.\end{DoxyRefDesc}
+\hypertarget{newfeat0_1}{}\subsection{New features in mtoc++ 0.1}\label{newfeat0_1}
+Demo features of the demo classes and examples
+
+See also \hyperlink{changelog0_1}{Changes in mtoc++ 0.\+1}
+
+
+\begin{DoxyRefList}
+\item[\label{newfeat0_1__newfeat0_1000001}%
+\hypertarget{newfeat0_1__newfeat0_1000001}{}%
+\hyperlink{classexamples_1_1_class}{Class} \hyperlink{classexamples_1_1_inherited_class}{examples\+:\+:Inherited\+Class} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/03-\/17) Added this subclass to extend the documentation examples. 
+\item[\label{newfeat0_1__newfeat0_1000002}%
+\hypertarget{newfeat0_1__newfeat0_1000002}{}%
+Page \hyperlink{tips}{Tips for doxygen usage with mtoc} ](\hyperlink{developers_dw}{Daniel Wirtz}, undated) Added a fancy new feature! (New feature Example)
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/01-\/01) Added a fancy new feature on new year\textquotesingle{}s! (New feature Example)
+\end{DoxyRefList}\hypertarget{changelog0_1}{}\subsection{Changes in mtoc++ 0.1}\label{changelog0_1}
+Demo changes of the demo classes and examples
+
+See also \hyperlink{newfeat0_1}{New features in mtoc++ 0.\+1}
+
+
+\begin{DoxyRefList}
+\item[\label{changelog0_1__changelog0_1000001}%
+\hypertarget{changelog0_1__changelog0_1000001}{}%
+Member \hyperlink{classexamples_1_1_class_aebd897ed5a726cf0f09c5f40a9702484}{examples\+:\+:Class\+:\+:no\+Real\+Arguments} ()](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/03-\/22) You can even specify/log changes on a function or property level! 
+\item[\label{changelog0_1__changelog0_1000002}%
+\hypertarget{changelog0_1__changelog0_1000002}{}%
+Page \hyperlink{tips}{Tips for doxygen usage with mtoc} ](\hyperlink{developers_dw}{Daniel Wirtz}, undated) Changed foo to bar! (Changelog Example)
+\end{DoxyRefList}\hypertarget{newfeat1_2}{}\subsection{New features in mtoc++ 1.2}\label{newfeat1_2}
+First \char`\"{}stable\char`\"{} release with windows/unix support.
+
+See also \hyperlink{changelog1_2}{Changes in mtoc++ 1.\+2}
+
+
+\begin{DoxyRefList}
+\item[\label{newfeat1_2__newfeat1_2000003}%
+\hypertarget{newfeat1_2__newfeat1_2000003}{}%
+Page \hyperlink{changes}{Changes and new features in mtoc++} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/27) Reordered the Doxyfile.\+m4 so that changes from our side are all collected to the bottom. This makes keeping custom settings over different versions easier.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/25) Included a file \hyperlink{class__substitutes_8c_source}{class\+\_\+substitutes.\+c} into the config directory that introduces fake classes for common matlab data types.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/07) Created the initial mtoc++ documentation structure 
+\item[\label{newfeat1_2__newfeat1_2000001}%
+\hypertarget{newfeat1_2__newfeat1_2000001}{}%
+Class \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/10-\/13) Added this class and moved documentation related stuff here from the Ker\+Mor class. 
+\item[\label{newfeat1_2__newfeat1_2000002}%
+\hypertarget{newfeat1_2__newfeat1_2000002}{}%
+Class \hyperlink{class_m_file_scanner}{M\+File\+Scanner} ](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) New config flag C\+O\+P\+Y\+\_\+\+T\+Y\+P\+I\+F\+I\+E\+D\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+O\+C\+U which allows to toggle the automatic insertion of required fields for method parameters. This flag sets whether the documentation of fields in \textquotesingle{}Required fields of param\textquotesingle{}, \textquotesingle{}Optional fields of param\textquotesingle{} or \textquotesingle{}Generated fields of retval\textquotesingle{} shall be copied in case the Parameter \textquotesingle{}param\textquotesingle{} or \textquotesingle{}retval\textquotesingle{} have a type. 
+\end{DoxyRefList}\hypertarget{changelog1_2}{}\subsection{Changes in mtoc++ 1.2}\label{changelog1_2}
+First \char`\"{}stable\char`\"{} release with windows/unix support.
+
+See also \hyperlink{newfeat1_2}{New features in mtoc++ 1.\+2}
+
+
+\begin{DoxyRefList}
+\item[\label{changelog1_2__changelog1_2000010}%
+\hypertarget{changelog1_2__changelog1_2000010}{}%
+Page \hyperlink{changes}{Changes and new features in mtoc++} ](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) Updated the test reference files
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/07) Reordered the source code files and tools in more concise folders. 
+\item[\label{changelog1_2__changelog1_2000001}%
+\hypertarget{changelog1_2__changelog1_2000001}{}%
+Class \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/27)
+\begin{DoxyItemize}
+\item Included documentation creation for the Windows platform and combined the old methods into one (small effective differences)
+\item No longer storing the doxygen binary file in the prefs as a lot of tools must be present on the path anyways. The new paradigm is to expect all required 3rd-\/party programmes to be available on P\+A\+T\+H. As backup the configuration files directory is added to the Matlab P\+A\+T\+H environment {\bfseries nonpermanently} and any executables found there will thus also be usable.
+\item Included checks for {\ttfamily dot} and {\ttfamily latex} at the setup stage to recommend installation of those tools if not present (the default doxygen settings in Doxyfile.\+m4 are to use both)
+\end{DoxyItemize}
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/08) Improved the create\+Unix method by displaying the warnings and writing the output to a log file afterwards. Not using cprintf anymore as this is 3rd party software.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/07) Fixed a recursion bug caused by copy and paste. Now the preferences are stored on an per-\/application basis.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/04) Changed the name to \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} in order to export it into the mtoc++ distribution later. 
+\item[\label{changelog1_2__changelog1_2000005}%
+\hypertarget{changelog1_2__changelog1_2000005}{}%
+Class \hyperlink{class_m_file_scanner}{M\+File\+Scanner} ](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/28) Allow long (including line breaks) default values for properties
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) Fixed a bug that messed up the documentation if a new line was started after a @type tag and added a test case to class\+A.\+m$<$p$>$ (\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) Non-\/standard access modifier strings are now separated by a comma
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) Fixed a parse error occuring with the new $\sim$-\/notation in newer Mat\+Lab versions. Calls like {\ttfamily foo = bar(par1, $\sim$, par3)} now work.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) The order of @default and @type tags in parameters (if occurring) is no longer fixed.
+\end{DoxyRefList}\hypertarget{newfeat1_3}{}\subsection{New features in mtoc++ 1.3}\label{newfeat1_3}
+Improved stability for Windows platforms, event handling
+
+See also \hyperlink{changelog1_3}{Changes in mtoc++ 1.\+3}
+
+
+\begin{DoxyRefList}
+\item[\label{newfeat1_3__newfeat1_3000004}%
+\hypertarget{newfeat1_3__newfeat1_3000004}{}%
+Page \hyperlink{changes}{Changes and new features in mtoc++} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/28) Started mtoc++ 1.\+3. 
+\item[\label{newfeat1_3__newfeat1_3000001}%
+\hypertarget{newfeat1_3__newfeat1_3000001}{}%
+Class \hyperlink{class_m_file_scanner}{M\+File\+Scanner} ](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/03) Print a warning message to stderr when optional parameter in methods of functions are not documented with default values.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/10) \char`\"{}\+Bugfix\char`\"{}\+: Allowing the use of the {\ttfamily Abort\+Set} tag in property declarations, however, to extra action (e.\+g. inserting a note in documentation) is taken so far.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/16) Allowing multiple lines for default values in property comments \& code and added a test case.
+\end{DoxyRefList}\hypertarget{changelog1_3}{}\subsection{Changes in mtoc++ 1.3}\label{changelog1_3}
+Improved stability for Windows platforms, event handling
+
+See also \hyperlink{newfeat1_3}{New features in mtoc++ 1.\+3}
+
+
+\begin{DoxyRefList}
+\item[\label{changelog1_3__changelog1_3000021}%
+\hypertarget{changelog1_3__changelog1_3000021}{}%
+Page \hyperlink{changes}{Changes and new features in mtoc++} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/01-\/16) Changed the {\ttfamily S\+H\+O\+W\+\_\+\+F\+I\+L\+E\+S} default value in the doxygen configuration file from \char`\"{}\+N\+O\char`\"{} to \char`\"{}\+Y\+E\+S\char`\"{}.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/01-\/16) Bugfix\+: The setting {\ttfamily E\+X\+T\+R\+A\+\_\+\+P\+A\+C\+K\+A\+G\+E\+S} in the doxygen configuration file was given the wrong path format, as latex follows the unix file separation using only forwardslashes \char`\"{}/\char`\"{}, so the inclusion failed on Windows platforms. We fixed this by passing the correctly transformed path. Also a new placeholder \char`\"{}\+\_\+\+File\+Sep\+\_\+\char`\"{} which is being processed by \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} (any any tools to come) and set to the correct file separator character for your platform.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/01-\/14) Bugfix\+: Moved the mtoc++ developers page declaration into a separate file inside the tools/config folder, so that error messages like \char`\"{}changelog1\+:13\+: warning\+: unable to resolve reference to
+ `dw\textquotesingle{} for \textbackslash{}ref command\char`\"{} do not appear anymore.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/12-\/08) Bugfix\+: The C\+U\+S\+T\+O\+M\+\_\+\+D\+O\+C\+\_\+\+D\+I\+R path is not longer extended by a {\ttfamily docs/} folder.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/11-\/29) Added the new fake classes varargin and varargout to the \hyperlink{class__substitutes_8c_source}{class\+\_\+substitutes.\+c} file with links to the Mat\+Lab online documentation. 
+\item[\label{changelog1_3__changelog1_3000001}%
+\hypertarget{changelog1_3__changelog1_3000001}{}%
+Class \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/02-\/16)
+\begin{DoxyItemize}
+\item Now also collecting error messages from mtocpp\+\_\+post and adding them to the warnings.\+log file.
+\item Added the directive \char`\"{}\+L\+D\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+P\+A\+T\+H= \char`\"{} for unix systems, as Mat\+Lab sets it inside its executing environment. This can lead to errors if doxygen and/or mtoc++ have been built using never G\+L\+I\+B\+C (libstd) versions than the one shipped with Mat\+Lab.
+\end{DoxyItemize}
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/01-\/16)
+\begin{DoxyItemize}
+\item Properly using the correct file separators everywhere now
+\item Hyperlinked the log file so it can be opened directly
+\end{DoxyItemize}
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/01-\/14) Not displaying the \char`\"{}generated warnings\char`\"{}-\/text if there have not been any during documentation creation. 
+\item[\label{changelog1_3__changelog1_3000004}%
+\hypertarget{changelog1_3__changelog1_3000004}{}%
+Class \hyperlink{class_m_file_scanner}{M\+File\+Scanner} ](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/17) added events section
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) improved documentation for dependent flags
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) remove =0 for purely virtual class methods
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) bugfix\+: no Grrr! messages for complex property declarations.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) We totally ignore functions which are locally defined inside another function.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) Added config G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+S\+U\+B\+F\+U\+N\+T\+I\+O\+N\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+A\+T\+I\+O\+N and format for output of subfunctions.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/03) Bugfix\+: Default values were printed twice if documented in the documenation block and given as property default values. Now, the documentated default value is preferred.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/03) Improved the automatic documentation text for M\+A\+T\+L\+A\+B specific attributes of properties and methods, add a link to the online M\+A\+T\+L\+A\+B documentation.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/10) Some minor modifications for the postprocessor regarding dots \textquotesingle{}.\textquotesingle{} and \textquotesingle{}\+:\+:\textquotesingle{}
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/16) Bugfix\+: On Windows platforms the wrong {\ttfamily getcwd} command was issued and is now fixed.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/13) Bugfix\+: Now handling the {\bfseries Abstract} property correctly (was previously added for {\bfseries Set\+Observable} declarations due to copy\&paste)
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/13) Added a test case for default properties containing semicolons
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/13) Changed format for documentation of default properties and parameters
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/13) Default arguments for properties are added to the properties documentation block
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/13) Bugfix\+: observable properties have been documented as abstract ones.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/13) Adding a bold \char`\"{}\+Default\+:\char`\"{} line in property documentation blocks if a default value/default tag is set in either code or property comment.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/04) Bugfix reported by Evgeny Pr on mathworks\+: allow property definitions not ended by semicolons.
+\end{DoxyRefList}\hypertarget{newfeat1_4}{}\subsection{New features in mtoc++ 1.4}\label{newfeat1_4}
+Included basic source browsing, handling of varargin-\/parameters, basic La\+Te\+X generation support
+
+See also \hyperlink{changelog1_4}{Changes in mtoc++ 1.\+4}
+
+
+\begin{DoxyRefList}
+\item[\label{newfeat1_4__newfeat1_4000002}%
+\hypertarget{newfeat1_4__newfeat1_4000002}{}%
+Page \hyperlink{changes}{Changes and new features in mtoc++} ](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/17)
+\begin{DoxyItemize}
+\item Started mtoc++ 1.\+4.
+\item Added alias for an \char`\"{}events\char`\"{} tag, creating a page of all events in default documentation
+\item Changed naming convention for alias-\/tags new and change as newer doxygen versions seem not to recognize \textbackslash{}1\textbackslash{}2-\/like combinations of arguments any more (?) now pages named \char`\"{}newfeat\textbackslash{}1\+\_\+\textbackslash{}2\char`\"{} with underscore are created, please update your static references in your misc documentation files 
+\end{DoxyItemize}
+\item[\label{newfeat1_4__newfeat1_4000001}%
+\hypertarget{newfeat1_4__newfeat1_4000001}{}%
+Class \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/10-\/16)
+\begin{DoxyItemize}
+\item Added two more configuration variables \char`\"{}\+Project\+Description\char`\"{} and \char`\"{}\+Project\+Logo\char`\"{} for easier configuration of the \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} in many cases. Thanks to Wolfgang Mennerich \href{http://www.mathworks.com/matlabcentral/fileexchange/authors/272859}{\tt http\+://www.\+mathworks.\+com/matlabcentral/fileexchange/authors/272859} for the suggestion.
+\item Restructured the configuration, now only the project name function has to be implemented (the preferences tag depends on it, there might be more than one project within the same Matlab installation whos documentation is created using this tool). The rest can be provided either at setup time or later via suitable setters for the version, description and logo.
+\item Automatically setting Have\+Dot in the doxygen config whenever its found on the environment path.
+\item Added basic support for La\+Te\+X documentation creation. Using the parameter {\ttfamily latex}=true for the create method creates the La\+Te\+X version of the documentation in a folder \char`\"{}latex\char`\"{} in the Output\+Directory (default behaviour)
+\end{DoxyItemize}
+\end{DoxyRefList}\hypertarget{changelog1_4}{}\subsection{Changes in mtoc++ 1.4}\label{changelog1_4}
+Many bugfixes due to detailed feedback! Thanks!
+
+See also \hyperlink{newfeat1_4}{New features in mtoc++ 1.\+4}
+
+
+\begin{DoxyRefList}
+\item[\label{changelog1_4__changelog1_4000006}%
+\hypertarget{changelog1_4__changelog1_4000006}{}%
+Page \hyperlink{changes}{Changes and new features in mtoc++} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/10-\/17)
+\begin{DoxyItemize}
+\item Using the new css-\/style from doxygen 1.\+8 for own docs
+\item Added some troubleshooting feedback
+\item Checked the C\+Make procedure on a Mac platform (Mac\+Book pro), worked neatly.
+\item Added an extra section \hyperlink{tools_tools_direct}{Using mtoc++ directly} for instructions on how to directly use mtoc++
+\item Fixed broken links to Mat\+Lab method/property attributes in mtoc++ output
+\end{DoxyItemize}
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/09-\/27) Optimized compilation under Visual Studio 2010, now can also build the mtoc++ documentation locally.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/09-\/27)
+\begin{DoxyItemize}
+\item Added check for H\+A\+V\+E\+\_\+\+D\+O\+T in doxygen.\+conf.\+in
+\item Bugfix for function-\/only M-\/files reported by Francois Rongere 
+\end{DoxyItemize}
+\item[\label{changelog1_4__changelog1_4000001}%
+\hypertarget{changelog1_4__changelog1_4000001}{}%
+Class \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/10-\/18) Removed {\ttfamily m4} dependency and included constant properties for configuration file names.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2012-\/09-\/27) Added automatic dot Graphviz tool detection on call to create. 
+\item[\label{changelog1_4__changelog1_4000003}%
+\hypertarget{changelog1_4__changelog1_4000003}{}%
+Class \hyperlink{class_m_file_scanner}{M\+File\+Scanner} ](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/10-\/19) prettify the output of postprocessed source for source code browsing in doxygen. Now, we recommend the usage of the F\+I\+L\+T\+E\+R\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+I\+L\+E\+S doxygen switch.
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/10-\/17) implemented varargin handling by Matlab input\+Parser, as suggested here\+: \href{http://www.mathworks.de/de/help/matlab/ref/inputparser.parse.html}{\tt http\+://www.\+mathworks.\+de/de/help/matlab/ref/inputparser.\+parse.\+html}
+
+(\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/24) ignore comments in front of classdef (fixes Grrr message from Jesse Hopkins)
+\end{DoxyRefList}\hypertarget{newfeat1_5}{}\subsection{New features in mtoc++ 1.5}\label{newfeat1_5}
+Current development
+
+See also \hyperlink{changelog1_5}{Changes in mtoc++ 1.\+5}
+
+
+\begin{DoxyRefList}
+\item[\label{newfeat1_5__newfeat1_5000001}%
+\hypertarget{newfeat1_5__newfeat1_5000001}{}%
+Page \hyperlink{changes}{Changes and new features in mtoc++} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2013-\/02-\/21) Added \textquotesingle{}$\ast$.mex\textquotesingle{} files to the types of files parsed by default in Doxyfile.\+template
+\end{DoxyRefList}\hypertarget{changelog1_5}{}\subsection{Changes in mtoc++ 1.5}\label{changelog1_5}
+Current development
+
+See also \hyperlink{newfeat1_5}{New features in mtoc++ 1.\+5}
+
+
+\begin{DoxyRefList}
+\item[\label{changelog1_5__changelog1_5000001}%
+\hypertarget{changelog1_5__changelog1_5000001}{}%
+Class \hyperlink{class_matlab_doc_maker}{Matlab\+Doc\+Maker} ](\hyperlink{developers_dw}{Daniel Wirtz}, 2013-\/02-\/21) Fixed the callback for suggested direct documentation creation after \hyperlink{class_matlab_doc_maker_a434c176c2421dd18a40003919b19f4f2}{Matlab\+Doc\+Maker.\+setup} (Thanks to Aurelien Queffurust)
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2013-\/02-\/12) Also added the escaping for the Logo file. Thanks to Chris Olien for the hint.
+
+(\hyperlink{developers_dw}{Daniel Wirtz}, 2013-\/01-\/07) Included some backslash escaping for paths on windows platforms. Thanks to Math\+Works Pilot Engineer \textquotesingle{}{\ttfamily Arvind Jayaraman}\textquotesingle{} for providing the feedback and code!
+\end{DoxyRefList}

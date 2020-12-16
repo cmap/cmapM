@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+  <HEAD>
+    <TITLE>
+      mksqlite Dokumentation
+    </TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <STYLE type="text/css">
+    body { background-color: #FFFFFF;}
+    p.headline {font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: center; color: #0075d5}
+    p.text     {font-family: Arial, Helvetica, sans-serif; font-weight: normal; text-align: center; color: #000000}
+    p.faq      {font-family: Arial, Helvetica, sans-serif; font-weight: normal; text-align: center; color: #000088}
+    p.code     {font-family: Courier New, courier; font-weight: normal; text-align: left; color: #000000}
+    p.center {text-align: center}
+    hr.center {text-align: center}
+    </STYLE>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21584180-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </HEAD>
+  <BODY>
+	<p class="headline">mksqlite</p>
+	<p class="text">
+	mksqlite ist ein Open-Source Projekt, mit dem eine Schnittstelle von MATLAB Skripten<BR>
+	zu der SQL Datenbank SQLite als MATLAB als MEX-Dll realisiert wurde.<BR>
+	<BR>
+	&Uuml;ber den Befehl "mksqlite" k&ouml;nnen alle Features von SQLite in MATLAB Skripten<BR>
+	verwendet werden. Die Aufrageergebnisse werden als ein array von strukturen an das aufrufende<BR>
+	skript zur&uuml;ck gegeben. Der Einsatz von der MATLAB Kommandozeile aus ist ebenso m&ouml;glich.
+    </P>
+    <p class="headline">Versionen</p>
+	<p class="text">
+	mksqlite Version 1.11 setzt SQLite in der Version 3.7.6.3 ein.<BR>
+	Als MATLAB Versionen wurden R13SP1, R14SP2, 2006a, 2009a und 2011a eingesetzt.<BR>
+	mksqlite l&auml;uft auf Windows, Linux und MAC OS-X.
+	</p>
+    <p class="headline">Installation</p>
+    <p class="text">
+    Das Bin&auml;rpacket f&uuml;r Windows Systeme befindet sich auf <a href="http://developer.berlios.de/projects/mksqlite/">developer.berlios.de/projects/mksqlite/</a><br>
+    Einfach den Inhalt der ZIP-Datei in einem Verzeichnis im Suchpfad von MATLAB<BR>
+    installieren oder ein neues Verzeichnis in den Suchpfad aufehmen.<BR>
+    Weitere Bin&auml;rversionen k&ouml;nnen einfach &uuml;ber das Quelltextpaket erstelt werden.
+    </p>
+    <p class="headline">Quelltexte verwenden</p>
+    <p class="text">
+    Die Quelltexte befindet sich auf <a href="http://developer.berlios.de/projects/mksqlite/">developer.berlios.de/projects/mksqlite/</a><br>
+    F&uuml;r die &Uuml;bersetzung der Quelltexte wird MATLAB und unter Windows der<br>
+    Microsoft Visual C++ Compiler in der Version 2003 oder 2005 ben&ouml;tigt.<br>
+    Bei Linux und MAC OS-X Systeme kann der dort vorhandene GCC-Compiler verwendet werden.<br>
+    Die &Uuml;bersetzung wird aus MATLAB durch ausf&uuml;hren des skriptes "buildit.m" gestartet.
+    </p>
+    <p class="headline">Online Hilfe</p>
+    <p class="text">
+    Die Onlinehilfe kann MATLAB typisch mit "help mksqlite" aufgerufen werden.
+    </p>
+    <p class="headline">Benutzung</p>
+    <p class="text">
+    Genereller Aufruf:
+    </p>
+    <div align="center"><table class="code"><tr><td><p class="code">
+    dbid = mksqlite([dbid, ] SQLBefehl [, Argument])
+    </p>
+    </td></tr></table></div>
+    <p class="text">
+    Der Parameter dbid ist optional und wird nur dann ben&ouml;tigt, wenn mit<BR>
+    mehreren Datenbanken gleichzeitig gearbeitet werden soll. Wird dbid<BR>
+    weggelassen, so wird automatisch die Datenbank Nr. 1 verwendet.
+    </p>
+    <p class="text">
+ Funktionsaufrufe:
+    </p>
+    <div align="center"><table class="code"><tr><td><p class="code">
+  mksqlite('open', 'datenbankdatei')
+    </td></tr></table></div>
+    <p class="text">
+ oder
+    </p>
+    <div align="center"><table class="code"><tr><td><p class="code">
+  dbid = mksqlite(0, 'open', 'datenbankdatei')
+    </td></tr></table></div>
+    <p class="text">
+    &Ouml;ffnet die Datenbankdatei mit dem Dateinamen "datenbankdatei". Wenn eine<BR>
+    solche Datei nicht existiert wird sie angelegt.<BR>
+    Wenn eine dbid angegeben wird und diese sich auf eine bereits ge&ouml;ffnete<BR>
+    Datenbank bezieht, so wird diese vor Befehlsausf&uuml;hrung geschlossen. Bei<BR>
+    Angabe der dbid 0 wird die n&auml;chste freie dbid zur&uuml;ck geliefert.<BR>
+
+    </p>
+    <div align="center"><table class="code"><tr><td><p class="code">
+  mksqlite('close')
+    </td></tr></table></div>
+    <p class="text">
+ oder
+    </p>
+    <div align="center"><table class="code"><tr><td><p class="code">
+  mksqlite(dbid, 'close')
+    </td></tr></table></div>
+    <p class="text">
+ oder
+    </p>
+    <div align="center"><table class="code"><tr><td><p class="code">
+  mksqlite(0, 'close')
+    </td></tr></table></div>
+    <p class="text">
+    Schliesst eine Datenbankdatei. Bei Angabe einer dbid wird diese Datenbank<BR>
+    geschlossen. Bei Angabe der dbid 0 werden alle offenen Datenbanken<BR>
+ geschlossen.
+    </p>
+
+    <div align="center"><table class="code"><tr><td><p class="code">
+  mksqlite('SQL-Befehl')
+    </td></tr></table></div>
+    <p class="text">
+ oder
+    </p>
+    <div align="center"><table class="code"><tr><td><p class="code">
+  mksqlite(dbid, 'SQL-Befehl')
+    </td></tr></table></div>
+    <p class="text">
+ F&uuml;hrt "SQL-Befehl" aus.
+    </p>
+   <p class="headline">FAQ</p>
+    <p class="faq">
+    Mein Windows MATLAB findet mksqlite nicht.
+    </p>
+    <p class="text">
+    Stellen Sie sicher das sich mksqlit.mexw32 im MATLAB Suchpfad<BR>
+    oder im aktuellen Verzeichnis vefindet.
+    </p>
+    <p class="faq">
+    MATLAB meldet "Attempt to execute SCRIPT mksqlite as a function"
+    </p>
+    <p class="text">
+    Dabei scheint es sich um eine &auml;ltere MATLAB Version zu halten.<BR>
+    Versuchen Sie einmal die Datei "mksqlite.mexw32" in "mksqlite.dll"<BR>
+    umzubenennen. Wenn das nicht hilft m&uuml;ssen Sie sich eine eigene<BR>
+    Version von mksqlite mit Hilfe der Queltexte erstellen.
+    </p>
+    <p class="faq">
+    Funktioniert mksqlite auch mit einem 64Bit MATLAB oder mit einer<BR>
+    anderen Version von MATLAB unter Linux, Solaris, OS-X, ...
+    </p>
+    <p class="text">
+    Ja, aber Sie m&uuml;ssen die Bibliothek dazu selber erstellen. Im<BR>
+    Bin&auml;rpaket befindet sich nur eine 32Bit Version f&uuml;r MATLAB2006a.
+    </p>
+    <p class="faq">
+    Wie kann ich mir eine eigene Version von mksqlite &uuml;bersetzen?
+    </p>
+    <p class="text">
+    Sie ben&ouml;tigen dazu MATLAB und einen Compiler der eine MEX-Erweiterung<BR>
+    erstellen kann. Bei Windows Systemen bietet sich einer der Microsoft<BR>
+    Compiler an, bei anderen Systemen ist in der Regel ein GNU Compiler vorhanden.<BR>
+    Dann ben&ouml;tigen Sie die Quelltexte von mksqlite, diese befinden sich im<BR>
+    Source-Paket. In diesem Paket befindet sich das Skript "buildit" welches<BR>
+    einfach von der MATLAB Kommandozeile aus aufgerufen werden muss.
+    </p>
+    <p class="faq">
+    Das einf&uuml;gen von Daten ist sehr langsam. Geht das auch schneller?
+    </p>
+    <p class="text">
+    SQLite legt bei jeder Schreiboperation eine Journaldatei an. Das einf&uuml;gen<Br>
+    von Daten kann erheblich beschleunigt werden indem mehrere Daten in einer<BR>
+    Transaktion auf einmal eingef&uuml;gt werden oder indem die Journalfunktionen<BR>
+    f&uuml;r die Datenbank &uuml;ber pragma Anweisungen ge&auml;ndert werden.<BR>
+    Weitere Infos dazu finden sich in der SQLite Dokumentation.
+    </p>
+    <p class="faq">
+    Wie kann ich Fehler bei den Datenoperationen bearbeiten?
+    </p>
+    <p class="text">
+    mksqlite unterst&uuml;tzt den normalen MATLAB try ... catch Mechanismus.
+    </p>
+    <p class="faq">
+    Was kostet mksqlite?
+    </p>
+    <p class="text">
+    Die Benutzung von mksqlite ist kostenlos.<BR>
+    Wer aber der Meinung ist das so eine Software jede Unterst&uuml;tzung Wert<BR>
+    ist kann mich gerne anschreiben und mir einen Vorschlag unterbreiten.
+    </p>
+    <p class="faq">
+    Ich ben&ouml;tige die Funktion xyz, Wie sieht es mit weiteren Funktionen aus?
+    </p>
+    <p class="text">
+    Wenn Sie eine neue Funktion implementiert oder eine Idee dazu haben, dann<BR>
+    k&ouml;nnen Sie mich gerne dar&uuml;ber informieren. Ich werde das dann entweder<BR>
+    &uuml;bernehmen oder Ihnen einen anderen Weg zur L&ouml;sung Ihres Problems vorschlagen.
+    </p>
+    <p class="faq">
+    Kann ich irgendwie bei der Entwicklung von mksqlite helfen?
+    </p>
+    <p class="text">
+    Klar, dokumentieren, &uuml;bersetzen, erweitern, fehler melden, ...<BR>
+    Oder mir einfach nur mitteilen wof&uuml;r Sie mksqlite einsetzen.
+    </p>
+    <p class="faq">
+    Unter welcher Lizenz wird mksqlite vertrieben?
+    </p>
+    <p class="text">
+    F&uuml;r mksqlite gilt die LGPL
+    </p>
+
+    <p class="text">&nbsp;</p>
+
+  </BODY>
+</HTML>
+

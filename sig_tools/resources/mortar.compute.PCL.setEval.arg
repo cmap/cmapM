@@ -1,0 +1,46 @@
+-
+   # Preamble
+   ispreamble: true
+   name: 
+   summary: Assess concordance of connectivities of pertubagen classes (PCLs)
+   include: [commonToolOptions.arg]
+   # Note quotes to allow special chars
+   description: "Examine the similarities between 
+    members of user-defined sets of perturbagens. It takes a collection of 
+    perturbagen sets as input, and performs a lookup of connectivities 
+    between the members of each set'
+      
+    Examples:
+
+    % Evaluate perturbagen sets in similarity matrix
+
+    #name#('--ds', 'introspect_n1000x1000.gctx', '--pcl', 'pcl.gmt');
+
+    "
+-
+  name: --ds
+  default: ''
+  required: true
+  help: Square, pairwise-similarity (introspect) matrix as GCT or GCTX files.
+
+-
+  name: --pcl
+  default: ''
+  required: true
+  help: Perturbagen set(s) to evaluate can be in GMT, GMX or GRP format
+
+-
+   name: --split_by
+   default: cell_id
+   help: Metadata field(s) to use to subset the introspect matrix. The 
+         perturbagen sets are evaluated separatey on each subset.
+   
+-
+   name: --ds_meta
+   default: ''
+   help: Optional metadata cooresponding to the input dataset as a TSV file.  
+   
+-
+   name: --match_field
+   default: pert_id
+   help: Row annotation field in dataset corresponding to set entries

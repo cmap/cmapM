@@ -1,0 +1,27 @@
+B-splines
+Copyright 2010 Levente Hunyadi
+
+Draw, manipulate and reconstruct B-splines.
+
+The package comprises of a graphical utility to place uniform B-spline control points and see how the B-spline is redrawn as control points or control point weights are adjusted, and functions to estimate B-splines with known knot vector, given a set of noisy data points either with known or unknown associated parameter values.
+
+As regards the interactive interface, the user is shown a figure window with axes in which to choose control points of a uniform B-spline. As points are placed in the axes, the B-spline of specified order is drawn progressively. The user may terminate adding control points by pressing ENTER or ESC, or may place the last control point with a right mouse button click.
+
+Once done, control points may be adjusted with drag-and-drop. Hold down the left mouse button over any control point and drag it to another location. Control point adjustment works in 3D; use the rotation tool to set a different camera position. It is also possible to explicitly set the x, y and z coordinates as well as the weight of a control point: click on the point, enter new values and hit ENTER.
+
+As regards the non-interactive interface, functions include calculating and drawing basis functions, computing points of a (weighed or unweighed) B-spline curve with de Boor's algorithm, and estimating B-spline control points given noisy data, either with or without parameter values associated with the observed data points.
+
+From a programmers' perspective, this example illustrates how to use nested functions to extend variable scope, implement drag-and-drop operations, combine normalized and pixel units for control docking and register multiple callbacks for a single event in an interactive user interface.
+
+USAGE
+
+The simplest way to get started is to run "bspline_gui", which activates the figure window to place B-spline control points interactively. Examples are bundled to illustrate various B-spline curve computation and approximation methods.
+
+DISCLAIMER
+
+This component is provided in the hope that it will be useful, but no claims are made as to the fitness for any purpose. You are welcome to submit bug reports directly to the author; comments made at the MathWorks File Exchange site might be ignored.
+
+CONTACT INFORMATION
+
+Levente Hunyadi
+http://hunyadi.info.hu

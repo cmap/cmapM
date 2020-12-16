@@ -1,0 +1,77 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_makephenos_tool
+   summary: Generate a phenotypes file for use in SigMarker tool from instinfo file and given parameter
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    Generate a phenotypes file for use in SigMarker tool from instinfo file and given parameter.
+    Outputs a file with the following example format:
+   
+     sample_id   class_id    class_label sig_id
+    'plate:well' 'A'	'AZD-5363'	'AZD-5363_42MGBA_24h_vs_DMSO_42MGBA'
+    'plate:well' 'B'	'DMSO'	'AZD-5363_42MGBA_24h_vs_DMSO_42MGBA'
+
+    The combinations of parameters are formulated by finding all unique values 
+    of the supplied control/treatment parameters and subsetting the infofile table. 
+
+    Control parameters should be a subset to ensure further specified population
+    by treatment parameters have a control population. Also outputs a siginfo file of 
+    all specified fields.
+
+    Examples:
+
+    % Generate a phenotypes file from instinfo file comparing perturbagen-dose combinations
+    % to control
+
+    #name#('--instinfo', 'instinfo.txt', '--trt_params', {'pert_iname', 'pert_idose'});
+
+    % Generate a phenotypes file from instinfo file comparing perturbagen-dose combinations
+    % to control while outputting timepoint to sig_params file
+
+    #name#('--instinfo', 'instinfo.txt', '--trt_params', {'pert_iname', 'pert_idose'}, '--param_fields', 'pert_itime');
+
+    % Generate a phenotypes file from instinfo file comparing perturbagen-dose combinations
+    % to control DMSO at the relevant time point
+    
+    #name#('--instinfo', 'instinfo.txt', '--ctl_params', {'cell_id', 'pert_itime'}, '--trt_params', {'pert_iname', 'pert_idose'});
+
+    "
+-
+   name: --instinfo
+   default: ''
+   required: true
+   help: Instinfo file with metadata
+- 
+   name: --ctl_params
+   default: 'cell_id'
+   help: List of field headers that are varied within the control population. 
+-
+   name: --ctl_id_pair
+   default: ['pert_iname', 'DMSO']
+   help: Field, value pairing to identify a control population after stratification
+         by ctl_params. Should be a length 2 list of field followed by the value of that
+         field that identifies the control group.
+- 
+   name: --trt_params
+   default: 'pert_iname'
+   help: List of field headers that are varied within the treatment population.
+-
+   name: --prefix
+   default: ''
+   help: Prepend provided string to each sig_id
+-
+   name: --param_fields
+   default: ['cell_id' , 'pert_iname', 'pert_id' , 'pert_itime','pert_idose']
+   help: List of parameters to output in sig_params file. Control conditions
+        will have '_ctl' appended. ctl_params and trt_params enforced
+- 
+   name: --outfile
+   default: 'phenotypes.txt'
+   help: Name of output phenotypes file
+-
+   name: --ignore_missing
+   default: false
+   help: Ignore combinations with missing control or treatment populations

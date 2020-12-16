@@ -1,0 +1,174 @@
+\hypertarget{class_m_file_scanner}{}\subsection{M\+File\+Scanner Class Reference}
+\label{class_m_file_scanner}\index{M\+File\+Scanner@{M\+File\+Scanner}}
+
+
+{\ttfamily \#include $<$mfilescanner.\+h$>$}
+
+\subsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_m_file_scanner_aff53805cd2d976dc6883321337de350b}{}typedef std\+::vector$<$ std\+::string $>$ {\bfseries Docu\+Block}\label{class_m_file_scanner_aff53805cd2d976dc6883321337de350b}
+
+\item 
+\hypertarget{class_m_file_scanner_a06ec1ddcf48249dc7335c2d85b1c13ae}{}typedef \hyperlink{classordered__map}{ordered\+\_\+map}$<$ Docu\+Block $>$ {\bfseries Docu\+List}\label{class_m_file_scanner_a06ec1ddcf48249dc7335c2d85b1c13ae}
+
+\item 
+\hypertarget{class_m_file_scanner_a0329ebf827fb087f172d7e77d1c152e5}{}typedef \hyperlink{classordered__map}{ordered\+\_\+map}$<$ \hyperlink{classordered__map}{Docu\+List} $>$ {\bfseries Docu\+List\+Map}\label{class_m_file_scanner_a0329ebf827fb087f172d7e77d1c152e5}
+
+\item 
+\hypertarget{class_m_file_scanner_a09f82fa2970e4859f4ba43f729e23ac5}{}typedef std\+::map$<$ std\+::string, Docu\+Block $>$ {\bfseries Alt\+Docu\+List}\label{class_m_file_scanner_a09f82fa2970e4859f4ba43f729e23ac5}
+
+\item 
+\hypertarget{class_m_file_scanner_a8dbb3b103e795c6d7dc312319a036321}{}typedef std\+::map$<$ std\+::string, Alt\+Docu\+List $>$ {\bfseries Alt\+Docu\+List\+Map}\label{class_m_file_scanner_a8dbb3b103e795c6d7dc312319a036321}
+
+\item 
+\hypertarget{class_m_file_scanner_ac5139d08364982d139c47e214bb29b99}{}typedef std\+::set$<$ std\+::string $>$ {\bfseries Group\+Set}\label{class_m_file_scanner_ac5139d08364982d139c47e214bb29b99}
+
+\item 
+\hypertarget{class_m_file_scanner_a61767914e49a480691025d0f36f808ed}{}typedef \hyperlink{classordered__map}{ordered\+\_\+map}$<$ std\+::pair$<$ int, std\+::string $>$ $>$ {\bfseries Varargin\+Parser\+Values\+Type}\label{class_m_file_scanner_a61767914e49a480691025d0f36f808ed}
+
+\end{DoxyCompactItemize}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_m_file_scanner_ac26ee87e796c8c74996a2d4879225a62}{}{\bfseries M\+File\+Scanner} (std\+::istream \&fin, std\+::ostream \&fout, const std\+::string \&filename, const std\+::string \&conffilename, \hyperlink{struct_run_mode}{Run\+Mode} runmode)\label{class_m_file_scanner_ac26ee87e796c8c74996a2d4879225a62}
+
+\item 
+\hypertarget{class_m_file_scanner_abd8067b4fc2b84861f80119912d1d39c}{}int {\bfseries execute} ()\label{class_m_file_scanner_abd8067b4fc2b84861f80119912d1d39c}
+
+\item 
+\hypertarget{class_m_file_scanner_aa7df3bf624f1156d6b28d89eb9658e1b}{}\hyperlink{classordered__map}{Docu\+List} \& {\bfseries get\+Param\+List} ()\label{class_m_file_scanner_aa7df3bf624f1156d6b28d89eb9658e1b}
+
+\item 
+\hypertarget{class_m_file_scanner_af84523b3dada909aff99a9a6352d31b0}{}\hyperlink{struct_method_params}{Method\+Params} \& {\bfseries get\+Method\+Params} ()\label{class_m_file_scanner_af84523b3dada909aff99a9a6352d31b0}
+
+\item 
+\hypertarget{class_m_file_scanner_aa410226cad9cb8e77039cce0fc9ca1dc}{}void {\bfseries end\+\_\+function} ()\label{class_m_file_scanner_aa410226cad9cb8e77039cce0fc9ca1dc}
+
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+\begin{DoxyRefDesc}{Change in 1.\+4}
+\item[\hyperlink{changelog1_4__changelog1_4000003}{Change in 1.\+4}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/10-\/19) prettify the output of postprocessed source for source code browsing in doxygen. Now, we recommend the usage of the F\+I\+L\+T\+E\+R\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+F\+I\+L\+E\+S doxygen switch.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+4}
+\item[\hyperlink{changelog1_4__changelog1_4000004}{Change in 1.\+4}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/10-\/17) implemented varargin handling by Matlab input\+Parser, as suggested here\+: \href{http://www.mathworks.de/de/help/matlab/ref/inputparser.parse.html}{\tt http\+://www.\+mathworks.\+de/de/help/matlab/ref/inputparser.\+parse.\+html}\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+4}
+\item[\hyperlink{changelog1_4__changelog1_4000005}{Change in 1.\+4}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/24) ignore comments in front of classdef (fixes Grrr message from Jesse Hopkins)\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000004}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/17) added events section\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000005}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) improved documentation for dependent flags\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000006}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) remove =0 for purely virtual class methods\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000007}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) bugfix\+: no Grrr! messages for complex property declarations.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000008}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) We totally ignore functions which are locally defined inside another function.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000009}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/15) Added config G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+S\+U\+B\+F\+U\+N\+T\+I\+O\+N\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+A\+T\+I\+O\+N and format for output of subfunctions.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000010}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/03) Bugfix\+: Default values were printed twice if documented in the documenation block and given as property default values. Now, the documentated default value is preferred.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000011}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/03) Improved the automatic documentation text for M\+A\+T\+L\+A\+B specific attributes of properties and methods, add a link to the online M\+A\+T\+L\+A\+B documentation.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+3}
+\item[\hyperlink{newfeat1_3__newfeat1_3000001}{New in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/02-\/03) Print a warning message to stderr when optional parameter in methods of functions are not documented with default values.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+3}
+\item[\hyperlink{newfeat1_3__newfeat1_3000002}{New in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/10) \char`\"{}\+Bugfix\char`\"{}\+: Allowing the use of the {\ttfamily Abort\+Set} tag in property declarations, however, to extra action (e.\+g. inserting a note in documentation) is taken so far.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000012}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/10) Some minor modifications for the postprocessor regarding dots \textquotesingle{}.\textquotesingle{} and \textquotesingle{}\+:\+:\textquotesingle{}\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+3}
+\item[\hyperlink{newfeat1_3__newfeat1_3000003}{New in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/16) Allowing multiple lines for default values in property comments \& code and added a test case.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000013}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/16) Bugfix\+: On Windows platforms the wrong {\ttfamily getcwd} command was issued and is now fixed.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000014}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/13) Bugfix\+: Now handling the {\bfseries Abstract} property correctly (was previously added for {\bfseries Set\+Observable} declarations due to copy\&paste)\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000015}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/13) Added a test case for default properties containing semicolons\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000016}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/13) Changed format for documentation of default properties and parameters\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000017}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/13) Default arguments for properties are added to the properties documentation block\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000018}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2012-\/01-\/13) Bugfix\+: observable properties have been documented as abstract ones.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000019}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/13) Adding a bold \char`\"{}\+Default\+:\char`\"{} line in property documentation blocks if a default value/default tag is set in either code or property comment.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+3}
+\item[\hyperlink{changelog1_3__changelog1_3000020}{Change in 1.\+3}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/12-\/04) Bugfix reported by Evgeny Pr on mathworks\+: allow property definitions not ended by semicolons.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+2}
+\item[\hyperlink{changelog1_2__changelog1_2000005}{Change in 1.\+2}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/28) Allow long (including line breaks) default values for properties\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+2}
+\item[\hyperlink{changelog1_2__changelog1_2000006}{Change in 1.\+2}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) Fixed a bug that messed up the documentation if a new line was started after a @type tag and added a test case to class\+A.\+m\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+2}
+\item[\hyperlink{changelog1_2__changelog1_2000007}{Change in 1.\+2}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) Non-\/standard access modifier strings are now separated by a comma\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+2}
+\item[\hyperlink{changelog1_2__changelog1_2000008}{Change in 1.\+2}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) Fixed a parse error occuring with the new $\sim$-\/notation in newer Mat\+Lab versions. Calls like {\ttfamily foo = bar(par1, $\sim$, par3)} now work.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Change in 1.\+2}
+\item[\hyperlink{changelog1_2__changelog1_2000009}{Change in 1.\+2}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) The order of @default and @type tags in parameters (if occurring) is no longer fixed.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{New in 1.\+2}
+\item[\hyperlink{newfeat1_2__newfeat1_2000002}{New in 1.\+2}](\hyperlink{developers_md}{Martin Drohmann}, 2011-\/11-\/17) New config flag C\+O\+P\+Y\+\_\+\+T\+Y\+P\+I\+F\+I\+E\+D\+\_\+\+F\+I\+E\+L\+D\+\_\+\+D\+O\+C\+U which allows to toggle the automatic insertion of required fields for method parameters. This flag sets whether the documentation of fields in \textquotesingle{}Required fields of param\textquotesingle{}, \textquotesingle{}Optional fields of param\textquotesingle{} or \textquotesingle{}Generated fields of retval\textquotesingle{} shall be copied in case the Parameter \textquotesingle{}param\textquotesingle{} or \textquotesingle{}retval\textquotesingle{} have a type. \end{DoxyRefDesc}
+
+
+Definition at line 389 of file mfilescanner.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/mfilescanner.\+h\end{DoxyCompactItemize}

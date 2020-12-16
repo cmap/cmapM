@@ -1,0 +1,168 @@
+#** Create index page for summly
+ Inputs:
+ query_id: String
+ query_info: String
+ tableMap: hashmap of summly table(s)
+ fieldList: list of table fieldnames
+ figureMap : hashmap, Figures for a subset of rows keyed by sum_id
+ summaryPlotMap : hashmap, summary plots
+ paramMap : hashmap, Summly parameters 
+ opt : Java hashmap of optional settings:
+     .sort_column : integer, column to sort on
+     .sort_order : string, sort order
+     .expression_column: string, column index for is_expressed field
+     .hide_columne: string, column indice(s) to hide (comma separated)
+*#
+
+<!DOCTYPE HTML >
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>$query_id $!query_info</title>
+<style type="text/css" title="currentStyle">
+  @import "https://analysis.clue.io/assets/css/summly_page.css";
+  @import "https://analysis.clue.io/assets/css/summly_table.css";
+  @import "https://analysis.clue.io/assets/js/fancybox/2.1.5/jquery.fancybox.css";
+</style>
+<script type="text/javascript" language="javascript" src=" https://analysis.clue.io/assets/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://analysis.clue.io/assets/js/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" language="javascript" src="https://analysis.clue.io/assets/js/datatables/1.9.4/media/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body id="summly">
+  <div id="container" style="width:80%">
+    <h1>Query: $query_id $!query_info</h1>
+    <div id="linkbar">
+      <ul>
+	<li><a class="image_group" href="#param_content" title="Parameters">Parameters</a></li>
+	<li><a class="image_group" href="#summary_plots">Summary Plots</a></li>
+      </ul>
+    </div>
+
+    <div id="param_content" data-fancybox-group="param" style="width:400px;display: none;">
+       #set($macro_opt = {"table_class":"stats"})
+       #parameter_table($paramMap $macro_opt)
+    </div>
+
+    <div id="summary_plots" style="display: none;">
+       #set($link_opt = {"class":"image_group", "rel":"summary_plots"})
+       #ul_link($summaryPlotMap $link_opt {})
+    </div>
+
+    <h2>Compound Connections</h2>
+    <div id="dynamic_trt_cp"></div>
+    <div class="spacer"></div>
+
+    <h2>Consensus Knockdown Connections</h2>
+    <div id="expression_filter">
+      <input type="checkbox" id="checkbox_flag_expression">
+      <label>Flag not expressed</label>
+    </div>
+    <div id="dynamic_trt_sh_cgs"></div>
+    <div class="spacer"></div>
+
+    <h2>Overexpression Connections</h2>
+    <div id="dynamic_trt_oe"></div>
+    <div class="spacer"></div>
+    <div class="figure" href="" title=""> </div>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+    $("a.image_group").fancybox({
+	nextEffect: 'none',
+	prevEffect: 'none',
+    });
+    #* Expression filter control *#
+    $("#checkbox_flag_expression").prop('checked', true);
+    $("#checkbox_flag_expression").change(function() { oTable_trt_sh_cgs.fnDraw(); });
+    var oRanks = {};
+    #* Re-compute rank order on redraw *#
+    var fnCustomDrawCallback = function ( oSettings ) {
+        for ( var i=oSettings._iDisplayStart, iLen=oSettings._iDisplayEnd ; i<iLen ; i++ ) {
+	    var idx = oSettings.aiDisplay[i];
+	    #*Re-compute ranks on sorting event*#
+	    if(oSettings.bSorted){
+		var bAscend = oSettings.aaSorting[0][1]=="asc";
+		var iRows = oSettings.aiDisplayMaster.length;
+		var aRank = new Array(iRows);
+		for (var j=0; j<iRows; j++) {
+		    aRank[oSettings.aiDisplayMaster[j]] = bAscend ? iRows-j : j+1 ;
+		}
+		oRanks[oSettings.sTableId] = aRank;
+	    }	    
+            this.fnUpdate( oRanks[oSettings.sTableId][idx], oSettings.aiDisplay[i], 0, false, false );
+        }
+    };
+    #* Add links to plots *#
+    var fnFormatLinksCallback = function ( data, type, row ) {
+        return data in oFigures ? '<a class=image_group rel=trt_oe href="'+oFigures[data]+'">'+data+'</a>' : data;
+    };
+    #* Strikethrough rows where target is not expressed *#
+    var fnFormatExpressionCallback = function( nRow, aData, iDisplayIndex) {
+        var decoration = $("#checkbox_flag_expression").prop("checked")?"line-through":"none";
+        if (aData[$opt.expression_column] != 1) {
+            $(nRow).css({'text-decoration':decoration});
+        }
+    };
+
+ #foreach ($e in $tableMap.entrySet())
+   #set( $key = $e.key.replace(".", "_"))
+    $('#dynamic_$key').html('<table cellpadding="0" cellspacing="0" border="0" width="80%" class="display" id="table_$key"></table>');
+    oTable_$key = $('#table_$key').dataTable( {
+	"aaData": oDataSet['$e.key'],
+	"aoColumns": aColumns,
+        "aoColumnDefs": [ 
+#* turn off sorting for the index column *#
+	    { "bSortable": false, "aTargets": [ 0 ] },
+#* Add custom renderer to add links to plots *#
+	    { "mRender": fnFormatLinksCallback, "aTargets": [ 1 ] },
+#* Hide expression columns *#
+            { "bSearchable": false, "bVisible": false, "aTargets": [ $opt.hide_column ] }
+	],
+	"aaSorting": [[$opt.sort_column, "$opt.sort_order"]],
+#* Deferred rendering speeds up rendering large tables *#
+	"bDeferRender": true,
+#* handle the static index column *#
+        "fnDrawCallback": fnCustomDrawCallback,
+#if ($key == "trt_sh_cgs")
+	"fnRowCallback": fnFormatExpressionCallback,
+#end
+	"aLengthMenu" : [[20, 50, 100], [20, 50, 100]],
+	"iDisplayLength" : 20,
+    } );
+ #end
+});
+
+var aColumns = [
+{"sTitle": "", "sType": "numeric"},
+#foreach ($row in $fieldList)
+{"sTitle": "$row"},
+#end
+];
+
+var oDataSet = {
+  #foreach ($e in $tableMap.entrySet())
+    "$e.key": [
+    #set( $order = 1)
+    #foreach ($row in $e.value)
+        [ $order,
+        #foreach ($cell in $row)
+          "$cell", 
+        #end
+        ],
+	#set( $order = $order + 1)
+    #end
+    ],
+   #end
+};
+
+var oFigures = {
+ #foreach ($e in $figureMap.entrySet())
+ "$e.key" : "$e.value",
+ #end
+};
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,3 @@
+echo "Make sure to change the path to CBLAS in this file before running it!"
+#g++ quadtree.cpp tsne.cpp -o bh_tsne -O3 -I/xchip/cogs/tools/opt/openblas_0.2.5/include -L/xchip/cogs/tools/opt/openblas_0.2.5/lib -lopenblas
+g++ quadtree.cpp tsne.cpp -o bh_tsne -O3 -I/usr/include -L/usr/lib64/atlas -lcblas -latlas

@@ -1,0 +1,31 @@
+-[20-Apr-2020 10:28:26]-: Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sort')" style="font-weight:bold">sort</a>
+Only one input argument is supported for cell arrays.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mortar.compute.PclEval.plotJellyfish', '/Users/narayan/workspace/mortar/+mortar/+compute/@PclEval/plotJellyfish.m', 64)" style="font-weight:bold">mortar.compute.PclEval.plotJellyfish</a> (<a href="matlab: opentoline('/Users/narayan/workspace/mortar/+mortar/+compute/@PclEval/plotJellyfish.m',64,0)">line 64</a>)
+                    [~, col_ord] = sort(row_medians(gp_idx), 'descend');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mortar.compute.PclEval.runCliqueAnalysis', '/Users/narayan/workspace/mortar/+mortar/+compute/@PclEval/runCliqueAnalysis.m', 56)" style="font-weight:bold">mortar.compute.PclEval.runCliqueAnalysis</a> (<a href="matlab: opentoline('/Users/narayan/workspace/mortar/+mortar/+compute/@PclEval/runCliqueAnalysis.m',56,0)">line 56</a>)
+    mortar.compute.PclEval.plotJellyfish(rankpt_ds, gpset, args, wkdir, prefix);      
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mortar.sigtools.SigPclEval/runAnalysis_>main', '/Users/narayan/workspace/mortar/+mortar/+sigtools/@SigPclEval/runAnalysis_.m', 39)" style="font-weight:bold">mortar.sigtools.SigPclEval/runAnalysis_>main</a> (<a href="matlab: opentoline('/Users/narayan/workspace/mortar/+mortar/+sigtools/@SigPclEval/runAnalysis_.m',39,0)">line 39</a>)
+        mortar.compute.PclEval.runCliqueAnalysis(ds_list{zz}, args, wkdir, ...
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mortar.sigtools.SigPclEval/runAnalysis_', '/Users/narayan/workspace/mortar/+mortar/+sigtools/@SigPclEval/runAnalysis_.m', 4)" style="font-weight:bold">mortar.sigtools.SigPclEval/runAnalysis_</a> (<a href="matlab: opentoline('/Users/narayan/workspace/mortar/+mortar/+sigtools/@SigPclEval/runAnalysis_.m',4,0)">line 4</a>)
+obj.res_ = main(args, wkdir);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mortar.base.SigClass/classMain_', '/Users/narayan/workspace/mortar/+mortar/+base/SigClass.m', 216)" style="font-weight:bold">mortar.base.SigClass/classMain_</a> (<a href="matlab: opentoline('/Users/narayan/workspace/mortar/+mortar/+base/SigClass.m',216,0)">line 216</a>)
+                    obj.runAnalysis_();
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mortar.base.SigClass/runAnalysis', '/Users/narayan/workspace/mortar/+mortar/+base/SigClass.m', 97)" style="font-weight:bold">mortar.base.SigClass/runAnalysis</a> (<a href="matlab: opentoline('/Users/narayan/workspace/mortar/+mortar/+base/SigClass.m',97,0)">line 97</a>)
+                obj.classMain_;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mortar.base.SigClass/run', '/Users/narayan/workspace/mortar/+mortar/+base/SigClass.m', 69)" style="font-weight:bold">mortar.base.SigClass/run</a> (<a href="matlab: opentoline('/Users/narayan/workspace/mortar/+mortar/+base/SigClass.m',69,0)">line 69</a>)
+                obj.runAnalysis;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sig_pcleval_tool', '/Users/narayan/workspace/mortar/tools/sig_pcleval_tool.m', 6)" style="font-weight:bold">sig_pcleval_tool</a> (<a href="matlab: opentoline('/Users/narayan/workspace/mortar/tools/sig_pcleval_tool.m',6,0)">line 6</a>)
+obj.run(varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('LiveEditorEvaluationHelperESectionEval4f9a90d0', '/private/var/folders/d8/s40w6djs1j3_z0v0m1j804lw0000gq/T/Editor/LiveEditorEvaluationHelperESectionEval4f9a90d0.mlx', 1)" style="font-weight:bold">LiveEditorEvaluationHelperESectionEval4f9a90d0</a> (<a href="matlab: opentoline('/private/var/folders/d8/s40w6djs1j3_z0v0m1j804lw0000gq/T/Editor/LiveEditorEvaluationHelperESectionEval4f9a90d0.mlx',1,0)">line 1</a>)
+sig_pcleval_tool('ds', '/cmap/obelix/pod/custom/COVID/build/COVID_A/introspect/ps_n12846x12846.gctx',...
+
+Error in matlab.internal.editor.evaluateCode

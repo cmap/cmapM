@@ -1,0 +1,33 @@
+\hypertarget{tips_tip_versioning}{}\subsection{Feature and change tracking information}\label{tips_tip_versioning}
+\hypertarget{tips_dg_featchange}{}\subsubsection{New feature and change log commands}\label{tips_dg_featchange}
+New features can be tracked version-\/based via using \begin{DoxyVerb}*  @new{<mainversionnumber>, <mainversionnumber>, <developerkey>[, <date>]} <description>
+*  \end{DoxyVerb}
+
+
+For example, writing \begin{DoxyVerb}*  @new{0,1,dw} Added a fancy new feature! (New feature Example)
+*  \end{DoxyVerb}
+ results in \begin{DoxyRefDesc}{New in 0.\+1}
+\item[\hyperlink{newfeat0_1__newfeat0_1000002}{New in 0.\+1}](\hyperlink{developers_dw}{Daniel Wirtz}, undated) Added a fancy new feature! (New feature Example)\end{DoxyRefDesc}
+
+
+To include a date write \begin{DoxyVerb}*  @new{0,1,dw,2011-01-01} Added a fancy new feature on new year's! (New feature Example)
+*  \end{DoxyVerb}
+ results in \begin{DoxyRefDesc}{New in 0.\+1}
+\item[\hyperlink{newfeat0_1__newfeat0_1000003}{New in 0.\+1}](\hyperlink{developers_dw}{Daniel Wirtz}, 2011-\/01-\/01) Added a fancy new feature on new year\textquotesingle{}s! (New feature Example)\end{DoxyRefDesc}
+
+
+and a new related page called newfeat01 listing these items. To refer to that Changelog page, use the keyword \textquotesingle{}newfeat\textquotesingle{} together with both plainly concatenated numbers\+: \begin{DoxyVerb}*  @ref newfeat01
+*  \end{DoxyVerb}
+ gives newfeat01
+
+Changes can be tracked version-\/based via using \begin{DoxyVerb}*  @change{<mainversionnumber>, <mainversionnumber>, <developerkey>[, <date>]} <change-text>
+*  \end{DoxyVerb}
+
+
+For example, writing \begin{DoxyVerb}*  @change{0,1,dw} Changed foo to bar! (Changelog Example)
+*  \end{DoxyVerb}
+ results in \begin{DoxyRefDesc}{Change in 0.\+1}
+\item[\hyperlink{changelog0_1__changelog0_1000002}{Change in 0.\+1}](\hyperlink{developers_dw}{Daniel Wirtz}, undated) Changed foo to bar! (Changelog Example)\end{DoxyRefDesc}
+
+
+The optional date works same as with the \textquotesingle{}@new\textquotesingle{} command. The related page keys for changes are composed by the keyword \textquotesingle{}changelog\textquotesingle{} and both plainly concatenated numbers (similar to the new feature keys). 

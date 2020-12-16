@@ -1,0 +1,4 @@
+group	name	wildcard	action
+Dataset	Dataset	modzs_*.gct*	download
+Annotations	Annotations	sig.info	view
+Inputs	Inputs	config.yaml	view

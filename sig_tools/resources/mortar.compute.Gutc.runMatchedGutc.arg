@@ -1,0 +1,56 @@
+-
+  name: --ds
+  default: '' 
+  help: Connectivity score dataset
+  isrequired: true
+  
+-
+  name: --row_meta
+  default: ''
+  help: Row annotations  
+
+-
+  name: --column_meta
+  default: ''
+  help: Column annotations
+
+-
+  name: --match_field
+  default: 'cell_id'
+  help: Grouping field or fields to use for matching
+
+-
+  name: --id_field
+  default: 'pert_id'
+  help: Identifier field to match to
+
+-
+  name: --aggregate_method
+  default: 'maxq'
+  help: Aggregation method to use for summarized results.
+  isrequired: true  
+  choices: [maxq]
+
+-
+  name: --aggregate_param
+  default:
+    q_low: 33
+    q_high: 67
+  help: Parameters to use for aggregation method
+  isrequired: true
+
+-
+  name: --use_summly_space
+  default: true
+  help: Use Summly signature space for aggregation
+
+-
+  name: --verbose
+  default: true
+  help: Print debugging messages
+  
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file

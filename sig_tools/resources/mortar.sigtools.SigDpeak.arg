@@ -1,0 +1,39 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_dpeaktool_tool
+   summary: Deconvolute peaks from DUO detection data
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+   This is a stripped-down version of the current
+   k-means based dpeak algorithm. Intended for testing
+   and benchmarking for the CMap dpeak crowd challenge.
+
+    Examples:
+
+    % Dpeak a folder of LXBs
+
+    #name#('--dspath', '/path/to/lxbs');
+
+    "
+-
+   name: --dspath
+   default: ''
+   help: Path to LXB folder. Should contain text versions of LXB files with .txt extension.
+
+-
+   name: --plate
+   default: 'RAW'
+   help: Name of the dataset being deconvoluted
+
+-
+   name: --group_field
+   default: 'barcode_id'
+   help: Bead type identifier field in LXB files
+
+-
+   name: --intensity_field
+   default: 'FI'
+   help: Fluorescent intensity field in LXB files

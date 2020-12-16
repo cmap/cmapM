@@ -1,0 +1,99 @@
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:17: warning: Compound ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:176: warning: Compound PropExtraInformation is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:190: warning: Compound MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:108: warning: Compound PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:31: warning: Compound RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:93: warning: Compound AccessStruct is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:253: warning: Compound ordered_map is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/structArgFunc.m:60: warning: Member mtoc_subst_structArgFunc_m_tsbus_cotm_subFunction(matlabtypesubstitute a, matlabtypesubstitute b) (function) of namespace examples is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/tipps.c:25: warning: unable to resolve reference to `newfeat01' for \ref command
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/tipps.c:31: warning: unable to resolve reference to `newfeat01' for \ref command
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/troubleshooting.c:18: warning: Unsupported xml/html tag <mydir> found
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/troubleshooting.c:18: warning: Unsupported xml/html tag <matlabroot> found
+todo:20: warning: explicit link request to 'Class' could not be resolved
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:94: warning: Member full (variable) of class AccessStruct is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:95: warning: Member get (variable) of class AccessStruct is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:96: warning: Member set (variable) of class AccessStruct is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:102: warning: Member operator<<(std::ostream &os, AccessStruct &as) (friend) of class AccessStruct is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:29: warning: Member ConfFileScanner(const std::string &filename, const std::string &conffilename) (function) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:36: warning: Member execute() (function) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:38: warning: Member get_conffile() (function) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:41: warning: Member param_list_ (variable) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:42: warning: Member return_list_ (variable) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:43: warning: Member field_docu_ (variable) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:44: warning: Member docuheader_ (variable) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:45: warning: Member docubody_ (variable) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:46: warning: Member docuextra_ (variable) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:47: warning: Member groupset_ (variable) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/confscanner.h:48: warning: Member vars_ (variable) of class ConfFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/tools/MatlabDocMaker.m:612: warning: return type of member MatlabDocMaker::create is not documented
+/Users/narayan/workspace/mortar/ext/mtocpp/tools/MatlabDocMaker.m:246: warning: Found unknown command `\default'
+/Users/narayan/workspace/mortar/ext/mtocpp/tools/MatlabDocMaker.m:331: warning: Found unknown command `\default'
+/Users/narayan/workspace/mortar/ext/mtocpp/tools/MatlabDocMaker.m:284: warning: Found unknown command `\default'
+/Users/narayan/workspace/mortar/ext/mtocpp/tools/MatlabDocMaker.m:400: warning: return type of member MatlabDocMaker::open is not documented
+/Users/narayan/workspace/mortar/ext/mtocpp/tools/MatlabDocMaker.m:263: warning: return type of member MatlabDocMaker::setProjectDescription is not documented
+/Users/narayan/workspace/mortar/ext/mtocpp/tools/MatlabDocMaker.m:368: warning: return type of member MatlabDocMaker::setProjectLogo is not documented
+/Users/narayan/workspace/mortar/ext/mtocpp/tools/MatlabDocMaker.m:301: warning: return type of member MatlabDocMaker::setProjectVersion is not documented
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:196: warning: Member ccprefix() (function) of class MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:205: warning: Member ccpostfix() (function) of class MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:213: warning: Member print_list() (function) of class MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:191: warning: Member abstr (variable) of class MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:192: warning: Member statical (variable) of class MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:193: warning: Member hidden (variable) of class MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:194: warning: Member sealed (variable) of class MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:248: warning: Member operator<<(std::ostream &os, MethodParams &mp) (friend) of class MethodParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:392: warning: Member DocuBlock (typedef) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:393: warning: Member DocuList (typedef) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:394: warning: Member DocuListMap (typedef) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:395: warning: Member AltDocuList (typedef) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:396: warning: Member AltDocuListMap (typedef) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:397: warning: Member GroupSet (typedef) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:399: warning: Member VararginParserValuesType (typedef) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:402: warning: Member MFileScanner(std::istream &fin, std::ostream &fout, const std::string &filename, const std::string &conffilename, RunMode runmode) (function) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:412: warning: Member execute() (function) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:414: warning: Member getParamList() (function) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:419: warning: Member getMethodParams() (function) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:424: warning: Member end_function() (function) of class MFileScanner is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:256: warning: Member item (typedef) of class ordered_map is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:257: warning: Member base_type (typedef) of class ordered_map is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:258: warning: Member iterator (typedef) of class ordered_map is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:259: warning: Member const_iterator (typedef) of class ordered_map is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:266: warning: Member operator[](const std::string &key) (function) of class ordered_map is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:277: warning: Member find(const std::string &key) (function) of class ordered_map is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:177: warning: Member dependent (variable) of class PropExtraInformation is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:178: warning: Member setter (variable) of class PropExtraInformation is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:179: warning: Member getter (variable) of class PropExtraInformation is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:117: warning: Member ccprefix() (function) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:125: warning: Member print_list() (function) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:109: warning: Member constant (variable) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:110: warning: Member transient (variable) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:111: warning: Member dependent (variable) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:112: warning: Member hidden (variable) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:113: warning: Member setObservable (variable) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:114: warning: Member abstr (variable) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:115: warning: Member abortSet (variable) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:172: warning: Member operator<<(std::ostream &os, PropParams &pp) (friend) of class PropParams is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:49: warning: Member Mode (enumeration) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:55: warning: Member mode (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:56: warning: Member methodname (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:57: warning: Member latex_output (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:58: warning: Member print_fields (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:59: warning: Member auto_add_fields (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:60: warning: Member auto_add_params (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:61: warning: Member auto_add_class_properties (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:62: warning: Member auto_add_class (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:63: warning: Member copy_typified_field_docu (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:64: warning: Member remove_first_arg_in_abstract_methods (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:65: warning: Member parse_of_type (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:66: warning: Member void_type_in_return_values (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:67: warning: Member print_return_value_name (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/mfilescanner.h:68: warning: Member generate_subfunction_documentation (variable) of class RunMode is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/structArgFunc.m:60: warning: Member mtoc_subst_structArgFunc_m_tsbus_cotm_subFunction(matlabtypesubstitute a, matlabtypesubstitute b) (function) of namespace examples is not documented.
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/structArgFunc.m:32: warning: parameters of member examples::structArgFunc are not (all) documented
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/structArgFunc.m:32: warning: return type of member examples::structArgFunc is not documented
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/Class.m:315: warning: return type of member examples::Class::iwillbeoverridden is not documented
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/Class.m:339: warning: return type of member examples::Class::noRealArguments is not documented
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/InheritedClass.m:84: warning: @copydetails or @copydoc target '(null)' not found
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/InheritedClass.m:108: warning: found </div> at different nesting level (5) than expected (2)
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/InheritedClass.m:109: warning: end of comment block while expecting command </div>
+/Users/narayan/workspace/mortar/ext/mtocpp/src/docs/+examples/InheritedClass.m:84: warning: return type of member examples::InheritedClass::iwillbeoverridden is not documented

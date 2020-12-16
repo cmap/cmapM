@@ -1,0 +1,43 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_collategutc_tool
+   summary: Collate gutc result folders
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    % ADD EXAMPLES OF USAGE HERE
+
+    Examples:
+
+    % Collate a set of GUTC resul folders
+
+    #name#('--folder', '/path/to/gutc/results/');
+
+    "
+-
+   name: --folder
+   default: ''
+   help: Parent folder containing GUTC result folders
+
+-
+   name: --result_wildcard
+   default: 'input_*'
+   help: Wildcard pattern specifying GUTC result folders
+
+-
+   name: --file_pattern
+   default: ''
+   help: TSV file specifying custom file patterns to use for collation.
+         See $MORTARPATH/resources/mortar.sigtools.SigCollateGutc.file_pattern.txt
+         for the format 
+-
+   name: --result_wildcard
+   default: 'input_*'
+   help: Wildcard pattern specifying GUTC result folders
+
+-
+   name: --skip_annot
+   default: false
+   help: Skip embedded annotations in datasets if true 

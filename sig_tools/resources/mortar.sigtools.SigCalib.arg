@@ -1,0 +1,43 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_calib_tool
+   summary: Perform analysis on calibration plates
+   include: [sigClassOptions.arg, mortar.compute.Calib.runAnalysis.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    Examples:
+
+    % Plot TAS from a siginfo file, comparing seeding density and splitting by cell ID.
+
+    #name#('--siginfo', 'siginfo.txt', '--splitby_field', 'cell_id', 'experimental_param', {'x_density'});
+
+    "
+-
+   name: --conn_to_ref
+   default: ''
+   help: Path to dataset for GUTC analysis to generate PCL connectivity heatmap
+-
+   name: --pcls_to_display
+   default: ''
+   help: List of additional perturbagen class connections to display in 
+        PCL connectivity heatmap.
+-
+   name: --heatmap_ctls
+   default: false
+   help: Show controls in heatmap
+-
+   name: --save_gct
+   default: true
+   help: Save subset of GUTC matrix containing treatment signature connections
+-
+   name: --show_figure
+   default: false
+   help: Show figure windows
+-
+   name: --save_fig
+   default: false
+   help: Save plots in FIG format. Useful if formatting plots need to be resized 
+        or reformatted.
+

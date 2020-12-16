@@ -1,0 +1,77 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_trainmlr_tool
+   summary: "Create a model given a training dataset using multilinear regression."
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+    #name# takes as input a training dataset (genes x samples) containing 
+    expression values for a specified set of predictor (landmark) genes and 
+    some number of dependent genes and builds a multiple linear regression (MLR) model. The model can be applied to a new dataset 
+    using the SIG_TESTMLR_TOOL to infer the expression of the dependent genes based on landmark expression.           
+
+
+    Examples:
+
+    % Create a model from training data and landmark GRP file.
+
+    #name#('ds', 'training_data.gctx', 'grp_landmark', 'landmark.grp');
+    
+    % Create a model for a subset of dependent genes. 
+
+    #name#('ds', 'training_data.gctx', 'grp_landmark', 'landmark.grp', 'dependents', 'subset.grp');
+
+    % Perform z-scoring prior to creating model. 
+
+    #name#('ds', 'training_data.gctx', 'grp_landmark', 'landmark.grp', 'xform', 'zscore');
+
+    "
+-
+    name: --ds
+    isrequired: true
+    default: ''
+    help: Input dataset that includes both landmarks and resulting outputs.   
+-
+    name: --modeltype
+    default: 'pinv_int'
+    choices: [pinv_int, pinv]
+    help: "String. Regression model to be used:
+
+        pinv_int - Linear Regression with an intercept.
+        
+        pinv - Linear Regression. All best fits lines pass through 
+        origin.        
+
+    "
+-
+    name: --grp_landmark
+    isrequired: true
+    default: ''
+    help: GRP file containing identifiers for landmark genes. Must 
+          correspond to the row-ids in DS
+-
+    name: --dependents
+    default: ''
+    help: GRP file containing identifiers for dependent genes to infer. 
+          Must correspond to row-ids in DS and be mutually exclusive from 
+          the landmarks.
+-
+    name: --cid
+    default: ''
+    help: GRP file of column ids (samples) in DS to use for training.
+
+-
+    name: --xform
+    default: 'none'
+    choices: ['none', 'log2', 'abs', 'pow2', 'zscore']
+    help: String. Specify any transformations to apply to data prior to training
+-
+    name: --precision
+    default: 6
+    help: Integer. Level of precision (decimal places) for output model weights.
+-
+    name: --outfmt
+    default: 'gctx'
+    choices: ['mat', 'gct', 'gctx']
+    help: Model Output format

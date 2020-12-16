@@ -1,0 +1,60 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_smi2fp_tool
+   summary: Convert SMILES strings to binary fingerprints
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "Convert SMILES strings to binary fingerprints.
+
+    Examples:
+
+    % Convert SMILES string provided in the command line and 
+      add pert_id and pert_iname:
+
+    #name#('--smi', 'c1ccccc1', '--pert_id', 'BRD-123456789', '--pert_iname', 'benzene');
+    
+    % Convert SMILES strings provided in a JSON file and save the fingerprints in
+      a GCTX file:
+
+    #name#('--ijson', 'input.json', '--ogctx', 'output.gctx');
+
+    "
+## Main args
+-
+    name: --smi
+    default: ''
+    help: SMILES string
+-
+    name: --fpt
+    default: 'FP2'
+    choices: ['FP2', 'FP3', 'FP4','MACCS', 'ECFP', 'FCFP']
+    help: Binary fingerprint standard (FP2 is recommended, MACCS is not recommended)
+-
+    name: --pert_id
+    default: ''
+    help: Perturbation id
+-
+    name: --pert_iname
+    default: ''
+    help: Perturbation iname
+-
+    name: --ijson
+    default: ''
+    help: Input JSON file (must contain pert_id and corresponding SMILES)
+#-
+#    name: --ojson
+#    default: ''
+#    help: Output JSON file
+-
+    name: --icsv
+    default: ''
+    help: Input CSV file (must contain pert_id and corresponding SMILES)
+#-
+#    name: --ocsv
+#    default: ''
+#    help: Output tabulator delimited CSV file
+-
+    name: --ogctx
+    default: ''
+    help: Output GCTX file

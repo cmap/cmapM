@@ -1,0 +1,60 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_devgutcpercentile_tool
+   summary: Compute percentile ranks for touchstone signatures from normalized scores
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    % ADD EXAMPLES OF USAGE HERE
+
+    Examples:
+
+    % Run algorithm on a dataset
+
+    #name#('--ds', 'norm.gctx', '--row_meta', 'row_meta.txt', '--column_meta', 'column_meta.txt');
+
+    "
+-
+   name: --ds
+   default: ''
+   help: Input dataset. Normalized wtcs scores
+
+-
+   name: --row_meta
+   default: ''
+   help: Annotation table for rows in ds
+
+-
+   name: --column_meta
+   default: ''
+   help: Annotation table for columns in ds
+
+-
+   name: --match_field
+   default: 'pert_type, cell_id'
+   help: The comma-separated annotation fields used to select columns from the input 
+         dataset for computing the percentiles
+
+-
+   name: --rid
+   default: ''
+   help: Row ids of the input dataset as a GRP file. If not empty process
+         only the rows specified
+
+-
+   name: --block_size
+   default: 2000
+   help: Number of rows of the dataset to read at a time.
+
+- 
+   name: --method
+   default: 'global'
+   choices: ['global', 'decoupled', 'symmetric']
+   help: Method by which to compute the score to percentile transform. The 
+        global method computes percentiles across both positive and 
+        negative scores, while the decoupled method computes the 
+        percentiles separately for positive and negative scores.
+    
+

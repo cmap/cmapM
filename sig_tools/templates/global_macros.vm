@@ -1,0 +1,132 @@
+#* 
+Velocity macro library.
+Author: Rajiv Narayan
+
+Important: There can be any number of arguments in a macro, but the
+number used at invocation must match the number specified in the
+definition. For default arguments pass an empty array else bad things
+can happen.
+
+*#
+
+#*---------------------
+  #hello_world()
+  Print a useful message
+----------------------*#
+#macro(hello_world)
+	Hello World
+#end
+
+#* -----------------------------------------------------------------
+   #parameter_table($tableMap $opt) 
+
+   Create a n x 2 HTML table for key-value pairs in $tableMap.
+   $opt is an object with optional parameters:
+   .header : list of header names. Default is ["Parameter", "Value"]
+   .table_class : class name for table element. Default is param
+   .row_class : class name for row element. Default is param_row
+   .header_class : class name for header element. Default is param_header
+-------------------------------------------------------------------- *#
+#macro( parameter_table $tableMap $opt )
+  #if($opt.size() == 0) #set($opt={}) #end
+  #if( "$!opt.header" == "" ) #set( $dummy = $opt.put("header", ["Name", "Value"])) #end
+  #if( "$!opt.table_class" == "" ) #set($dummy = $opt.put("table_class", "param")) #end
+  #if( "$!opt.header_class" == "" ) #set($dummy = $opt.put("header_class", "param_header")) #end
+  #if( "$!opt.row_class" == "" ) #set($dummy = $opt.put("row_class", "param_row")) #end
+<table class="$opt.table_class">
+       <tr class="$opt.header_class"><th>$opt.header[0]</th> <th>$opt.header[1]</th></tr>
+       #foreach( $e in $tableMap.entrySet() )
+       		 <tr class="$opt.row_class"><td>$!e.key</td><td>$!e.value</td></tr>
+       #end
+</table>
+#end
+
+#* -------------------------------------------------
+   #html_table($tableList $header $opt)
+ 
+   Create an HTML table for data in $tableList. $TableList is a double
+   array of the form:
+   	 [[r1c1, r1c2, ...], [r2c1, r2c2,..], [...]] 
+   $header is an optional list of header names for each column. 
+   $opt is an object with optional parameters:
+   .table_class : class name for table element. Default is param
+   .row_class : class name for row element. Default is param_row
+   .header_class : class name for header element. Default is param_header
+---------------------------------------------------- *#
+#macro( html_table $tableList $header $opt )
+
+  ## Default header
+  #if($header.size() == 0) 
+      #set($header = []) 
+      #foreach($i in [1..$tableList.size()]) 
+          #set($dummy = $header.add("Column_${i}")) 
+      #end
+  #end
+
+  ## Default options
+  #if($opt.size() == 0) #set($opt={}) #end
+  #if(!$opt.table_class) #set($dummy = $opt.put("table_class", "table")) #end
+  #if(!$opt.header_class) #set($dummy = $opt.put("header_class", "table_header")) #end
+  #if(!$opt.row_class) #set($dummy = $opt.put("row_class", "table_row")) #end
+
+<table class="$opt.table_class">
+<th class="$opt.header_class">#foreach($e in $header) <td>$!e</td> #end</th>
+#foreach( $row in $tableList )
+   <tr class="$opt.row_class">#foreach($e in $row) <td>$!e</td> #end</tr>
+#end
+</table>
+#end
+
+#* -------------------------------------------------
+   #include_javascript($jsList)
+
+   Add <script> lines for a list of files $jsList.
+---------------------------------------------------- *#
+#macro(include_javascript $jsList)
+  #foreach($file in $jsList)
+    <script type="text/javascript" language="javascript" src="$file"></script>
+  #end
+#end
+
+#* -------------------------------------------------
+   #image_link($urlMap $linkOpt $imgOpt)
+
+   Create links to a list of images.
+---------------------------------------------------- *#
+#macro(image_link $urlMap $linkOpt $imgOpt )
+  #set( $Q = '"' )
+  #if($linkOpt.size() != 0) 
+     #foreach($e in $linkOpt.entrySet()) 
+        #set($linkAttr="$!linkAttr $e.key=$Q$e.value$Q")
+     #end
+  #end
+
+  #if($imgOpt.size() != 0) 
+     #foreach($e in $imgOpt.entrySet()) 
+        #set($imgAttr="$!imgAttr $e.key=$Q$e.value$Q")
+     #end
+  #end
+
+ #foreach ($e in $urlMap.entrySet())
+    <a $!linkAttr title="$e.key" href="$e.value"> <img $!imgAttr src="$e.value"> </a>
+ #end
+#end
+
+#* -------------------------------------------------
+   #ul_link($urlMap $linkOpt)
+
+   Create unordered list of links to urls.
+---------------------------------------------------- *#
+#macro(ul_link $urlMap $linkOpt )
+  #set( $Q = '"' )
+  #if($linkOpt.size() != 0) 
+     #foreach($e in $linkOpt.entrySet()) 
+        #set($linkAttr="$!linkAttr $!e.key=$Q$!e.value$Q")
+     #end
+  #end
+<ul>
+ #foreach ($e in $urlMap.entrySet())
+    <li><a $!linkAttr title="$!e.key" href="$!e.value"> "$!e.key" </a></li>
+ #end
+</ul>
+#end

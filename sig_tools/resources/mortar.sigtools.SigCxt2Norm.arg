@@ -1,0 +1,37 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_cxt2norm_tool
+   summary: Convert raw gene expression data to L1K compatible normalized values
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    % The CXT2Norm tool takes a list of CXT files as input and normalizes 
+      the dataset using luminex invariant set scaling (LISS) followed by
+      quantile normalization
+
+    Examples:
+
+    % Run algorithm on a dataset
+
+    #name#('--cxt', 'cxtlist.grp');
+
+    "
+-
+   name: --cxt
+   default: ''
+   required: true
+   help: List of CXT filenames as a grp file. The CXT files contain
+        Affymetrix probeset-level values processed via the MAS5 algorithm.
+        See the CEL2CXT tool for details.
+
+-
+   name: --cxt_path
+   default: '/cmap/obelix/bged/cxt'
+   help: Path to CXT files on the file system
+
+-
+   name: --feature_space
+   default: '/cmap/data/vdb/spaces/affx_n22268.grp'
+   help: Path to CXT files on the file system

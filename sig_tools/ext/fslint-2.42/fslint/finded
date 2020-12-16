@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# finded - find empty directory branches
+# Copyright © 2000-2009 by Pádraig Brady <P@draigBrady.com>.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details,
+# which is available at www.gnu.org
+
+script_dir=$(dirname "$0")              #directory of this script
+script_dir=$(readlink -f "$script_dir") #Make sure absolute path
+
+. "$script_dir"/supprt/fslver
+
+Usage() {
+	ProgName=$(basename "$0")
+	echo "find Empty Directory branches.
+Usage: $ProgName [[-r] [-f] paths(s) ...]
+
+If no path(s) specified then the currrent directory is assumed."
+	exit
+}
+
+for arg
+do
+	case "$arg" in
+	-h|--help|-help)
+		Usage ;;
+	-v|--version)
+		Version ;;
+	*)
+		argsToPassOn="$argsToPassOn $(shell_quote "$arg")" ;;
+	esac
+done
+
+. "$script_dir"/supprt/getfpf -f "$argsToPassOn"
+#forcing -f as if specify an empty dir it would not display
+
+#flag trailing / as an error
+if printf "%s\n" "$@" | tr -s '/' | grep -q './$'; then
+    echo "Error: trailing '/' in a parameter is not allowed" >&2
+    exit 1
+fi
+
+(
+#get all dirs
+find "$@" -type d ! -name "*$LF*" -printf "$FPF\n" |
+sort -u #merge dirs (indirectly) specified multiple times
+
+#get all dirs containing files.
+#Note / not included for absolute dirs, but we assume / has files
+find "$@" ! -type d ! -name "*$LF*" -printf "%h\n" |
+uniq | #quick merge of dir names for each file
+sed -n ':s; p; s#/\{0,\}[^/]\{1,\}$##; /./b s' #separate dir nodes
+#Ensure we exclude parents to specified absolute dirs
+find "$@" -maxdepth 0 ! -name "*$LF*" -printf "%h\n%h\n" |
+sed '/^\//!d' | #only process absolute dirs
+sed -n ':s; p; s#/\{0,\}[^/]\{1,\}$##; /./b s' #separate dir nodes
+) |
+#get dirs only containing dirs, or nothing at all
+sort | uniq -u |
+
+#reduce to parent (prefixes)
+sed 'p; :s $!N; s/^\(.*\)\n\1\/.*/\1/; t s; D' |
+
+#make further processing immune to blanks
+tr '\n' '\0' |
+
+if [ ! -p /proc/self/fd/1 ]; then
+    xargs -r0 ls -b1Ud --
+else
+    cat
+fi
