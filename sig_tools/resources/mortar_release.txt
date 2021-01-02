@@ -1,5 +1,0 @@
-Param	Value
-Name: Mortar Matlab Library
-Version: v1.2
-Release: Bonnaroo Buzz
-Date: 20-Nov-2011

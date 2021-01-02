@@ -1,8 +1,0 @@
--
-   # Preamble
-   ispreamble: true
-   name: sig_lumiqc_tool
-   summary: Luminex real-time QC reports
-   include: [sigClassOptions.arg, mortar.compute.LumiQC.runAnalysis.arg]
-   # Note quotes to allow special chars
-

@@ -1,3 +1,0 @@
-build_id	score	rank_full	rank_lm	rank_bing	q2norm	rank_bing_v1	rank_bing_v2
-a2	/cmap/data/build/a2y13q1/modzs.gctx	/cmap/data/build/a2y13q1/rank_full.gctx	/cmap/data/build/a2y13q1/rank_lm.gctx	/cmap/data/build/a2y13q1/rank_bing_v2.gctx	/cmap/data/build/a2y13q1/q2norm.gctx	/cmap/data/build/a2y13q1/rank_bing_v1.gctx	/cmap/data/build/a2y13q1/rank_bing_v2.gctx
-a2geneid	/cmap/data/build/a2geneid/modzs.gctx	/cmap/data/build/a2geneid/rank_aig.gctx	/cmap/data/build/a2geneid/rank_lm.gctx	/cmap/data/build/a2geneid/rank_bing.gctx			

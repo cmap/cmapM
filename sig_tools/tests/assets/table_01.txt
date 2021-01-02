@@ -1,4 +1,0 @@
-FIELD1	FIELD2	FIELD3
-americone dream	1	10/10/2008
-bonaroo buzz	2	12/15/2009
-cherry garcia	3	06/01/2012

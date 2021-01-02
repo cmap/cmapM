@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall   CMakeFiles/mtocpp.dir/src/mtocpp.cc.o CMakeFiles/mtocpp.dir/mfilescanner_parser.cc.o CMakeFiles/mtocpp.dir/src/mfilescanner.cc.o CMakeFiles/mtocpp.dir/confscanner.cc.o  -o mtocpp -rdynamic 

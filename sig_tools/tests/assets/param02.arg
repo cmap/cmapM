@@ -1,7 +1,0 @@
-# Input arguments for my_cool_tool
--
-  # Preamble
-  ispreamble: true
-  name: my_cool_tool
-  summary: Run some cool analysis
-  include: [param01.arg,param03.arg]

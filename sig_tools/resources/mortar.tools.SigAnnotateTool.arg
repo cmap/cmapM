@@ -1,7 +1,0 @@
--
-   # Preamble
-   ispreamble: true
-   name: SigInfoTool
-   summary: Extract annotations from a dataset
-   include: [mortar.compute.SigAnnotate.runAnalysis.arg, sigToolOptions.arg]
-   description:

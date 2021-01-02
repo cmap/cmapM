@@ -1,6 +1,0 @@
-#g++ quadtree.cpp tsne.cpp -o bh_tsne -O3 -I./CBLAS/include -L./ -lcblas
-# Assumes Openblas is setup correctly
-# use .openblas-2.14
-g++ quadtree.cpp tsne.cpp -o bh_tsne_linux -O3 -lopenblas
-# static binary
-#g++ quadtree.cpp tsne.cpp -o bh_tsne_linux -O3 -lopenblas -Wl,-rpath=/cmap/tools/opt/openblas-0.2.14/lib 

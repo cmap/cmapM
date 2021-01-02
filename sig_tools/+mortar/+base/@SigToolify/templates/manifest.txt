@@ -1,8 +1,0 @@
-template_file	replace_string	target_folder
-__FullClassName__.arg	FullClassName	resources
-__ClassName__.m	ClassName	class
-checkArgs_.m	na	class
-runAnalysis_.m	na	class
-saveResults_.m	na	class
-Test__ClassName__.m	ClassName	tests
-__ToolName__.m	ToolName	tools

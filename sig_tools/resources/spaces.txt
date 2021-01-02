@@ -1,9 +1,0 @@
-id	dim	space_id	build_id	space_file	annot_file	numel
-row_full	row	full	any	/cmap/data/vdb/spaces/affx_n22268.grp	-666	22268
-row_lm	row	lm	any	/cmap/data/vdb/spaces/lm_epsilon_n978.grp	-666	978
-row_bing	row	bing	any	/cmap/data/vdb/spaces/bing_n10638.grp	-666	10638
-column_full_a2	column	full	a2	/cmap/data/build/a2y13q1/cid.grp	/cmap/data/vdb/sig_query_tool/sig_info_a2_n476251.txt	476251
-column_gold_a2	column	gold	a2	/cmap/data/build/a2y13q1/cid_gold.grp	/cmap/data/vdb/sig_query_tool/sig_info_a2_n240901.txt	240901
-column_full_a1	column	full	a1	/cmap/data/build/affogato/cid.grp	-666	398050
-column_gold_a1	column	gold	a1	/cmap/data/build/affogato/cid_gold.grp	-666	198733
-column_summly_a2	column	summly	a2	/cmap/data/vdb/summly/sigspace_n69761.grp	/cmap/data/vdb/summly/sigspace_info_n69761.txt	69761

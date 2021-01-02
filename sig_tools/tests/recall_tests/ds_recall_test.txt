@@ -1,3 +1,0 @@
-group_id	file_path
-PRISM_COMP	/Users/narayan/workspace/mortar/tests/recall_tests/PREP2_MODZ.ZSPC.COMBAT_n648x489.gctx
-PRISM_COMP	/Users/narayan/workspace/mortar/tests/recall_tests/PASG002_MODZ.ZSPC_n383x489.gctx

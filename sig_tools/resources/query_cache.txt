@@ -1,4 +1,0 @@
-build_id	metric	row_space	query_cache
-a2	spearman	lm	/cmap/data/build/a2y13q1/query/sim_spearman.lm.gctx
-a2	wtcs	lm	/cmap/data/build/a2y13q1/query/sim_wtcs.lm50_COMBINED.gctx
-a2	wtcs	bing	/cmap/data/build/a2y13q1/query/sim_wtcs.bing100_COMBINED.gctx

@@ -1,6 +1,0 @@
-param	value
-l1k_config_path: /cmap/data/vdb/roast
-mongo_config_path:	/cmap/data/vdb/mongo
-cmap_bin_path: /cmap/bin
-vdb_path: /cmap/data/vdb
-bged_path: /cmap/obelix/bged

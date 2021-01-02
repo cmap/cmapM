@@ -1,3 +1,0 @@
-set_id	set_desc	set_size	set_source	set_collection	pert_iname	pert_id	moa
-LINEAGE_CENTRAL_NERVOUS_SYSTEM	Central Nervous System	35	LINEAGE_CENTRAL_NERVOUS_SYSTEM	MISC	Central Nervous System	-666	-666
-LINEAGE_SKIN	Skin	40	LINEAGE_SKIN	MISC	Skin	-666	-666

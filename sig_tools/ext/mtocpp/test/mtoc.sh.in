@@ -1,3 +1,0 @@
-#!/bin/sh
-
-@CMAKE_CURRENT_BINARY_DIR@/mtocpp $1 conf
