@@ -1,0 +1,69 @@
+# Input arguments for runPCLAnalysis
+-
+   # Preamble
+   ispreamble: true
+   name: runPCLAnalysis
+   summary: Evaluate signatures for concordance of PCLs
+   # Note quotes to allow special chars
+   
+   description: "The PCL analysis tool examines a query result for
+   concordance of pre-defined perturbational classes.  It takes a
+   query dataset and a collection of PCLs as input, and computes 
+   summarized scores for each query across all specified PCLs.
+   
+   Outputs include matrices of summarized PCL connectivity scores.
+   
+   Description of outputs:
+     
+     pcl_info.txt : annotations for each signature with group membership
+     pclmember_score_n*.gctx : individual pcl member scores for each input query
+     pcl_median_n*.gctx : Median PCL scores for each query
+     pcl_maxq_n*.gctx : Max Quantile PCL scores for each query
+     pcl_iqr_n*.gctx : Inter-quartile ranges of PCL member scores for each query
+     
+     Examples:
+       
+       % Run PCL analysis on a set of queries and PCLs       
+       runPCLAnalysis('score', 'score.gctx', 'pcl', 'pcl.gmt', 'pcl_field', 'pert_id')
+       "          
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file
+
+-
+  name: --score
+  default: ''
+  help: Path to input score matrix
+
+-
+   name: --pcl
+   default: ''
+   required: true
+   help: PCL set(s) can be in GMT, GMX or GRP format
+
+-
+   name: --pcl_field
+   default: _rid
+   help: The dataset annotation field to match entries in the PCL file
+
+-
+  name: --cid
+  default: ''
+  help: Subset of column ids to use while running the analysis.
+
+-
+  name: --split_by_cell
+  default: true
+  help: Split score matrix by cell line
+
+-
+  name: --keep_core_cell
+  default: true
+  help: if true, retain connections (rows) corresponding to 9 core CMap cell types.
+
+-
+  name: [-v, --verbose]
+  default: true
+  help: Enable debugging information

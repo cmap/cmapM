@@ -1,0 +1,92 @@
+## Create index page for brew
+## Inputs:
+## name: String
+## plateList: cell array, List of source plates.
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+#if (!$opt.width)
+  #set ($opt.width = 230 )
+#end
+#if (!$opt.height)
+  #set ($opt.height = 225 )
+#end
+
+<title>$name</title>
+<style>
+body,
+html {
+margin:0;
+padding:0;
+}
+
+#wrap {
+width:800px;
+margin: 0 20;
+}
+#header {
+width: 800px;
+text-align: left;
+}
+
+#main {
+float:left;
+width:630px;
+}
+#sidebar {
+float:right;
+width:170px;
+}
+ol { font-size: 85%;}
+ul { font-size: 85%;}
+
+h1 { color: #1f77b4; }
+h3 { color: #2ca02c; }
+table.stats {
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+table.stats td {
+padding: 5px;
+border: 1px solid #808080;
+font-size: 85%;
+}
+
+table.dataset td {
+padding: 1px;
+#border: 1px solid #808080;
+font-size: 75%;
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrap">
+<div id="header">
+<h1>$name</h1>
+</div>  <!-- #header -->
+  <div id="main">
+
+
+#set($ctr = 0 )
+<table class="stats">
+  #foreach ($e in $plateList)
+    <tr>  
+        <td>$velocityCount</td> 
+        <td>$e</td> 
+        <td><a href="$url1List[$ctr]">rna_well</a></td> 
+        <td><a href="$url2List[$ctr]">pert_id</a></td>
+    </tr>
+    #set($ctr = $ctr + 1)
+  #end
+</table>
+
+
+</div id="main">
+</div> <!-- #wrap -->
+</body>
+</html>

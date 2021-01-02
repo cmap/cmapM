@@ -1,0 +1,27 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_querycontest_tool
+   summary: Reference Cmap Query implementation
+   include: [sigClassOptions.arg, mortar.compute.Connectivity.runCmapQuery.arg]
+   # Note quotes to allow special chars
+   description: "Reference implementation of the CMap query algorithm. 
+                Executes queries of user-defined genesets against a 
+                specified database of gene expression signatures.
+
+   ## Examples
+
+   - Run a set of queries against score and rank matrices
+        
+     #name# --up  'up.gmt' --dn 'dn.gmt' --score 'score.gctx' --rank 'rank.gctx'
+
+   - Run a set of queries against rank_score encoded matrix
+
+    #name# --up 'up.gmt' --dn 'dn.gmt' --rank_score 'rore.gctx'
+
+                "
+-
+   name: --out_fmt
+   default: gctx
+   choices: [gctx,gct,csv,tsv]
+   help: Output format for result matrix

@@ -1,0 +1,59 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_testmlr_tool
+   summary: "Apply given model to predict genes using multiple linear regression."
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+    The #name# takes as input a test dataset (genes x samples) minimally 
+    containing all landmark genes and an MLR model (output by SIG_TRAINMLR_TOOL) 
+    and output inferred values for dependent genes by applying the model. 
+    Note that the values in the input dataset must match the data used for training.
+    The standard L1000 analytical workflow employs normalized log2 transformed expression as input to the model.
+    The --xform argument can be optionally specified to transform the input data.
+    The output is saved as a GCTX file with the inferred dependent genes appended to the original 
+    landmark data.
+
+    ## Examples:
+
+    - Apply model to landmark data.
+
+    #name# --ds 'test_data.gctx' --model '/filepath/model.gctx'
+    
+    - Apply model to landmark data retricting the minimum value in the output to 2.
+
+    #name# --ds 'test_data.gctx' --model '/filepath/model.gctx' --minval 2
+        
+"
+-
+    name: --ds
+    default: ''
+    isrequired: true
+    help: GCT or GCTX, Input dataset (genes x samples), minimally 
+          containing all landmarks genes specified in the model. 
+          Non-landmark genes will be ignored
+-
+    name: --model
+    default: '' 
+    isrequired: true
+    help: MLR model output from SIG_TRAINMLR_TOOL to utilize to infer dependent genes
+-
+    name: --minval
+    default: 0
+    help: Minimum value for output dataset. Lower values will be replaced with this value
+-
+    name: --maxval
+    default: 15
+    help: Maximum value for output dataset. Greater values will be replaced with this value
+
+-
+   name: --use_gctx
+   default: true
+   help: Outputs text GCT files if false
+
+-
+    name: --xform
+    default: 'none'
+    choices: ['none', 'log2', 'abs', 'pow2', 'zscore']
+    help: String. Specify any transformations to apply to data prior to training

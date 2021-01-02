@@ -1,0 +1,42 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_2to4_tool
+   summary: Convert data from level 2 to 4
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    This script takes a level 2 dataset (--ds) and converts it to level 4.
+    The steps include applying L1000 invariant set scaling (LISS) plus
+    quantile normalization (QNORM) to generate level 3. It next applies
+    a robust z-score using population control (ZSPC) to generate level 4.
+    The tool assumes that the measurements for the 10 calibrator analytes,
+    which are required for LISS, will be provided in a separate dataset
+    given by the --cal argument. It is assumed to have the same column IDs
+    as --ds. Additionally, the reference values for the calibrator analytes
+    also need to be given as a separate dataset, specified using the
+    --calref argument. All datasets are expected to be in GCT or GCTX format.
+    This tool is intended for use in the CMap peak deconvolution challenge.
+
+    ## Examples
+
+    - Run algorithm on a dataset
+
+    #name# --ds 'level2_n376x978.gct' --cal 'cal_n376x10.gct' --calref 'calref_n10x1.gct'
+
+    "
+-
+   name: --ds
+   default: ''
+   help: level 2 dataset to convert
+
+-
+   name: --cal
+   default: ''
+   help: dataset of calibrator analytes
+
+-
+   name: --calref
+   default: ''
+   help: dataset of reference expression levels for calibrator analytes

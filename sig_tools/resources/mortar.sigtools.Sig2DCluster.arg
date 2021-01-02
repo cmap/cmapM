@@ -1,0 +1,67 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_2dcluster_tool
+   summary: Cluster a group of compounds based on their 2D similarity
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+    ## Examples
+
+    - Run algorithm on a dataset
+
+    #name# --ds_tani 'tanimoto.gctx' --ds_gex 'summly.gctx' --tani_threshold 0.89 --prefix 'analysis_output'
+
+    "
+-
+   name: --ds_tani
+   default: ''
+   help: Matrix with pairwise Tanimoto coefficient
+
+-
+   name: --ds_gex
+   default: 'None'
+   help: Matrix with connectivity in the gene expression for the compounds provided with --ds_tani. This argument is optional
+
+-
+   name: --tani_threshold 
+   default: 0.89
+   help: Threshold for Tanimoto coefficient to perform initial selection of compounds
+
+-
+   name: --overlap_threshold
+   default: 0.75
+   help: Threshold for cluster overlap to perform deduplication
+
+-
+   name: --overlap_metric
+   default: 'overlapcoef'
+   choice: ['overlapcoef','jaccard','intersect']
+   help: Metric for calculation of overlap coefficient between sets
+
+-
+   name: --tani_threshold_dedup
+   default: auto
+   help: Threshold for Tanimoto coefficient to perform deduplication. [IMPORTANT!!! Has to be lower than the value provided with --tani_threshold; 
+         If this option is set to 'auto' the best threshold is determined based on the lowest value of pairwise Tanimoto coefficient for the initial groups of compounds]
+
+-
+   name: --iter
+   default: 50
+   help: Number of interations in the deduplication procedure
+
+-
+   name: --input_gmt
+   default: 'None'
+   help: GMT file to deduplicate. This option allows for running the deduplication in several steps. Initial Tanimoto threshold provided with --tani_threshold option is not
+         effective when the GMT file is provided
+
+-
+   name: --prefix
+   default: 'output'
+   help: Prefix for the output files
+
+-
+   name: --generate_figures
+   default: 1
+   help: Option to activate generation of figures

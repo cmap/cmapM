@@ -1,0 +1,4 @@
+classdef CmapMongo < Mongo
+    
+    
+end

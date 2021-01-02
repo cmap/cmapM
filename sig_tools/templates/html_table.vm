@@ -1,0 +1,137 @@
+#** Create index page for summly
+ Inputs:
+ query_id: String
+ tableMap: Java hasmap of summly table(s)
+ fieldList: Java List of table fieldnames
+ rankPlotMap : Java hashmap, Input for stats table
+ opt : Java hashmap of optional settings:
+     .sort_column : integer, column to sort on
+     .sort_order : string, sort order
+     .link_column: integer, coulmn to add links to
+*###
+<!DOCTYPE HTML >
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+#*Title*###
+<title>$opt.title</title>
+<style type="text/css" title="currentStyle">
+      @import "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
+      @import "https://cmap.github.io/barista/barista.main.min.css";
+      @import "https://cdn.datatables.net/1.10.0/css/jquery.dataTables.css";
+      @import "https://cdn.datatables.net/scroller/1.2.1/css/dataTables.scroller.css";
+      @import "https://analysis.clue.io/assets/js/fancybox/2.1.5/jquery.fancybox.css";
+      @import "https://analysis.clue.io/assets/js/mortar/dist/all.css";
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://analysis.clue.io/assets/js/fancybox/2.1.5/jquery.mousewheel-3.0.6.pack.js"></script>
+<script src="https://analysis.clue.io/assets/js/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="https://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/scroller/1.2.1/js/dataTables.scroller.min.js"></script>
+<script src="https://analysis.clue.io/assets/js/mortar/dist/all.min.js"></script>
+</head>
+<body id="summly">
+  <div id="container" style="width:80%">
+    <div id="dynamic"></div>
+    <div class="spacer"></div>
+<script>
+$(document).ready(function() {
+ $("a.image_group").fancybox({
+     nextEffect: 'none',
+     prevEffect: 'none',
+ });
+ var oRanks = {};
+ var fnCustomDrawCallback = function ( oSettings ) {
+        for ( var i=oSettings._iDisplayStart, iLen=oSettings._iDisplayEnd ; i<iLen ; i++ ) {
+	    var idx = oSettings.aiDisplay[i];	    
+	    if(oSettings.bSorted){
+		var bAscend = oSettings.aaSorting[0][1]=="asc";
+		var iRows = oSettings.aiDisplayMaster.length;
+		var aRank = new Array(iRows);
+		for (var j=0; j<iRows; j++) {
+		    aRank[oSettings.aiDisplayMaster[j]] = bAscend ? j+1 : iRows-j;
+		}
+		oRanks[oSettings.sTableId] = aRank;
+	    }	    
+            this.fnUpdate( oRanks[oSettings.sTableId][idx], oSettings.aiDisplay[i], 0, false, false );
+        }
+    };
+
+ #foreach ($e in $tableMap.entrySet())
+    #set( $key = $e.key.replace(".", "_"))
+    #* Add formatting for links *# ##
+    var fnFormatLinksCallback = function ( data, type, row ) {
+        return data in oFigures ? '<a class=image_group rel=$key href="'+oFigures[data]+'">'+data+'</a>' : data;
+    };    
+    $('#dynamic').html('<table cellpadding="0" cellspacing="0"  border="0" width="80%" class="display" id="table_$key"></table>');
+    $('#table_$key').dataTable( {
+	 "bStateSave": true,
+	 "aaData": oDataSet['$e.key'],
+	 "aoColumns": aColumns,
+	#* turn off sorting for the index column *###
+     "aoColumnDefs": [ 
+	   { "bSortable": false, "aTargets": [ 0 ] },
+       #* Add custom renderer to add links to plots *###
+	   { "mRender": fnFormatLinksCallback, "aTargets": [ $opt.link_column ] },
+	  ],
+	 "aaSorting": [[$opt.sort_column, "$opt.sort_order"]],
+	#* Deferred rendering speeds up large tables *###
+	 "bDeferRender": true,
+	#* handle the order column *###
+     "fnDrawCallback": fnCustomDrawCallback,
+     "aLengthMenu" : [[20, 50, 100], [20, 50, 100]],
+     "iDisplayLength" : 20,
+     "bJQueryUI" : true,
+     "bAutoWidth": false,
+     "dom" : "RfrtiS",
+     "bScrollCollapse": true,
+     "sScrollY": "450px",
+     "sScrollX": true
+    } );
+    #* Add live events *###
+    $('#table_$key').on('click', 'tbody tr', function(){
+     var nTds = $('td', this);
+     var sSumId = $(nTds[1]).text();
+     var sFigSrc = '';
+     if (sSumId in oFigures) {
+     	sFigSrc = oFigures[sSumId];	
+     }
+     //alert(sSumId + ',' + sFigSrc);
+     });
+ #end
+});
+
+var aColumns = [
+{"sTitle": "Order"},
+#foreach ($row in $fieldList)
+{"sTitle": "$row"},
+#end
+];
+
+var oDataSet = {
+  #foreach ($e in $tableMap.entrySet())
+    "$e.key": [
+    #set( $order = 1)
+    //$tableMap[$e.key].size()
+    #foreach ($row in $e.value)
+        [ "$order",
+        #foreach ($cell in $row)
+          "$!cell", 
+        #end
+        ],
+	#set( $order = $order + 1)
+    #end
+    ],
+   #end
+};
+
+var oFigures = {
+ #foreach ($e in $figureMap.entrySet())
+ "$e.key" : "$e.value",
+ #end
+};
+
+</script>
+<a href="config.yaml">Parameters</a>
+</body>
+</html>

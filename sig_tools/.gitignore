@@ -1,0 +1,33 @@
+# 
+# Temporary files
+*.*~
+*.log
+.DS_Store
+
+# NodeJS
+node_modules/
+
+# Compiled code
+CompiledCode/
+
+# scratch code
+# scratch/
+
+# documentation
+docs/
+
+ext/smi2fp/.mc.menu
+
+ext/smi2fp/smi2fp_module.pyc
+
+ext/bin/laptop_py_wrapper.sh
+
+ext/smi2fp/smi2fp_module.py.bak1
+
+tests/trt_cp_output.gctx
+
+*/assets/wkdir*
+ext/bin/fastquery/gitconfig
+ext/bin/fastquery/Dockerfile
+ext/bin/fastquery/docker_run.sh
+*id_rsa*

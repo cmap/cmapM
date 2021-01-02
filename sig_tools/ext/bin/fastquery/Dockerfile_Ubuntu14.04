@@ -1,0 +1,17 @@
+FROM ubuntu:14.04
+
+MAINTAINER Ben Wedin <cmap-soft@broadinstitute.org>
+MAINTAINER Anup Jonchhe <anup@broadinstitute.org>
+
+LABEL fastquery.ubuntu.clue.io.version="0.0.2"
+LABEL fastquery.ubuntu.clue.io.vendor="Connectivity Map"
+
+RUN apt-get -y update && apt-get -y upgrade && \
+  apt-get -y install clang && mkdir -p /tmp/fastquery/ && \
+  apt-get -y install git && apt-get -y install build-essential
+
+WORKDIR /cmap/mortar/ext/bin/fastquery/
+
+CMD ["bash", "./compile.sh"]
+
+

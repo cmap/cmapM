@@ -1,0 +1,3 @@
+param	value
+cmap_bin_path: /cmap/bin
+bged_path: /cmap/obelix/bged

@@ -1,0 +1,2 @@
+dataset_id	score_file	rank_file	feature_id	comment
+pasg_pr500_bydose	/cmap/data/vdb/PRISM/builds/PASG003_LEVEL5_MODZ.LFCPC.COMBAT_n383x489.gctx	/cmap/data/vdb/PRISM/builds/PASG003_RANK_n383x489.gctx	feature_id	Moderated z-scores per dose of cell viability for 120 refrence drugs and tool compounds; post Combat

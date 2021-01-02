@@ -1,0 +1,20 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_pdex_tool
+   summary: Query patient derived expression data
+   include: [mortar.compute.Pdex.runQuery.arg, sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+   ## Examples
+
+    - Run PDEX queries and compute background percentile scores
+
+    #name# --up 'sample_set.gmt'
+    
+    - Process pre-computed query results
+
+    #name# --query_result_folder 'path/to/query/result'
+
+    "

@@ -1,0 +1,28 @@
+sample_id	class_label	class_id	sig_id
+GSM320837	Paclitaxel-sensitive	A	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320840	Paclitaxel-sensitive	A	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320841	Paclitaxel-sensitive	A	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320844	Paclitaxel-sensitive	A	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320845	Paclitaxel-sensitive	A	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320848	Paclitaxel-sensitive	A	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320849	Paclitaxel-sensitive	A	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320852	Paclitaxel-sensitive	A	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320838	Paclitaxel-resistant	B	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320839	Paclitaxel-resistant	B	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320842	Paclitaxel-resistant	B	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320843	Paclitaxel-resistant	B	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320846	Paclitaxel-resistant	B	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320847	Paclitaxel-resistant	B	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320850	Paclitaxel-resistant	B	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM320851	Paclitaxel-resistant	B	GSE12791_PACLITAXEL.SENSITIVE_VS_RESISTANT
+GSM275680	Estrogen-receptor positive, estrogen deprived, hormone-independent	B	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275681	Estrogen-receptor positive, estrogen deprived, hormone-independent	B	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275682	Estrogen-receptor positive, estrogen deprived, hormone-independent	B	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275683	Estrogen-receptor positive, estrogen deprived, hormone-independent	B	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275684	Estrogen-receptor positive, estrogen deprived, hormone-independent	B	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275685	Estrogen-receptor positive, estrogen deprived, hormone-independent	B	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275686	Estrogen-receptor positive, estrogen deprived, hormone-independent	B	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275676	Estrogen-receptor positive, estrogen dependent and antihormone responsive	A	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275677	Estrogen-receptor positive, estrogen dependent and antihormone responsive	A	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275678	Estrogen-receptor positive, estrogen dependent and antihormone responsive	A	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT
+GSM275679	Estrogen-receptor positive, estrogen dependent and antihormone responsive	A	GSE10879_ESTROGEN.DEPENDENT_VS_INDEPENDENT

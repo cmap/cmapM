@@ -1,0 +1,39 @@
+# Exit early if there is an error
+set -e
+
+# Store \n in a variable for use in scripts
+LF='
+'
+
+# Quote a parameter for safe interpretation by shell
+shell_quote() {
+    # bash has printf %q for this
+    printf '"'
+    echo -n "$*" | sed 's/\([`"$\]\)/\\\1/g'
+    printf '"'
+}
+
+# The following is essentially to speedup sort & grep
+# (which redhat really crippled speedwise around redhat 8/9 for UTF8 locales).
+# Note since glibc 2.3.3 this causes (error) messages from
+# subordinate tools to not use the charset in LC_MESSAGES.
+# (see `info libc "Charset conversion in gettext"`).
+export LC_CTYPE=C #uncomment for speed (noting the caveats above)
+export LC_COLLATE=C #for even more speed
+
+# I noticed Fedora 7 was much slower than FC4 for grep.
+# The following change restores the faster operation.
+# Also DFA seems more correct wrt multibyte input?
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=121313
+export GREP_USE_DFA=1
+
+Version() {
+  echo "FSlint 2.42" && exit
+}
+
+check_uniq() {
+  #This uniq feature is very new (9/9/02) so check explicitly
+  echo | uniq --all-repeated=prepend > /dev/null 2>&1 || \
+  { echo "Error: uniq must have --all-repeated=prepend option. \
+  Get the latest version from GNU coreutils or textutils-2.0.21" >&2; exit 1; }
+}

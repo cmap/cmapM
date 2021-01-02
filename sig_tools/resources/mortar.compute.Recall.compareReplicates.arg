@@ -1,0 +1,131 @@
+-
+   # Preamble
+   ispreamble: true
+   name: compareRelicates
+   summary: Compare replicate datasets in a pairwise manner to assess recall
+   # include: 
+   # Note quotes to allow special chars
+   description: "
+   ## Examples
+
+    - Compute recall using Spearman correlation
+
+    #name# --ds_list '/list/of/datasets' --metric 'spearman'
+
+    - Compute recall using Weighted Enrichment
+
+    #name# --ds_list '/list/of/datasets' --metric 'wtcs' --set_size 50
+
+    "
+-
+   name: --ds_list
+   default: ''
+   help: "List of datasets to compare. 
+
+         A single replicate set can be specified as a GRP file or cell 
+         array listing the full filepath to a dataset per line.
+
+         Multiple replicate sets can be specified by supplying a TSV text 
+         file with the following columns:
+
+        'group_id' : Grouping variable shared by all datasets in a replicate set
+        'file_path' : Full filepath to a dataset. 
+
+        For example to run recall on two replicate sets A and B use:
+
+
+        | group_id |        file_path    |
+
+        |----------|---------------------|
+
+        | A        |/path/to/DS_A_X1.gct |
+
+        | A        |/path/to/DS_A_X2.gctx|
+
+        | A        |/path/to/DS_A_X3.gct |
+
+        | B        |/path/to/DS_B_X1.gctx|
+
+        | B        |/path/to/DS_B_X2.gct |
+
+
+    Any replicate set with singleton entries will be ignored. A list of 
+    skipped replicate sets is output to a file named ds_skipped.grp
+"
+-
+   name: --metric
+   default: 'spearman'
+   choices: ['spearman', 'pearson', 'wtcs', 'cs', 'cosine']
+   help: Similarity metric to use for the comparison
+
+-
+   name: --set_size
+   default: 50
+   help: Set size to use for enrichment metrics. This is ignored for 
+         correlation metrics
+
+-
+   name: --es_tail
+   choices: ['up', 'down', 'both']
+   default: 'both'
+   help: Specify two-tailed or one-tailed statistic for enrichment metrics 
+
+-
+   name: --dim
+   choices: ['row', 'column']
+   default: 'column'
+   help: Dimension to operate on. The default is to compare columns 
+         between datasets. If 'row' is specified, the features are compared
+
+-
+   name: --sample_field
+   default: 'det_well'
+   help: Column metadata field to use for matching pairs of comparisons. 
+         The field should exist in each dataset for the dimension specified
+
+-
+   name: --feature_field
+   default: 'rid'
+   help: Row metadata field to use for matching pairs of comparisons. 
+         The field should exist in each dataset for the dimension specified
+
+-
+   name: --row_filter
+   default: ''
+   help: GMT or GMX file specifying row filter criteria. Dataset rows are 
+        filtered prior to recall analysis. See parse_filter for details on 
+        the filter format
+
+-
+   name: --column_filter
+   default: ''
+   help: GMT or GMX file specifying column filter criteria. Dataset columns 
+        are filtered prior to recall analysis. See parse_filter for details
+        on the filter format
+
+-
+   name: --save_pw_matrix
+   default: 0
+   help: If true, saves pairwise similarity matrices in GCTx format for 
+         each pair of comparisons.
+
+-
+   name: --show_fig
+   default: 0
+   access: hidden
+   help: Display figures instead of hiding them, helpful in debugging
+
+-
+   name: --recall_group_prefix
+   default: ''
+   help: String if provided is prepended to the recall_group field in 
+         the recall report
+
+-
+   name: --outlier_alpha
+   default: 0.01
+   help: Level of significance, used to flag outlier replicate datasets
+-
+   name: --fix_ties
+   default: true
+   help: Adjusts for ties in the recall score when computing ranks if true

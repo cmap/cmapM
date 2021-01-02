@@ -1,0 +1,38 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_devgutcaggregatenorm_tool
+   summary: Aggregate norm matrix by pert and cell id
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+   ## Examples
+
+   - Run algorithm on a dataset
+
+   #name# --ds 'norm.gctx' --cid 'cid_subset.grp' --block_size 500
+
+    "
+-
+   name: --ds
+   default: ''
+   help: Input dataset. Normalized wtcs scores
+
+-
+   name: --row_meta_ts
+   default: ''
+   help: Row annotations of touchstone signatures as a TSV file. The first column or a column named 
+        id should match the row ids in the dataset. 
+
+-
+   name: --cid
+   default: ''
+   help: Column ids of the input dataset as a GRP file. If not empty, 
+         process only the columns specified
+
+-
+   name: --block_size
+   default: 2000
+   help: Number of columns of the dataset to read into memory at a time
+

@@ -1,0 +1,11 @@
+-
+   # Preamble
+   ispreamble: true
+   name: SigMarkerTool
+   include: [mortar.compute.MarkerSelection.runAnalysis.arg, commonToolOptions.arg]
+   summary: Identify differentially expressed genes using
+            two-class marker selection.
+   # Note quotes to allow special chars
+   description: 
+   
+

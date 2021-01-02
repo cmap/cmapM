@@ -1,0 +1,22 @@
+-
+  name: pos1
+  default: 100
+  help: Positional argument
+  
+-
+  name: [--opt1, -o]
+  default: default1
+  help: optional argument 1
+ 
+-
+  name: --opt2
+  default: 1
+  help: Optional argument 2
+  isrequired: true
+  choices: [1, 10, 100]
+
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file

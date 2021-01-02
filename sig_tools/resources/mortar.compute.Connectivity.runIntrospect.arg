@@ -1,0 +1,120 @@
+# Input arguments for runIntrospect
+-
+   # Preamble
+   ispreamble: true
+   name: runIntrospect
+   summary: Compute internal connectivities between signatures
+   include: [commonToolOptions.arg]
+
+   # Note quotes to allow special chars
+   description: "The introspect analysis examines the similarities between a
+    group of gene expression signatures. It takes a matrix of signatures as 
+    input and computes similarities between, them adjusting the strength of
+    connectivities using all the signatures or a pre-computed connectivity 
+    matrix as a background distribution. 
+
+   It does this by first executing queries of the signatures against one another. 
+   Different similarity metrics of similarity are supported, see sig_query_tool 
+   for a description of the metrics. Next the similarity scores are normalized 
+   i.e. adjusted for co-variates of perturbagen type and cell line identity. 
+   Finally the scores are converted to percentile scores using a user-specified 
+   signature set as a null distribution.   
+
+          Examples:
+            % Run introspect using the signature matrix as the background
+            #name#('--sig_score', 'sig_zscore.gct')
+
+            % Run introspect using a pre-computed background            
+            #name#('--sig_score', 'sig_zscore.gct', '--bkg_connectivity', 'bkg_wtcs.gct')
+
+            % Run introspect using pre-computed introspect and background results
+            #name#('--sig_connectivity', 'sig_wtcs.gct', '--bkg_connectivity', 'bkg_wtcs.gct')            
+            
+          "          
+-
+   name: --sig_score
+   default: ''
+   help: Input signature scores
+
+-
+   name: --sig_rank
+   default: ''
+   help: Ranks of input signatures
+
+-
+   name: --sig_connectivity
+   default: ''
+   help: Pre-computed self query results.
+
+-
+   name: --sig_col_meta
+   default: ''
+   help: Alternative column annotations for the signature score matrix. 
+        Must include column id, pert_type and cell_id as a minimum. 
+        The column id field must be the first column or be named id.
+
+#-
+#   name: --bkg_score
+#   default: ''
+#   help: Scores of signatures to use as background
+
+#-
+#   name: --bkg_rank
+#   default: ''
+#   access: hidden
+#   help: Ranks of signatures to use as background
+
+-
+   name: --bkg_connectivity
+   default: ''
+   help: Pre-computed query results (e.g. wtcs scores) using identical 
+        genesets against the designated background signatures. Note for 
+        proper interpretation, the query metric and parameters used 
+        here must match those supplied to introspect.
+
+-
+   name: --bkg_row_meta
+   default: ''
+   help: Alternative row annotations for background connectivity matrix. 
+         Must include row id, pert_type and cell_id as a minimum. The 
+        row id field must be the first column or be named id.
+
+-
+  name: --gset_size
+  default: 50
+  help: Length of genesets to use for enrichment metrics
+
+-
+  name: --metric
+  default: wtcs
+  choices: [cs, wtcs]
+  help: Similarity metric
+
+-
+  name: --es_tail
+  default: both
+  choices: [up, down, both]
+  help: Specify two-tailed or one-tailed statistic for enrichment metrics
+
+-
+  name: --rid
+  default: ''
+  help: List of row ids to to use specified as a GRP file or cell array. If empty all rows are used
+
+-
+  name: --row_space
+  default: 'all'
+  choices: ['all', 'lm', 'bing', 'aig', 'lm_probeset', 'bing_probeset', 'full_probeset', 'custom']
+  help: Common row-id space definitions to use as an alternative to the rid parameter
+
+-
+  name: --symmetricize_result
+  default: true
+  choices: [true, false]
+  help: Make the result matrices symmetric by averaging the values with their transpose.
+
+-
+   name: --max_el
+   default: 250e6
+   help: Maximum number of elements to read at a time
+

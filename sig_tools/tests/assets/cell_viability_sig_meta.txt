@@ -1,0 +1,11 @@
+cid	moa	pert_iname	pert_type	target_name
+BRD-A00077618	PKA activator	8-bromo-cGMP	trt_cp	PRKG1
+BRD-A00758722	Progestogen hormone	noretynodrel	trt_cp	PGR
+BRD-A01346607	Glucocorticoid receptor agonist	flumetasone	trt_cp	NR3C1
+BRD-A01643550	Glucocorticoid receptor agonist	prednisolone-acetate	trt_cp	NR3C1
+BRD-A02146479	-666	STOCK4S-02706	trt_cp	-666
+BRD-A02180903	Glucocorticoid receptor agonist	betamethasone	trt_cp	NR3C1
+BRD-A02367930	Estrogen receptor agonist|DNA directed DNA polymerase stimunlant|Estrogenic component in oral contraceptives	ethinyl-estradiol	trt_cp	ESR1
+BRD-A03216249	Potassium channel blocker|Sodium channel blocker	mepivacaine	trt_cp	-666
+BRD-A03249105	Estrogen receptor antagonist	fulvestrant	trt_cp	ESR1
+BRD-A03506276	HSP inhibitor	XL-888	trt_cp	-666

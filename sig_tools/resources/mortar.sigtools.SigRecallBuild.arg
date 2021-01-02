@@ -1,0 +1,150 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_recallbuild_tool
+   summary: Perform replicate recall on a single collated dataset 
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+    SigRecallBuild run on a build path, locates the appropriate
+    dataset and metadata files and performs replicate recall. Generates a 
+    report per split_by grouping and collates results at the top level.
+
+   ## Examples
+
+   - Run algorithm on a build using level 4 matrix
+
+    #name# --build '/PATH/TO/BUILD_DIR/'
+
+   - Run algorithm on a build using level 4 matrix, brew_prefix includes dose
+
+    #name# --build '/PATH/TO/BUILD_DIR/' --split_by 'pert_plate,cell_id,pert_itime,pert_idose'
+
+   - Run algorithm on a build with multiple level 4 matrices, using lm matrix.
+
+    #name# --build '/PATH/TO/BUILD_DIR/' --ds_match '*x978.gct*'
+    
+   - Run algorithm on a build usinglevel 3 matrix
+
+    #name# --build '/PATH/TO/BUILD_DIR/' --data_level 'level3'
+
+    "
+-
+   name: --build
+   default: ''
+   help: Directory path to a build containing level 3 dataset and instinfo file
+-
+   name: --ds_match
+   default: ''
+   help: Pattern to match in choosing level3 dataset.
+-
+   name: --data_level
+   default: 'level4'
+   choices: ['level3', 'level4']
+   help:  Data level of interest to use for recall.
+-
+   name: --metric
+   default: 'spearman'
+   choices: ['spearman', 'pearson', 'wtcs', 'cs', 'cosine']
+   help: Similarity metric to use for the comparison
+-
+   name: --split_by
+   default: 'pert_plate,cell_id,pert_itime'
+   help: Field by which to identify groups to serve as background for each sample_field set.
+         Similarities between set members will be compared to similarities to all other 
+         members of the group to compute a rank
+-
+   name: --group_by
+   default: 'det_well'
+   help: "
+         How to identify members within a set. For all unique values of the
+         supplied field per split, all columns containing those values constitute 
+         a set in which pair-wise similarity should be computed and compared to
+         background (pairwise similarities with non-set signatures) within the split
+         Column metadata field to use for matching pairs of comparisons. 
+         The field should exist in each dataset for the dimension specified
+"   
+-
+   name: --rep_id_field
+   default: 'det_plate'
+   help: Identify replicates using this field
+-
+   name: --append_stats
+   default: false
+   help: Append set level recall report score and rank stats to siginfo or 
+        sig_metrics file within the specified build. Resulting siginfo file
+        is placed in the out_dir and does not overwrite existing file. 
+        Uses --ds_match field to find sig_metrics file if multiple are present
+
+-
+   name: --set_size
+   default: 50
+   help: Set size to use for enrichment metrics. This is ignored for 
+         correlation metrics
+
+-
+   name: --es_tail
+   choices: ['up', 'down', 'both']
+   default: 'both'
+   help: Specify two-tailed or one-tailed statistic for enrichment metrics 
+
+-
+   name: --dim
+   choices: ['row', 'column']
+   default: 'column'
+   help: Dimension to operate on. The default is to compare columns 
+         between datasets. If 'row' is specified, the features are compared
+
+-
+   name: --feature_field
+   default: 'rid'
+   help: Row metadata field to use for matching pairs of comparisons. 
+         The field should exist in each dataset for the dimension specified
+
+-
+   name: --row_filter
+   default: ''
+   help: GMT or GMX file specifying row filter criteria. Dataset rows are 
+        filtered prior to recall analysis. See parse_filter for details on 
+        the filter format
+
+-
+   name: --column_filter
+   default: ''
+   help: GMT or GMX file specifying column filter criteria. Dataset columns 
+        are filtered prior to recall analysis. See parse_filter for details
+        on the filter format
+
+-
+   name: --save_pw_matrix
+   default: 0
+   help: If true, saves pairwise similarity matrices in GCTx format for 
+         each pair of comparisons
+
+-
+   name: --show_fig
+   default: 0
+   access: hidden
+   help: Display figures instead of hiding them, helpful in debugging
+
+-
+   name: --recall_group_prefix
+   default: ''
+   help: String if provided is prepended to the recall_group field in 
+         the recall report
+
+-
+   name: --outlier_alpha
+   default: 0.01
+   help: Level of significance, used to flag outlier replicate datasets
+
+- 
+   name: --skip_missing
+   default: false
+   help: skip cases when there are no replicates to compare
+
+-
+   name: --fix_ties
+   default: true
+   help: Adjusts for ties in the recall score when computing ranks if true

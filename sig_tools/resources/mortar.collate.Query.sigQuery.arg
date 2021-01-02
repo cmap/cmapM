@@ -1,0 +1,77 @@
+-
+  name: --src_path
+  default: ''
+  help: Path to sig_query_tool result folders
+
+-
+  name: --src_list
+  default: ''
+  help: List of paths to sig_query_tool result folders to collate
+
+-
+  name: --block_size
+  default: 25
+  help: Number of result folders to process at a time
+
+-
+  name: --compress
+  default: false
+  help: Turn on HDF5 compression
+
+-
+  name: --compression_level
+  default: 6
+  choices: [1,2,3,4,5,6,7,8,9]
+  help: Set compression level
+
+-
+  name: --out
+  default: ''
+  help: Output path
+
+-
+  name: --mkdir
+  default: true
+  help: Create standard output folders
+
+-
+  name: --merge_minimal
+  default: true
+  help: Merge only the combined scores if true. Otherwise combine all 
+        intermediate score matrices
+
+-
+  name: --col_meta
+  default: ''
+  help: Column meta data
+
+-
+  name: --col_meta_keyfield
+  default: sig_id
+  help: Keyfield for column meta data
+
+-
+  name: --row_meta
+  default: ''
+  help: Row meta data
+
+-
+  name: --row_meta_keyfield
+  default: id
+  help: Keyfield for row meta data
+
+-
+  name: --rpt
+  default: my_analysis
+  help: Prefix label for analysis report folder
+
+-
+  name: --verbose
+  default: true
+  help: Print debugging messages
+  
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file

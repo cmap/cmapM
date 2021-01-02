@@ -1,0 +1,11 @@
+sig_id	pert_id	pert_iname	pert_type	cell_id	pert_itime	pert_idose	moa	gene_targets	gene_family	distil_nsample	distil_cc_q75	ss_ngene	tas	is_touchstone	is_exemplar	is_touchstone_pert
+CPC004_A375_6H:BRD-A14966924-001-03-0:10	BRD-A14966924	alaproclate	trt_cp	A375	6 h	10 µM	Serotonin receptor antagonist	SLC6A4	-666	3	0.2	97	0.140842	1	1	1
+CPC004_A375_6H:BRD-K03670461-001-02-0:10	BRD-K03670461	tyrphostin-AG-82	trt_cp	A375	6 h	10 µM	EGFR inhibitor	EGFR	-666	3	0.35	429	0.391826	1	1	1
+CPC004_A375_6H:BRD-K20482099-001-01-1:10	BRD-K20482099	rutin	trt_cp	A375	6 h	10 µM	Antioxidant|Capillary stabilizing agent|Nitric oxide scavenger	AKR1C3	-666	3	0.32	623	0.451492	1	1	1
+CPC004_A375_6H:BRD-K36737713-001-01-6:10	BRD-K36737713	AG-957	trt_cp	A375	6 h	10 µM	Protein tyrosine kinase inhibitor	ABL1|EGFR	-666	3	0.46	164	0.277736	1	1	1
+CPC004_A375_6H:BRD-K79131256-001-08-8:10	BRD-K79131256	albendazole	trt_cp	A375	6 h	10 µM	Tubulin inhibitor	-666	-666	3	0.28	74	0.145554	1	0	1
+CPC005_A375_6H:BRD-A07824748-001-02-6:10	BRD-A07824748	flavanone	trt_cp	A375	6 h	10 µM	11-beta-HSD1 inhibitor	-666	-666	3	0.31	485	0.392087	1	0	1
+CPC005_A375_6H:BRD-A85280935-003-01-7:10	BRD-A85280935	quinpirole	trt_cp	A375	6 h	10 µM	Dopamine receptor agonist	DRD2|DRD3|DRD4	-666	3	0.11	91	0.101169	1	0	1
+CPC005_A375_6H:BRD-K43405658-001-01-8:10	BRD-K43405658	tyrphostin-AG-527	trt_cp	A375	6 h	10 µM	Protein tyrosine kinase inhibitor	EGFR	-666	3	0.15	158	0.15567	1	0	1
+CPC005_A375_6H:BRD-K51223576-001-01-3:10	BRD-K51223576	AG-99	trt_cp	A375	6 h	10 µM	Tyrosine kinase inhibitor	-666	-666	3	0.19	78	0.123099	1	0	1
+CPC005_A375_6H:BRD-K62929068-001-03-3:10	BRD-K62929068	6-benzylaminopurine	trt_cp	A375	6 h	10 µM	Purinergic receptor activator	-666	-666	3	0.09	119	0.104647	1	0	1

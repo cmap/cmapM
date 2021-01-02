@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$#" -gt 0 ]; then
+
+   echo bsub -q interactive -I "$*"
+   bsub -q interactive -I "$*"
+
+fi

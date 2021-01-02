@@ -1,0 +1,19 @@
+#!/bin/bash
+# check if X is available
+if [[ ! -e /tmp/.X0-lock ]];then
+    XVFB_DISPLAY=0
+    FONT_PATH='unix/:7100'
+    Xvfb :$XVFB_DISPLAY -fp $FONT_PATH -screen 0 1280x1024x24 2>/dev/null &
+    export DISPLAY=:$XVFB_DISPLAY
+    XVFB_PID=$!
+fi
+
+
+MSCRIPT=$1
+MCR_PATH=$2
+shift 2
+# run the script
+$MSCRIPT $MCR_PATH $*    
+
+# kill xvfb
+kill -s SIGINT $XVFB_PID
