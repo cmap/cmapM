@@ -15,7 +15,7 @@ All code is made available under the free [3-clause BSD license](LICENSE.txt).
 ```bash
 git clone https://github.com/cmap/cmapM
 ```
-- Configure the MATLAB environment and download test data for the demo
+- Configure the MATLAB environment and download test datasets
 
 ```matlab
 % within a MATLAB sesssion type:
@@ -55,7 +55,6 @@ If you use the GCTx annotated data matrix format in your work, please cite [Enac
 	- Added Level 4 to Level 5 processing to L1000 data pipeline
 - v1.0.0, 2017
 	- Initial release
-
 
 ## Contributing
 
