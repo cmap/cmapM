@@ -19,7 +19,7 @@ MCR_CACHE_ROOT="/tmp/mcr_cache_$USER"
 RAM_OPT="-R rusage[mem=4]"
 IO_OPT=""
 X_OPT=""
-
+VDBPATH=${VDBPATH:?"VDBPATH env variable is not set but is required by most tools"}
 # Run Matlab compiled scripts
 USAGE_HELP="--------------------------------------------------
 \033[1;34m${0##*/}\033[0m: Execute standalone Matlab scripts

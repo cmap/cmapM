@@ -8,13 +8,18 @@
 # MATLAB_ROOT=/broad/tools/apps/matlab76
 source $(dirname $0)/global_vars.sh
 echo "Using Mortar: $MORTARPATH"
+
+# MATLAB path and runtime version
+MATLAB_ROOT=${MATLAB_ROOT:?"MATLAB_ROOT not set"}
+MCR_VERSION=${MCR_VERSION:?"MCR_VERSION not set"}
+
 #update Mortar
 if [ $UPDATEMORTAR -eq 1 ]; then
     echo "Updating Mortar..."
     (cd $MORTARPATH; git pull)
 fi
 # add mortar to includes
-MCC_INCLUDE=$(find $MORTARPATH -type d|egrep -v '\.git|mortar/doc|mortar/ext|mortar/tools|tests|templates|resources|\+mortar|node_modules|\+work|scratch|mortar/js'| sed  's/^/-I /')
+MCC_INCLUDE=$(find $MORTARPATH -type d|egrep -v "\.git|mortar/doc|$MORTARPATH/ext|$MORTARPATH/tools|tests|templates|resources|\+mortar|node_modules|\+work|scratch|$MORTARPATH/js"| sed  's/^/-I /')
 # add yaml parser
 MCC_INCLUDE="$MCC_INCLUDE -I $MORTARPATH/ext/yamlmatlab"
 MCC_INCLUDE="$MCC_INCLUDE -I $MORTARPATH/ext/jsonlab"
@@ -22,7 +27,7 @@ MCC_INCLUDE="$MCC_INCLUDE -I $MORTARPATH/tests"
 
 # Add resources to CTF archive
 MCC_ADD="-a $MORTARPATH/resources \
--a $MORTARPATH/mongo-matlab-driver \
+-a $MORTARPATH/ext/mongo-matlab-driver \
 -a $MORTARPATH/ext/bin \
 -a $MORTARPATH/ext/bh_tsne \
 -a $MORTARPATH/ext/smi2fp \

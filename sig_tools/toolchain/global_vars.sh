@@ -2,8 +2,8 @@
 
 # GLOBAL VARIABLES used by many scripts
 
-#***Change to point to the correct path(s) ***
 # Path to Matlab standalone scripts
+#***Change to point to the correct path(s) ***
 MSCRIPT_PATH=${MSCRIPT_PATH:-'/cmap/tools/sig_tools'}
 # Path to Mortar library
 MORTARPATH=${MORTARPATH:-'/cmap/tools/mortar'}
@@ -26,9 +26,12 @@ MATLAB_ARCH=glnxa64
 # MATLAB specific
 # Matlab version to use
 
+#MATLAB_ROOT=${MATLAB_ROOT:?"MATLAB_ROOT not set"}
+#MCR_VERSION=${MCR_VERSION:?"MCR_VERSION not set"}
+
 # v814, R2014b, [Dev]
-MATLAB_ROOT=/broad/software/nonfree/Linux/redhat_6_x86_64/pkgs/matlab_2014b
-MCR_VERSION=v84
+#MATLAB_ROOT=/broad/software/nonfree/Linux/redhat_6_x86_64/pkgs/matlab_2014b
+#MCR_VERSION=v84
 
 # v717, R2012a, [Stable, has h5 support]
 #MATLAB_ROOT=/broad/software/nonfree/Linux/redhat_5_x86_64/pkgs/matlab_2012a
