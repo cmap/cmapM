@@ -7,8 +7,8 @@
 
 gct_file_location = fullfile(cmapmpath, 'resources', 'example.gct');
 gctx_file_location = fullfile(cmapmpath, 'resources', 'example.gctx');
-ds1 = cmapm.Pipeline.parse_gctx(gct_file_location);
-ds2 = cmapm.Pipeline.parse_gctx(gctx_file_location);
+ds1 = parse_gctx(gct_file_location);
+ds2 = parse_gctx(gctx_file_location);
 
 %% GCT data representation
 % GCT and GCTx files are both represented in memory as structures.
@@ -31,7 +31,7 @@ disp(class(ds2));
 disp(ds2);
 
 %% For large files, it can be useful to read just the metadata
-ds_with_only_meta = cmapm.Pipeline.parse_gctx(gctx_file_location, 'annot_only', true);
+ds_with_only_meta = parse_gctx(gctx_file_location, 'annot_only', true);
 disp(ds_with_only_meta);
 % Note that the mat field is empty, but the metadata is the same as above
 
@@ -43,7 +43,7 @@ my_rids = ds_with_only_meta.rid(3:5);
 my_cids = ds_with_only_meta.cid(5);
 
 % Use my_rids and my_cids to read a subset of the data
-ds_subset = cmapm.Pipeline.parse_gctx(gctx_file_location, 'rid', my_rids, 'cid', my_cids);
+ds_subset = parse_gctx(gctx_file_location, 'rid', my_rids, 'cid', my_cids);
 
 %% Working with metadata
 % We provide several convenience functions to operate on the metadata in a
@@ -60,32 +60,32 @@ col_fields = ds_subset.chd;
 disp(row_fields);
 disp(col_fields);
 %% Read all row metadata into a structure
-row_meta = cmapm.Pipeline.ds_get_annotations(ds_subset, 'row');
+row_meta = gctmeta(ds_subset, 'row');
 % display the first entry
 disp(row_meta(1));
 
 %% Annotate a dataset from a structure
 new_meta = struct('rid', ds_subset.rid, 'new_field1', {'A';'B';'C'}, 'new_field2', {1;2;3});
-ds_subset = cmapm.Pipeline.ds_set_annotations(ds_subset, new_meta, 'dim', 'row');
+ds_subset = annotate_ds(ds_subset, new_meta, 'dim', 'row');
 % verify if the new fields have been added
 assert(all(ismember({'new_field1', 'new_field2'}, ds_subset.rhd)));
 
 %% Read contents of a metadata field
-gene_symbol = cmapm.Pipeline.ds_get_meta(ds_subset, 'row', 'pr_gene_symbol');
+gene_symbol = ds_get_meta(ds_subset, 'row', 'pr_gene_symbol');
 disp(gene_symbol);
 %% Add metadata fields from cell arrays
-ds_subset = cmapm.Pipeline.ds_add_meta(ds_subset, 'row', 'new_field3', {'X';'Y';'Z'});
+ds_subset = ds_add_meta(ds_subset, 'row', 'new_field3', {'X';'Y';'Z'});
 % verify if the new field has been added
 assert(all(ismember({'new_field3'}, ds_subset.rhd)));
 
 %% Remove metadata fields
-ds_subset = cmapm.Pipeline.ds_delete_meta(ds_subset, 'row', {'new_field1', 'new_field2', 'new_field3'});
+ds_subset = ds_delete_meta(ds_subset, 'row', {'new_field1', 'new_field2', 'new_field3'});
 % verify if the new fields have been removed
 assert(all(~ismember({'new_field1', 'new_field2', 'new_field3'}, ds_subset.rhd)));
 %% Merging GCT/x files
 % You can merge 2 datasets together if they have compatible ids.
 % i.e they have the same row ids but different column ids or vice versa
-merged = cmapm.Pipeline.ds_merge(ds1, ds2);
+merged = merge_two(ds1, ds2);
 
 % Confirm that the # of columns in merged is equal to the # of columns in ds1 plus the # of columns in ds2.
 assert(isequal(size(merged.mat, 2), size(ds1.mat, 2) + size(ds2.mat, 2)))
@@ -93,30 +93,30 @@ assert(isequal(size(merged.mat, 2), size(ds1.mat, 2) + size(ds2.mat, 2)))
 %% Slicing GCT/x files
 % Let's say you want to slice a GCT/x file to keep only "dp52" probes and
 % only "DMSO" samples.
-ds = cmapm.Pipeline.parse_gctx(gctx_file_location);
+ds = parse_gctx(gctx_file_location);
 
 % Get rids corresponding to dp52 probes.
-beadset_ids = cmapm.Pipeline.ds_get_meta(ds, 'row', 'pr_bset_id');
+beadset_ids = ds_get_meta(ds, 'row', 'pr_bset_id');
 dp52_bool_array = strcmp('dp52', beadset_ids);
 dp52_rids = ds.rid(dp52_bool_array);
 
 % Get cids corresponding to DMSO samples.
-pert_inames = cmapm.Pipeline.ds_get_meta(ds, 'column', 'pert_iname');
+pert_inames = ds_get_meta(ds, 'column', 'pert_iname');
 dmso_bool_array = strcmp('DMSO', pert_inames);
 dmso_cids = ds.cid(dmso_bool_array);
 
 % Confirm that the dimensions of sliced is correct: 489 probes x 100 samples.
-sliced = cmapm.Pipeline.ds_slice(ds, 'rid', dp52_rids, 'cid', dmso_cids);
+sliced = ds_slice(ds, 'rid', dp52_rids, 'cid', dmso_cids);
 assert(isequal(size(sliced.mat), [length(dp52_rids), length(dmso_cids)]), 'Dimension mismatch');
 disp(size(sliced.mat));
 
 %% Transpose a GCT/x
-transposed = cmapm.Pipeline.ds_transpose(ds);
+transposed = transpose_gct(ds);
 assert(isequal(size(ds.mat, 1), size(transposed.mat, 2)));
 assert(isequal(size(ds.mat, 2), size(transposed.mat, 1)));
 %% Writing GCT/x files
-out_gct = cmapm.Pipeline.mkgct('example_out.gct', ds);
-out_gctx = cmapm.Pipeline.mkgctx('example_out.gctx', ds);
+out_gct = mkgct('example_out.gct', ds);
+out_gctx = mkgctx('example_out.gctx', ds);
 
 % Note that the same dataset object can be written out as either a GCT or GCTx.
 % Note also that for convenience the dimensions of the matrix is automatically appended to
@@ -124,7 +124,7 @@ out_gctx = cmapm.Pipeline.mkgctx('example_out.gctx', ds);
 
 %% Compute correlations
 % Compute pairwise spearman correlations between columns of dataset
-cc = cmapm.Pipeline.ds_corr(ds);
+cc = ds_corr(ds);
 
 % cc is a square and symmetric GCT structure
 assert(isequal(size(cc.mat), [size(ds.mat, 2), size(ds.mat, 2)]), 'CC is not square');
