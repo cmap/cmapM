@@ -97,7 +97,7 @@ if isequal(nargout,0)
     fprintf ('Saving analysis to %s\n',wkdir);    
     % save parameters
     fid = fopen(fullfile(wkdir, sprintf('%s_params.txt',toolName)), 'wt');
-    print_tool_params2( toolName, fid, arg);
+    print_args( toolName, fid, arg);
     fclose (fid);
 
     %extract prefix from training set

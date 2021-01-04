@@ -11,7 +11,7 @@ arg = parse_args(pnames, dflts, varargin{:});
 annfile = fullfile(arg.annpath, sprintf('%s.chip', arg.chip));
 
 if isfileexist(annfile)
-    ann = parse_sin(annfile, 0);
+    ann = parse_tbl(annfile);
     if ischar(gs)
         gs = {gs};
     end
@@ -27,9 +27,9 @@ if isfileexist(annfile)
     for ii=1:ngs
         idx = find(strcmp(gs{ii}, ann.pr_gene_symbol));
         if ~isempty(idx)
-            gdesc{ii} = print_dlm_line2(ann.pr_gene_title(idx(1)), 'dlm', arg.dlm);
-            entrezid{ii} = print_dlm_line2(ann.pr_gene_id(idx(1)), 'dlm', arg.dlm);
-            ps{ii} = print_dlm_line2(ann.pr_id(idx), 'dlm', arg.dlm);
+            gdesc{ii} = print_dlm_line(ann.pr_gene_title(idx(1)), 'dlm', arg.dlm);
+            entrezid{ii} = print_dlm_line(ann.pr_gene_id(idx(1)), 'dlm', arg.dlm);
+            ps{ii} = print_dlm_line(ann.pr_id(idx), 'dlm', arg.dlm);
         end
     end
     info.gdesc = gdesc;

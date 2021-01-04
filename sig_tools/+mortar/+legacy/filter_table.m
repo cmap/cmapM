@@ -1,3 +1,4 @@
+function [filttbl, keepidx] = filter_table(tbl, fn, mask, varargin)
 % FILTER_TABLE
 % filttbl = filter_table(tbl, fn, mask)
 %
@@ -8,7 +9,6 @@
 %TODO
 % input validation
 % masking options
-function [filttbl, keepidx] = filter_table(tbl, fn, mask, varargin)
 
 pnames = {'matchtype', 'tblhdr'};
 dflts = {'regexpi', ''};
@@ -39,7 +39,7 @@ elseif iscell(tbl) && iscell(args.tblhdr)
 elseif isfileexist(tbl)
     tbltype = 'struct';
     tblfile = tbl;
-    tbl = parse_sin(tblfile, false, 'version', 'v2');
+    tbl = parse_record(tblfile, false);
     nrec = length(tbl);
 else
     error('File not found: %s', tbl);

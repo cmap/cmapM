@@ -249,7 +249,7 @@ if nim
                         for k=1:length(param)
                             val = stringify(tbl.(param{k}));
                             if iscell(val)
-                                val = print_dlm_line2(val, 'dlm', ':');
+                                val = print_dlm_line(val, 'dlm', ':');
                             end
                             val = strtrunc(val, arg.maxstrlen);
                             fprintf (fid, '\\bf{%s} & %s\\\\\n', texify(param{k}), texify(val));
@@ -281,7 +281,7 @@ if nim
                         nrow = length(tbl);
                         nf = length(param);
                         s = {'l'};
-                        align_str = print_dlm_line2(s(ones(nf, 1)), 'dlm', '|');
+                        align_str = print_dlm_line(s(ones(nf, 1)), 'dlm', '|');
                         fprintf(fid, '\\tiny\\begin{tabular}{|%s|}\\hline\n', align_str);
                         % header
                         s = cell(nf, 1);
@@ -292,14 +292,14 @@ if nim
                                 s{c} = sprintf('\\bf{%s}', texify(upper(param{c})));
                             end
                         end
-                        print_dlm_line2(s, 'dlm' ,' & ', 'fid', fid);
+                        print_dlm_line(s, 'dlm' ,' & ', 'fid', fid);
                         fprintf(fid, '\\hline\n');
                         for r = 1:nrow
                             s = cell(nf, 1);
                             for c=1:nf
                                 val = stringify(tbl(r).(param{c}));
                                 if iscell(val)
-                                    val = print_dlm_line2(val, 'dlm', ':');
+                                    val = print_dlm_line(val, 'dlm', ':');
                                 end
                                 val = strtrunc(val, arg.maxstrlen);
                                 if c==nf
@@ -309,7 +309,7 @@ if nim
                                 end
                             end
                             
-                            print_dlm_line2(s, 'dlm' ,' & ', 'fid', fid);
+                            print_dlm_line(s, 'dlm' ,' & ', 'fid', fid);
                         end
                         fprintf(fid, '\\hline\n\\end{tabular}}\n');
                         fprintf(fid,'}\n');

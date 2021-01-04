@@ -9,13 +9,11 @@ end
 
 function [tbl, missfields] = parse_sin_multi(dsfile, missval)
 nd = length(dsfile);
-%tbl = parse_sin(dsfile{1}, 0, 'detect_numeric', false, 'lowerhdr', true);
 tbl = parse_tbl(dsfile{1}, 'detect_numeric', false, 'lowerhdr', true);
 fn = fieldnames(tbl);
 rowctr = length(tbl.(fn{1}));
 missfields = [];
 for ii=2:nd
-%     x = parse_sin(dsfile{ii}, 0, 'detect_numeric', false, 'lowerhdr', true);
     x = parse_tbl(dsfile{ii}, 'detect_numeric', false, 'lowerhdr', true);
     newfn = fieldnames(x);
     nrow = length(x.(newfn{1}));

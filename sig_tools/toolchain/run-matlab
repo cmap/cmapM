@@ -1,0 +1,141 @@
+#!/bin/bash
+# Script to run Matlab-based Sig tools
+
+# Location of sigtools, the env variable TOOL_PATH overrides this
+TOOL_PATH=${TOOL_PATH:-'/cmap/tools/sig_tools'}
+
+# Path to Matlab compiler runtime, set MCR_ROOT env variable to override
+MCR_ROOT=${MCR_ROOT:-'/opt/mcr/v84'}
+
+self_path=$(dirname $0)
+source "$self_path/bashtk" -q 
+SCRIPT=""
+SCRIPT_ARGS=""
+DO_LOG=1
+CMD_FILE="commands_run.$USER"
+RUN_IN_FG=1
+ERROR_LOG=""
+MCR_CACHE_ROOT="/tmp/mcr_cache_$USER"
+
+# Run Matlab compiled scripts
+USAGE_HELP="--------------------------------------------------
+\033[1;34m${0##*/}\033[0m: Execute standalone Matlab scripts
+Author: Rajiv Narayan [narayan@broadinstitute.org]
+--------------------------------------------------
+Usage: ${0##*/} [options] matlab_tool <tool args>
+Options:
+-c random|<dir> Specify MCR_CACHE_ROOT location. When set to random
+   will generate a random temporary path (Use when there are multiple
+   instances of a script that are running concurrently, e.g. Batch LSF
+   jobs). Default is $MCR_CACHE_ROOT
+-e <filepath> Specify error log file
+-f Run local processes in foreground. Default is to run in background
+-h Print this help and exit
+-l Turn off logging. By default commands are logged to commands_run.$USER
+-m <dir> MCR_ROOT Specify an alternate version of Matlab component runtime
+-p <dir> Specify alternative tool path
+-x Enable virtual Xbuffer for scripts requiring an X server
+"
+
+get_matlab_tools() {
+    find ${TOOL_PATH} -maxdepth 1 -name 'sig_*tool.conf' -exec grep -l 'LANGUAGE:matlab' {} \;|while read p; do echo "$(basename $p|sed 's/.conf$//')"; done
+}
+
+help() {
+    _check_help $1 $FUNCNAME
+    local matlab_tools=(`get_matlab_tools`)
+    sort_cmd=($(printf '%s\n' "${matlab_tools[@]}"|sort))
+    [[ $# -gt 0 ]] && msg "$@" red bold
+    is_defined "$USAGE_HELP" && msg "$USAGE_HELP"
+    echo "Available tools:"
+    for x in "${sort_cmd[@]}"; do
+	echo -e "\t" $x
+    done
+    quit 1
+}
+
+# Parse command line arguments
+while getopts "c:d:e:fhlm:no:p:q:r:wx" optionName; do
+    case "$optionName" in
+	c) if [[ $OPTARG == "random" ]]; then
+            MCR_CACHE_ROOT=$(mktemp -d)
+	    else
+	    MCR_CACHE_ROOT="$OPTARG"
+	    fi
+	    ;;
+	e) ERROR_LOG="$OPTARG"
+	    ;;
+	f) RUN_IN_FG=1
+	    ;;
+	h) help	    
+	    ;;
+	l) DO_LOG=0
+	    ;;
+	m) MCR_ROOT="$OPTARG"
+	    echo "Changing MCR_ROOT to $MCR_ROOT"
+	    ;;
+	n) EMAIL_OPT="-o /dev/null "
+	    echo "Turning email notification off"
+	    ;;
+	p) TOOL_PATH="$OPTARG"
+	    ;;
+	x) X_OPT=$(dirname $0)/run_with_x
+	    ;;
+	[?]) help "Option not recognized"
+	    ;;
+    esac
+done
+
+if [[ -n $MCR_CACHE_ROOT ]]; then
+    echo "Setting MCR_CACHE_ROOT to $MCR_CACHE_ROOT"
+    export MCR_CACHE_ROOT=$MCR_CACHE_ROOT
+    mkdir -p $MCR_CACHE_ROOT
+fi
+
+if [[ -n $ERROR_LOG ]]; then
+ exec 2>$ERROR_LOG   
+fi
+
+if [[ $DO_LOG == 1 && "$#" > 1 ]]; then
+    echo -e $(basename $0) "$*\n" >> $CMD_FILE &2>/dev/null
+fi
+
+shift $(($OPTIND -1))
+
+#Save submit path to pass to the script
+SUBMIT_PATH=$PWD
+
+if [[ "$#" -gt 0 ]]; then
+    script_name=$1
+    runscript="run_$1.sh"
+    config_file=$1.conf
+    # Determine MCR version
+    mcr_version=$(sed -n 's/MCR_VERSION://p' $TOOL_PATH/$config_file)
+    # ensure that MCR versions match
+    installed_mcr=$(basename $MCR_ROOT)
+    if [[ $mcr_version != $installed_mcr ]]; then
+		status_die "MCR version mismatch! Ensure that the MCR version matches the tool"
+    else
+		MATLAB_ROOT=$MCR_ROOT
+    fi
+    shift 1
+
+    msg Running locally
+    cmd_line="$TOOL_PATH/$runscript $MATLAB_ROOT $*" 
+    print_hl "$cmd_line"
+    if [[ $RUN_IN_FG == 1 ]]; then
+		$cmd_line
+		return_value=$?
+    else
+		$cmd_line &
+	   # for backgrounded processes return 0
+	return_value=0
+    fi
+    echo "Tool exited with code $return_value"
+
+    # Exit with return value of the tool
+    exit $return_value
+
+else
+	help "Bad Arguments"
+fi

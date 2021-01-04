@@ -11,7 +11,7 @@ ex = parse_gmx(expFile);
 
 
 if ~isstruct(sins)
-    sins = parse_sin(sins);
+    sins = parse_tbl(sins);
 end
 
 nq = length(ex);

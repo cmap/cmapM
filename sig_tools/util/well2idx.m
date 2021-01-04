@@ -19,9 +19,9 @@ end
 switch arg.platefmt
     case {'384','96'}
         % 384 well fmt        
-        wellfmt = parse_sin(fullfile(mortarpath,'resources',sprintf('%s_plate.txt',arg.platefmt)), false);
-        colord = str2double(wellfmt.COLMAJOR_ORDER);        
-        [cmn, idx] = intersect_ord(wellfmt.WELL, wn);
+        wellfmt = parse_tbl(fullfile(mortarpath,'resources',sprintf('%s_plate.txt',arg.platefmt)));
+        colord = wellfmt.colmajor_order;        
+        [cmn, idx] = intersect_ord(wellfmt.well, wn);
         if ~isequal(cmn, wn)
             disp(setdiff(wn, cmn));
             error('Well info could not be extracted for some wells');

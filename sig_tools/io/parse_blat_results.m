@@ -4,8 +4,8 @@
 % blatTable: refSeq lookup table 
 function test = parse_blat_results(resFile, blatTable)
 
-blat = parse_sin(blatTable, 0, 'detect_numeric', false);
-test = parse_sin(resFile, 0,  'detect_numeric', false);
+blat = parse_tbl(blatTable, 'detect_numeric', false);
+test = parse_tbl(resFile, 'detect_numeric', false);
 numq = length(test.QUERY);
 blat_txEnd = str2double(blat.txEnd);
 blat_txStart = str2double(blat.txStart);
@@ -14,7 +14,7 @@ test_TSTART = str2double(test.TSTART);
 test_TEND = str2double(test.TEND);
 test.HITS_REFSEQ = cell(numq,1);
 test.HITS_GENESYM = cell(numq,1);
-for idx=1:numq; 
+for idx=1:numq
     fprintf('%s\t chr%s%s %s %s %s %s %s',...
         test.QUERY{idx}, test.TNAME{idx}, test.STRAND{idx}, ...
         test.TSTART{idx}, test.TEND{idx}, test.IDENTITY{idx}, ...

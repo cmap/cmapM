@@ -120,7 +120,7 @@ spike_int = cell(nc,1);
 is_spike_ascend = cell(nc,1);
 
 for ii=1:nc
-    spike_int{ii} = print_dlm_line2(ds.mat(spikeIdx, ii), 'dlm', '|', 'precision', 0);
+    spike_int{ii} = print_dlm_line(ds.mat(spikeIdx, ii), 'dlm', '|', 'precision', 0);
     % Are Intensities of spike controls in ascending order  BioB<BioC<BioD<CreX
     if all(diff(ds.mat(spikeIdx, ii))>0)
         is_spike_ascend{ii} = 'Y';

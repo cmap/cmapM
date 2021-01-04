@@ -215,7 +215,7 @@ end
             res.pool = lower(smap(1).pool);
             smap_bset = lower(tokenize(smap(1).bsets, ','));
         case '2.1'
-            smap = parse_sin(res.sample_map, false, 'version', 'v2', 'lowerhdr',true);
+            smap = parse_record(res.sample_map, 'lowerhdr',true);
             % probe pool
             res.pool = lower(smap(1).pool_name);
             smap_bset = lower(tokenize(smap(1).bead_set, ','));
@@ -282,7 +282,7 @@ end
     
     % missing analytes
     tok = tokenize(annot.missing_analytes, ',');
-    match = print_dlm_line2(res.bset, 'dlm', '|');
+    match = print_dlm_line(res.bset, 'dlm', '|');
     res.missing_analytes = tok(~cellfun(@isempty, regexpi(tok, match)))';
     
     % not duo analytes

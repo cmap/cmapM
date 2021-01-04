@@ -39,7 +39,7 @@ elseif iscell(tbl) && iscell(args.tblhdr)
 elseif isfileexist(tbl)
     tbltype = 'struct';
     tblfile = tbl;
-    tbl = parse_sin(tblfile, false, 'version', 'v2');
+    tbl = parse_record(tblfile);
     nrec = length(tbl);
 else
     error('File not found: %s', tbl);

@@ -19,7 +19,23 @@ MCR_CACHE_ROOT="/tmp/mcr_cache_$USER"
 RAM_OPT="-R rusage[mem=4]"
 IO_OPT=""
 X_OPT=""
-VDBPATH=${VDBPATH:?"VDBPATH env variable is not set but is required by most tools"}
+DEFAULT_VDB_PATH='/cmap/data/vdb'
+
+if [[ -z $VDBPATH ]]; then
+    if [[ -d $DEFAULT_VDB_PATH ]]; then
+	VDBPATH="$DEFAULT_VDB_PATH"
+    else
+	msg "VDBPATH:$DEFAULT_VDB_PATH not found" red
+	quit 1
+    fi
+else
+    if [[ ! -d $VDBPATH ]]; then
+	msg "VDBPATH:$VDBPATH not found" red
+	quit 1	
+    fi
+fi
+export VDBPATH
+
 # Run Matlab compiled scripts
 USAGE_HELP="--------------------------------------------------
 \033[1;34m${0##*/}\033[0m: Execute standalone Matlab scripts

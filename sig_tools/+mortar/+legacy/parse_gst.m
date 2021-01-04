@@ -10,7 +10,7 @@ if ~exist('isdu','var')
 end
 
 if exist(fname,'file')
-    gst = parse_sin(fname, false);
+    gst = parse_tbl(fname, false);
     fn = fieldnames(gst);
     
     if isempty(strmatch('SAMPLE_ID',fn, 'exact'))

@@ -29,7 +29,7 @@ else
             % struct dimensions as a string
             if arg.struct2str
                 s = sprintf('[%dx%d struct] fields:%s', size(x),...
-                    print_dlm_line2(fieldnames(x),'dlm',','));
+                    print_dlm_line(fieldnames(x),'dlm',','));
             else
                 s = x;
             end

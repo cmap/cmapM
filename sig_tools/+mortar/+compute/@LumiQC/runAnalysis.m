@@ -123,7 +123,7 @@ try
         % summary report of main qc stats
         report = sample_calib_report(calibds, ds(1));
         qcSummaryFile = fullfile(wkdir, sprintf('qc_report.txt'));
-        mksin(report, qcSummaryFile);
+        mktbl(report, qcSummaryFile);
         
         % CSV file meta info
         fid = fopen(fullfile(wkdir, sprintf('csv_info.txt')), 'wt');

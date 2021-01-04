@@ -78,7 +78,7 @@ if nim
         for ii=1:length(param)
             val = stringify(arg.arg.(param{ii}));
             if iscell(val)
-                val = print_dlm_line2(val, 'dlm', ',');
+                val = print_dlm_line(val, 'dlm', ',');
             end
             fprintf (fid, '\\emph{%s} & %s\\\\\n', texify(param{ii}), texify(val));
         end

@@ -1,12 +1,12 @@
 function [gs, gd, ezid] = ps2genesym(ps, varargin)
 
 pnames = {'chip', 'annpath', 'desc'};
-dflts = {'affx', mapdir('/cmap/data/vdb/chip'), false};
+dflts = {'affx', mapdir(get_l1k_path('chip_path')), false};
 arg = parse_args(pnames, dflts, varargin{:});
 annfile = fullfile(arg.annpath, sprintf('%s.chip', lower(arg.chip)));
 
 if isfileexist(annfile)
-    ann = parse_sin(annfile, 0);
+    ann = parse_tbl(annfile);
     if ischar(ps)
         gs = ann.pr_gene_symbol(strcmp(ps, ann.pr_id));
         if arg.desc && ~isempty(gs)

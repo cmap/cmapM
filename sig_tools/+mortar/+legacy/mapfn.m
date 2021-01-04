@@ -14,7 +14,7 @@ newfn = cell(nf,1);
 if isstruct(mapfile)
     map = mapfile;
 elseif isfileexist(mapfile)
-    map = parse_sin(mapfile, false,'-version','v2');
+    map = parse_record(mapfile);
 else
     error('File not found: %s', mapfile);
 end

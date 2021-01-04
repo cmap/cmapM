@@ -15,7 +15,7 @@ if isstruct(s)
     for ii=1:length(pnames)
         val = stringify(s.(pnames{ii}));
         if iscell(val)
-            val = print_dlm_line2(val, 'dlm', ',');
+            val = print_dlm_line(val, 'dlm', ',');
             if length(val)>255
                 val=sprintf('%s...',strtrunc(val, 255));
             end

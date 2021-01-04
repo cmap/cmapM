@@ -153,7 +153,7 @@ for ii=1:ncdesc
     %     ds.coldesc(x{1}{1}) = x{1}((2+nrdesc):end);
     % empty value fix
     ds.chd{ii} = lower(x{1}{1});
-    ds.cdesc(:, ii) = [x{1}{1+nrdesc+(1:nc)}; emptyval(1:(nc+nrdesc+1 - length(x{1})))];
+    ds.cdesc(:, ii) = [x{1}(1+nrdesc+(1:nc)); emptyval(1:(nc+nrdesc+1 - length(x{1})))];
 end
 ds.cdict = list2dict(ds.chd);
 % close file descriptor

@@ -37,14 +37,14 @@ if ~isempty(name)
             else
                 % unix path
                 t = tokenize(name, '/', true);
-                root = print_dlm_line2(t(2:3), 'dlm', '_');
+                root = print_dlm_line(t(2:3), 'dlm', '_');
                 rempath = t(4:end);
             end
                 drives = get_win_drives;
                 driveidx = find(~cellfun(@isempty, regexp({drives.name}, root)));
                 if isequal(length(driveidx), 1)
                     %path
-                    name = print_dlm_line2([drives(driveidx).letter; rempath], 'dlm', '\\');
+                    name = print_dlm_line([drives(driveidx).letter; rempath], 'dlm', '\\');
                 end
 
             end

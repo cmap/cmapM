@@ -27,9 +27,9 @@ if ~isempty(args.sort_order)
 end
 
 fid = fopen(sdffile, 'wt');
-print_dlm_line2([{'SAMPLE_NAME'}; fn], 'fid', fid)
+print_dlm_line([{'SAMPLE_NAME'}; fn], 'fid', fid)
 for ii=1:length(sidx)
-    print_dlm_line2([ds.cid(sidx(ii)),  ...
+    print_dlm_line([ds.cid(sidx(ii)),  ...
         ds.cdesc(sidx(ii), fnidx)], ...
         'fid', fid, 'precision',2)
 end

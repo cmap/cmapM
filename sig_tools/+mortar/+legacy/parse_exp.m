@@ -1,3 +1,4 @@
+function ex = parse_exp(expFile, sins)
 % PARSE_EXP Parse .exp files
 % EX = PARSE_EXP(EXPFILE, SINFILE Returns a nested structure EX of
 % 
@@ -6,13 +7,11 @@
 % $Author: Rajiv Narayan [narayan@broadinstitute.org]
 % $Date: Jul.01.2010 12:01:46 EDT
 
-function ex = parse_exp(expFile, sins)
-
 ex = parse_gmx(expFile);
 
 
 if ~isstruct(sins)
-    sins = parse_sin(sins);
+    sins = parse_tbl(sins);
 end
 
 nq = length(ex);

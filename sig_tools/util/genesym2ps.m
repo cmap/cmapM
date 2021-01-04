@@ -26,7 +26,7 @@ end
 ngs = length(gs);
 
 if isfileexist(lutfile)
-    lut = parse_sin(lutfile);
+    lut = parse_tbl(lutfile);
 %     g2p = containers.Map(lut.pr_gene_symbol, lut.pr_id);
     g2p = list2dict(lut.pr_gene_symbol);
     gidx = zeros(ngs, 1);
@@ -67,7 +67,7 @@ if isfileexist(lutfile)
     end
     
 elseif isfileexist(annfile)
-    ann = parse_sin(annfile);
+    ann = parse_tbl(annfile);
     % generate single list of probesets length(ps) > = length(gs)
     if args.unwrap
       ps = {};
@@ -82,7 +82,7 @@ elseif isfileexist(annfile)
       for ii=1:length(gs)
           pidx = find(~cellfun(@isempty,regexpi(ann.pr_gene_symbol, sprintf('^\\W*\\<%s\\>\\W*$', gs{ii}))));
           %pidx = strmatch(gs{ii}, ann.Gene_Symbol, 'exact');
-          ps{ii} = print_dlm_line2(sort(ann.pr_id(pidx)), 'dlm', args.dlm);
+          ps{ii} = print_dlm_line(sort(ann.pr_id(pidx)), 'dlm', args.dlm);
       end
     end
 else
