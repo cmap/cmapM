@@ -19,12 +19,19 @@ if ~help_flag
         
         % Merge reports
         pair_recall_rpt = mergeRecallReport(pw_recall_rpt, match_field, args);    
-        
+        npairs = length(pair_recall_rpt);
+        if npairs>0
         % per-replicate report
         [rep_recall_rpt, rep_stats_rpt] = mortar.compute.Recall.getReplicateReport(pair_recall_rpt, args.outlier_alpha);
         
         % Summarize pairwise recall to recall sets
         set_recall_rpt = getSetReport(pair_recall_rpt, match_field, args);
+        else
+            warning('No replicate pairs found! returning empty reports')
+            rep_recall_rpt = [];
+            rep_stats_rpt = [];
+            set_recall_rpt = [];
+        end
 else
     % help selected do nothing
 end

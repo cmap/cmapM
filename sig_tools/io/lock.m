@@ -30,7 +30,7 @@ end
 
 if isdefined('fname') && ischar(fname)
     [exit_code, result] = system(sprintf('%s -r0 %s', lockfile_bin, fname));
-    if ~isempty(regexp(result,'Try praying', 'once'))        
+    if ~isempty(regexp(result,'giving up on', 'once'))        
         if isfileexist(fname)
             exit_code = 1;
         else

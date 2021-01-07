@@ -24,7 +24,12 @@ function [gpvar, gp, gpidx, cmn_hd, gpsz] = get_groupvar(desc, hd, gpid, varargi
 %   'skip_undef' : boolean, if true, skip fields silently if its missing. Default is
 %   false.
 %   'skip_missing' : boolean, Default is false
-%   'no_space' : boolean, if true strip whitespace. Default is false
+%   'no_space' : boolean, if true strip contiguous whitespace. Default is false
+%   'replace_dlm': boolean, if true replace pre-existing delimiter
+%   characters with dlm_replace_char. Default true
+%   'dlm_replace_char': char, replacement string for preexisting delimiters
+%   if replace_dlm is true
+%   'space_replace_char': char, replacement string for spaces
 
 % Example: 
 % C = {'A', 10; 'B', 20; 'C', 20; 'A', 10} 
@@ -32,9 +37,11 @@ function [gpvar, gp, gpidx, cmn_hd, gpsz] = get_groupvar(desc, hd, gpid, varargi
 
 pnames = {'add_unit', 'skip_static', 'skip_undef',...
           'dlm', 'skip_missing', 'no_space',...
-          'case'};
+          'case', 'replace_dlm', 'dlm_replace_char',...
+          'space_replace_char'};
 dflts = {false, false, false,...
          ':', false, false,...
+         '', true, '',...
          ''};
 
 args = parse_args(pnames, dflts, varargin{:});
@@ -87,9 +94,11 @@ for ii=1:ngp
         addme = lower(addme);
     end
     if args.no_space
-        addme = strrep(addme, ' ', '');
+        addme = regexprep(addme, ' +', args.space_replace_char);
     end
-    addme = strrep(addme, args.dlm, '');
+    if args.replace_dlm
+        addme = strrep(addme, args.dlm, args.dlm_replace_char);
+    end    
     if isfirst && keep_hd(ii)
         gpvar = strcat(gpvar, args.dlm, addme);
     elseif keep_hd(ii)

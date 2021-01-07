@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github-rajivnarayan:cmap/mortar
 	branch = cmapM-v2.0.0
-	commit = 44031e6f76f31e39d00e0d3df7af732a00c2d9b6
-	parent = 1bff2f162504332907c3b3edd841964513aa3447
+	commit = e5684baf7298e76fb5861f82fe5a93f1281bc1db
+	parent = fda9fa4d309da43637c23026e665a8832a258cdb
 	method = merge
 	cmdver = 0.4.3

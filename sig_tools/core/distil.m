@@ -131,7 +131,9 @@ end
     search_type, 'tblhdr', ds.chd);
 nkeep = length(keep_idx);
 if nkeep>0
-    [group_var, group_id, group_idx] = get_groupvar(keep_desc, ds.chd, args.group_by,'add_unit',false);
+    [group_var, group_id, group_idx] = get_groupvar(keep_desc, ds.chd, args.group_by,...
+        'add_unit',false, 'case', 'upper', 'no_space', true, 'space_replace_char', '_',...
+        'replace_dlm', false);
 
     ng = length(group_id);
     sig_mat = zeros(nfeature, ng);
@@ -162,12 +164,11 @@ if nkeep>0
 
         pert_desc = unique(sig_desc(:,ds.cdict(args.pert_desc_field)));
         if isempty(args.cid_prefix)
-            sig_cid{g} =  print_dlm_line(upper(group_id(g)), 'dlm', ':');
+            sig_cid{g} =  print_dlm_line(group_id(g), 'dlm', ':');
         else
-            sig_cid{g} = print_dlm_line(upper({args.cid_prefix, group_id{g}}), 'dlm', ':');
+            sig_cid{g} = print_dlm_line({args.cid_prefix, group_id{g}}, 'dlm', ':');
         end
-        % fix for spaces
-        sig_cid{g} = regexprep(sig_cid{g},' +','_');
+
         % sample index in ds
         samp_idx = keep_idx(sig_idx);
         zs = ds.mat(feature_idx, samp_idx);
