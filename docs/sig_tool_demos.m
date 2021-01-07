@@ -83,6 +83,8 @@ SCORE_FILE = fullfile(DATASET_PATH, 'prism/repurposing-secondary/level5_modz.zsp
 RANK_FILE = fullfile(DATASET_PATH, 'prism/repurposing-secondary/rank_n1258x489.gctx');
 % Signature annotations
 SIG_META_FILE = fullfile(DATASET_PATH, 'prism/repurposing-secondary/siginfo.txt');
+% results folder
+OUT_PATH = 'results/curie';
 
 % Run the curie tool
 sig_curie_tool('es_tail', 'up',...
