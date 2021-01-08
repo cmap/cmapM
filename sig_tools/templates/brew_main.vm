@@ -1,0 +1,145 @@
+## Create index page for brew
+## Inputs:
+## brewid: String
+## plateList: cell array, List of selected source plates.
+## ignoredPlateList: cell array, List of ignored source plates.
+## statsMap : Java hashmap, Input for stats table
+## annotationList : cell array, List of annotation maps. 
+## reportMap : Java hashmap, Report names and locations.
+## datasetMap: Javahashmap, Dataset names and locations.
+## imlist : cell array of image file names
+## caption : cell array of captions
+## opt : Java hashmap of optional settings:
+##     .ncol : integer, number of columns per row
+##     .width : width of image, default is 230
+##     .height : height of image, default is 225
+##     .title : String, page title, default is None
+##     .thumbdir : String, location of thumbnails. Default is None
+##     .roast_path : String, Roast root folder
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+#if (!$opt.width)
+  #set ($opt.width = 230 )
+#end
+#if (!$opt.height)
+  #set ($opt.height = 225 )
+#end
+
+<title>$brewid</title>
+<style>
+body,
+html {
+margin:0;
+padding:0;
+}
+
+#wrap {
+width:800px;
+margin: 0 20;
+}
+#header {
+width: 800px;
+text-align: left;
+}
+
+#main {
+float:left;
+width:510px;
+}
+#sidebar {
+float:right;
+width:290px;
+}
+ol { font-size: 85%;}
+ul { font-size: 85%;}
+li.ignored { 
+    color: #808080;
+    text-decoration: line-through;
+}
+
+h1 { color: #1f77b4; }
+h3 { color: #2ca02c; }
+table.stats {
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+table.stats td {
+padding: 5px;
+border: 1px solid #808080;
+font-size: 85%;
+}
+
+table.dataset td {
+padding: 1px;
+#border: 1px solid #808080;
+font-size: 75%;
+}
+<!-- for image grid -->
+.grid { display: table; border-spacing: 4px; }
+.row { display: table-row; }
+img { width: ${opt.width}px; height: ${opt.height}px;}
+.cell { display: table-cell; background-color: white; border: 1px solid #d4dded; vertical-align: top; text-align: center;}
+.desc { color: #c92d0a; font-size: 85%; font-weight: bold; text-align:
+center;  padding-top: 8px;}
+
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrap">
+<div id="header">
+<h1>$brewid</h1>
+</div>  <!-- #header -->
+  <div id="main">
+<table class="stats">
+  #foreach ($e in $statsMap.entrySet())
+  <tr> <td>$e.key</td><td>$e.value</td> </tr>
+  #end
+</table>
+
+<h3>Source Plates</h3>
+<ol>
+#foreach ($i in $plateList)
+  <li>$i (<a href="http://www.broadinstitute.org/cogs/lims/search.html#plate=$i"
+  title="View QC plots">lumiqc</a> |
+  <a href="${opt.roast_path}/$i/snapshot.html"
+  title="View Roast Report">roast</a>)
+  </li>
+#end
+#foreach ($i in $ignoredPlateList)
+  <li class="ignored">$i (<a href="http://www.broadinstitute.org/cogs/lims/search.html#plate=$i"
+  title="View QC plots">lumiqc</a> |
+  <a href="${opt.roast_path}/$i/snapshot.html"
+  title="View Roast Report">roast</a>)
+  </li>
+#end
+</ol>
+
+<h3>Reports</h3>
+<ul>
+#foreach ($e in $reportMap.entrySet())
+  <li><a href="$e.value">$e.key</a></li>
+#end
+</ul>
+
+<h3>Datasets and Annotations </h3>
+<table class="dataset">
+  #foreach ($e in $datasetMap.entrySet())
+##  <tr> <td>$e.key</td><td><a href="$e.value">$e.value</a></td> </tr>
+  <tr> <td><a href="$e.value">$e.key</a></td> </tr>
+  #end
+</table>
+
+</div>  <!-- #main -->
+<div id="sidebar">
+#parse('image_grid.vm')
+</div> <!-- #sidebar -->
+
+</div> <!-- #wrap -->
+</body>
+</html>

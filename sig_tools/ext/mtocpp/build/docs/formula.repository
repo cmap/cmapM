@@ -1,0 +1,4 @@
+\form#0:$\text{\LaTeX}$
+\form#1:$ \sum_{n=0}^N \frac{1}{n} $
+\form#2:\[ \sum_{n=0}^N \frac{1}{n} \]
+\form#3:$A' * B'$

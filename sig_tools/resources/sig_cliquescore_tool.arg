@@ -1,0 +1,95 @@
+# Input arguments for sig_cliquescore_tool
+-
+   # Preamble
+   ispreamble: true
+   name: sig_cliquescore_tool
+   summary: Evaluate signatures for concordance of cliques
+   # Note quotes to allow special chars
+   
+   description: "The cliquescore tool examines a list of summly
+   queries for concordance of pre-defined cliques.  It takes a list of
+   summly queries and a collection of sets as input, and performs a
+   lookup of summly scores for each query across all specified
+   cliques.
+   
+   Outputs include matrices of connectivity scores, ranks and tables
+   with group statistics. In addition a HTML page with heatmaps for
+   each group and summary rank distributions is created.
+   
+   Description of outputs:
+     
+     summly/ : Summly lookup statistics
+     <cell_id>/ : Per-cell line statistics
+     inter_cell/ : Cross cell-line connectivities
+     
+     figures/index.html : HTML report with pairwise rank plots
+     
+     query_{up,dn}.gmt : queries used in the analysis
+     
+     rank_space.grp : list of signatures that constitute the rank space
+     
+     self_connectivity.txt : table with statistics for each introspect group
+     
+     signature_info.txt : annotations for each signature with group membership
+     
+     self_rankpt_n*.gctx : NxN Rank point matrix 
+     
+     self_score_n*.gctx : NxN connectivity score matrix
+     
+     Examples:
+       
+       % Run cliquescore on a set of queries and cliques
+       
+       sig_cliquescore_tool('score', 'summly_score.gctx', 'summly_id', 'query.grp', 'clique', 'pcl.gmt', 'clique_field', 'pert_id')
+       "          
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file
+
+-
+   name: --clique
+   default: ''
+   required: true
+   help: Set(s) to check can be in GMT, GMX or GRP format
+
+-
+   name: --clique_field
+   default: _rid
+   help: Annotation field specified in the clique file
+
+-
+   name: --cluster_method
+   default: hclust
+   choices: [hclust, median]
+   help: method to use to cluster pairwise connectivities
+-
+  name: --mkdir
+  default: true
+  help: Create standard output folders
+
+-
+  name: [-o, --out]
+  default: '.'
+  help: Output folder
+
+-
+  name: --score
+  default: ''
+  help: Path to summly matrix
+
+-
+  name: --summly_id
+  default: ''
+  help: List of summly queries to evaluate as a GRP file
+
+-
+  name: --summly_field
+  default: '_cid'
+  help: Meta-data field to match summly_ids
+
+-
+  name: [-v, --verbose]
+  default: true
+  help: Enable debugging information

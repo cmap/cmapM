@@ -1,0 +1,16 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_build_tool
+   summary:  Generate L1k signature build from a list of brews
+   include: [sigClassOptions.arg, mortar.collate.Brew.build.arg]
+   # Note quotes to allow special chars
+   description: "
+
+   ## Examples
+
+   - Generate build for a list of brews
+
+    #name# --brew_path '/path/to/brew/folders' --brew_list '/list/of/brews.grp'
+
+    "

@@ -1,0 +1,7 @@
+# query tool defaults
+default_score: /cmap/data/build/affogato/affogato_r1_score_n398050x22268.gctx
+default_rank: /cmap/data/build/affogato/affogato_r1_rank_n398050x22268.gctx 
+default_rank_lm: /cmap/data/build/affogato/affogato_r1_ranklm_n398050x978.gctx
+default_metric: spearman
+default_rid_lm: /cmap/data/vdb/spaces/lm_epsilon_n978.grp
+default_rid_full: /cmap/data/vdb/spaces/affx_n22268.grp

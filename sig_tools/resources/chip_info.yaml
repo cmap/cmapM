@@ -1,0 +1,59 @@
+# Chip files lists feature spaces for different platforms
+# file names are paths relative to vdbpath
+-
+  platform: l1000
+  file: chip/l1kaig.chip
+  space: [all, aig, bing, lm, aignolm, bingnolm]
+  desc:
+    - L1000 All inferred genes + landmarks
+    - L1000 All inferred genes + landmarks
+    - L1000 Best inferred genes + landmarks
+    - L1000 Landmarks only
+    - L1000 All inferred genes only
+    - L1000 Best inferred genes only
+
+-
+  platform: affx_u133
+  file: chip/affx.chip
+  space:
+    - all
+    - l1000
+  desc:
+    - All Affymetrix U133 probesets
+    - Affymetrix probesets used in L1000 assay
+
+-
+   platform: entrez
+   file: chip/entrez.chip
+   space:
+      - all
+   desc:
+      - Entrez gene ids
+
+-
+   platform: ensembl
+   file: chip/ensembl.chip
+   space:
+     - all
+   desc:
+     - Ensembl gene ids
+
+-
+   platform: pr500_cs5
+   file: chip/PRISM-Pr500_cell_info.txt
+   space:
+     - all
+   desc:
+     - PR500 All cell lines in cell set 5
+
+-
+  platform: l1000_covid
+  file: chip/l1kaig_COVID.V1.0.chip
+  space: [all, aig, bing, lm, aignolm, bingnolm]
+  desc:
+    - L1000 All inferred genes + landmarks
+    - L1000 All inferred genes + landmarks
+    - L1000 Best inferred genes + landmarks
+    - L1000 Landmarks only
+    - L1000 All inferred genes only
+    - L1000 Best inferred genes only

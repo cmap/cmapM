@@ -1,0 +1,39 @@
+# Configurations
+
+LATEX_OUTPUT := false;
+
+# PRINT_FIELDS := false;
+
+AUTO_ADD_FIELDS := false;
+
+AUTO_ADD_PARAMETERS := false;
+
+AUTO_ADD_CLASS_PROPERTIES := false;
+
+AUTO_ADD_CLASS := false;
+
+REMOVE_FIRST_ARG_IN_ABSTRACT_METHODS := true;
+
+ENABLE_OF_TYPE_PARSING := true;
+
+VOID_TYPE_IN_RETURN_VALUES := true;
+
+PRINT_RETURN_VALUE_NAME := 1;
+
+GENERATE_SUBFUNTION_DOCUMENTATION := true;
+
+##
+
+add(params) = auto_param => """ object of type gridbase.gridbase which is not used! This documentation is added automatically! """;
+
+add(fields) = auto_struct.auto_field => """ This field's documentation has been added automatically! """;
+
+glob = * { groups = test; }
+
+glob = test {
+  add(params) = auto_param => """ object of type othergrid which is not used! This documentation is added automatically! """;
+}
+
+glob = doxygen.m { add(params) = auto_param => """ jajaja """; }
+
+# vim: set ft=perl et sw=2 :

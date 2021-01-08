@@ -1,0 +1,130 @@
+# Input arguments for SigGutcTool
+-
+   # Preamble
+   ispreamble: true
+   name: SigGutcTool
+   summary: "[DEPRECATED use sig_gutc_tool instead] Run queries against CMap signature database and report connectivity scores."
+   # Note quotes to allow special chars. 
+   
+   description: "The SigGutcTool executes queries against the CMap database 
+        and returns connectivity scores. The scores are compared to a reference 
+        set of signatures (Touchstone set). The results are then summarized 
+        at different levels of granularity. The following levels 
+        of connectivities are reported: Signature, Perturbagen and Perturbagen Class. 
+        For the Pertubation level, the scores for individual cell lines as well 
+        as across cell types are computed.
+       "          
+-
+  name: [--up, --uptag]
+  default: '' 
+  dest: uptag
+  help: Geneset(s) to use for the up portion of the query
+  isrequired: true
+  
+-
+  name: [--dn, --dntag]
+  default: ''
+  dest: dntag
+  help: Geneset(s) to use for the down portion of the query
+  isrequired: true
+
+-
+  name: --metric
+  default: 'wtcs'
+  choices: ['cs', 'wtcs']
+  help: Similarity metric
+
+-
+  name: --es_tail
+  default: 'both'
+  choices: ['both', 'up', 'down']
+  help: Specify two-tailed or one-tailed statistic for enrichment metrics
+
+-
+  name: --rank
+  default: ''
+  help: Dataset of ranks corresponding to the score matrix in
+        GCT(X) format
+
+-
+  name: --score
+  default: ''
+  help: Dataset of differential expression scores (e.g. zscores) in
+        GCT(X) format
+
+-
+  name: --row_space
+  default: 'bing'
+  choices: ['lm', 'bing', 'full']
+  help: Feature space for comparisions
+
+-
+   name: --column_space
+   default: 'full'
+   choices: ['full']
+   help: Signature space
+
+-
+   name: --pcl_set
+   default: '/cmap/data/vdb/pcl/pcl_20140402.gmt'
+   help: Perturbational classes in GMT format
+  
+-
+  name: --ns2rp
+  default: '/cmap/data/vdb/touchstone/ns2rp_n10001x203948.gctx'
+  help: Normalized score to rank transform matrix
+  isrequired: true
+
+-
+  name: --ts
+  default: '/cmap/data/vdb/touchstone/touchstone_n1x203948.gctx'
+  help: Touchstone signature definition dataset
+  isrequired: true
+
+-
+  name: --aggregate_method
+  default: 'maxq'
+  help: Aggregation method to use for GUTC summarization
+  isrequired: true  
+  choices: [maxq]
+
+-
+  name: --aggregate_param
+  default:
+    q_low: 33
+    q_high: 67
+  help: Parameters to use for aggregation method
+  isrequired: true
+
+-
+  name: --query_result
+  default: ''
+  help: "Load pre-computed query results from supplied result folder. 
+        The folder should contain the following files: *_params.txt, 
+        query_up*.gmt, query_dn*.gmt, result_*COMBINED*.gct*"
+
+-
+  name: [-o, --out]
+  default: ''
+  help: Output path
+
+-
+  name: --rpt
+  default: ''
+  help: Report folder prefix
+
+-
+  name: --create_subdir
+  default: true
+  help: Create subfolder in out for saving output
+
+-
+  name: --verbose
+  default: true
+  help: Print debugging messages
+  
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file

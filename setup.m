@@ -15,3 +15,5 @@ addpath(genpath(fullfile(this_path, 'bin')));
 % Download and unpack assets if not already present
 download_cmapm_assets;
 
+% set VDB path
+set_vdbpath(fullfile(this_path, 'vdb'));

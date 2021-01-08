@@ -1,0 +1,79 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_fastquery_tool
+   summary: Compute weighted connectivity score using faster C++ implementation
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+   ## Examples
+
+   - Run algorithm on a dataset
+
+    #name# --ds 'raw_data.gctx'
+
+    "
+-
+   name: --score
+   default: ''
+   help: Reference score matrix of signatures of which to calculate connectivity
+        scores. Binary format of int32 floats.
+-
+   name: --rank
+   default: '/cmap/data/build/a2y13q1/rank_trans_small_bing.bin'
+   help: Corresponding rank matrix for supplied score matrix. 
+        Binary format of short int.
+-
+   name: --score2
+   default: ''
+   help: Copy of score matrix to read data in parallel. Binary format of int32 floats.
+-
+   name: --rank2
+   default: ''
+   help: Copy of rank matrix to enable parallel read. 
+        Binary format of short int.
+-
+   name: --genelist
+   default: '/cmap/data/build/a2y13q1/gene_ids_bing.grp'
+   help: List of genes, with order corresponding to column order in score 
+        matrix
+-
+   name: --sigids
+   default: '/cmap/data/build/a2y13q1/sigids.grp'
+   help: List of signature ids, with order corresponding to row order in score 
+        matrix.
+-
+   name: --es_tail
+   default: 'both'
+   choices: ['both', 'up', 'down']
+   help: Specify two-tailed or one-tailed statistic for enrichment metrics
+-
+   name: --uptag
+   default: ''
+   help: Sets of upregulated genes used for an external query
+-
+   name: --dntag
+   default: ''
+   help: Sets of downregulated genes used for an external query
+-
+   name: --num_threads
+   default: 16
+   help: Number of threads available for use in calculation of WTCS scores
+-
+   name: --num_genes
+   default: 10174
+   help: Number of genes within each signature.
+-
+   name: --num_sigs
+   default: 476251
+   help: Number of signatures in the score matrix.
+-
+   name: --buffer_size
+   default: 60000
+   access: hidden
+   help: Size of preallocated buffer for storing signatures. Impacts memory usage
+-
+   name: --outfile
+   default: 'result.gct'
+   help: Filename of output GCT containing connectivity scores

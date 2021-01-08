@@ -1,0 +1,23 @@
+-
+   # Preamble
+   ispreamble: true
+   name: $opt.ToolName
+   summary: ${opt.Desc}
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "$!{opt.Summary}
+
+    % ADD EXAMPLES OF USAGE HERE
+
+    Examples:
+
+    % Run algorithm on a dataset
+
+    #name#('--ds', 'raw_data.gctx');
+
+    "
+## Main args
+-
+   name: --ds
+   default: ''
+   help: Input dataset

@@ -1,0 +1,4 @@
+id	exp_pool_id	exp_bset_revision	exp_bset	chip_file	invset_file	yref_file	missing_analytes	not_duo
+deltap:r1	deltap	r1	dp44,dp45	/cmap/data/vdb/chip/L1000_DELTAP.R1.chip	/cmap/data/vdb/roast/deltaprime_analyte.gmx	/cmap/data/vdb/roast/log_ybio_delta.gct	dp45:11,dp44:402	[1:10,11,402]
+epsilon:r1	epsilon	r1	dp52,dp53	/cmap/data/vdb/chip/L1000_EPSILON.R1.chip	/cmap/data/vdb/roast/epsilon_analyte.gmx	/cmap/data/vdb/roast/log_ybio_epsilon.gct	dp53:11,dp52:499	[1:10,11,499]
+epsilon:r2	epsilon	r2	dp52,dp53	/cmap/data/vdb/chip/L1000_EPSILON.R2.chip	/cmap/data/vdb/roast/epsilon_analyte.gmx	/cmap/data/vdb/roast/log_ybio_epsilon.gct	dp53:11,dp52:499	[1:10,11,499]

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Import Matlab binary to library
+usageHelp="${0##*/}: Import matlab binary to library. 
+Usage: ${0##*/} <path to binary>
+" 
+
+source $(dirname $0)/global_vars.sh
+source "$BIN_PATH/helper.sh"
+
+if [ ! -z "$1" ]; then
+    fileCheck "$1"
+    filePath "$1"
+    infile="$FILEPATH"
+    f=$(basename -- $infile)
+    p=$(dirname -- $infile)
+    scriptfile="$p/run_$f.sh"
+    configfile="$p/$f.conf"    
+    fileCheck "$scriptfile"
+    fileCheck "$configfile"
+    echo "Importing to $MSCRIPT_PATH: $f, run_$f.sh and $f.conf"
+    # fix permissions
+    chgrp xchipgrp $infile $scriptfile $conffile
+    chmod 775 $infile
+    chmod 775 $scriptfile
+    yes|cp -f $infile $MSCRIPT_PATH
+    yes|cp -f $scriptfile $MSCRIPT_PATH
+    yes|cp -f $configfile $MSCRIPT_PATH
+
+    # commit to svn
+    if [ $USE_SUBVERSION -eq 1 ]; then
+	cd $MSCRIPT_PATH
+	svn ls $f --non-interactive || svn add $f
+	svn ls run_$f.sh --non-interactive || svn add run_$f.sh
+	svn ls $f.conf --non-interactive || svn add $f.conf
+	svn commit -m "Added $f"
+    fi
+
+    echo "Done."
+else
+    printHelpAndExit
+fi

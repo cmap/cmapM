@@ -1,0 +1,280 @@
+#!/bin/bash
+source /cmap/tools/bashtk/bashtk -q
+SCRIPT="${0##*/}"
+
+# Defaults
+upSet=""
+downSet=""
+filePrefix="input"
+startIndex=1
+batchSize=25
+outPath=$PWD
+runScript="run_single_query.sh"
+rankFile="rank_lm_n476251x978.gctx"
+scoreFile="modzs_n476251x22268.gctx"
+featureSpace="lm"
+# valid feature space choices
+featureSpaceList=(lm bing full)
+rankFileList=(rank_lm_n476251x978.gctx rank_bing_n476251x10638.gctx rank_full_n476251x22268.gctx)
+
+USAGE_HELP="--------------------------------------------------
+$SCRIPT: Setup CMap query for parallel execution
+Author: Rajiv Narayan [narayan@broadinstitute.org]
+--------------------------------------------------
+Usage: $SCRIPT --up <geneset> --down <geneset> [options]
+
+Options:
+--up|-u <geneset> GMT file of the up genesets. REQUIRED
+--down|-u <geneset> GMT file of the down genesets. Should be in the same order as the up geneset. REQUIRED
+--out|-o <path> Output path. Default is $outPath
+--numsets|-n <integer> Number of sets per batch. Default is $batchSize
+--score|-s <score file> Score matrix file. Default is $scoreFile
+--rank|-r <rank file> Rank matrix file. Default is $rankFile
+--feature_space|-f <feature space> Feature space to use for the query. Choices are {'lm', 'bing', 'full'}. Default is $featureSpace
+-h Print this help and exit
+
+Description:
+This tool takes a pair of geneset files (in GMT format) as input and creates a folder containing query tool input files for parallel execution on the Amazon cluster.
+
+Example:
+$SCRIPT --up up.gmt --down down.gmt --out outpath
+
+"
+function GetRankFile() {
+    local featureSpace=$1
+    index=0
+    for s in "${featureSpaceList[@]}";
+    do
+	if [[ $featureSpace == $s ]]; then
+	    echo ${rankFileList[$index]}
+	fi
+	((index+=1))
+    done
+}
+
+function CreateRunScript(){
+## Generate run script for executing single query
+## Usage: CreateRunScript scoreFile rankFile featureSpace
+# Template variables
+T_SCORE=$1
+T_RANK=$2
+T_ROW_SPACE=$3
+if [[ -z $T_SCORE || -z $T_RANK || -z $T_ROW_SPACE ]]; then
+  msg "$FUNCNAME: Invalid arguments" red
+  exit 1
+fi
+cat <<EOF
+#!/bin/bash
+
+function usage() {
+    echo "\${0##*/} joblist.grp jobpath outpath datapath [job_index]"
+}
+
+function get_cluster_type() {
+    cluster_type=""
+    if [[ -n \$SGE_CLUSTER_NAME ]]; then
+	cluster_type='sge'
+    elif [[ -n \$LSF_CLUSTER_NAME ]]; then
+	cluster_type='lsf'
+    fi
+    echo \$cluster_type
+}
+
+function get_sequence_index() {
+    # nth element in a seq
+    n=\$1
+    # start index of the seq
+    a=\$2
+    # difference between elements in the seq
+    d=\$3
+    echo \$((\$a + (\$n - 1) * \$d))
+}
+
+cluster_type=\$(get_cluster_type)
+case "\$cluster_type" in
+    'sge')
+	job_index=\${SGE_TASK_ID-\$5}	    
+	;;
+    'lsf')
+	job_index=\${LSB_JOBINDEX-\$5}
+	;;
+    *)
+	job_index=\$5
+	;;
+esac
+
+if [[ -n "\$job_index" && -f "\$1" && -d "\$2" && -n "\$3" && -n "\$4" ]]; then
+    joblist=\$1
+    jobpath=\$2
+    outpath=\$3
+    datapath=\$4
+    if [[ ! -d \$outpath ]]; then 
+	mkdir -p "\$outpath"
+    fi
+    up_set=\$jobpath/input_\$(sed -n "\$job_index{p;q}" \$joblist)_UP.gmt
+    dn_set=\$jobpath/input_\$(sed -n "\$job_index{p;q}" \$joblist)_DN.gmt
+    rum -q local -f sig_query_tool \\
+	--uptag \$up_set \\
+	--dntag \$dn_set \\
+	--metric wtcs \\
+	--column_space full \\
+	--row_space ${T_ROW_SPACE} \\
+	--score \$datapath/${T_SCORE} \\
+	--rank \$datapath/${T_RANK} \\
+	--save_minimal true \\
+	--out \$outpath 
+else
+    [[ -n \$job_index ]] || echo 'ERROR! job array index not found or specified'
+    usage
+fi
+EOF
+}
+
+function CheckGeneSets() {
+    local up="$1"
+    local down="$2"
+    cut -f1 $up | paste -d $'\t' - $down|cut -f1,2|sed 's/_UP\b//;s/_DN\b//'|awk '{if ($1 != $2) {print "Name mismatch in row",NR,":",$1,$2; exit 1}} END{print NR" genesets read"}'
+}
+
+## Main
+getopt -T >/dev/null 2>&1
+if [[ $? == 4 ]]; then
+    OPTS=`getopt -o u:d:o:n:s:r:f:h --long up:,down:,out:,numsets:,score:,rank:,feature_space:help -- "$@"`
+    if [[ $? != 0 ]]
+    then
+	exit 1
+    fi
+
+    eval set -- "$OPTS"
+    while true ; do
+	case "$1" in
+            -u|--up) 
+		upSet="$2"
+		shift 2;;
+            -d|--down) 
+		downSet="$2"
+		shift 2;;
+            -o|--out) 
+		outPath="$2"
+		shift 2;;
+            -n|--numsets) 
+		batchSize="$2"
+		shift 2;;
+	    -s|--score)
+		parts=(`file_parts $2`)
+		scoreFile="${parts[1]}${parts[2]}"
+		shift 2;;
+	    -r|--rank)
+                parts=(`file_parts $2`)
+		rankFile="${parts[1]}${parts[2]}"
+		shift 2;;
+	    -f|--feature_space)
+		[[ "${featureSpaceList[@]}" =~ "$2" ]] || { msg "Invalid Feature Space: $2"; status_die 1; }
+		featureSpace=$2
+		rankFile=$(GetRankFile $featureSpace)
+		shift 2;;
+	    -h|--help)
+		msg_help;;
+            --) shift; break;;
+	    *) echo "Internal error!"
+		exit 1 ;;
+	esac
+    done
+
+    if [[ -f $upSet && -f $downSet ]]; then
+	if [[ ! -d $outPath ]]; then
+	    mkdir -p $outPath
+	fi
+	if [[ ! -d $outPath/jobs ]]; then
+	    mkdir $outPath/jobs
+	fi
+
+    # Check inputs	
+	msg "Checking genesets" 
+	CheckGeneSets $upSet $downSet || status_die 1
+
+    # Split Up geneset
+	msg "Creating UP genesets of size $batchSize per file" 
+	awk -v n="$batchSize" -v ctr="$startIndex" \
+	    -v prefix="$filePrefix" -v ext="_UP.gmt" \
+	    -v outpath="$outPath/jobs" \
+            -f  <(sed -n '/^#AWK_BEGIN/,/^#AWK_END/{//!p}' $0) "$upSet" \
+	    || status_die 1
+	
+    # Split Down geneset
+	msg "Creating DOWN genesets of size $batchSize per file"
+	awk -v n="$batchSize" -v ctr="$startIndex" \
+	    -v prefix="$filePrefix" -v ext="_DN.gmt" \
+	    -v outpath="$outPath/jobs" \
+            -f  <(sed -n '/^#AWK_BEGIN/,/^#AWK_END/{//!p}' $0) "$downSet" \
+	    || status_die 1
+
+    # generate joblist	
+	numJobs=$(ls -1 $outPath/jobs/*_UP.gmt|wc -l)
+	msg "Generating list for $numJobs jobs..."
+	seq $numJobs > "$outPath/joblist.grp"
+	[[ ${PIPESTATUS[0]} -eq 0 ]] || { msg "Error creating joblist" red; status_die 1; }
+
+    # Generate run script
+	runScriptFile="$outPath/$runScript"
+	msg "Generating run script: $runScriptFile"
+	CreateRunScript $scoreFile $rankFile $featureSpace > $runScriptFile
+	echo ${PIPESTATUS[@]}
+	[[ ${PIPESTATUS[0]} -eq 0 ]] || { msg "Error generating run script" red; status_die 1; }
+	chmod +x $runScriptFile
+
+	msg "Done." green
+
+	msg "Verify the following invocation of query tool, make any changes to $runScriptFile" cyan 
+	str_rep '#' 30
+	grep -A 9 rum $runScriptFile
+	str_rep '#' 30
+	msg "The output is in: $(abs_path $outpath)" cyan
+	msg "To execute queries on the cluster, use:"
+	msg "batchx -i joblist.grp -p jobs -j ./run_single_query.sh -o <output path> -d <data path>" green
+    else
+	[[ -f $upSet ]] || msg "UP geneset not found: $upSet" red;
+	[[ -f $downSet ]] || msg "DOWN geneset not found: $downSet" red;
+	msg_help "Invalid Input"
+    fi
+else
+    echo "Unsupported getopt found. Requires GNU-Getopt"
+fi
+
+exit $PIPE_STATUS
+
+#AWK_BEGIN
+# split a GMT file
+BEGIN{
+    FS="\t"
+    OFS="\t"
+    n=n?n:25
+    ctr=ctr?ctr:1
+    prefix=prefix?prefix:"input"
+    outpath=outpath?outpath:"."
+    ext=ext?ext:""
+    batch_file=outpath"/batch"ext".txt"
+    index_file=outpath"/index"ext".txt"
+    val_field=val_field?valfield:0
+}
+{
+    if (NR==1) {
+	    print "file_id", "sig_id" > index_file
+	}
+	
+	if ((NR-1) % n == 0) {
+		if (NR>1) {
+			close(this_out)
+		    }
+		    this_out=outpath"/"prefix"_"ctr""ext
+		    ctr++	
+	    }
+	    
+	    print $val_field >> this_out
+	    print this_out, $1 >> index_file
+}
+END {
+    close(this_out)
+    print "Total files generated:"ctr-1
+}
+#AWK_END

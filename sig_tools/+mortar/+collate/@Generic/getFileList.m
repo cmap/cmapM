@@ -1,0 +1,56 @@
+function file_list = getFileList(varargin)
+% getFileList get a list of files
+% See getFileList('--help')
+
+pnames = {'--files',...
+          '--folders',...
+          '--parent_folder',...
+          '--file_wildcard',...
+          '--sub_folder',...
+          '--verbose'};
+dflts = {'',...
+         '',...
+         '',...
+         '',...
+         '',...
+         true};
+desc = {'List of files as a GRP file or cell array',...
+        'List of parent folders as a GRP file or cell array',...
+        'Wildcard',...
+        'Parent folder containing files or folders',...
+        'Sub folder, relative to the parent folder that contains the target file',...
+        'Print debugging messages',...
+        };
+config = struct('name', pnames, 'default', dflts, 'help', desc); 
+opt = struct('prog', mfilename, 'desc', 'Get file list');
+args = mortar.common.ArgParse.getArgs(config, opt, varargin{:});
+
+% Construct file list
+dbg(args.verbose, 'Generating file list...');
+if ~isempty(args.files)
+    file_list = parse_grp(args.files);
+    file_list = cellfun(@(x) fullfile(args.parent_folder, x), file_list, 'unif', false);
+    isfile = mortar.common.FileUtil.isfile(file_list, 'file');
+    if ~all(isfile)
+        disp (file_list(~isfile));
+        error('%d/%d files not found', nnz(~isfile), numel(isfile));
+    end
+elseif ~isempty(args.folders)
+    folders = parse_grp(args.folders);
+    nfolder = length(folders);
+    file_list = cell(nfolder, 1);
+    for ii=1:nfolder
+        p = fullfile(args.parent_folder, folders{ii},...
+                args.sub_folder, sprintf('%s', args.file_wildcard));
+        [fn, fp] = find_file(p);
+        if isequal(length(fn), 1)
+            file_list{ii} = fp{1};
+        elseif ~isempty(fn)
+            disp(fp)
+            error('Multiple entries found for %s', p);
+        else
+            error('%s not found', p)
+        end
+    end
+end
+end

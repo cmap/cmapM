@@ -1,0 +1,35 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_collatebuild_tool
+   summary:  Merge matrices, annotations and genesets of given builds
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: " 
+    SigCollateBuild collectes the top level GCT(x), GMT, and TXT files and collates 
+    them after performing checks for collisions and matching annotations.
+    For TXT files, missing or mismatched fields are filled with '-666' 
+    Date Modified: November 25, 2019
+
+
+   ## Examples
+   - Merge files within src_build and target_build directories
+
+    #name# --src 'src_build/' --target 'target_build/'
+
+    "
+-
+   name: --src
+   default: ''
+   isrequired: true
+   help: New dataset to add to --target build
+-
+   name: --target
+   default: ''
+   isrequired: true
+   help: Existing target build to append matrices to.
+-
+   name: --id_fields
+   default: ['sig_id', 'distil_id']
+   help: List of id names that the data may use. Only one should be 
+    present for any given file

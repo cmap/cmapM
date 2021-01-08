@@ -1,0 +1,8 @@
+group	name	wildcard	action	location	add_dim
+Summary Report	View Summary	index.html	view	summary/1	n
+Summary Report	Download summary	result_*_summly_n*.txt	download	summary/1	n
+Detailed Results	Preview of top %d connections	tail.result_*.html	view	query_result	nrow
+Detailed Results	Download full result (%d connections)	result_*.txt	download	query_result	nrow
+Inputs	Up geneset (%d features)	query_up*.g*	view	query_result	nrow
+Inputs	Down geneset (%d features)	query_dn*.g*	view	query_result	nrow
+Inputs	View Parameters	config.yaml	view	.	n

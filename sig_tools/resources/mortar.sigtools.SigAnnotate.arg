@@ -1,0 +1,49 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_annotate_tool
+   summary: Read or modify metadata for a dataset
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "This tool extracts annotations of rows and columns 
+    from a dataset.
+
+    # Examples
+
+    - Extract row and column annotations from a dataset
+
+    #name# --ds 'data.gctx'
+
+    - Update row and column annotations
+
+    #name# --ds 'data.gctx' --row_meta 'row_meta.tsv' --column_meta 'column_meta.tsv'
+
+    - Remove matrix column annotations
+
+    #name# --ds 'data.gctx' --strip_matrix 'column'
+
+
+    "
+## Main args
+-
+   name: --ds
+   default: ''
+   required: true
+   help: Dataset in GCT or GCTX format
+
+-
+   name: --row_meta
+   default: ''
+   help: Row annotations as a TSV file. The first column or a column named id should match the row ids in the dataset
+
+-
+   name: --column_meta
+   default: ''
+   help: Column annotations as a TSV file. The first column or a column named id should match the column ids in the dataset
+- 
+   name: --strip_matrix
+   default: 'none'
+   choices: [row, column, both, none]
+   help: If selected will output the original matrix with the specified annotations removed. 
+
+

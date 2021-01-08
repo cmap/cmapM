@@ -1,0 +1,90 @@
+#!/bin/bash
+# Script to run CMap sigtools
+# This wrapper determines the language-specific script to execute and runs it
+
+self_path=$(dirname $0)
+source "$self_path/bashtk" -q 
+SELF_NAME="${0##*/}"
+DO_LOG=1
+CMD_FILE="commands_run.$USER"
+RUN_IN_FG=1
+
+# Location of sigtools, the env variable TOOL_PATH overrides this
+TOOL_PATH=${TOOL_PATH:-'/cmap/tools/sig_tools'}
+
+USAGE_HELP="--------------------------------------------------
+\033[1;34m${0##*/}\033[0m: Execute CMap Sig-tools
+Author: Rajiv Narayan [narayan@broadinstitute.org]
+--------------------------------------------------
+Usage: ${0##*/} [options] sig_tool_name <tool args>
+Options:
+-h Print this help and exit
+-l List available sig_tools 
+
+Examples:
+# List available sig-tools
+$SELF_NAME sig_queryl1k_tool --help
+
+# Run tests for a sig tool
+$SELF_NAME sig_queryl1k_tool --runtests
+"
+
+print_usage() {
+	[[ $# -gt 0 ]] && msg "$@" red bold
+	msg "$USAGE_HELP"
+	echo "Available tools:"
+	list_tools
+}
+
+get_tool_list() {
+	find ${TOOL_PATH} -maxdepth 1 -name 'sig_*tool.conf' -exec basename {} \;|sed 's/.conf//'
+}
+
+list_tools() {
+    local tool_list=(`get_tool_list`)
+    sort_cmd=($(printf '%s\n' "${tool_list[@]}"|sort))
+    for x in "${sort_cmd[@]}"; do
+	echo $x
+    done
+}
+
+get_tool_lang() {
+	script_name=$1
+    config_file=$TOOL_PATH/$1.conf
+	if [[ -f $config_file ]]; then
+		lang=$(sed -n  's/^LANGUAGE://p' $config_file)
+	else
+		lang='NONE'
+	fi
+	echo $lang
+}
+
+# parse arguments to this script
+while getopts "c:d:e:fhlm:no:p:q:r:wx" optionName; do
+    case "$optionName" in
+	h) 	print_usage
+	   	quit 1
+		;;
+	l) 	list_tools
+		quit 1
+		;;
+	[?]) help "Option not recognized"
+	    ;;
+    esac
+done
+shift $(($OPTIND -1))
+
+# toolname
+sig_tool="$1"
+# call language-specific script
+if [[ -n $sig_tool ]]; then
+	sig_tool_lang=$(get_tool_lang "$1")
+	case $sig_tool_lang in
+		matlab)
+			run-matlab $*
+		;;
+		*) msg_quit "Language $sig_tool_lang unsupported for $sig_tool"
+	esac
+else
+	print_usage "No arguments supplied"
+fi

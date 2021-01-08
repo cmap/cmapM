@@ -1,0 +1,2053 @@
+#!/bin/bash
+# BASHTK: BASH Toolkit
+# -----------------------------
+# Copyright 2011, Rajiv Narayan
+# askrajiv[AT]gmail[DOT]com
+# -----------------------------
+# A BASH library with support for basic math, string operations,
+# init-style message notifications and logging.
+# Usage: bashtk [options]
+# Options:
+# -q Quiet mode. Do not print any message when sourced
+# -h Print this help message and exit
+#
+# * To use the library, simply source the file using:
+#   source ./bashtk
+# * After sourcing the library, type btkhelp for a list of available
+#   commands.  
+# * Run demo.sh for a demonstration of the main features of the library.
+#
+# Fork me at GitHub: https://github.com/hashbang/bashtk
+# License:
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Current version
+BTK_VERSION="1.0"
+# Path to bashtk script
+#BASHTK_PATH=`type -p bashtk`
+# works with bash >= v3
+BTK_PATH=$BASH_SOURCE
+
+# global variables used by various functions.
+# Note changing these directly can have unintended effects.
+BTK_TIC='' #timer count
+BTK_ENABLE_LOG=0 #enable logging
+BTK_LOG_FILE='' #log filename
+BTK_LOG_ADD_TS=1 # Add timestamp to log entries
+BTK_LOG_DATE_FORMAT='%b %e %H:%M:%S' #date format for log
+BTK_DEBUG=0 #enable / disable debug messages
+BTK_PRECISION=6 #precision for bc calculator
+BTK_USECOLOR=1 #enable terminal colors
+BTK_X11_ENABLED=0 #is x11 available
+BTK_GPL_TERM='dumb' #gnuplot terminal info
+
+USAGE_HELP="-----------------------------
+\033[1;34mBashTk: BASH Toolkit v$BTK_VERSION\033[0m
+Copyright 2011, Rajiv Narayan
+-----------------------------
+A BASH library of simple utility functions.
+
+Usage: bashtk [options]
+Options:
+-q Quiet mode. Do not print any message when sourced
+-h Print this help message and exit
+
+To use the library, simply source the file using:
+source $BTK_PATH
+
+After sourcing the library, type \033[1;31mbtkhelp\033[0m for a list of available commands.
+"
+_check_help()
+{
+    if [[ $1 == -h ]]; then 
+	btkhelp $2
+	quit 1;
+    fi
+}
+
+btkhelp()
+{
+    if [[ -z $1 ]]; then
+	(   
+	    echo -e "\033[1;4;34mBashTk: BASH Toolkit v$BTK_VERSION\033[0m\n"
+	    echo "List of available commands:"
+	    echo "For help on a specific command, type:
+<command> -h or btkhelp <command>" | colorize 'btkhelp'
+	    awk '
+/^### .*/ {gsub ("^#* *",""); print "\033[4;1;31m""\n"$0"\033[0m";}
+/^## / {gsub ("^#* *",""); split($0,a,":"); print "\033[1;34m"a[1]"\033[0m"a[2];}
+' $BTK_PATH
+	    echo
+	)|more -d
+    else
+	echo -e "\033[1;4;34mBashTk: BASH Toolkit v$BTK_VERSION\033[0m\n"
+	awk -v pat="^## $1:" '$0~pat,!/^#.*/{
+if ($0~pat) {gsub("^#* *",""); split($0,a,":"); print "\033[1;34m"a[1]"\033[0m"a[2];} 
+else if (/^#.*/) {gsub("^#* *","  "); print};
+}' $BTK_PATH
+	    echo
+	    echo "Type btkhelp for a list of available commands"|colorize 'btkhelp'
+    fi
+}
+
+###########################
+### Date and Time Functions
+###########################
+
+## tic: Start timer.
+#  Usage: tic
+#  Initializes the timer. Use toc to get the time elapsed.
+#  See also: toc 
+tic () 
+{
+    _check_help $1 $FUNCNAME
+    BTK_TIC=$(date +%s)
+}
+
+## toc: Print time elapsed in seconds.
+#  Usage: toc
+#  Prints the seconds elapsed since tic was called. Note must first
+#  call tic before calling toc
+#
+#  Example:
+#  tic
+#  echo "do something"
+#  elapsed=$(toc)
+#  echo "${elapsed}s elapsed."
+toc()
+{
+    _check_help $1 $FUNCNAME
+    local _TOC=$(date +%s)
+    if [[ -n $BTK_TIC ]]; then
+	local SECS_ELAPSED=$(($_TOC - $BTK_TIC))
+	echo "${SECS_ELAPSED}"
+	return 0
+    else
+	echo "Run tic() before calling toc()"
+	return 1
+    fi
+}
+
+##################
+### File Utilities
+##################
+
+## abs_path: Resolve the absolute path to a file.
+#  Usage: abs_path filename 
+#  Prints the resolved path
+#
+#  Example:
+#  abs_path ~/myfile.txt
+abs_path()
+{
+    _check_help $1 $FUNCNAME
+    local p="$1"
+    local d="$(dirname -- "$p")"
+    if [[ $d == '~' ]]; then
+	d=$(readlink -f ~)
+    else
+	d=$(cd -P -- "$d" 2&>/dev/null && pwd -P)
+    fi
+    full_file "$d" "$(basename $p)"
+
+#    if ( require realpath); then
+#	realpath -s "$p"
+#    elif ( require python); then
+#	python -c "import os,sys; print os.path.realpath(sys.argv[1])" "$prg"
+#    fi
+}
+
+## dir_check: Check if folder exists.
+#  Usage: dir_check dirname 
+#  If dirname does not exist, prints an error and exits
+dir_check()
+{
+    _check_help $1 $FUNCNAME
+    [[ ! -d "$1" ]] && printErrorAndExit "Folder:$1 missing"
+}
+
+# fileCheck: Check if file exists
+#  Usage: fileCheck FILENAME
+#  If FILENAME does not exist, prints error and exits
+fileCheck()
+{
+    _check_help $1 $FUNCNAME
+    [[ ! -f "$1" ]] && printErrorAndExit "File:$1 missing"
+}
+
+## file_parts: Split a file into path, file and extension.
+#  Usage: file_parts FILENAME
+#  Prints the path, file and extension of FILENAME. Can be read into
+#  an array.
+#
+#  Example
+#  parts=(`file_parts ~/file.txt`)
+#  echo "path:${parts[0]} file:${parts[1]} ext:${parts[2]}"
+
+# TODO: handle spaces in file names
+file_parts() 
+{
+    _check_help $1 $FUNCNAME
+    #local f="$1"
+    local f=(`input "$@"`)
+    if ! $(is_empty "$f"); then
+	local bn="$(basename $f)"
+	local dn="$(dirname $f)"
+	echo $dn
+	echo ${bn%\.*}
+	local ext=${bn##*\.}
+	if [ "$ext" != "$bn" ]; then
+	    echo ".$ext"
+	else
+	    echo ""
+	fi
+	return 0 #success
+    else
+	return 1 #fail
+    fi
+}
+
+## full_file: Build full filename from parts.
+#  Usage: full_file D1 D2 ... FILE
+#
+#  Example:
+#  full_file foo bar zog.txt
+full_file()
+{
+    _check_help $1 $FUNCNAME
+    local f="$1"
+    shift 1
+    for part in $@
+    do
+	if [ -z "$f" -o -z "$part" ]; then
+	    f="$f$part"
+	elif [ "${f:(-1):1}" == '/' -a "${part:1:1}" == '/' ]; then 
+	    f="$f${part:1}"
+	elif [ "${f:(-1):1}" == '/' -o "${part:1:1}" == '/' ]; then
+	    f="$f$part"
+	else
+	    f="$f/$part"
+	fi
+    done
+    echo $f
+    return 0 #success
+}
+
+## require: Test if a command is available.
+#  Usage: require CMD
+#  Returns an exit code of 0 if CMD exists or >0 otherwise
+#
+#  Example:
+#  if (require ls); then echo 'ls exists'; fi
+require () 
+{ 
+    _check_help $1 $FUNCNAME
+    type -p "$1" 2>&1 >/dev/null
+}
+
+##############################
+### Init-style Status Messages
+##############################
+# Modified from the Arch Linux initscripts package
+
+# Status message prefixes:
+PREFIX_REG="::"
+PREFIX_HL=" >"
+
+# _usecolor: Setup colors.
+_use_color()
+{
+    if tput setaf 0 &>/dev/null; then
+# foreground colors
+	C_BLACK=$(tput setaf 0)
+	C_RED=$(tput setaf 1)
+	C_GREEN=$(tput setaf 2)
+	C_YELLOW=$(tput setaf 3)
+	C_BLUE=$(tput setaf 4)
+	C_MAGENTA=$(tput setaf 5)
+	C_CYAN=$(tput setaf 6)
+	C_WHITE=$(tput setaf 7)
+# background colors
+	C_BLACK_BG=$(tput setab 0)
+	C_RED_BG=$(tput setab 1)
+	C_GREEN_BG=$(tput setab 2)
+	C_YELLOW_BG=$(tput setab 3)
+	C_BLUE_BG=$(tput setab 4)
+	C_MAGENTA_BG=$(tput setab 5)
+	C_CYAN_BG=$(tput setab 6)
+	C_WHITE_BG=$(tput setab 7)
+# attributes
+	C_BOLD=$(tput bold)
+	C_UNDERLINE=$(tput smul)
+	C_REVERSE=$(tput rev)
+# clear text
+	C_CLEAR=$(tput sgr0)
+    else
+# foreground colors
+	C_BLACK="\033[30m"
+	C_RED="\033[31m"
+	C_GREEN="\033[32m"
+	C_YELLOW="\033[33m"
+	C_BLUE="\033[34m"
+	C_MAGENTA="\033[35m"
+	C_CYAN="\033[36m"
+	C_WHITE="\033[37m"
+# background colors
+	C_BLACK_BG="\033[40m"
+	C_RED_BG="\033[41m"
+	C_GREEN_BG="\033[42m"
+	C_YELLOW_BG="\033[43m"
+	C_BLUE_BG="\033[44m"
+	C_MAGENTA_BG="\033[45m"
+	C_CYAN_BG="\033[46m"
+	C_WHITE_BG="\033[47m"
+# attributes
+	C_BOLD="\033[1m"
+	C_NORMAL="\033[0m"
+	C_UNDERLINE="\033[4m"
+	C_REVERSE="\033[7m"
+# clear text
+	C_CLEAR="\033[m"
+    fi
+# main text
+    C_MAIN=${C_CLEAR}
+# prefix & brackets
+    C_OTHER=${C_MAIN}${C_BOLD}${C_BLUE}
+# busy
+    C_BUSY=${C_CLEAR}${BOLD}${C_YELLOW}
+# warn
+    C_WARN=${C_MAIN}${C_BOLD}${C_CYAN}
+# failed
+    C_FAIL=${C_MAIN}${C_BOLD}${C_RED}
+# completed
+    C_DONE=${C_MAIN}${C_GREEN}
+# backgrounded
+    C_BKGD=${C_MAIN}${C_BOLD}${C_MAGENTA}
+# highlight text 1
+    C_H1=${C_MAIN}${C_RED}
+# highlight text 2
+    C_H2=${C_MAIN}${C_BOLD}${C_CYAN}
+}
+
+# _calc_columns: Calculate column width for messages.
+_calc_columns () 
+{
+    STAT_COL=80
+    if [[ ! -t 1 ]]; then
+	USECOLOR=""
+    elif [[ -t 0 ]]; then
+		# stty will fail when stdin isn't a terminal
+	STAT_COL=$(stty size)
+		# stty gives "rows cols"; strip the rows number, we just want columns
+	STAT_COL=${STAT_COL##* }
+    elif tput cols &>/dev/null; then
+		# is /usr/share/terminfo already mounted, and TERM recognized?
+	STAT_COL=$(tput cols)
+    fi
+    if (( STAT_COL == 0 )); then
+		# if output was 0 (serial console), set default width to 80
+	STAT_COL=80
+	USECOLOR=""
+    fi
+	# we use 13 characters for our own stuff
+    STAT_COL=$(( STAT_COL - 13 ))
+
+    if [[ -t 1 ]]; then
+	SAVE_POSITION="\e[s"
+	RESTORE_POSITION="\e[u"
+	DEL_TEXT="\e[$(( STAT_COL + 4 ))G"
+    else
+	SAVE_POSITION=""
+	RESTORE_POSITION=""
+	DEL_TEXT=""
+    fi
+}
+
+# deltext: position cursor for status messages.
+deltext() 
+{
+    printf "${DEL_TEXT}"
+}
+
+## print_hl: Print highlighted notification.
+#  Usage: print_hl [MSG] [COLOR]
+#  Prints MSG 
+print_hl() 
+{
+    _check_help $1 $FUNCNAME
+    local m="${1}"
+    shift
+    local attr="$(color_string ${@-BLUE})"
+    
+    msg "${C_OTHER}${PREFIX_HL} ${attr}${m}${C_CLEAR} "
+    log "> $m"
+}
+
+## status: Report exit status of last executed command.
+#  Usage: status
+#  If $? is 0 issues status_pass else status_fail. Also returns the
+#  exit code of the last command.
+status()
+{
+    local ret=$?
+    _check_help $1 $FUNCNAME
+#    msg -n "${C_OTHER}${PREFIX_REG} ${C_MAIN}${1}${C_CLEAR} "
+#    log "[STATUS]: $1"
+    [[ $ret -eq 0 ]] && status_pass || status_fail
+    return $ret
+}
+
+## status_append: Appends text to message line.
+#  Usage: status_append
+status_append() 
+{
+    _check_help $1 $FUNCNAME
+    printf "${RESTORE_POSITION}"
+    printf -- "${C_MAIN}${1}${C_CLEAR}"
+    printf "${SAVE_POSITION}"
+    log "[APPEND]: $1"
+}
+
+## status_bkgd: Prints background status.
+#  Usage: status_bkgd
+status_bkgd() 
+{
+    _check_help $1 $FUNCNAME
+    msg -n "${C_OTHER}${PREFIX_REG} ${C_MAIN}${1}${C_CLEAR} "
+    deltext
+    msg -n "   ${C_OTHER}[${C_BKGD}BKGD${C_OTHER}]${C_CLEAR} "
+    log "[BKGD]: $1"
+}
+
+## status_busy: Prints busy status.
+#  Usage: status_busy
+status_busy() 
+{
+    _check_help $1 $FUNCNAME
+    msg -n "${C_OTHER}${PREFIX_REG} ${C_MAIN}${1}${C_CLEAR} "
+    printf "${SAVE_POSITION}"
+    deltext
+    printf "   ${C_OTHER}[${C_BUSY}BUSY${C_OTHER}]${C_CLEAR} "
+    log "[BUSY]: $1"
+}
+
+## status_cmd: Execute command and print exit status.
+#  Usage: status_cmd MSG CMD ARGS
+#  Prints MSG and executes the command CMD with arguments ARGS and
+#  reports exit status.
+status_cmd()
+{
+    _check_help $1 $FUNCNAME
+    status_busy "$1"
+    shift
+    "$@" &>/dev/null
+    local ret=$?
+    deltext
+    [[ $ret -eq 0 ]] && status_pass || status_fail
+    return $ret
+}
+
+## status_die: Exit after printing error message.
+#  Usage: status_die [EXIT_CODE]
+#  Prints fail status and exits with 1 or specified code.
+status_die() 
+{
+    _check_help $1 $FUNCNAME
+    status_fail
+    quit ${1:-1}
+}
+
+## status_fail: Prints fail status.
+#  Usage: status_fail
+status_fail() 
+{
+    _check_help $1 $FUNCNAME
+    deltext
+    msg "   ${C_OTHER}[${C_FAIL}FAIL${C_OTHER}]${C_CLEAR} "
+    log "***[FAIL]***"
+}
+
+## status_pass: Prints pass status.
+#  Usage: status_pass
+status_pass() 
+{
+    _check_help $1 $FUNCNAME
+    deltext
+    msg "   ${C_OTHER}[${C_DONE}PASS${C_OTHER}]${C_CLEAR} "
+    log "[PASS]"
+}
+
+## status_warn: Prints background status.
+#  Usage: status_warn
+status_warn() 
+{
+    _check_help $1 $FUNCNAME
+    msg -n "${C_OTHER}${PREFIX_REG} ${C_BKGD}${1}${C_CLEAR} "
+    deltext
+    msg -n "   ${C_OTHER}[${C_WARN}WARN${C_OTHER}]${C_CLEAR} "
+    log "[WARN]: $1"
+}
+
+################
+### IO Functions
+################
+
+## bail: Exit on error.
+#  Usage: bail MESSAGE
+#  Checks the exit status of the last command and prints MESSAGE and
+#  exits if status is non-zero.  Returns the status as the exit code.
+bail()
+{
+    _check_help $1 $FUNCNAME
+    if [[ $? -gt 0 ]]; then
+	{
+	    [[ -n "$@" ]] && msg "$@"
+	    quit 1
+	}
+    fi
+    return 0
+}
+
+## file2array: Read a text file into an array.
+#  Usage: file2array FILENAME
+#  Prints each line in FILENAME, ignoring blank lines and lines that
+#  begin with a '#'
+#
+#  Example
+#  x=(`file2array foo.txt`)
+#  echo "number of elements:" ${#x[@]}
+#  echo ${x[@]}
+file2array()
+{
+    _check_help $1 $FUNCNAME
+    local f="$1"
+    if is_file $f; then
+	local arr=(`cat "$f"|egrep -v '^$|^#'|tr '\n' ' '`)
+	for e in "${arr[@]}";
+	do
+	    echo $e
+	done	
+    fi
+}
+
+## input: Read input from stdin, pipes or files.
+#  Usage: [PIPE|] input [STDIN] [<FILE]
+#  Returns data from standard input, file redirection or pipe.
+#  
+#  Example:
+#  echo 1 2 3 | input
+#  input 1 2 3
+#  input < file.txt
+#  #Read into an array
+#  in=(`input "$@"`)
+input()
+{
+    #_check_help $1 $FUNCNAME
+    local SAVEIFS=$IFS
+    IFS=$(echo -en "\n\b")
+    local x=( "$@" )
+    if [[ ${#x[@]} -eq 0 ]]; then
+	if is_pipein || ! is_stdin; then
+	    x=(`while read -r l; do echo "$l"; done`)	    
+	fi
+    fi
+    echo "${x[@]}"
+    IFS=$SAVEIFS
+}
+
+inputType()
+{
+    local t='no input'
+    local x=( "$@" )
+    if [[ ${#x[@]} -gt 0 ]]; then
+	t='stdin'
+    elif is_pipein; then
+	t='pipe'
+    elif ! is_stdin; then
+	t='file'
+    fi
+    echo $t
+}
+
+## quit: Exit with error code.
+#  Usage: quit [EXIT CODE]
+#  Replacement for exit. When called from a script exits with status 1
+#  or EXIT CODE if specified.  In interactive mode, sends a SIGINT and
+#  returns 1 or EXIT CODE.
+quit()
+{
+    _check_help $1 $FUNCNAME
+    if is_interactive; then
+	# need to handle pipein differently
+	if is_pipein; then
+	    exit 1
+	else
+	    kill -s SIGINT $$
+	    return ${1:-1}
+	fi
+    else
+	exit ${1:-1}
+    fi
+}
+
+## yesno: Prompt for a reply.
+#  Usage: yesno [MSG]
+#  Prompts for a yes/no reply. If the reply is 'y' returns an exit
+#  code of 0, else returns 1.
+yesno()
+{
+    local m="${1-Reply }"
+    read -p "$m (y/n)?:" -n 1 ans
+    echo
+    [[ $ans == [yY] ]]
+}
+
+#################
+### Logical Tests
+#################
+
+## is_defined: Test if variable exists.
+#  Example:
+#  y='foo'
+#  unset x
+#  is_defined $y && echo 'y is defined'
+#  ! is_defined $x && echo 'x is not defined'
+is_defined()
+{
+    _check_help $1 $FUNCNAME
+    #[[ ${!1-X} == ${!1-Y} ]]
+    [[ ! -z "${1+x}" ]]
+}
+
+## is_dir: Test if directory exists.
+#  Usage: is_dir DIRNAME
+#  Returns an exit code of 0 if DIRNAME exists or 1 otherwise
+#
+# Example
+# if ! (is_dir myfolder); then echo 'folder does not exist'; fi
+is_dir()
+{
+    _check_help $1 $FUNCNAME
+    [[ -d $1 ]]
+}
+
+## is_empty: Test if a string is empty.
+# example 
+# if (is_empty "foo"); then echo 'string is not empty'; fi
+is_empty()
+{
+    _check_help $1 $FUNCNAME
+    [[ -z $1 ]]
+}
+
+## is_file: Test if file exists.
+#  Usage: is_file FILENAME
+#  Returns an exit code of 0 if FILENAME exists or 1 otherwise
+#
+#  Example 
+#  if (is_file myfile.txt); then echo 'file exists'; fi
+is_file()
+{
+    _check_help $1 $FUNCNAME
+    [[ -f $1 ]]
+}
+
+## is_filein: Test if script received a file redirection input.
+#  Usage: is_filein
+#  Returns 0 if a file redirection input was detected, 1 if not
+is_filein()
+{
+    _check_help $1 $FUNCNAME
+    if ! is_pipein && ! isStdin; then
+	return 0
+    else
+	return 1
+    fi
+}
+
+## is_integer: Test if a variable is an integer.
+#  Usage: is_integer VAR
+#
+#  if is_integer -10; then echo 'is an integer'; fi 
+is_integer()
+{
+    _check_help $1 $FUNCNAME
+    [ "$1" -eq "$1" 2>/dev/null ]
+    #[[ $1 -eq $1 ]] 2>/dev/null
+}
+
+## is_interactive: Test if current shell is interactive.
+#  Usage: is_interactive
+#  Returns 0 as an exit code if true, 1 if not.
+is_interactive()
+{
+    [[ $- =~ 'i' ]]
+# alternatively
+#    [[ -n "$PS1" ]]
+}
+
+## is_linux: Test for GNU linux.
+#  Usage: is_linux
+#  Returns 0 for linux and 1 otherwise.
+#  
+#  Example:
+#  is_linux && echo 'go tux!' || echo 'no cigar'
+is_linux()
+{
+    _check_help $1 $FUNCNAME
+    [[ $OSTYPE =~ linux ]]
+}
+
+## is_mac: Test for Mac OS X.
+#  Usage: is_mac
+#  Returns an exit code of 0 for Mac OS and 1 otherwise.
+#  
+#  Example:
+#  is_mac && echo 'im a lemon' || echo 'not a lemon'
+is_mac()
+{
+    _check_help $1 $FUNCNAME
+    [[ $OSTYPE =~ darwin ]]
+}
+
+## is_numeric: Test if a variable is numeric.
+#  Usage: is_numeric VAR
+#  Returns an exit code of 0 if VAR is numeric or 1 if not.
+#  Example:
+#  if (is_numeric 10.5); then echo 'is a number'; fi
+is_numeric()
+{
+    _check_help $1 $FUNCNAME
+    [[ `awk -v var="$1" 'BEGIN{if (var==var+0) print 1}'` -eq 1 ]]
+}
+
+## is_pipein: Test if script received a pipe input.
+#  Usage: is_pipein
+#  Returns 0 if a pipe input was detected, 1 if not
+is_pipein()
+{
+    _check_help $1 $FUNCNAME
+    if is_linux; then
+	local src=$(readlink /proc/self/fd/0)
+	if [[ $src =~ ^pipe: ]]; then
+	    return 0
+	fi
+    elif is_mac; then
+	x=$(stat -f %HT /dev/fd/0)
+	if [[ $x =~ 'Fifo' ]]; then
+	    return 0
+	fi
+    fi
+    return 1
+}
+
+## is_stdin: Test if script received standard input.
+#  Usage: is_stdin
+#  Returns 0 if a standard input was detected, 1 if not
+is_stdin()
+{
+    _check_help $1 $FUNCNAME
+    if is_linux; then
+	local src=$(file `readlink /proc/self/fd/0`)
+	if [[ $src =~ character\ special ]]; then
+	    return 0
+	fi
+    elif is_mac; then
+	x=$(stat -f %HT /dev/fd/0)
+	if [[ $x =~ 'Character' ]]; then
+	    return 0
+	fi
+    fi
+    return 1
+}
+
+##################
+### Math Utilities
+##################
+
+## abs: Absolute value.
+#  Usage: abs N1 [N2] ...
+#  Computes the absolute value of a list of numbers.
+abs()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    if [[ ${#x[@]} -gt 0 ]]; then
+        echo ${x[@]}|awk '{for(i=1;i<=NF;i++){print ($i>=0) ? $i : -$i;}}'
+        return 0
+    else
+        return 1
+    fi
+}
+
+## calc: Evaluate a floating point number expression.
+#  Usage: calc EXPRESSION
+#  Evaluates EXPRESSION using bc. Writes the result of EXPRESSION to
+#  standard out. Sets exit code to 0 if the expression was evaluated
+#  successfully and 1 if not. Refer to the man page of bc to see
+#  available functions.
+#
+#  Example: 
+#  calc 'sqrt(2) / 3.0' 
+#
+#  See also: float_cond
+
+# Modified from: http://www.linuxjournal.com/content/floating-point-math-bash
+function calc()
+{
+    _check_help $1 $FUNCNAME
+    local stat=0
+    local result=0.0
+    local e=(`input "$@"`)
+    if [[ "${#e[@]}" -gt 0 ]]; then
+        result=$(echo "scale=$(get_precision); ${e[@]}" | bc -q -l 2>/dev/null)
+        stat=$?
+        if [[ $stat -eq 0  &&  -z "$result" ]]; then stat=1; fi
+    fi
+    echo $result
+    return $stat
+}
+
+## ceil: Round up to positive infinity.
+#  Usage: ceil N1 [N2] ...
+#  Returns the smallest integer that is not less than N1.
+ceil() { 
+    _check_help $1 $FUNCNAME
+# BC solution
+# See http://stackoverflow.com/questions/2726896/bash-bcmath-functions
+    local x=( `input "$@"` )
+    local BC_CEIL="define ceil(x) { auto savescale; savescale = scale;
+    scale = 0; if (x>0) { if (x%1>0) result = x+(1-(x%1)) else result
+    = x} else result = -1*floor(-1*x); scale = savescale; return
+    result }"
+    local BC_FLOOR="define floor(x) { auto savescale; savescale =
+    scale; scale = 0; if (x>0) result = x-(x%1) else result =
+    -1*ceil(-1*x); scale = savescale; return result }" 
+# An Alternative Python soluton
+#    python -c "import sys; from math import ceil; print
+#    ceil(float(sys.argv[1]))" $e
+
+    for e in "${x[@]}"; do
+	if (is_numeric $e); then
+	    if [[ $e != 0 ]]; then
+		echo -e "scale=$(get_precision)\n"$BC_CEIL$BC_FLOOR"ceil($e)"|bc
+	    else
+		echo 0
+	    fi
+	else
+	    echo "Error $e is not numeric"
+	    return 1
+	fi
+    done
+    return 0
+}
+
+## cv: Coefficient of Variation.
+#  Usage: cv N1 N2 N3 ...
+cv()
+{
+    _check_help $1 $FUNCNAME
+    x=(`input "$@"`)
+    local mu=$(mean "${x[@]}")
+    local sigma=$(std "${x[@]}")
+    local absmu=$(abs "$mu")
+    if ( float_cond "$absmu > 0" ); then
+	calc "100*$sigma/$absmu" 
+    else
+	echo 0
+    fi
+}
+
+## describe: Descriptive Statistics.
+#  Usage: describe N1 N2 ...
+#  Prints a number of descriptive statistics for the list of numbers
+#  [N1,N2...]
+describe()
+{
+    _check_help $1 $FUNCNAME
+    x=(`input "$@"`)
+    echo "N: ${#x[@]}"
+    local mm=(`minmax "${x[@]}"`)
+    local mu=(`mean "${x[@]}"`)
+    local sigma=(`std "${x[@]}"`)    
+    local q=(`prctile '25,50,75' "${x[@]}"`)
+    local iq=$(calc "${q[2]} - ${q[0]}")
+    local absmu=$(abs "${q[1]}")
+    if ( float_cond "$absmu > 0" ); then
+	local robcv=$(calc "100*$iq/$absmu")
+    else
+	local robcv=0
+    fi
+    echo "Min: ${mm[0]}"
+    echo "Max: ${mm[1]}"
+    echo "Mean: $mu"
+    echo "Median: ${q[1]}"
+    echo "Std: $sigma"
+    echo "IQR: $iq"
+    echo "Robust CV%: $robcv"
+    echo "Q25: ${q[0]}"
+    echo "Q75: ${q[2]}"
+}
+
+## float_cond: Evaluate a floating point number conditional expression.
+#  Usage: float_cond CONDITIOAL_EXPRESSION
+#  Evaluates CONDITIONAL_EXPRESSION using bc and sets the
+#  return/status code to zero if the expression is true and one if
+#  it's false.
+#
+#  Example: if (float_cond '2.5^2 > 3.0'); then echo true; fi
+#  See also: float_eval
+
+# Modified from: http://www.linuxjournal.com/content/floating-point-math-bash
+function float_cond()
+{
+    _check_help $1 $FUNCNAME
+    local cond=0
+    local e=(`input "$@"`)
+    if [[ ${#e[@]} -gt 0 ]]; then
+        cond=$(echo "${e[@]}" | bc -q 2>/dev/null)
+        if [[ -z "$cond" ]]; then cond=0; fi
+        if [[ "$cond" != 0  &&  "$cond" != 1 ]]; then cond=0; fi
+    fi
+    local stat=$((cond == 0))
+    return $stat
+}
+
+## floor: Round down value.
+#  Usage: floor N1 [N2] ...
+#  Returns the largest integer that is not greater than N.
+floor() { 
+    _check_help $1 $FUNCNAME
+# a BC solution
+# See http://stackoverflow.com/questions/2726896/bash-bcmath-functions
+    local x=( `input "$@"` )
+    local BC_CEIL="define ceil(x) { auto savescale; savescale = scale;
+    scale = 0; if (x>0) { if (x%1>0) result = x+(1-(x%1)) else result
+    = x} else result = -1*floor(-1*x); scale = savescale; return
+    result }"
+    local BC_FLOOR="define floor(x) { auto savescale; savescale =
+    scale; scale = 0; if (x>0) result = x-(x%1) else result =
+    -1*ceil(-1*x); scale = savescale; return result }" 
+
+    for e in "${x[@]}"; do
+	if (is_numeric $e); then
+	    if [[ $e != 0 ]]; then
+		echo -e "scale=$(get_precision)\n"$BC_CEIL$BC_FLOOR"floor($e)"|bc
+	    else
+		echo 0
+	    fi
+	else
+	    echo "Error $e is not numeric"
+	    return 1
+	fi
+    done
+    return 0
+}
+
+## get_precision: Get the current floating point precision.
+#  Usage: get_precision
+#  Default is 6
+#  See also set_precision 
+get_precision()
+{
+    _check_help $1 $FUNCNAME
+    echo ${BTK_PRECISION}
+}
+
+## iqr: Inter-quartile range.
+#  Usage: iqr N1 N2 ...
+#  Calculates the IQR of the list [N1 N2 ...]
+iqr() {
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    if [[ ${#x[@]} -gt 0 ]] ; then
+	local q=(`echo "${x[@]}" | prctile '25,75'`)
+	calc "${q[1]} - ${q[0]}"
+    fi
+}
+
+## length: Length of a list.
+#  Usage: length L1 L2 L3 ...
+length()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    echo ${#x[@]}
+    return 0
+}
+
+## log2: Base 2 logarithm.
+#  Usage: log2 N1 N2 N3 ...
+log2()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    for e in ${x[@]}; do
+	echo "scale=$(get_precision); l($e)/l(2)"|bc -l
+    done
+}
+
+
+## linspace: Generate linearly spaced vectors.
+#  Usage: linspace A B [N]
+#  
+#  Example:
+#  linspace 1 10 100 
+linspace()
+{
+    _check_help $1 $FUNCNAME
+    local a=${1?not defined}
+    local b=${2?not defined}
+    local n=`floor ${3-100}`
+    if [[ $n -ge 2 ]]; then
+	awk -v a=$a -v b=$b -v n=$n 'BEGIN{step=(b-a)/(n-1); for(i=0;i<=(n-2);i++) print a+i*step; print b;}'
+    else
+	echo $b
+    fi
+    return 0
+}
+
+## mean: Compute the average of a list of numbers.
+#  Usage: mean N1 N2 N3 ...
+#  Returns the mean of the list. The precision of the result is
+#  determined by set_precision.
+#  See also: set_precision
+mean()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    echo "scale=$(get_precision);" $(sum "${x[@]}")/${#x[@]}|bc
+}
+
+## max: Calculate the maximum of a list of numbers.
+max()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    if [[ ${#x[@]} -gt 0 ]]; then
+	local res=(`echo "${x[@]}" | minmax`)
+	echo "${res[1]}"
+	return 0
+    else
+	return 1
+    fi
+}
+
+## median: Median of a sample.
+#  Usage: median N1 N2 ...
+#  Calculates the median of the list [N1 N2 ...]
+median() {
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    if [[ ${#x[@]} -gt 0 ]] ; then
+	echo "${x[@]}" | prctile 50
+    fi
+}
+
+## min: Calculate the minimum of a list of numbers.
+min()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    if [[ ${#x[@]} -gt 0 ]]; then
+	local res=(`echo "${x[@]}" | minmax`)
+	echo "${res[0]}" 
+	return 0
+    else
+	return 1
+    fi
+}
+
+## minmax: Calculate the minimum and maximum of a list of numbers.
+minmax()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    if [[ ${#x[@]} -gt 0 ]]; then
+	echo ${x[@]}|awk '{min=$1; max=$1; for(i=2;i<=NF;i++){if ($i>max) max=$i; \
+else if ($i<min) min=$i;}}; END{print min"\n"max}'
+	return 0
+    else
+	return 1
+    fi
+}
+
+## pi: Value of PI.
+#  Usage: pi
+#  Prints the value of PI. The precision is determined by set_precision.
+#
+#  See also set_precision
+pi()
+{
+    _check_help $1 $FUNCNAME
+    echo "scale=$(get_precision); 4*a(1)"| bc -l 
+}
+
+## plus: Add a constant to the input.
+#  Usage: plus C N1 N2 N3 ...
+#  Adds C to each number in the list N1, N2 ...
+#  Example:
+#  echo {1..5} | plus 2
+plus()
+{
+    _check_help $1 $FUNCNAME
+    local val=${1-0}
+    shift
+    local x=( `input "$@"` )
+    echo "${x[@]}"|awk -v v=$val '{for(i=1;i<=NF;i++){print v+$i;}}'
+    return 0
+}
+
+## pow2: Base 2 power of numbers.
+#  Usage: pow2 N1 N2 N3 ...
+#  Calculates 2^N for a list of numbers.
+pow2()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    for e in ${x[@]}; do
+	if (is_integer $e); then
+	    echo "scale=$(get_precision); 2^$e"|bc
+	else
+	    echo "scale=$(get_precision); e($e*l(2))"|bc -l
+	fi
+    done
+}
+
+## prctile: Percentile of a sample.
+#  Usage: prctile P N1 N2 ...
+#  Calculates the Pth percentile of the list [N1 N2 ...]
+#         prctile "P1,P2,.." N1 N2 ...
+#  Reports P1, P2,... th percentiles of the data
+#
+#  Example:
+#  randn 1000|prctile '25,50,75' 
+prctile()
+{
+    _check_help $1 $FUNCNAME
+    local p=${1}
+    [[ -z $p ]] && msg_quit "Must specify P"
+    shift
+    local x=( `input "$@"` )
+    if [[ ${#x[@]} -gt 0 ]] ; then
+echo "${x[@]}" | awk -v P=$p 'function ptile(arr, N, P){if (P==50) {if (N%2==0) print 0.5*(arr[N/2]+arr[N/2+1]); else print arr[(N+1)/2];} \
+else if (P==0) print arr[1]; else if (P==100) print arr[N]; \
+else {R=P*(N+1)/100; l=int(R); r=N-int(N-R); ddl=R-l; print arr[l]+ddl*(arr[r]-arr[l])}}{for (i=1;i<=NF;i++){ arr[i]=$i; }} \
+END{asort(arr); \
+np=split(P,parr,",");\
+for (i=1;i<=np;i++) if (parr[i]>=0 && parr[i] <=100) ptile(arr, NF, parr[i]); else print "Error p not in range [0,100]"
+}'
+    fi
+}
+
+## rand: Generate random numbers.
+#  Usage: rand [N]
+#  Generates one random number in the range [0,1]. Generates N value
+#  if specified.
+rand()
+{
+   _check_help $1 $FUNCNAME
+   local n=${1:-1}
+   if require awk; then
+       local x=(`awk -v N=$n 'BEGIN{srand(); for (i=0;i<N;i++){print rand();}}'`)
+   else
+       # polling /dev/urandom is inefficient, and should not be used
+       # for long sequences
+       local i=0
+       while [[ $i -le $n ]];
+       do
+	   x[$i]=`echo "scale=$(get_precision);"$(od -N3 -An -i /dev/urandom)'/16777216'|bc`
+           ((i++))
+       done
+   fi
+   for e in "${x[@]}"
+   do
+       echo "$e"
+   done
+}
+
+## randn: Normally distributed random numbers.
+#  Usage: randn [N]
+#  Generates one or N  normal random numbers.
+
+# Uses Box-Muller transformation
+# Reference: Numerical recipes in C: Normal (Gaussian) Deviates
+randn()
+{
+   _check_help $1 $FUNCNAME
+   local n=${1:-1}
+   awk -v N=$n 'BEGIN{srand(); for (i=1;i<=int((N+1)/2);i++){\
+do { v1=2*rand()-1; v2=2*rand()-1; rsq=v1*v1+v2*v2;} while (rsq >=1 || rsq ==0);\
+ fac=sqrt(-2.0*log(rsq)/rsq); \
+if (i*2<=N) printf "%.6f\n%.6f\n",v1*fac,v2*fac; else printf "%.6f\n", v1*fac; } }'
+
+}
+
+## rem: Remainder after division.
+#  Usage: rem D N1 ...
+#  Prints remainder of N1 after division by D
+rem()
+{
+    _check_help $1 $FUNCNAME
+    local d=${1-1}
+    shift
+    local x=( `input "$@"` )
+    for e in "${x[@]}"
+    do
+      if (is_numeric $e); then
+	  calc "scale=0;$e % 2"
+      else
+	  echo "Error $e is not numeric"
+	  quit 1
+      fi
+    done
+    return 0
+}
+
+## robcv: Robust Coefficient of Variation.
+#  Usage: robcv N1 N2 N3 ...
+robcv()
+{
+    _check_help $1 $FUNCNAME
+    x=(`input "$@"`)
+    local q=(`prctile '25,50,75' "${x[@]}"`)
+    local iq=$(calc "${q[2]} - ${q[0]}")
+    local absmu=$(abs "${q[1]}")
+    if ( float_cond "$absmu > 0" ); then
+	calc "100*$iq/$absmu" 
+    else
+	echo 0
+    fi
+}
+
+## round: Round to nearest integer.
+#  Usage: round N1 [N2] ...
+round()
+{
+    _check_help $1 $FUNCNAME
+    BC_ROUND="define round(x) { scale=0; if (x>0) return (x+0.5)/1
+    else return (x-0.5)/1 }"
+    local x=( `input "$@"` )
+    for e in "${x[@]}"
+    do
+      if (is_numeric $e); then
+	 echo $BC_ROUND"round($e)"|bc
+      else
+	  echo "Error $e is not numeric"
+	  quit 1
+      fi
+    done
+    return 0
+}
+
+## roundto: Round to specified precision.
+#  Usage: roundto N1 N2 ...
+#  Rounds the input to the precision specified by set_precision.
+#  See also: set_precision, get_precision
+roundto()
+{
+   _check_help $1 $FUNCNAME
+   local x=( `input "$@"` )
+   for e in "${x[@]}"
+   do
+       printf "%.$(get_precision)f\n" $e
+   done
+}
+
+## set_precision: Set floating point precision.
+#  Usage: set_precision integer
+#  If called without and argument defaults to 6.
+#  See also get_precision
+set_precision()
+{
+    _check_help $1 $FUNCNAME
+    BTK_PRECISION=${1:-6}
+}
+
+## sign: Signum function.
+#  Usage: sign N1 [N2] ...
+#  Returns 1 if the number is positive, -1 if its negative and 0 if it
+#  is equal to zero.
+sign()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    echo "${x[@]}" | awk '{for (i=1;i<=NF;i++) \
+{if ($i==0) print 0; else print ($i>0)?1:-1;}}'
+    return 0
+}
+
+## sqrt: Square root of non-negative numbers.
+#  Usage: sqrt N1 [N2] ...
+sqrt()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    for e in ${x[@]}; do
+        if (float_cond "$e>=0"); then
+            echo "scale=$(get_precision); sqrt($e)"|bc
+        else
+	    echo "$e is negative"
+	    return 1
+        fi
+    done
+    return 0
+}
+
+## std: Standard deviation.
+#  Usage: std X1 X2 ...
+std()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    if [[ ${#x[@]} -gt 1 ]]; then
+	local mu=$(mean "${x[@]}")
+	local sigma
+	sigma=$(echo "${x[@]}" | awk -v mean=$mu '
+{for (i=1;i<=NF;i++) {sum2+=($i - mean)*($i - mean);}} 
+END{print sqrt(sum2/(NF - 1))}')
+	echo $sigma
+    else
+	echo 0
+    fi
+}
+
+## sum: Calculate the sum of elements in a list.
+#  Usage: sum N1 N2 N3 ...
+#  Prints the sum of numbers in the list.
+#  Example:
+#  x={1..5}
+#  sum ${x[@]}
+sum()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    # BC solution, arbitrary precision
+    local s=$(echo "${x[@]}"|tr ' ' '+'|bc)
+    printf "%.$(get_precision)f\n" $s
+    # Awk Solution, precision=6
+    # echo "${x[@]}"|awk '{for(i=1;i<=NF;i++){s+=$i}; print s}'
+    # Kahan compensated summation avoids precision errors
+    # http://en.wikipedia.org/wiki/Compensated_summation
+    # echo "${x[@]}"|awk '{s=$1; c=0; for(i=2;i<=NF;i++){y=$i-c; t=s+y; c=(t-s)-y; s=t}; print s}'
+    return 0
+}
+
+## times: Scale input by a constant.
+#  Usage: times SCALE N1 N2 N3 ...
+#  Multiples each number in the list N1, N2 ... by SCALE.
+#  Example:
+#  echo {1..5} | times 2
+times()
+{
+    _check_help $1 $FUNCNAME
+    local scale=${1-1}
+    shift
+    local x=( `input "$@"` )
+    echo "${x[@]}"|awk -v sc=$scale '{for(i=1;i<=NF;i++){print sc*$i;}}'
+    return 0
+}
+
+## var: Variance.
+#  Usage: var X1 X2 ...
+var()
+{
+    _check_help $1 $FUNCNAME
+    local x=( `input "$@"` )
+    local mu=$(mean "${x[@]}")
+    local v
+    v=$(echo "${x[@]}" | awk -v mean=$mu ' 
+{for (i=1;i<=NF;i++) {sum2+=+($i - mean)*($i - mean);}} 
+END{print sum2/(NF - 1)}')
+    echo $v
+}
+
+########################
+### Messages and Logging
+########################
+
+# _getAttrValue: Get terminal attribute values. 
+# private function
+_getAttrValue()
+{
+    _check_help $1 $FUNCNAME
+    local val=''
+    local stat=0
+    case $(upper "$1") in
+	BLACK) val=${C_BLACK};;
+	RED) val=${C_RED};;
+	GREEN) val=${C_GREEN};;
+	YELLOW) val=${C_YELLOW};;
+	BLUE) val=${C_BLUE};;
+	MAGENTA) val=${C_MAGENTA};;
+	CYAN) val=${C_CYAN};;
+	WHITE) val=${C_WHITE};;
+	BLACKBG) val=${C_BLACK_BG};;
+	REDBG) val=${C_RED_BG};;
+	GREENBG) val=${C_GREEN_BG};;
+	YELLOWBG) val=${C_YELLOW_BG};;
+	BLUEBG) val=${C_BLUE_BG};;
+	MAGENTABG) val=${C_MAGENTA_BG};;
+	CYANBG) val=${C_CYAN_BG};;
+	WHITEBG) val=${C_WHITE_BG};;
+	DEFAULT) val=${C_CLEAR};;
+	RESET) val=${C_CLEAR};;
+	NORMAL) val=${C_NORMAL};;
+	BOLD) val=${C_BOLD};;
+	UNDERLINE) val=${C_UNDERLINE};;
+	REVERSE) val=${C_REVERSE};;
+	*) stat=1;;
+    esac
+    echo $val
+    return $stat
+}
+
+## color: Set terminal color and attributes.
+#  Usage: color FGCOLOR [ATTR1] ...
+#  Set terminal foreground color to FGCOLOR and sets optional
+#  attributes ATTR. Colors can be one of [red, green, yellow, blue,
+#  magenta, cyan, white, black]. ATTR can be [bold, underline,
+#  reverse]. Calling color without arguments or setting COLOR to
+#  'reset' sets the color to the default.
+#
+#  Example:
+#  color red
+#  color red underline reverse
+#
+#  See also: color_string
+color()
+{
+    _check_help $1 $FUNCNAME
+    local fgcol="$1"
+    fgcol=${fgcol:-RESET}
+    bgcol=${bgcol:-RESET}
+    shift $(min 1 $#)
+    local fgval=$(color_string $fgcol)
+
+    if [[ $# -gt 0 ]]; then
+	local effectval="$(color_string "$@")"
+	if [[ -n $effectval ]]; then
+	    echo -ne "$effectval"
+	fi
+    fi
+
+    if [[ -n $fgval ]]; then 
+	echo -ne $fgval
+    fi
+}
+
+## color_string: Get ANSI escape string for terminal color and attributes.
+#  Usage: color_string FGCOLOR [ATTR1] ...
+#  Returns the ANSI escape sequence for the specified color and attributes.
+#  Calling color_string without arguments or setting COLOR to
+#  'reset' returns the reset string. 
+#
+#  Example:
+#  red=$(color_string red)
+#  reset=$(color_string)
+#  echo -e "${red}Foo${reset}"
+#
+#  See also: color
+color_string()
+{
+    _check_help $1 $FUNCNAME
+    local attr
+    [[ $# -gt 0 ]] && attr=("$@") || attr=('reset')
+    local attrstr
+    for e in "${attr[@]}"; do
+	attrstr+="$(_getAttrValue $e)"
+    done
+    echo "${attrstr[@]}"
+}
+
+## log: Write a message to a logfile.
+#  Usage log MSG
+#  Writes MSG to the logfile specified by log_on. Note will fail
+#  silently if logging has not been enabled.
+#  See also: log_on, log_off, msg
+log()
+{
+    _check_help $1 $FUNCNAME
+    if [[ $BTK_ENABLE_LOG -eq 1 ]]; then
+	local m="$@"
+	local ts=`date +"$BTK_LOG_DATE_FORMAT"`
+	if [[ -n $m ]]; then
+	    echo "$ts $m" >> "$BTK_LOG_FILE"
+	else
+	    echo "$ts -- Empty message --" >> "$BTK_LOG_FILE"
+	fi
+    fi
+}
+
+## log_cat: Display contents of the log file.
+#  Usage: log_cat
+log_cat()
+{
+    _check_help $1 $FUNCNAME
+    if [[ -f $BTK_LOG_FILE ]]; then
+	cat "$BTK_LOG_FILE"
+    else
+	echo "Log file not found."
+    fi
+}
+
+## log_name: Displays path of the current logfile.
+#  Usage: log_name
+log_name()
+{
+    _check_help $1 $FUNCNAME
+    if [[ $BTK_ENABLE_LOG -eq 1 ]]; then
+	echo "$BTK_LOG_FILE"
+    else
+        echo "Logging not enabled"
+    fi
+}
+
+## log_off: Stop logging to file.
+#  Usage: log_off [MSG]
+#  Write End log message to log and stops logging. 
+#  See also: log_on
+log_off()
+{
+    _check_help $1 $FUNCNAME
+    local m="${@:---- End log ---}"
+    log "$m"
+    log_suspend
+}
+
+## log_on: Begin logging to file.
+#  Usage: log_on LOGFILE
+#  Turns on logging and specifies the logfile. All subsequent calls to
+#  msg or log will be written to the logfile.
+#  See also: log_off, log
+log_on()
+{
+    _check_help $1 $FUNCNAME
+    if [[ -n $1 ]]; then
+	BTK_LOG_FILE="$1"
+	touch "$BTK_LOG_FILE"
+	BTK_ENABLE_LOG=1
+	log '--- Begin log ---'
+    else
+	echo "log_on: must specify logfile"
+    fi
+}
+
+## log_reset: Resets the content of the current logfile.
+#  Usage: log_reset
+log_reset()
+{
+    _check_help $1 $FUNCNAME
+    if [[ $BTK_ENABLE_LOG -eq 1 ]]; then
+	rm -f "$BTK_LOG_FILE"
+	log_on "$BTK_LOG_FILE"
+    else
+        echo "Logging not enabled"
+    fi
+}
+
+## log_resume: Resume logging to file.
+#  Usage: log_resume
+#  See also: log_suspend
+log_resume()
+{
+    _check_help $1 $FUNCNAME
+    if [[ $BTK_ENABLE_LOG -eq 0 && -f $BTK_LOG_FILE ]]; then
+	log_on "$BTK_LOG_FILE"
+    elif [[ ! -f $BTK_LOG_FILE ]]; then
+	echo 'Logfile does not exist, cannot resume.'
+    fi
+}
+
+## log_suspend: Temporarily stop logging to file.
+#  Usage: log_suspend
+#  See also: log_resume
+log_suspend()
+{
+    _check_help $1 $FUNCNAME
+    BTK_ENABLE_LOG=0
+}
+
+## log_tail: Display the last part of the logfile.
+#  Usage: log_tail [N]
+#  Prints the last 10 lines of the log file. If N is specified prints
+#  the last N lines.
+
+log_tail()
+{
+    _check_help $1 $FUNCNAME
+    local n=${1:-10}
+    if [[ $BTK_ENABLE_LOG -eq 1 ]]; then
+        tail -"$n" "$BTK_LOG_FILE"
+    else
+        echo "Logging not enabled"
+    fi
+}
+
+## msg: Print and log messages.
+#  Usage: msg TEXT [FGCOLOR] [ATTR]
+#  Displays TEXT using optional attributes FGCOLOR and ATTR. Also
+#  writes the message to logfile if logging is on.
+#
+#  Example:
+#  msg 'This is an alert' red bold
+#
+#  See also: color, log
+msg()
+{
+    _check_help $1 $FUNCNAME
+    local m="$1"
+    local newl=1
+    if [[ $m == '-n' ]]; then
+	newl=0
+	shift
+	m="$1"
+    fi
+    shift
+    color "$@"
+    [[ $newl -eq 1 ]] && echo -e "$m" || echo -ne "$m"
+    color reset
+}
+
+## msg_help: Print message, help and quit.
+#  Usage: msg_quit [MSG]
+#  Prints message MSG is specified and also the variable USAGE_HELP if
+#  defined. Exits with error code 1.
+msg_help()
+{
+    _check_help $1 $FUNCNAME
+    [[ $# -gt 0 ]] && msg "$@" red bold
+    is_defined "$USAGE_HELP" && msg "$USAGE_HELP"
+    quit 1
+}
+
+## msg_quit: Print message and quit.
+#  Usage: msg_quit MSG
+#  Prints MSG and exits with error code 1
+msg_quit()
+{
+    _check_help $1 $FUNCNAME
+    msg "$@" red bold
+    quit 1
+}
+
+##################
+### Plot Utilities
+##################
+
+#check if x11 is available
+_check_x11()
+{
+    if [[ $BTK_X11_ENABLED == 1 ]]; then
+	return 0
+    else
+#	xset -q 2&>/dev/null && BTK_X11_ENABLED=1 || BTK_X11_ENABLED=0
+	[[ -z $DISPLAY ]] && BTK_X11_ENABLED=0 || BTK_X11_ENABLED=1
+    fi
+    [[ $BTK_X11_ENABLED == 1 ]]
+}
+
+#check if gnuplot is available
+_check_gnuplot()
+{
+    if (require 'gnuplot'); then
+	return 0
+    else
+	msg_quit 'Gnuplot required' 1
+    fi
+}
+
+_set_gnuplot_term()
+{
+    _check_x11
+    if [[ $? -eq 0 ]]; then
+	BTK_GPL_TERM='x11'
+    else
+	BTK_GPL_TERM='dumb'
+    fi
+}
+
+## cdfplot: Display an empirical cumulative distribution function.
+#  Usage: PIPE | cdfplot [options]
+#
+#  Options:
+#  -d <string> Terminal device. Default is x11 or dumb for non-X
+#     terminals. Too see a list of available terminals type:
+#     echo 'set term'|gnuplot
+#  -g <0/1> Display grid. Default is 1
+#  -o <string> Output filename. Note if a filename is specified, the
+#     terminal is set to PNG unless a different terminal is specified
+#     using -d
+#  -t <string> Title
+#  -w <int> Line width
+#  -x <string> Xlabel
+#  -y <string> Ylabel
+cdfplot()
+{
+    _check_help $1 $FUNCNAME
+    _check_gnuplot
+    local lw='2'
+    local device=${BTK_GPL_TERM}
+    local t='Empirical CDF'
+    local xl='x'
+    local yl='F(x)'
+    local out=''
+    local ps='steps'
+    local gridon=1
+    while getopts 'd:g:o:t:s:x:y:w:' opt; do
+	case "$opt" in
+	    d) device="$OPTARG";;
+	    g) [[ $OPTARG == [01] ]] && gridon="${OPTARG}";;
+	    o) out="$OPTARG";;
+	    s) ps="$OPTARG";;
+	    t) t="$OPTARG";;
+	    x) xl="$OPTARG";;
+	    y) yl="$OPTARG";;	    
+	    w) lw=$(floor "$OPTARG");;
+	esac
+    done
+    local x=(`input`)
+    local datfile=$(mktemp)
+    if [[ ${#x[@]} -gt 1 ]]; then
+	echo "${x[@]}" |tr ' ' '\n'|sort -n|awk -vN="${#x[@]}" 'BEGIN{y=0;}{if (NR==1) x=$1; else if ($1-x>0) {print  y/N"\t"x; y=NR; x=$1}}END{printf "1\t"x"\n"}' > $datfile
+	(
+	    echo "set term $device"
+	    if [[ -n $out ]];then
+		if [[ $device = ${BTK_GPL_TERM} ]]; then
+		    echo "set term png"
+		fi
+		echo "set output '$out'"
+	    fi
+	    echo "unset key"
+	    echo "set title '$t n=${#x[@]}'"
+	    echo "set xlabel '$xl'"
+	    echo "set ylabel '$yl'"
+	    echo "set ytics 0,0.1" 
+	    [[ $gridon -eq 1 ]] && echo "set grid"
+	    echo "plot '$datfile' u 2:1 w $ps lw $lw lt 3"
+	)|gnuplot -persist
+	rm $datfile
+    fi
+}
+
+## line: Display a line plot.
+#  Usage: PIPE|line [options]
+#
+#  Options:
+#  -d <string> Terminal device. Default x11. Too see a list of
+#     available terminals type:
+#     echo 'set term'|gnuplot
+#  -g <0/1> Display grid. Default is 1
+#  -o <string> output filename
+#  -t <string> plot title
+#  -s <string> plot style [lines, points, linespoints]
+#  -w <int> Line width, default is 2
+#  -x <string> xlabel
+#  -y <string> ylabel
+line()
+{
+    _check_help $1 $FUNCNAME
+    _check_gnuplot
+    local lw='2'
+    local device=${BTK_GPL_TERM}
+    local t=''
+    local xl=''
+    local yl=''
+    local out=''
+    local ps='linespoints'
+    local gridon=1
+    while getopts 'd:g:o:t:s:x:y:w:' opt; do
+	case "$opt" in
+	    d) device="$OPTARG";;
+	    g) [[ $OPTARG == [01] ]] && gridon="${OPTARG}";;
+	    o) out="$OPTARG";;
+	    s) ps="$OPTARG";;
+	    t) t="$OPTARG";;
+	    x) xl="$OPTARG";;
+	    y) yl="$OPTARG";;	    
+	    w) lw=$(floor "$OPTARG");;
+	esac
+    done
+    local x=(`input`)
+    local datfile=$(mktemp)
+    if [[ ${#x[@]} -gt 0 ]]; then
+	echo "${x[@]}" | tr ' ' '\n'|nl > $datfile
+	(
+	    echo "set term $device"
+	    [[ -n $out ]] && echo "set output '$out'"
+	    echo "unset key"
+	    echo "set title '$title n=${#x[@]}'"
+	    echo "set xlabel '$xl'"
+	    echo "set ylabel '$yl'"
+	    [[ $gridon -eq 1 ]] && echo "set grid"
+	    echo "plot '$datfile' u 2 w $ps lw $lw lt 3"
+	)|gnuplot -persist
+	rm $datfile
+    fi
+}
+
+## hist: Display a histogram.
+#  Usage: PIPE | hist [options]
+#
+#  Options:
+#  -d <string> terminal device. Default x11. To see a list of
+#     available terminals type:
+#     echo 'set term'|gnuplot
+#  -g <0/1> Display grid. Default is 1
+#  -n <int> number of bins. Default is 10
+#  -o <string> Output filename
+#  -t <string> Plot title
+#  -x <string> Xlabel
+#  -y <string> Ylabel
+
+# Known Bugs: Breaks with identical value inputs
+hist()
+{
+    _check_help $1 $FUNCNAME
+    _check_gnuplot
+    local n=10
+    local title=''
+    local xlabel=''
+    local ylabel=''
+    local device=${BTK_GPL_TERM}
+    local out=''
+    local gridon=1
+    while getopts 'd:n:t:x:y:o:' opt; do
+	case "$opt" in
+	    d) device="$OPTARG";;
+	    g) [[ $OPTARG == [01] ]] && gridon="${OPTARG}";;
+	    n) n="$OPTARG";;
+	    t) title="$OPTARG";;
+	    x) xlabel="$OPTARG";;
+	    y) ylabel="$OPTARG";;
+	    o) out="$OPTARG";;
+	esac
+    done
+    local x=(`input`)
+    local datfile=$(mktemp)
+    if [[ ${#x[@]} -gt 1 ]]; then
+	#compute bin_width
+	local lh=(`minmax "${x[@]}"`) 
+	local bw=$(calc "(${lh[1]} - ${lh[0]}) / $n")
+	echo "${x[@]}" | tr ' ' '\n' > $datfile
+	(
+	    echo "set term $device"
+	    [[ -n $out ]] && echo "set output '$out'"
+	    echo "bin_width = ${bw};"
+	    echo "bin_number(x) = floor(x/bin_width)"
+	    echo "rounded(x) = bin_width * ( bin_number(x) + 0.5 )"
+	    echo "UNITY = 1"
+	    echo "unset key"
+	    echo "set autoscale x"
+	    echo "set title '$title n=${#x[@]}'"
+	    echo "set xlabel '$xlabel'"
+	    echo "set ylabel '$ylabel'"
+	    [[ $gridon -eq 1 ]] && echo "set grid"
+	    echo "plot '$datfile' u (rounded(\$1)):(UNITY) smooth frequency w boxes lw 3 lt 3 fs solid 0.5"
+#	    echo "plot \"\" u 1:(1/300) smooth cumulative t 'cummulative'"
+	)|gnuplot -persist
+	rm $datfile
+    fi
+}
+
+####################
+### String Utilities
+####################
+
+## capitalize: Convert first letter of string to uppercase.
+capitalize()
+{
+    _check_help $1 $FUNCNAME
+    local s="$(input "$@")"
+    local f=`upper "${s:0:1}"`
+    local r=`lower "${s:1}"`
+    echo "$f$r"
+}
+
+## colorize: Highlight search terms.
+#  Usage: PIPE | colorize TERM1 ...
+#  Highlights each term in the input data.
+colorize()
+{
+    _check_help $1 $FUNCNAME
+    local terms=( "$@" )
+    local col='\033[1;31m'
+    local reset='\033[0m'
+    if is_pipein; then
+	while read l; do
+	    for t in "${terms[@]}";
+	    do
+		l=`echo -e "${l//$t/${col}$t${reset}}"`
+	    done
+	    echo "$l"
+	done
+    fi
+}
+
+## decap: Remove header(s).
+#  Usage: cat file | decap [ -n num ] [ -s array ]
+#  Remove the first N elements in the list [A,B,C...] 
+
+decap()
+{
+    _check_help $1 $FUNCNAME
+    local n=1
+    local s=(`input`)
+    while getopts 'n:s:' opt; do
+	case "$opt" in
+	    n) n="$OPTARG";;
+	    s) s="$OPTARG";;
+	esac
+    done
+    if [[ $n -gt 0 ]]; then
+	echo "${s[@]}"|tr ' ' '\n'|sed "1,${n}d"
+    else
+	echo "${s[@]}"|tr ' ' '\n'
+    fi
+}
+
+## duplicates: Find duplicates in a list.
+#  Usage: duplicates A B C ...
+#  Prints duplicate entries in the list (A,B,C...)
+duplicates()
+{
+    _check_help $1 $FUNCNAME
+    echo "$(input $@)" | tr ' ' '\n'|awk '($0 in a);!($0 in a) {a[$0]};'
+    # echo "$(input $@)" | tr ' ' '\n'| awk 'a[$0]++'
+}
+
+## lower: Convert string to lowercase.
+lower()
+{
+    _check_help $1 $FUNCNAME
+    echo "$(input $@)" | tr '[:upper:]' '[:lower:]'
+}
+
+## str_deblank: Remove trailing spaces from the end of a string.
+str_deblank()
+{
+    _check_help $1 $FUNCNAME
+    echo "$(input $@)" | sed 's/ *$//'
+}
+
+## str_rep: Repeat a string.
+#  Usage: str_rep STR NREP [MAXLEN]
+#  Repeats the string STR NREP times. If MAXLEN is specified truncates
+#  the output at a maximum length.
+str_rep()
+{
+    _check_help $1 $FUNCNAME
+    local s="$1"
+    local n="${2:-0}"
+    local maxlen="$3"
+    local x=''
+    local i=0
+    while [[ $i -le $n ]]
+    do
+	x+="$s"
+	((i++))
+    done
+    if [[ -z $maxlen ]]; then
+	echo "$x"
+    else
+	maxlen=$(min ${#x} $maxlen)
+	echo "${x:0:$maxlen}"
+    fi
+}
+
+## str_tok: Split string into parts separated by a delimiter.
+#  Usage: str_tok -s STR -t DLM
+#         PIPE | str_tok -t DLM
+#  Splits STR into parts based on the delimiter DLM. The delimiter
+#  defaults to ' ' if not specified
+#
+#  Example
+#  x=(`str_tok -s 'foo:bar:abc' -t ':'`)
+#  echo "number of parts:" ${#x[@]}
+#  echo ${x[@]}
+str_tok()
+{
+    _check_help $1 $FUNCNAME
+    local tok=' '
+    local s=(`input`)
+    while getopts 't:s:' opt; do
+	case "$opt" in
+	    t) tok="$OPTARG";;
+	    s) s="$OPTARG";;
+	esac
+    done
+    echo "$s"| tr "$tok" '\n'
+}
+
+## str_trim: Remove leading and trailing spaces from a string.
+str_trim()
+{
+    _check_help $1 $FUNCNAME
+    echo "$(input $@)" | sed 's/^ *//; s/ *$//'
+}
+
+## unique: Remove duplicates from a list.
+#  Usage: unique A B C ...
+#  Prints unique elements from a list (A,B,C...)
+unique()
+{
+    _check_help $1 $FUNCNAME
+    echo "$(input $@)" | tr ' ' '\n'|awk '!($0 in a) {a[$0]; print};'
+    # echo "$(input $@)" | tr ' ' '\n'| awk '!a[$0]++'  
+}
+
+## upper: Convert string to uppercase.
+upper()
+{
+    _check_help $1 $FUNCNAME 
+    echo "$(input $@)" | tr '[:lower:]' '[:upper:]'
+}
+
+######
+# Main
+######
+checkDep()
+{
+    local deps=( "$@" )
+    for d in "${deps[@]}";
+    do
+      require $d
+      if [ ! $? -eq 0 ]; then
+	  echo "Warning: $d is missing. BashTk may not function
+	  properly without it."
+      fi
+    done
+}
+
+# Check if dependencies exist
+checkDep 'bc' 'awk' 'readlink' 'stat' 'gnuplot'
+# set gnuplot terminal
+_set_gnuplot_term
+
+# initialize colors and width for init messages
+[[ $BTK_USECOLOR -eq 1 ]] && _use_color
+_calc_columns
+
+if [  "$BASH_SOURCE" != "$0" ]; then
+    # library was sourced
+    if [ "$1" != '-q' ]; then
+	echo "Using BashTk v$BTK_VERSION"
+    fi
+else
+    # Called directly
+    if [ "$1" != '-q' ]; then
+	msg_help
+    fi
+fi
+

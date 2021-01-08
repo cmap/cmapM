@@ -1,0 +1,32 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_devgutcpslookup_tool
+   summary: Lookup percentile scores for a given set of normalized scores using pre-computed ns2ps distributions
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+   ## Examples
+
+   - Run algorithm on a dataset
+
+    #name# --ds 'ns_pert.gctx' --ns2ps 'ns2ps_pert.gctx'
+
+    "
+-
+   name: --ds
+   default: ''
+   help: Normalized connectivity scores in GCT(x) format.
+
+-
+   name: --ns2ps
+   default: ''
+   help: Normalized connectivity scores to percentile transform matrix 
+         in GCT(x) format.
+
+-
+   name: --cid
+   default: ''
+   help: A subset of column ids corresponding to ds in GRP format. If 
+         provided, percentile scores are only computed for the subset of 
+         columns

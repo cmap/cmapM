@@ -1,0 +1,39 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_metrics_tool
+   summary: Compute signature strength metrics on a dataset
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+   ## Examples
+
+   - Run algorithm on a dataset
+
+    #name# --ds_brew 'raw_data.gctx'
+
+    "
+-
+   name: --ds_brew
+   default: ''
+   help: Brew-level signatures. If no '--sig_id' specified, column ids are used as sig ids.
+
+-
+   name: --ds_roast
+   default: ''
+   help: Roast-level signatures
+
+-
+   name: --sig_id
+   default: ''
+   help: Signature ids
+
+-
+   name: --inst_id
+   default: ''
+   help: Instance ids
+
+-
+   name: --rid
+   default: ''
+   help: Row/feature ids

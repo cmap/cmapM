@@ -1,5 +1,4 @@
-Handling common data formats used in CMapM
-==
+# Handling common data formats used in CMapM
 
 |Data Type| File Format(s) | Description|
 |--|--|--|

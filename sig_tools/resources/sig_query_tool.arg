@@ -1,0 +1,226 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_query_tool
+   summary: Run CMap queries.
+   # Note quotes to allow special chars
+   description: "The query tool examines the similarities between user 
+          defined genesets and the signatures in the CMap database. 
+
+          Both internal and external queries are supported. Internal 
+          queries are genesets of perturbagens that already exist in the 
+          CMap database. External queries are based on user-defined genesets 
+          or rank lists.
+
+          Several measures of similarities are supported. These include 
+          correlation metrics: Spearman and Pearson, as well as enrichment 
+          metrics: Connectivity Score (cs) and Weighted Connectivity Score 
+          (wtcs).
+
+          Examples:
+
+          % Run an internal query of SIG_ID against the full database 
+            using the similarity metric M. SIG_ID is a list of CMap signature
+            identifiers.
+
+            sig_query_tool('sig_id', SIG_ID, 'metric', M)
+
+          % Run an external query using UP and DN genesets. UP and DN are
+            GMT files. Note that correlation metrics are not supported in this mode.
+          
+            sig_query_tool('uptag', UP, 'dntag', DN, 'metric', METRIC)
+          
+          % Run an external query using a signature file SIGDS containing 
+          differential expression scores. All metrics are supported in this
+          mode. In the case of enrichment metrics the gset_size parameter 
+          specifies the size of the geneset to use (default is to use top/bottom 100 
+          probesets). The rid parameter specifies the feature space 
+          (default is epsilon landmarks).
+            
+          sig_query_tool('sig_score', SIGDS, 'metric', METRIC)
+        "
+-
+   name: --annotate_from_ds
+   default: false
+   help: Use annotations from the provided dataset instead of using Mongo
+
+-
+   name: --build_id
+   default: 'a2geneid'
+   choices: ['a1', 'a2', 'a2geneid', 'custom']
+   help: Build Identifier
+
+-
+   name: --cid
+   default: ''
+   help: Subset of signatures to run the query against. 
+         Can be a cell array or GRP file
+
+-
+    # hidden argument, not shown in help but can assign if needed.
+   access: hidden
+   name: --cid_filter
+   default: ''
+   help: Signature filter (internal use).
+
+-
+   name: --column_space
+   default: 'full'
+   choices: ['gold', 'full', 'custom']
+   help: Signature space
+
+-
+  name: --config
+  default: ''
+  action: read_args
+  help: Argument configuration file.
+
+-
+   name: --dntag
+   default: ''
+   help: Sets of downregulated genes used for an external query
+
+-
+   name: --gset_size
+   help: The number of features to consider in a geneset. 
+         Applies to external queries where a signature file
+         is specified along with an enrichment metric
+   default: 100
+
+-
+   name: --max_el
+   default: 250e6
+   help: Maximum number of elements to read at a time
+
+-
+  name: --metric
+  default: 'wtcs'
+  choices: ['spearman', 'pearson', 'cs', 'wtcs']
+  help: Similarity metric
+
+-
+  name: --es_tail
+  default: 'both'
+  choices: ['both', 'up', 'down']
+  help: Specify two-tailed or one-tailed statistic for enrichment metrics
+
+-
+   name: --mkdir   
+   default: true
+   help: Create standard output folders
+
+-
+   name: --mongo_location   
+   default: 'current'
+   choices: ['current', 'a2', 'a1']
+   help: Location of Mongo database needed for annotations
+
+-
+   name: --out
+   default: ''
+   help: Output path.
+
+-
+  name: --rank
+  default: ''
+  help: Dataset of rank lists corresponding to the score matrix in
+        GCT(X) format
+
+-
+   name: --rid
+   default: ''
+   help: Custom feature space for comparisions. 
+         Required if row_space is custom.
+         Can be a cell array or GRP file
+
+-
+  name: --row_space
+  default: 'lm'
+  choices: ['lm', 'bing', 'bing_v1', 'bing_v2', 'full', 'custom']
+  help: Feature space for comparisions
+
+-
+  name: --ignore_missing_features
+  default: false
+  help: Ignore missing features of a row_space from an external dataset specified via sig_score argument
+
+-
+   name: --rpt
+   default: 'my_analysis'
+   help: Prefix label for analysis report folder
+
+-
+   name: --save_analysis
+   default: true
+   help: Save queries and results
+
+-
+   name: --save_minimal
+   default: false
+   help: Save minimal output to optimize storage requirements. 
+         For enrichment based metrics only the combined scores are saved.
+         Also implies that save_tail and save_full_tables are false.
+
+-
+   name: --save_query   
+   default: true
+   help: Save query genesets
+
+-
+   name: --save_result   
+   default: true
+   help: Save results
+
+-   
+   name: --save_tail
+   default: true
+   help: Creates an annotated table of the top and bottom N results for
+         each query. Use tail_size to specify N
+
+-   
+   name: --save_full_table
+   default: false
+   help: Creates an annotated table of complete query results for
+         each query
+
+-
+  name: --score
+  default: ''
+  help: Dataset of differential expression scores (e.g. zscores) in
+        GCT(X) format
+
+-
+   name: --score2rank_direc   
+   default: 'descend'
+   choices: ['descend', 'ascend']
+   help: Sort order of scores. Used to derive ranks from sig_score
+
+-
+  name: --sig_id
+  default: ''
+  help: List of signature ids. Cell array or file in GRP format 
+
+-
+   name: --sig_score
+   default: ''
+   help: Query dataset of differential expression scores in GCT(X) format
+
+-
+   name: --tail_size
+   default: 1000
+   help: Specifies the length of the tail report
+
+-
+   name: --uptag
+   default: ''
+   help: Sets of upregulated genes used for an external query
+
+-
+   name: --use_gctx
+   default: true
+   help: Save results in GCTX format if true or GCT otherwise
+
+-
+  name: [-v, --verbose]
+  default: true
+  help: Enable debugging information

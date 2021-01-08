@@ -1,0 +1,12 @@
+#Parameters for tagduo
+low_exp:	4
+high_exp:	15
+dpeak_method: kmeans_viable
+max_k:4
+min_bead: 20
+min_peak_support: 10
+min_peak_support_pct: 10
+opt_support_pct_hi: 65
+opt_support_pct_lo: 35
+subtract_bg:	0
+merge_close_peaks: 0

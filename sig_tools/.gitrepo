@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github-rajivnarayan:cmap/mortar
+	branch = cmapM-v2.0.0
+	commit = a2077e16d709ce28c5b0d992f9af69968da47573
+	parent = 2eaa9ce5ae712d1afbd555a59084f3806f341de7
+	method = merge
+	cmdver = 0.4.3

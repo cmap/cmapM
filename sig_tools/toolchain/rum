@@ -1,0 +1,214 @@
+#!/bin/bash
+
+#Defaults
+# MCC_BUILD_ENV
+# MSCRIPT_PATH
+source $(dirname $0)/global_vars.sh
+source "$BIN_PATH/bashtk" -q 
+QUEUE="local"
+SCRIPT=""
+SCRIPT_ARGS=""
+DO_LOG=1
+EMAIL_OPT="-N "
+WAIT_OPT=" "
+CMD_FILE="commands_run.$USER"
+RUN_IN_FG=0
+ERROR_LOG=""
+MCR_CACHE_ROOT="/tmp/mcr_cache_$USER"
+#MCR_CACHE_ROOT=$(mktemp -d)
+RAM_OPT="-R rusage[mem=4]"
+IO_OPT=""
+X_OPT=""
+DEFAULT_VDB_PATH='/cmap/data/vdb'
+
+if [[ -z $VDBPATH ]]; then
+    if [[ -d $DEFAULT_VDB_PATH ]]; then
+	VDBPATH="$DEFAULT_VDB_PATH"
+    else
+	msg "VDBPATH:$DEFAULT_VDB_PATH not found" red
+	quit 1
+    fi
+else
+    if [[ ! -d $VDBPATH ]]; then
+	msg "VDBPATH:$VDBPATH not found" red
+	quit 1	
+    fi
+fi
+export VDBPATH
+
+# Run Matlab compiled scripts
+USAGE_HELP="--------------------------------------------------
+\033[1;34m${0##*/}\033[0m: Execute standalone Matlab scripts
+Author: Rajiv Narayan [narayan@broadinstitute.org]
+--------------------------------------------------
+Usage: ${0##*/} [options] matlab_tool <tool args>
+Options:
+-c random|<dir> Specify MCR_CACHE_ROOT location. When set to random
+   will generate a random temporary path (Use when there are multiple
+   instances of a script that are running concurrently, e.g. Batch LSF
+   jobs). Default is $MCR_CACHE_ROOT
+-d <resource_id>=IO_UNITS Disk IO resource usage request. The
+   resource_id for /xchip/cogs is \"sulfur_io\" and /xchip/obelix is
+   \"argon_io\" Set IO_UNITS to 50 for light reads, and 100 for heavy
+   reads. 
+   Example: To request heavy IO on cogs use \"sulfur_io=100\"
+   To find the correct resource-id for a particular filesystem use:
+   /broad/tools/scripts/io_resource_for_file /path/to/your/file
+-e <filepath> Specify error log file
+-f Run local processes in foreground. Default is to run in background
+-h Print this help and exit
+-l Turn off logging. By default commands are logged to commands_run.$USER
+-m <dir> MCR_ROOT Specify an alternate version of Matlab component runtime
+-n Do not send email after a LSF job completes
+-o <outfile> Send job report to output file, instead of email
+-p <dir> Specify alternative script path
+-q <queue_name> LSF queue to submit jobs [optional]. Can be 'local', 'interactive' or a valid LSF queue. The default is local.
+-r <RAM in Gb> Request RAM for LSF jobs. Default is 4
+-w Wait till the LSF job completes before exiting
+-x Enable virtual Xbuffer for scripts requiring an X server
+"
+
+get_matlab_bin() {
+	find ${MSCRIPT_PATH} -maxdepth 1 -name 'sig_*tool.conf' -exec basename {} \;|sed 's/.conf//'
+}
+
+help() {
+    _check_help $1 $FUNCNAME
+    local matlab_bin=(`get_matlab_bin`)
+    sort_cmd=($(printf '%s\n' "${matlab_bin[@]}"|sort))
+    [[ $# -gt 0 ]] && msg "$@" red bold
+    is_defined "$USAGE_HELP" && msg "$USAGE_HELP"
+    echo "Available tools:"
+    for x in "${sort_cmd[@]}"; do
+	echo -e "\t" $x
+    done
+    quit 1
+}
+
+# Parse command line arguments
+while getopts "c:d:e:fhlm:no:p:q:r:wx" optionName; do
+    case "$optionName" in
+	c) if [[ $OPTARG == "random" ]]; then
+            MCR_CACHE_ROOT=$(mktemp -d)
+	    else
+	    MCR_CACHE_ROOT="$OPTARG"
+	    fi
+	    ;;
+	d) IO_OPT="-R rusage[$OPTARG]"
+	    ;;
+	e) ERROR_LOG="$OPTARG"
+	    ;;
+	f) RUN_IN_FG=1
+	    ;;
+	h) help	    
+	    ;;
+	l) DO_LOG=0
+	    ;;
+	m) MCR_ROOT="$OPTARG"
+	    echo "Changing MCR_ROOT to $MCR_ROOT"
+	    ;;
+	n) EMAIL_OPT="-o /dev/null "
+	    echo "Turning email notification off"
+	    ;;
+	o) EMAIL_OPT="-o $OPTARG "
+	    ;;
+	p) MSCRIPT_PATH="$OPTARG"
+	    ;;
+	q) QUEUE="$OPTARG"
+	    ;;
+	r) RAM_OPT="-R rusage[mem=$OPTARG]"
+	    ;;
+	w) WAIT_OPT="-K "
+            echo "Will wait for job to complete"
+            ;;
+	x) X_OPT=$(dirname $0)/run_with_x
+	    ;;
+	[?]) help "Option not recognized"
+	    ;;
+    esac
+done
+
+if [[ -n $MCR_CACHE_ROOT ]]; then
+    echo "Setting MCR_CACHE_ROOT to $MCR_CACHE_ROOT"
+    export MCR_CACHE_ROOT=$MCR_CACHE_ROOT
+    mkdir -p $MCR_CACHE_ROOT
+fi
+
+if [[ -n $ERROR_LOG ]]; then
+ exec 2>$ERROR_LOG   
+fi
+
+if [[ $DO_LOG == 1 && "$#" > 1 ]]; then
+    echo -e $(basename $0) "$*\n" >> $CMD_FILE &2>/dev/null
+fi
+
+shift $(($OPTIND -1))
+
+#Save submit path to pass to the script
+SUBMIT_PATH=$PWD
+
+if [[ "$#" -gt 0 ]]; then
+    script_name=$1
+    runscript="run_$1.sh"
+    config_file=$1.conf
+    # Determine MCR version
+    mcr_version=$(sed -n 's/MCR_VERSION://p' $MSCRIPT_PATH/$config_file)
+    MATLAB_ROOT=$MCR_ROOT/$mcr_version
+    shift 1
+   #cd $MSCRIPT_PATH
+   if [[ $QUEUE = "interactive" ]]; then       
+       cmd_line="bsub -cwd $SUBMIT_PATH -q interactive -P $PROJECT $RAM_OPT -I $MSCRIPT_PATH/$runscript $MATLAB_ROOT $*"
+       print_hl "$cmd_line"
+       bsub -cwd $SUBMIT_PATH -q interactive -P $PROJECT $RAM_OPT $IO_OPT -I $MSCRIPT_PATH/$runscript $MATLAB_ROOT $*
+       status 'Job status'
+   elif [ $QUEUE = "local" ]; then
+       msg Running locally
+       cmd_line="nohup $X_OPT $MSCRIPT_PATH/$runscript $MATLAB_ROOT $*" 
+       print_hl "$cmd_line"
+       if [[ $RUN_IN_FG == 1 ]]; then
+	   $cmd_line
+	   return_value=$?
+       else
+	   $cmd_line &
+	   # for backgrounded processes return 0
+	   return_value=0
+       fi
+       echo "Tool exited with code $return_value"
+       script_pid=$!
+	# get svn revision, ignore errors
+       script_ver=$(svn info $MSCRIPT_PATH/$script_name 2>/dev/null|grep 'Revision')
+       # check if nohup.out is writeable else use alternative path
+       if [ -w nohup.out ]; then
+	   LOGFILE=nohup.out
+       else
+	   LOGFILE=~/nohup.out
+       fi
+
+       # if script executing in fg, echo nohup.out
+       if [[  $(ps  h -p $$ -o pgid) == $(ps  h -p $$ -o tpgid) ]]; then
+	   echo "======================================"
+	   echo "$script_name: $script_ver" |colorize "$script_name"
+	   echo "Script executing [PID=$script_pid]"
+	   echo "Press ^C to quit" 
+	   echo "======================================"
+	   tail --pid $script_pid -n0 -F $LOGFILE | while read l; do
+	       echo $l
+	   done
+       else
+	   echo "======================================"
+	   echo "$script_name: $script_ver" | colorize "$script_name"
+	   echo "Script executing in background [PID=$script_pid]"
+	   echo "Check $LOGFILE for output"
+	   echo "======================================"
+       fi
+       # Exit with return value of the tool
+       exit $return_value
+   else
+       cmd_line="bsub -cwd $SUBMIT_PATH -q $QUEUE -P $PROJECT $RAM_OPT $IO_OPT $EMAIL_OPT $WAIT_OPT $X_OPT $MSCRIPT_PATH/$runscript $MATLAB_ROOT $*"
+       print_hl "$cmd_line"
+       bsub -cwd $SUBMIT_PATH -q $QUEUE -P $PROJECT $RAM_OPT $IO_OPT $EMAIL_OPT $WAIT_OPT $X_OPT $MSCRIPT_PATH/$runscript $MATLAB_ROOT $*
+   fi
+
+else
+	help "Bad Arguments"
+fi

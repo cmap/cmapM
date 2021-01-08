@@ -1,0 +1,16 @@
+function runAnalysis_(obj, varargin)
+args = obj.getArgs;
+obj.res_ = main(args);
+end
+
+function res = main(args)
+% Main function
+
+res = struct('args', args, 'output', '');
+res.output = mortar.compute.Regression.trainMLR('ds', args.ds, ...
+    'regtype', args.modeltype, ...
+    'grp_landmark', args.grp_landmark, ...
+    'rid', args.dependents, 'cid', args.cid,...
+    'xform', args.xform, ...
+    'precision', args.precision);
+end

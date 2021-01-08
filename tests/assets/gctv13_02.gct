@@ -1,0 +1,1016 @@
+#1.3
+978	10	11	35
+id	pr_analyte_id	pr_analyte_num	pr_bset_id	pr_gene_id	pr_gene_symbol	pr_gene_title	pr_is_bing	pr_is_inf	pr_is_lmark	pr_lua_id	pr_pool_id	LJP005_MCF7_24H_X1_B17:A03	LJP005_MCF7_24H_X1_B17:A04	LJP005_MCF7_24H_X1_B17:A05	LJP005_MCF7_24H_X1_B17:A06	LJP005_MCF7_24H_X1_B17:A07	LJP005_MCF7_24H_X1_B17:A08	LJP005_MCF7_24H_X1_B17:A09	LJP005_MCF7_24H_X1_B17:A10	LJP005_MCF7_24H_X1_B17:A11	LJP005_MCF7_24H_X1_B17:A12
+bead_batch	na	na	na	na	na	na	na	na	na	na	na	b17	b17	b17	b17	b17	b17	b17	b17	b17	b17
+bead_revision	na	na	na	na	na	na	na	na	na	na	na	r2	r2	r2	r2	r2	r2	r2	r2	r2	r2
+bead_set	na	na	na	na	na	na	na	na	na	na	na	dp52,dp53	dp52,dp53	dp52,dp53	dp52,dp53	dp52,dp53	dp52,dp53	dp52,dp53	dp52,dp53	dp52,dp53	dp52,dp53
+cell_id	na	na	na	na	na	na	na	na	na	na	na	MCF7	MCF7	MCF7	MCF7	MCF7	MCF7	MCF7	MCF7	MCF7	MCF7
+count_cv	na	na	na	na	na	na	na	na	na	na	na	17	16	15	17	17	18	17	16	17	18
+count_mean	na	na	na	na	na	na	na	na	na	na	na	59	65	67	53	64	58	60	63	60	55
+det_mode	na	na	na	na	na	na	na	na	na	na	na	duo	duo	duo	duo	duo	duo	duo	duo	duo	duo
+det_plate	na	na	na	na	na	na	na	na	na	na	na	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17	LJP005_MCF7_24H_X1_B17
+det_well	na	na	na	na	na	na	na	na	na	na	na	A03	A04	A05	A06	A07	A08	A09	A10	A11	A12
+mfc_plate_dim	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	-666	-666	-666	-666	-666	-666
+mfc_plate_id	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	-666	-666	-666	-666	-666	-666
+mfc_plate_name	na	na	na	na	na	na	na	na	na	na	na	C-5001-01-LM6-004	C-5001-01-LM6-004	C-5001-01-LM6-004	C-5001-01-LM6-004	C-5001-01-LM6-004	C-5001-01-LM6-004	C-5001-01-LM6-004	C-5001-01-LM6-004	C-5001-01-LM6-004	C-5001-01-LM6-004
+mfc_plate_quad	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	-666	-666	-666	-666	-666	-666
+mfc_plate_well	na	na	na	na	na	na	na	na	na	na	na	A03	A04	A05	A06	A07	A08	A09	A10	A11	A12
+pert_dose	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	10	3.33	1.11	0.37	0.12	0.04
+pert_dose_unit	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	um	um	um	um	um	um
+pert_id	na	na	na	na	na	na	na	na	na	na	na	DMSO	DMSO	DMSO	DMSO	BRD-K76908866	BRD-K76908866	BRD-K76908866	BRD-K76908866	BRD-K76908866	BRD-K76908866
+pert_id_vendor	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	-666	-666	-666	-666	-666	-666
+pert_idose	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	10.0 um	3.33 um	1.11 um	0.37 um	0.12 um	0.04 um
+pert_iname	na	na	na	na	na	na	na	na	na	na	na	DMSO	DMSO	DMSO	DMSO	CP-724714	CP-724714	CP-724714	CP-724714	CP-724714	CP-724714
+pert_itime	na	na	na	na	na	na	na	na	na	na	na	24 h	24 h	24 h	24 h	24 h	24 h	24 h	24 h	24 h	24 h
+pert_mfc_desc	na	na	na	na	na	na	na	na	na	na	na	DMSO	DMSO	DMSO	DMSO	CP724714	CP724714	CP724714	CP724714	CP724714	CP724714
+pert_mfc_id	na	na	na	na	na	na	na	na	na	na	na	dmso	dmso	dmso	dmso	BRD-K76908866-001-06-8	BRD-K76908866-001-06-8	BRD-K76908866-001-06-8	BRD-K76908866-001-06-8	BRD-K76908866-001-06-8	BRD-K76908866-001-06-8
+pert_time	na	na	na	na	na	na	na	na	na	na	na	24	24	24	24	24	24	24	24	24	24
+pert_time_unit	na	na	na	na	na	na	na	na	na	na	na	h	h	h	h	h	h	h	h	h	h
+pert_type	na	na	na	na	na	na	na	na	na	na	na	ctl_vehicle	ctl_vehicle	ctl_vehicle	ctl_vehicle	trt_cp	trt_cp	trt_cp	trt_cp	trt_cp	trt_cp
+pert_vehicle	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	DMSO	DMSO	DMSO	DMSO	DMSO	DMSO
+pool_id	na	na	na	na	na	na	na	na	na	na	na	epsilon	epsilon	epsilon	epsilon	epsilon	epsilon	epsilon	epsilon	epsilon	epsilon
+provenance_code	na	na	na	na	na	na	na	na	na	na	na	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO	KMV+F2D+INO+QNO
+qc_f_logp	na	na	na	na	na	na	na	na	na	na	na	9.9	8.4	7.8	7.1	8.2	7.9	8.5	8.2	6.6	8.2
+qc_iqr	na	na	na	na	na	na	na	na	na	na	na	7.7	7.71	8.7	10.3	10.37	8.89	7.92	9.16	9.74	7.06
+qc_slope	na	na	na	na	na	na	na	na	na	na	na	59	60	61	63	62	61	59	62	60	58
+rna_plate	na	na	na	na	na	na	na	na	na	na	na	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1	LJP005_MCF7_24H_X1
+rna_well	na	na	na	na	na	na	na	na	na	na	na	A03	A04	A05	A06	A07	A08	A09	A10	A11	A12
+x_hmsl_id	na	na	na	na	na	na	na	na	na	na	na	-666	-666	-666	-666	HMSL10010	HMSL10010	HMSL10010	HMSL10010	HMSL10010	HMSL10010
+200814_at	Analyte 11	11	dp52	5720	PSME1	proteasome (prosome, macropain) activator subunit 1 (PA28 alpha)	1	1	1	LUA-3404	epsilon	11.7974	11.8121	11.6875	11.3174	11.9334	11.9460	11.4355	11.6155	10.9096	11.8121
+218597_s_at	Analyte 12	12	dp52	55847	CISD1	CDGSH iron sulfur domain 1	1	1	1	LUA-3431	epsilon	10.6667	10.8230	11.2095	11.5024	10.7566	11.3174	10.2725	11.0324	10.0615	10.5633
+217140_s_at	Analyte 12	12	dp53	7416	VDAC1	voltage-dependent anion channel 1	1	1	1	LUA-4000	epsilon	12.7662	12.5856	12.6514	12.0514	12.2298	12.2798	12.3381	12.4276	13.0274	12.5856
+209253_at	Analyte 13	13	dp53	10174	SORBS3	sorbin and SH3 domain containing 3	1	1	1	LUA-4040	epsilon	5.1905	4.9113	4.4500	9.3304	5.7676	5.1109	4.9706	4.8157	6.1145	4.6060
+214404_x_at	Analyte 13	13	dp52	25803	SPDEF	SAM pointed domain containing ets transcription factor	1	1	1	LUA-1326	epsilon	10.1470	10.0974	9.9673	10.1981	10.1241	10.1981	10.1981	9.9520	10.2878	9.9225
+222103_at	Analyte 14	14	dp52	466	ATF1	activating transcription factor 1	1	1	1	LUA-3660	epsilon	8.1747	7.6015	7.7838	6.3267	7.8318	6.5002	7.7791	7.1859	6.9140	8.0526
+219888_at	Analyte 14	14	dp53	6676	SPAG4	sperm associated antigen 4	1	1	1	LUA-4029	epsilon	6.9777	4.1814	6.6114	3.5833	5.6845	3.3755	3.9900	4.5079	3.9900	4.3001
+207042_at	Analyte 15	15	dp53	1870	E2F2	E2F transcription factor 2	1	1	1	LUA-3976	epsilon	5.4020	4.5311	5.2891	5.0447	11.3516	4.6363	11.8262	4.9706	4.8059	11.7453
+201453_x_at	Analyte 15	15	dp52	6009	RHEB	Ras homolog enriched in brain	1	1	1	LUA-3487	epsilon	12.0414	12.1876	11.9206	11.3764	12.0604	11.5244	12.3144	11.7583	12.0694	11.9581
+203627_at	Analyte 16	16	dp52	3480	IGF1R	insulin-like growth factor 1 receptor	1	1	1	LUA-3564	epsilon	11.5347	11.2938	11.2572	11.1787	11.2656	11.3940	11.1088	11.5761	11.2698	11.7030
+204087_s_at	Analyte 16	16	dp53	8884	SLC5A6	solute carrier family 5 (sodium-dependent vitamin transporter), member 6	1	1	1	LUA-314	epsilon	9.3247	9.5427	9.2201	9.0403	9.1373	8.8484	9.8212	9.2456	9.5847	9.4229
+204131_s_at	Analyte 17	17	dp52	2309	FOXO3	forkhead box O3	1	1	1	LUA-4141	epsilon	9.0294	8.9037	8.7153	8.6648	9.1618	8.8766	9.6091	8.8484	8.9705	9.2723
+202388_at	Analyte 17	17	dp53	5997	RGS2	regulator of G-protein signaling 2, 24kDa	1	1	1	LUA-422	epsilon	4.0742	4.7172	4.4158	4.6887	3.9745	5.9623	4.6786	9.2723	9.6827	4.4266
+204418_x_at	Analyte 18	18	dp52	2946	GSTM2	glutathione S-transferase mu 2 (muscle)	1	1	1	LUA-3542	epsilon	4.6686	3.7516	4.8735	4.8915	3.8074	4.9014	4.6363	4.5428	2.5613	3.7875
+205607_s_at	Analyte 18	18	dp53	57147	SCYL3	SCY1-like 3 (S. cerevisiae)	1	1	1	LUA-300	epsilon	3.5257	2.7934	3.2829	3.8274	6.5002	3.4858	2.5613	3.3755	6.2421	5.9572
+200059_s_at	Analyte 19	19	dp52	387	RHOA	ras homolog gene family, member A	1	1	1	LUA-3488	epsilon	9.5398	9.3397	8.9978	8.2176	9.2061	8.9993	9.5716	9.1618	9.8501	9.1558
+213417_at	Analyte 19	19	dp53	6909	TBX2	T-box 2	1	1	1	LUA-542	epsilon	8.7728	8.7509	8.2211	8.8121	8.1302	8.0328	8.8207	8.4437	8.4057	9.7638
+205963_s_at	Analyte 20	20	dp53	9093	DNAJA3	DnaJ (Hsp40) homolog, subfamily A, member 3	1	1	1	LUA-4081	epsilon	12.8067	13.1926	13.3568	14.3828	13.1926	13.4607	6.1853	13.7036	13.1926	12.1451
+205067_at	Analyte 20	20	dp52	3553	IL1B	interleukin 1, beta	1	1	1	LUA-4352	epsilon	5.9522	5.6598	7.4810	7.4415	7.1563	7.6086	13.1926	6.6199	6.1853	6.4621
+213702_x_at	Analyte 21	21	dp52	427	ASAH1	N-acylsphingosine amidohydrolase (acid ceramidase) 1	1	1	1	LUA-3659	epsilon	8.0116	7.5012	7.6417	8.3834	7.8914	7.9713	7.8228	6.7533	7.0118	7.3781
+212851_at	Analyte 21	21	dp53	23142	DCUN1D4	DCN1, defective in cullin neddylation 1, domain containing 4 (S. cerevisiae)	1	1	1	LUA-4079	epsilon	7.0867	6.6670	8.3753	6.5900	5.9770	6.5557	7.0867	7.9645	8.5458	8.1075
+210151_s_at	Analyte 22	22	dp53	8444	DYRK3	dual-specificity tyrosine-(Y)-phosphorylation regulated kinase 3	1	1	1	LUA-491	epsilon	6.3503	5.7266	7.4879	6.1463	5.4020	6.6806	5.8874	7.4065	6.6440	5.4876
+214435_x_at	Analyte 22	22	dp52	5898	RALA	v-ral simian leukemia viral oncogene homolog A (ras related)	1	1	1	LUA-3455	epsilon	8.8067	8.7760	8.7020	8.3099	8.4190	8.6517	8.8956	8.6587	8.9061	8.6237
+201334_s_at	Analyte 23	23	dp52	23365	ARHGEF12	Rho guanine nucleotide exchange factor (GEF) 12	1	1	1	LUA-3655	epsilon	7.5598	6.4746	7.4545	7.8318	8.3464	8.3297	7.4438	7.8413	7.1082	7.5892
+205811_at	Analyte 23	23	dp53	11232	POLG2	polymerase (DNA directed), gamma 2, accessory subunit	1	1	1	LUA-454	epsilon	6.8883	7.9293	8.6330	8.3706	7.0598	7.0657	6.3615	7.0834	8.2655	8.3794
+213721_at	Analyte 24	24	dp52	6657	SOX2	SRY (sex determining region Y)-box 2	1	1	1	LUA-3783	epsilon	8.7424	10.0390	9.5056	9.6759	9.5131	9.0445	8.5169	9.1216	8.9546	8.4423
+203512_at	Analyte 24	24	dp53	27095	TRAPPC3	trafficking protein particle complex 3	1	1	1	LUA-361	epsilon	9.5716	8.6021	8.5989	8.6936	8.2132	9.6213	10.2652	9.7897	11.0377	9.5873
+202627_s_at	Analyte 25	25	dp52	5054	SERPINE1	serpin peptidase inhibitor, clade E (nexin, plasminogen activator inhibitor type 1), member 1	1	1	1	LUA-3556	epsilon	5.4876	3.4374	3.5833	5.9623	6.1764	5.5038	6.7663	5.8874	3.3172	3.6787
+204849_at	Analyte 25	25	dp53	10732	TCFL5	transcription factor-like 5 (basic helix-loop-helix)	1	1	1	LUA-353	epsilon	3.2829	6.5195	6.1541	3.7516	3.8838	2.9543	3.7875	3.0717	6.4497	6.4020
+202224_at	Analyte 26	26	dp53	1398	CRK	v-crk sarcoma virus CT10 oncogene homolog (avian)	1	1	1	LUA-3938	epsilon	9.1598	8.8540	8.7536	8.5209	8.8517	8.9061	9.0260	9.1089	8.7277	9.0902
+217478_s_at	Analyte 26	26	dp52	3108	HLA-DMA	major histocompatibility complex, class II, DM alpha	1	1	1	LUA-4242	epsilon	2.7934	4.2436	4.0335	4.1694	3.6392	3.1158	4.5079	3.6392	4.5079	2.9543
+206254_at	Analyte 27	27	dp52	1950	EGF	epidermal growth factor	1	1	1	LUA-3982	epsilon	3.7695	4.3406	4.5622	5.0719	4.5731	4.1441	4.7773	4.1441	5.2465	3.7875
+212591_at	Analyte 27	27	dp53	23029	RBM34	RNA binding motif protein 34	1	1	1	LUA-506	epsilon	9.8665	9.8013	9.7154	9.3427	9.5928	9.2104	9.5456	9.7317	9.3026	9.5873
+203336_s_at	Analyte 28	28	dp53	9270	ITGB1BP1	integrin beta 1 binding protein 1	1	1	1	LUA-4171	epsilon	9.4604	9.2832	9.5780	9.1772	8.9404	9.2432	9.5398	9.2456	8.7020	9.4051
+203127_s_at	Analyte 28	28	dp52	9517	SPTLC2	serine palmitoyltransferase, long chain base subunit 2	1	1	1	LUA-3795	epsilon	4.8735	5.1905	5.0534	4.9113	5.5150	5.6131	5.6356	5.4729	5.8805	6.1808
+210337_s_at	Analyte 29	29	dp53	47	ACLY	ATP citrate lyase	1	1	1	LUA-4182	epsilon	10.4679	10.2489	9.8830	10.1749	9.8151	9.7703	10.2306	10.0423	10.5319	10.5088
+200602_at	Analyte 29	29	dp52	351	APP	amyloid beta (A4) precursor protein	1	1	1	LUA-3648	epsilon	13.1028	13.5526	13.7036	13.7036	13.5526	13.7036	13.4607	13.2844	13.2357	13.2357
+206066_s_at	Analyte 30	30	dp53	5889	RAD51C	RAD51 homolog C (S. cerevisiae)	1	1	1	LUA-4167	epsilon	10.1113	9.9466	9.9307	9.9971	7.2458	10.0390	9.9602	10.0802	9.8899	9.9520
+218245_at	Analyte 30	30	dp52	25987	TSKU	tsukushi small leucine rich proteoglycan homolog (Xenopus laevis)	1	1	1	LUA-3835	epsilon	7.3335	7.8984	7.0240	6.7818	9.8633	6.9390	7.8984	7.0598	8.1279	7.8318
+201589_at	Analyte 31	31	dp53	8243	SMC1A	structural maintenance of chromosomes 1A	1	1	1	LUA-4177	epsilon	9.3785	8.9839	9.3835	8.8927	5.6286	8.9433	9.2104	8.7396	8.5114	9.4402
+218113_at	Analyte 31	31	dp52	23670	TMEM2	transmembrane protein 2	1	1	1	LUA-3826	epsilon	7.7133	7.0577	7.2267	6.6486	7.6837	7.2230	7.3365	7.1082	6.8508	7.2159
+205581_s_at	Analyte 32	32	dp52	4846	NOS3	nitric oxide synthase 3 (endothelial cell)	1	1	1	LUA-3114	epsilon	3.6787	4.3134	3.4374	4.0200	3.1600	4.6786	4.5079	2.7934	4.7172	4.0469
+201351_s_at	Analyte 32	32	dp53	10730	YME1L1	YME1-like 1 (S. cerevisiae)	1	1	1	LUA-4183	epsilon	9.1813	9.3026	9.1089	9.1279	9.1151	9.1307	9.5339	9.0260	9.4347	9.5582
+214274_s_at	Analyte 33	33	dp53	30	ACAA1	acetyl-CoA acyltransferase 1	1	1	1	LUA-175	epsilon	8.0483	7.8998	7.0895	6.5557	6.7579	8.5554	7.2598	7.7888	7.1743	8.1692
+206562_s_at	Analyte 33	33	dp52	1452	CSNK1A1	casein kinase 1, alpha 1	1	1	1	LUA-3941	epsilon	8.9546	9.1517	8.9131	8.2176	8.4190	7.8255	8.7760	9.0117	9.6993	9.3944
+208687_x_at	Analyte 34	34	dp53	3312	HSPA8	heat shock 70kDa protein 8	1	1	1	LUA-4278	epsilon	12.0184	11.7453	11.8433	11.3266	11.6716	11.6303	11.2275	11.6372	10.8315	12.0414
+205897_at	Analyte 34	34	dp52	4776	NFATC4	nuclear factor of activated T-cells, cytoplasmic, calcineurin-dependent 4	1	1	1	LUA-3087	epsilon	5.4501	6.2040	7.1517	7.9495	6.8005	7.2124	5.1420	6.5412	4.8385	5.3165
+214710_s_at	Analyte 35	35	dp53	891	CCNB1	cyclin B1	1	1	1	LUA-3734	epsilon	12.6514	12.6866	12.8547	13.0719	12.7232	13.0719	12.7232	12.6866	12.5702	12.4276
+203135_at	Analyte 35	35	dp52	6908	TBP	TATA box binding protein	1	1	1	LUA-3828	epsilon	8.6359	8.2702	8.6460	8.1103	7.6651	7.9197	8.1833	8.2045	7.8050	8.5609
+220091_at	Analyte 36	36	dp52	11182	SLC2A6	solute carrier family 2 (facilitated glucose transporter), member 6	1	1	1	LUA-3921	epsilon	9.1466	9.5847	9.6213	9.8899	9.3631	9.8343	9.3116	9.6955	9.7509	9.0327
+202908_at	Analyte 36	36	dp53	7466	WFS1	Wolfram syndrome 1 (wolframin)	1	1	1	LUA-149	epsilon	8.2140	8.0196	8.4257	8.1747	7.7316	8.5338	8.2655	8.4867	8.0196	8.2248
+203358_s_at	Analyte 37	37	dp52	2146	EZH2	enhancer of zeste homolog 2 (Drosophila)	1	1	1	LUA-3896	epsilon	9.4402	8.8927	8.7760	8.0627	7.6786	7.9603	9.6011	8.6936	10.2255	9.1772
+212403_at	Analyte 37	37	dp53	89910	UBE3B	ubiquitin protein ligase E3B	1	1	1	LUA-393	epsilon	8.5609	9.3785	9.6091	9.7730	9.7102	10.1055	9.0117	9.4604	8.8887	8.4480
+204949_at	Analyte 38	38	dp52	3385	ICAM3	intercellular adhesion molecule 3	1	1	1	LUA-3929	epsilon	6.8565	7.2124	7.4327	6.1263	7.4359	7.7316	6.6486	6.7663	6.4950	7.0774
+218086_at	Analyte 38	38	dp53	56654	NPDC1	neural proliferation, differentiation and control, 1	1	1	1	LUA-4286	epsilon	11.7583	11.7299	11.1088	11.1980	11.5761	6.5818	11.6555	11.5984	11.6372	11.5347
+208950_s_at	Analyte 39	39	dp53	501	ALDH7A1	aldehyde dehydrogenase 7 family, member A1	1	1	1	LUA-4237	epsilon	7.2598	8.0483	8.1747	8.6067	3.7329	7.5499	8.1747	8.0343	4.4621	7.6396
+204531_s_at	Analyte 39	39	dp52	672	BRCA1	breast cancer 1, early onset	1	1	1	LUA-3688	epsilon	4.1814	5.5932	5.4566	5.1602	7.6243	4.3134	4.9113	5.1602	8.3074	5.4566
+207416_s_at	Analyte 40	40	dp53	4775	NFATC3	nuclear factor of activated T-cells, cytoplasmic, calcineurin-dependent 3	1	1	1	LUA-3085	epsilon	8.4410	8.9306	9.0294	9.7897	8.8364	9.4753	8.5338	9.5900	9.0717	8.4985
+200882_s_at	Analyte 40	40	dp52	5710	PSMD4	proteasome (prosome, macropain) 26S subunit, non-ATPase, 4	1	1	1	LUA-3393	epsilon	12.9473	12.8067	12.7232	12.6514	12.9899	12.6866	12.6866	12.9899	12.8067	13.0274
+201202_at	Analyte 41	41	dp53	5111	PCNA	proliferating cell nuclear antigen	1	1	1	LUA-3157	epsilon	13.7036	13.7036	13.5526	13.1028	13.0719	13.3568	13.7036	13.4607	13.7036	13.5526
+203709_at	Analyte 41	41	dp52	5261	PHKG2	phosphorylase kinase, gamma 2 (testis)	1	1	1	LUA-63	epsilon	8.1476	7.8862	8.0054	8.0828	8.2793	8.1075	7.4732	8.4671	7.7385	8.3267
+206501_x_at	Analyte 42	42	dp52	2115	ETV1	ets variant 1	1	1	1	LUA-4042	epsilon	4.2063	4.5622	4.5840	3.8679	3.8074	4.5079	4.4743	4.4743	4.3643	3.7875
+212955_s_at	Analyte 42	42	dp53	5438	POLR2I	polymerase (RNA) II (DNA directed) polypeptide I, 14.5kDa	1	1	1	LUA-178	epsilon	10.7672	10.6521	10.4410	10.0322	10.0322	10.4679	10.5973	10.3952	9.9896	10.4017
+201548_s_at	Analyte 43	43	dp52	10765	KDM5B	lysine (K)-specific demethylase 5B	1	1	1	LUA-457	epsilon	7.7838	7.4289	7.5434	7.8797	7.4359	8.3464	8.1398	7.3988	8.2045	7.4250
+209040_s_at	Analyte 43	43	dp53	5696	PSMB8	proteasome (prosome, macropain) subunit, beta type, 8 (large multifunctional peptidase 7)	1	1	1	LUA-3379	epsilon	6.8883	3.9745	5.1905	5.4876	8.7139	7.3889	7.2105	4.6254	5.0534	8.5209
+218064_s_at	Analyte 44	44	dp53	26993	AKAP8L	A kinase (PRKA) anchor protein 8-like	1	1	1	LUA-184	epsilon	6.8467	7.1343	6.4216	8.5704	8.9944	7.3700	6.6715	8.1042	8.2230	7.0162
+212189_s_at	Analyte 44	44	dp52	25839	COG4	component of oligomeric golgi complex 4	1	1	1	LUA-346	epsilon	9.3071	8.9978	8.5640	6.9140	7.6116	8.6152	9.0501	9.1466	10.1113	8.9573
+201555_at	Analyte 45	45	dp52	4172	MCM3	minichromosome maintenance complex component 3	1	1	1	LUA-218	epsilon	11.0686	11.3516	10.8376	11.0377	10.1749	10.8014	11.4279	11.1702	11.8574	10.9771
+218290_at	Analyte 45	45	dp53	55111	PLEKHJ1	pleckstrin homology domain containing, family J member 1	1	1	1	LUA-579	epsilon	8.7640	9.0717	8.8121	8.8500	8.2619	8.8907	9.3735	8.9461	10.1544	8.6906
+203138_at	Analyte 46	46	dp53	8520	HAT1	histone acetyltransferase 1	1	1	1	LUA-4394	epsilon	9.3631	9.1411	9.1659	9.3304	8.4653	9.0772	8.6600	9.1699	5.0534	9.4122
+207199_at	Analyte 46	46	dp52	7015	TERT	telomerase reverse transcriptase	1	1	1	LUA-3836	epsilon	6.0113	6.3000	5.8616	7.1295	5.3165	6.5366	5.7551	6.8565	7.2534	5.3790
+201503_at	Analyte 47	47	dp53	10146	G3BP1	GTPase activating protein (SH3 domain) binding protein 1	1	1	1	LUA-4405	epsilon	9.5956	9.0536	8.4753	7.9645	7.3076	9.0365	9.0117	8.9288	6.0113	9.6397
+213292_s_at	Analyte 47	47	dp52	23161	SNX13	sorting nexin 13	1	1	1	LUA-540	epsilon	7.9864	7.2458	9.3366	8.7424	8.9839	7.4626	7.5104	7.9416	7.9293	7.8318
+203154_s_at	Analyte 48	48	dp52	10298	PAK4	p21 protein (Cdc42/Rac)-activated kinase 4	1	1	1	LUA-481	epsilon	10.2519	9.9971	9.8633	9.5398	9.2319	9.7066	10.3396	9.9283	10.1914	10.3354
+201379_s_at	Analyte 48	48	dp53	7165	TPD52L2	tumor protein D52-like 2	1	1	1	LUA-4432	epsilon	9.3584	9.2561	8.8517	10.1579	10.3354	8.9809	9.7255	9.0424	8.9404	9.5519
+204514_at	Analyte 49	49	dp52	1802	DPH2	DPH2 homolog (S. cerevisiae)	1	1	1	LUA-4030	epsilon	7.9197	8.0343	7.9506	7.6894	6.6199	7.2230	7.0598	7.8110	7.7385	6.9821
+217872_at	Analyte 49	49	dp53	55011	PIH1D1	PIH1 domain containing 1	1	1	1	LUA-706	epsilon	6.8764	7.1343	6.9189	6.0113	8.0328	8.1565	8.0504	6.8273	6.1145	7.7814
+210038_at	Analyte 50	50	dp53	5588	PRKCQ	protein kinase C, theta	1	1	1	LUA-3337	epsilon	5.2811	5.9202	5.7551	5.4876	8.3706	5.3474	4.2183	4.9539	5.3943	4.2436
+217789_at	Analyte 50	50	dp52	58533	SNX6	sorting nexin 6	1	1	1	LUA-3993	epsilon	9.4518	9.4483	9.1466	8.7989	9.6529	9.2579	9.3026	9.3026	8.6044	9.2579
+209572_s_at	Analyte 51	51	dp52	8726	EED	embryonic ectoderm development	1	1	1	LUA-3981	epsilon	8.8563	8.5458	9.2663	7.8991	8.5114	9.2797	8.5609	8.3678	9.1492	8.4653
+204656_at	Analyte 51	51	dp53	6461	SHB	Src homology 2 domain containing adaptor protein B	1	1	1	LUA-3339	epsilon	8.0225	9.0943	8.0963	10.2119	5.9403	7.6786	9.0403	9.3137	7.8998	7.5617
+221514_at	Analyte 52	52	dp53	10813	UTP14A	UTP14, U3 small nucleolar ribonucleoprotein, homolog A (yeast)	1	1	1	LUA-2029	epsilon	8.4955	8.4985	8.4321	5.3790	6.3686	7.5938	6.4276	7.2267	5.9354	8.7509
+212051_at	Analyte 52	52	dp52	147179	WIPF2	WAS/WASL interacting protein family, member 2	1	1	1	LUA-1280	epsilon	6.8318	7.1517	6.8390	7.0746	7.9769	6.2321	7.7015	8.4671	7.6942	7.6786
+218407_x_at	Analyte 53	53	dp52	29937	NENF	neudesin neurotrophic factor	1	1	1	LUA-4035	epsilon	9.5582	9.3273	9.3366	9.1845	8.8766	9.5550	9.4753	9.2663	9.1659	9.3335
+219581_at	Analyte 53	53	dp53	80746	TSEN2	tRNA splicing endonuclease 2 homolog (S. cerevisiae)	1	1	1	LUA-925	epsilon	8.2702	8.2045	8.2343	8.0685	9.8963	8.3834	8.5816	8.1326	8.0526	8.2579
+201011_at	Analyte 54	54	dp52	6184	RPN1	ribophorin I	1	1	1	LUA-582	epsilon	13.1926	12.9899	13.2844	12.8067	12.7662	12.9473	12.8547	13.0274	12.4932	12.9899
+218619_s_at	Analyte 54	54	dp53	6839	SUV39H1	suppressor of variegation 3-9 homolog 1 (Drosophila)	1	1	1	LUA-3804	epsilon	7.1112	7.0774	7.0701	6.7663	6.7245	6.9632	8.1665	7.1659	8.4653	7.4921
+204757_s_at	Analyte 55	55	dp52	9854	C2CD2L	C2CD2-like	1	1	1	LUA-610	epsilon	5.7551	5.5741	4.6887	5.5741	6.2148	5.0360	5.4432	5.6286	4.3643	5.4020
+203007_x_at	Analyte 55	55	dp53	10434	LYPLA1	lysophospholipase I	1	1	1	LUA-4425	epsilon	9.6955	9.3126	9.6676	8.8121	9.6676	9.2243	9.1618	9.3584	8.8299	10.0390
+202076_at	Analyte 56	56	dp53	329	BIRC2	baculoviral IAP repeat containing 2	1	1	1	LUA-3679	epsilon	6.9372	6.4457	6.7579	6.4276	7.2267	6.5195	6.3000	6.7025	6.4341	6.8318
+206173_x_at	Analyte 56	56	dp52	2553	GABPB1	GA binding protein transcription factor, beta subunit 1	1	1	1	LUA-192	epsilon	10.1406	10.2255	9.8772	9.5956	9.8501	9.3631	9.6955	9.8578	9.8384	9.9746
+204756_at	Analyte 57	57	dp53	5607	MAP2K5	mitogen-activated protein kinase kinase 5	1	1	1	LUA-901	epsilon	7.1859	7.1052	7.2194	6.6281	7.6015	7.4225	7.1818	7.5211	7.8772	7.1483
+202635_s_at	Analyte 57	57	dp52	5440	POLR2K	polymerase (RNA) II (DNA directed) polypeptide K, 7.0kDa	1	1	1	LUA-4150	epsilon	11.2219	10.8687	11.4355	10.5473	11.2219	11.0473	10.5473	10.7672	9.7436	11.1302
+203110_at	Analyte 58	58	dp52	2185	PTK2B	PTK2B protein tyrosine kinase 2 beta	1	1	1	LUA-3426	epsilon	7.2817	7.8050	8.8406	9.2596	8.8997	8.9131	7.5598	8.6587	7.8914	7.2442
+209899_s_at	Analyte 58	58	dp53	22827	PUF60	poly-U binding splicing factor 60KDa	1	1	1	LUA-601	epsilon	13.5526	13.3568	12.8067	12.9473	13.1028	12.8547	13.1028	13.0719	13.5526	13.0719
+210788_s_at	Analyte 59	59	dp53	51635	DHRS7	dehydrogenase/reductase (SDR family) member 7	1	1	1	LUA-4456	epsilon	9.9673	9.9362	9.9561	9.4402	11.0896	9.6273	10.0893	10.0534	9.3785	10.0217
+202093_s_at	Analyte 59	59	dp52	54623	PAF1	Paf1, RNA polymerase II associated factor, homolog (S. cerevisiae)	1	1	1	LUA-429	epsilon	10.6858	10.4930	10.7212	11.1139	10.5973	11.1702	10.6465	10.8974	10.5169	10.6144
+212614_at	Analyte 60	60	dp53	84159	ARID5B	AT rich interactive domain 5B (MRF1-like)	1	1	1	LUA-3363	epsilon	6.7852	7.2368	6.9372	7.5262	8.4867	6.7056	7.0299	6.8273	7.2397	7.1112
+207515_s_at	Analyte 60	60	dp52	9533	POLR1C	polymerase (RNA) I polypeptide C, 30kDa	1	1	1	LUA-188	epsilon	8.6439	8.5458	8.5875	8.7482	7.2105	8.1031	8.1279	8.0685	8.0453	8.2814
+209615_s_at	Analyte 61	61	dp53	5058	PAK1	p21 protein (Cdc42/Rac)-activated kinase 1	1	1	1	LUA-3132	epsilon	5.5150	5.2465	5.4827	10.6610	9.1517	5.3474	5.4020	5.9842	6.3503	4.8157
+201614_s_at	Analyte 61	61	dp52	8607	RUVBL1	RuvB-like 1 (E. coli)	1	1	1	LUA-1206	epsilon	10.9158	10.7258	10.7463	10.2758	10.4448	10.5515	10.4595	10.5737	10.4765	10.5940
+207163_s_at	Analyte 62	62	dp52	207	AKT1	v-akt murine thymoma viral oncogene homolog 1	1	1	1	LUA-243	epsilon	12.0694	12.0184	11.6555	9.8446	11.5453	11.7299	12.2091	12.0184	12.6188	11.9460
+208728_s_at	Analyte 62	62	dp53	998	CDC42	cell division cycle 42 (GTP binding protein, 25kDa)	1	1	1	LUA-3771	epsilon	10.3952	10.3578	10.0893	11.7635	10.0534	10.1241	10.0534	10.1113	10.4093	10.3952
+215980_s_at	Analyte 63	63	dp53	3508	IGHMBP2	immunoglobulin mu binding protein 2	1	1	1	LUA-2019	epsilon	6.3295	7.4200	7.5295	7.7863	7.9928	7.6275	6.9408	7.6243	7.9990	7.1517
+202318_s_at	Analyte 63	63	dp52	26054	SENP6	SUMO1/sentrin specific peptidase 6	1	1	1	LUA-874	epsilon	10.4213	10.7258	10.8128	10.9771	11.3383	11.4279	10.2791	10.9771	10.3744	10.9398
+212500_at	Analyte 64	64	dp53	84890	ADO	2-aminoethanethiol (cysteamine) dioxygenase	1	1	1	LUA-1018	epsilon	6.7088	6.7579	6.2321	6.2470	6.6930	6.0113	14.4730	6.5054	6.7887	6.8581
+201841_s_at	Analyte 64	64	dp52	3315	HSPB1	heat shock 27kDa protein 1	1	1	1	LUA-4279	epsilon	14.6142	14.6142	14.6142	14.8071	15.0000	14.6142	14.6142	14.8071	15.0000	14.6142
+202735_at	Analyte 65	65	dp52	10682	EBP	emopamil binding protein (sterol isomerase)	1	1	1	LUA-4194	epsilon	9.7354	9.2104	9.2797	8.8406	9.5368	9.2579	8.9324	9.3944	7.9353	9.7730
+218584_at	Analyte 65	65	dp53	79600	TCTN1	tectonic family member 1	1	1	1	LUA-3812	epsilon	6.9736	6.8467	7.2900	6.6281	6.9260	6.8318	6.4950	6.9208	6.5859	6.5076
+214259_s_at	Analyte 66	66	dp53	8574	AKR7A2	aldo-keto reductase family 7, member A2 (aflatoxin aldehyde reductase)	1	1	1	LUA-248	epsilon	10.9353	10.9398	10.8014	10.4327	10.6610	10.6144	11.2095	10.9654	10.8687	10.9654
+207620_s_at	Analyte 66	66	dp52	8573	CASK	calcium/calmodulin-dependent serine protein kinase (MAGUK family)	1	1	1	LUA-4137	epsilon	7.7350	7.9037	7.2105	6.8005	6.1028	6.6486	7.4879	6.8724	8.1533	7.5262
+203338_at	Analyte 67	67	dp53	5529	PPP2R5E	protein phosphatase 2, regulatory subunit B', epsilon isoform	1	1	1	LUA-850	epsilon	10.7566	11.0025	11.0473	11.4620	11.1787	11.5453	11.0377	11.3088	11.1702	10.8687
+203171_s_at	Analyte 67	67	dp52	23378	RRP8	ribosomal RNA processing 8, methyltransferase, homolog (yeast)	1	1	1	LUA-453	epsilon	5.8321	5.8943	6.2040	6.1898	6.1764	6.1898	6.2877	6.2372	5.9842	6.1400
+203726_s_at	Analyte 68	68	dp53	3909	LAMA3	laminin, alpha 3	1	1	1	LUA-3586	epsilon	4.4050	3.8074	3.9900	5.8152	4.9225	4.7270	5.5150	5.0360	4.1938	4.3001
+204297_at	Analyte 68	68	dp52	5289	PIK3C3	phosphoinositide-3-kinase, class 3	1	1	1	LUA-3182	epsilon	6.4020	5.9079	6.4399	6.9979	6.8549	6.4399	6.5146	6.1463	6.1853	5.9202
+201170_s_at	Analyte 69	69	dp52	8553	BHLHE40	basic helix-loop-helix family, member e40	1	1	1	LUA-3380	epsilon	3.6787	6.3076	6.7887	3.9900	6.4341	6.9777	5.7676	3.7695	5.4179	6.8549
+205034_at	Analyte 69	69	dp53	9134	CCNE2	cyclin E2	1	1	1	LUA-3741	epsilon	7.7096	4.6686	4.4853	7.1483	4.3643	5.1109	4.2183	7.1958	3.4374	5.0060
+211715_s_at	Analyte 70	70	dp52	622	BDH1	3-hydroxybutyrate dehydrogenase, type 1	1	1	1	LUA-3376	epsilon	8.8887	8.8242	8.4074	8.1883	8.6995	8.5404	8.4257	8.3202	8.8927	8.5392
+215000_s_at	Analyte 70	70	dp53	9637	FEZ2	fasciculation and elongation protein zeta 2 (zygin II)	1	1	1	LUA-4069	epsilon	4.7466	5.3378	4.2868	4.4853	6.0013	5.1602	5.4020	4.3948	5.5550	5.3474
+202491_s_at	Analyte 71	71	dp53	8518	IKBKAP	inhibitor of kappa light polypeptide gene enhancer in B-cells, kinase complex-associated protein	1	1	1	LUA-1361	epsilon	8.9599	9.7436	9.0791	8.8747	8.8887	8.4955	9.9003	9.0424	10.0390	9.4288
+201811_x_at	Analyte 71	71	dp52	9467	SH3BP5	SH3-domain binding protein 5 (BTK-associated)	1	1	1	LUA-3338	epsilon	11.0579	10.8792	10.7566	10.8315	10.9034	10.5906	10.5633	10.9266	10.6144	11.2275
+202187_s_at	Analyte 72	72	dp52	5525	PPP2R5A	protein phosphatase 2, regulatory subunit B', alpha	1	1	1	LUA-378	epsilon	9.9331	9.6152	9.6152	9.8501	9.5368	9.8501	9.8303	9.7392	10.0830	9.7286
+205120_s_at	Analyte 72	72	dp53	6443	SGCB	sarcoglycan, beta (43kDa dystrophin-associated glycoprotein)	1	1	1	LUA-4214	epsilon	5.8486	6.2470	5.8874	4.9438	5.2722	8.6936	6.0332	5.9403	6.3503	6.3000
+203442_x_at	Analyte 73	73	dp52	256364	EML3	echinoderm microtubule associated protein like 3	1	1	1	LUA-3269	epsilon	8.4257	8.2899	7.5434	7.6146	7.4573	7.5821	8.8031	8.0028	7.8914	7.7958
+217956_s_at	Analyte 73	73	dp53	58478	ENOPH1	enolase-phosphatase 1	1	1	1	LUA-4451	epsilon	11.3449	11.2095	11.1895	10.9654	10.7304	10.8128	11.3088	11.0579	10.5011	11.1190
+202095_s_at	Analyte 74	74	dp52	332	BIRC5	baculoviral IAP repeat containing 5	1	1	1	LUA-4189	epsilon	10.9266	10.7852	10.5557	10.4855	10.7768	10.7390	10.6057	10.7925	11.3858	11.0846
+203291_at	Analyte 74	74	dp53	4850	CNOT4	CCR4-NOT transcription complex, subunit 4	1	1	1	LUA-66	epsilon	7.2124	6.9604	6.7768	6.9576	9.8446	6.1631	7.3821	6.7025	7.7072	7.0598
+200843_s_at	Analyte 75	75	dp52	2058	EPRS	glutamyl-prolyl-tRNA synthetase	1	1	1	LUA-659	epsilon	9.7102	9.8899	9.6472	9.5620	10.4248	9.6397	9.6793	10.0974	10.0496	10.1579
+202507_s_at	Analyte 75	75	dp53	6616	SNAP25	synaptosomal-associated protein, 25kDa	1	1	1	LUA-3588	epsilon	9.5456	3.0717	4.9337	3.1600	9.7509	4.3524	3.6964	3.8997	8.9910	3.5447
+212723_at	Analyte 76	76	dp53	23210	JMJD6	jumonji domain containing 6	1	1	1	LUA-101	epsilon	10.5557	10.5249	10.4930	10.3354	10.7852	10.7852	10.6238	10.7026	10.7768	11.0377
+121_at	Analyte 76	76	dp52	7849	PAX8	paired box 8	1	1	1	LUA-545	epsilon	3.4374	3.3755	2.9543	3.8997	4.0335	3.4374	3.7516	2.9543	4.8915	3.0717
+209682_at	Analyte 77	77	dp52	868	CBLB	Cas-Br-M (murine) ecotropic retroviral transforming sequence b	1	1	1	LUA-3722	epsilon	7.3740	6.8911	6.9684	7.9560	7.5768	8.0453	7.6417	7.5023	8.1719	7.6292
+218826_at	Analyte 77	77	dp53	54733	SLC35F2	solute carrier family 35, member F2	1	1	1	LUA-4139	epsilon	6.2650	6.0427	7.8748	5.7138	5.7895	6.6363	6.7768	6.1631	6.2421	6.3686
+218910_at	Analyte 78	78	dp53	55129	ANO10	anoctamin 10	1	1	1	LUA-3358	epsilon	7.1859	6.7088	6.7427	6.6639	7.8110	6.8273	6.8911	6.7025	5.9354	7.0353
+212140_at	Analyte 78	78	dp52	23244	PDS5A	PDS5, regulator of cohesion maintenance, homolog A (S. cerevisiae)	1	1	1	LUA-886	epsilon	9.6334	9.4518	9.7638	9.6334	9.9780	9.5456	9.4604	9.7255	9.3735	9.7286
+206752_s_at	Analyte 79	79	dp52	1677	DFFB	DNA fragmentation factor, 40kDa, beta polypeptide (caspase-activated DNase)	1	1	1	LUA-3963	epsilon	6.0113	5.8553	6.6759	7.1859	6.7088	6.3783	6.0013	6.4216	5.3714	6.1190
+217934_x_at	Analyte 79	79	dp53	10273	STUB1	STIP1 homology and U-box containing protein 1, E3 ubiquitin protein ligase	1	1	1	LUA-809	epsilon	13.4607	13.4607	13.0274	12.9029	12.9029	13.1926	13.3568	13.5526	13.3568	13.4607
+200886_s_at	Analyte 80	80	dp53	5223	PGAM1	phosphoglycerate mutase 1 (brain)	1	1	1	LUA-3175	epsilon	7.0010	12.8547	12.7662	12.3144	12.2798	12.6188	12.7662	12.6514	12.8547	12.6514
+209747_at	Analyte 80	80	dp52	7043	TGFB3	transforming growth factor, beta 3	1	1	1	LUA-3847	epsilon	7.8949	8.1476	8.9705	9.7128	8.9503	9.8899	8.1054	8.9618	8.3678	7.6292
+209364_at	Analyte 81	81	dp53	572	BAD	BCL2-associated agonist of cell death	1	1	1	LUA-739	epsilon	8.9061	9.2596	9.0581	9.3524	9.3137	9.6051	9.4691	9.4288	9.3247	8.8299
+200670_at	Analyte 81	81	dp52	7494	XBP1	X-box binding protein 1	1	1	1	LUA-1129	epsilon	13.2357	13.1473	13.2357	13.2844	13.2844	13.1473	13.0719	13.2357	13.1028	13.3568
+201158_at	Analyte 82	82	dp52	4836	NMT1	N-myristoyltransferase 1	1	1	1	LUA-53	epsilon	7.3335	7.1464	7.4200	8.7139	7.4200	7.3201	7.3616	7.3335	7.8371	7.0774
+219485_s_at	Analyte 82	82	dp53	5716	PSMD10	proteasome (prosome, macropain) 26S subunit, non-ATPase, 10	1	1	1	LUA-1307	epsilon	9.9043	9.6472	9.8013	7.4178	10.5473	9.7392	9.3335	9.4483	9.3335	10.3744
+202109_at	Analyte 83	83	dp52	23647	ARFIP2	ADP-ribosylation factor interacting protein 2	1	1	1	LUA-819	epsilon	9.2480	9.4347	8.8207	8.0254	9.1466	8.8956	9.3247	9.2285	9.6529	9.7392
+203884_s_at	Analyte 83	83	dp53	22841	RAB11FIP2	RAB11 family interacting protein 2 (class I)	1	1	1	LUA-1142	epsilon	6.0820	6.5412	6.3436	8.8207	7.3917	5.7056	5.6845	5.8553	6.8855	5.0819
+202945_at	Analyte 84	84	dp53	2356	FPGS	folylpolyglutamate synthase	1	1	1	LUA-571	epsilon	8.5338	8.9306	8.3876	8.3706	8.0453	9.2243	8.7354	8.4257	7.5598	8.8563
+202811_at	Analyte 84	84	dp52	10617	STAMBP	STAM binding protein	1	1	1	LUA-858	epsilon	9.7255	9.4874	9.4122	9.2797	9.3785	8.7341	9.2760	9.2561	8.6906	9.5780
+204061_at	Analyte 85	85	dp52	5613	PRKX	protein kinase, X-linked	1	1	1	LUA-3354	epsilon	8.2509	8.1031	8.4057	9.3683	7.7704	8.6152	8.0357	8.7833	8.1631	7.8388
+206050_s_at	Analyte 85	85	dp53	6050	RNH1	ribonuclease/angiogenin inhibitor 1	1	1	1	LUA-682	epsilon	10.1835	10.3507	9.3524	10.1579	9.6719	9.7154	10.5387	9.9855	11.1980	10.0116
+221492_s_at	Analyte 86	86	dp53	64422	ATG3	ATG3 autophagy related 3 homolog (S. cerevisiae)	1	1	1	LUA-4412	epsilon	8.9037	8.5209	8.5989	7.7262	7.1464	7.3298	8.8887	8.7728	8.6152	8.5640
+202862_at	Analyte 86	86	dp52	2184	FAH	fumarylacetoacetate hydrolase (fumarylacetoacetase)	1	1	1	LUA-4373	epsilon	7.7641	7.5012	7.4685	8.4818	8.5554	8.2579	7.5856	8.1103	7.3464	7.9353
+204725_s_at	Analyte 87	87	dp53	4690	NCK1	NCK adaptor protein 1	1	1	1	LUA-3078	epsilon	9.7509	9.3458	9.4518	8.9131	9.6827	9.1598	9.2285	7.2845	5.8616	9.6529
+201136_at	Analyte 87	87	dp52	5355	PLP2	proteolipid protein 2 (colonic epithelium-enriched)	1	1	1	LUA-4351	epsilon	6.9821	7.0598	6.9979	7.3740	7.5499	7.2565	6.7488	8.7214	8.7482	6.9821
+209939_x_at	Analyte 88	88	dp53	8837	CFLAR	CASP8 and FADD-like apoptosis regulator	1	1	1	LUA-3259	epsilon	7.5012	7.4156	7.3545	8.7214	7.4987	7.3889	7.3231	7.0201	7.8772	7.2565
+201416_at	Analyte 88	88	dp52	6659	SOX4	SRY (sex determining region Y)-box 4	1	1	1	LUA-680	epsilon	10.2615	9.6397	9.0943	9.4805	9.6434	9.4086	9.8899	9.9331	10.2615	9.7436
+218595_s_at	Analyte 89	89	dp53	55127	HEATR1	HEAT repeat containing 1	1	1	1	LUA-635	epsilon	9.4229	9.7703	9.4994	9.1335	8.9288	9.0076	9.6152	10.4679	8.5310	9.8151
+204106_at	Analyte 89	89	dp52	7016	TESK1	testis-specific kinase 1	1	1	1	LUA-92	epsilon	8.9172	9.2319	10.3278	10.9266	9.9043	10.1682	9.0902	9.8446	9.9120	9.2946
+212115_at	Analyte 90	90	dp52	90861	HN1L	hematological and neurological expressed 1-like	1	1	1	LUA-3555	epsilon	10.6283	10.0775	10.0830	9.7638	9.9780	9.9520	10.0802	10.3046	10.1649	10.5473
+212880_at	Analyte 90	90	dp53	23335	WDR7	WD repeat domain 7	1	1	1	LUA-1315	epsilon	10.0039	6.7887	7.1082	7.7461	6.7964	6.8565	7.2230	7.0972	7.3988	6.0427
+203848_at	Analyte 91	91	dp53	10270	AKAP8	A kinase (PRKA) anchor protein 8	1	1	1	LUA-24	epsilon	7.4250	8.5672	7.6452	8.3753	6.8295	7.4517	8.5816	8.5209	8.7020	8.9944
+201628_s_at	Analyte 91	91	dp52	10670	RRAGA	Ras-related GTP binding A	1	1	1	LUA-1273	epsilon	8.5129	7.8371	8.5129	7.6894	8.6237	8.3734	8.0156	7.9018	7.8050	8.1790
+204256_at	Analyte 92	92	dp52	79071	ELOVL6	ELOVL fatty acid elongase 6	1	1	1	LUA-3480	epsilon	8.9874	8.6302	9.1813	8.9251	9.4874	9.3273	8.4347	9.1897	8.7640	8.9809
+212811_x_at	Analyte 92	92	dp53	6509	SLC1A4	solute carrier family 1 (glutamate/neutral amino acid transporter), member 4	1	1	1	LUA-3340	epsilon	4.9934	4.4853	8.6067	4.7466	5.9403	8.7214	8.9780	4.2303	4.1938	4.5311
+202324_s_at	Analyte 93	93	dp52	64746	ACBD3	acyl-CoA binding domain containing 3	1	1	1	LUA-132	epsilon	8.0936	7.3201	7.5104	7.4517	8.1398	7.8371	7.3917	7.9150	7.9864	7.6623
+221549_at	Analyte 93	93	dp53	83743	GRWD1	glutamate-rich WD repeat containing 1	1	1	1	LUA-340	epsilon	7.1859	8.1533	8.1418	6.4684	6.2421	6.7056	8.2713	7.0201	6.5076	8.3587
+204285_s_at	Analyte 94	94	dp52	5366	PMAIP1	phorbol-12-myristate-13-acetate-induced protein 1	1	1	1	LUA-136	epsilon	6.8051	6.7367	7.2105	8.0254	6.8549	6.7282	6.5818	7.9560	7.1295	6.3853
+200887_s_at	Analyte 94	94	dp53	6772	STAT1	signal transducer and activator of transcription 1, 91kDa	1	1	1	LUA-4495	epsilon	8.4257	9.0625	8.3086	6.9260	8.4437	8.6623	8.4321	6.4086	8.8139	9.3458
+206015_s_at	Analyte 95	95	dp53	22887	FOXJ3	forkhead box J3	1	1	1	LUA-469	epsilon	7.1428	7.6524	6.9189	6.5557	7.1464	7.1082	7.2872	7.2712	7.3889	7.1778
+202009_at	Analyte 95	95	dp52	11344	TWF2	twinfilin, actin-binding protein, homolog 2 (Drosophila)	1	1	1	LUA-551	epsilon	8.0730	8.3982	7.8998	7.5856	8.3876	8.1352	8.0730	7.9713	8.7482	8.0656
+206846_s_at	Analyte 96	96	dp52	10013	HDAC6	histone deacetylase 6	1	1	1	LUA-838	epsilon	7.2425	7.4289	7.6743	7.4844	8.1833	7.6595	7.7262	7.6309	7.7863	7.3260
+219363_s_at	Analyte 96	96	dp53	51001	MTERFD1	MTERF domain containing 1	1	1	1	LUA-2032	epsilon	10.6610	10.8128	11.3940	11.6555	11.3940	11.5907	10.7566	11.2822	10.6858	10.5169
+208711_s_at	Analyte 97	97	dp52	595	CCND1	cyclin D1	1	1	1	LUA-3735	epsilon	9.9814	9.6628	8.6574	9.1845	9.6955	9.6500	9.1151	9.7993	9.4443	10.3179
+219492_at	Analyte 97	97	dp53	26511	CHIC2	cysteine-rich hydrophobic domain 2	1	1	1	LUA-1029	epsilon	7.6981	7.4771	9.5398	8.4196	8.1054	8.3099	8.0504	8.5100	6.8318	7.2317
+201087_at	Analyte 98	98	dp52	5829	PXN	paxillin	1	1	1	LUA-94	epsilon	11.4620	11.7174	11.2572	11.0896	11.0632	11.2615	11.6716	11.4279	11.9974	11.6155
+201498_at	Analyte 98	98	dp53	7874	USP7	ubiquitin specific peptidase 7 (herpes virus-associated)	1	1	1	LUA-150	epsilon	7.8681	6.9189	7.1428	10.3709	7.4478	7.2105	7.6699	7.2534	7.7133	7.8489
+217950_at	Analyte 99	99	dp53	51070	NOSIP	nitric oxide synthase interacting protein	1	1	1	LUA-665	epsilon	7.8371	8.0685	7.9990	5.8152	4.5194	5.6516	8.0254	7.9243	6.6363	8.1279
+202738_s_at	Analyte 99	99	dp52	5257	PHKB	phosphorylase kinase, beta	1	1	1	LUA-677	epsilon	6.2148	6.4341	6.3686	7.2534	7.1563	6.9947	6.9821	6.2372	7.9864	6.6978
+209095_at	Analyte 100	100	dp53	1738	DLD	dihydrolipoamide dehydrogenase	1	1	1	LUA-56	epsilon	11.8433	11.9050	11.6372	10.8014	11.3131	11.0377	11.8121	11.5043	11.7174	5.4876
+214062_x_at	Analyte 100	100	dp52	4793	NFKBIB	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor, beta	1	1	1	LUA-3102	epsilon	6.2421	6.3503	6.1463	6.1028	5.8680	5.6131	6.5146	5.7472	5.7837	6.5412
+207842_s_at	Analyte 101	101	dp52	22794	CASC3	cancer susceptibility candidate 3	1	1	1	LUA-855	epsilon	7.3150	7.7814	6.8958	6.5054	7.3335	7.0470	7.7838	7.2993	8.2713	7.6116
+217496_s_at	Analyte 101	101	dp53	3416	IDE	insulin-degrading enzyme	1	1	1	LUA-4498	epsilon	6.2040	5.7551	5.5150	5.2891	4.0890	5.3790	5.3378	5.2262	5.4362	6.5616
+205153_s_at	Analyte 102	102	dp53	958	CD40	CD40 molecule, TNF receptor superfamily member 5	1	1	1	LUA-3755	epsilon	8.5905	9.8151	10.5837	10.9909	10.2981	11.4899	9.3554	10.2380	9.1184	8.5037
+200617_at	Analyte 102	102	dp52	9761	MLEC	malectin	1	1	1	LUA-1222	epsilon	11.6303	11.7030	11.4899	11.5244	11.7974	10.9545	11.7453	11.7635	12.0514	11.7974
+207034_s_at	Analyte 103	103	dp52	2736	GLI2	GLI family zinc finger 2	1	1	1	LUA-4176	epsilon	3.9900	4.6060	6.3686	5.5932	4.4621	7.0588	6.3267	6.2040	8.5609	4.4743
+209161_at	Analyte 103	103	dp53	9128	PRPF4	PRP4 pre-mRNA processing factor 4 homolog (yeast)	1	1	1	LUA-623	epsilon	8.8322	8.6418	8.9637	8.8747	8.7574	8.7153	8.6722	9.0925	6.2040	8.7139
+204825_at	Analyte 104	104	dp53	9833	MELK	maternal embryonic leucine zipper kinase	1	1	1	LUA-767	epsilon	9.5093	9.3126	9.5398	9.2061	9.0210	8.8642	9.7542	9.2797	9.6434	12.6188
+200083_at	Analyte 104	104	dp52	23326	USP22	ubiquitin specific peptidase 22	1	1	1	LUA-1115	epsilon	12.7232	12.3381	12.5856	12.1451	12.4932	12.5157	12.1451	12.6188	11.3266	12.8547
+201763_s_at	Analyte 105	105	dp53	1616	DAXX	death-domain associated protein	1	1	1	LUA-3953	epsilon	8.2939	7.5598	7.5636	7.6417	7.4036	7.8681	7.9037	8.0784	8.0963	7.6046
+200929_at	Analyte 105	105	dp52	10972	TMED10	transmembrane emp24-like trafficking protein 10 (yeast)	1	1	1	LUA-4516	epsilon	12.4583	12.5157	12.4276	12.0414	12.3673	12.3673	12.6514	12.4583	12.5157	12.5548
+202230_s_at	Analyte 106	106	dp52	10523	CHERP	calcium homeostasis endoplasmic reticulum protein	1	1	1	LUA-14	epsilon	8.7880	9.2201	8.5283	8.5417	7.6243	7.8489	9.2760	8.1103	10.3146	8.5129
+205398_s_at	Analyte 106	106	dp53	4088	SMAD3	SMAD family member 3	1	1	1	LUA-3785	epsilon	9.3137	8.4653	7.5892	7.7461	8.4867	8.9288	7.7673	9.1793	8.7760	9.3584
+208717_at	Analyte 107	107	dp53	5018	OXA1L	oxidase (cytochrome c) assembly 1-like	1	1	1	LUA-3135	epsilon	12.4276	12.3898	7.7704	11.9460	12.6188	11.9334	12.5157	12.2298	12.4583	12.4583
+204369_at	Analyte 107	107	dp52	5290	PIK3CA	phosphoinositide-3-kinase, catalytic, alpha polypeptide	1	1	1	LUA-3187	epsilon	7.6651	8.3490	8.6784	8.4480	8.1936	7.9197	8.5011	7.8228	9.1659	7.5985
+205573_s_at	Analyte 108	108	dp53	51375	SNX7	sorting nexin 7	1	1	1	LUA-3790	epsilon	10.7212	11.3636	12.5548	12.9899	12.1060	12.8067	11.7583	12.4932	11.9581	11.0579
+204985_s_at	Analyte 108	108	dp52	79090	TRAPPC6A	trafficking protein particle complex 6A	1	1	1	LUA-4005	epsilon	10.1241	10.0251	9.9120	10.1406	10.2119	10.1615	10.2191	10.3438	10.5249	9.5339
+212255_s_at	Analyte 109	109	dp52	27032	ATP2C1	ATPase, Ca++ transporting, type 2C, member 1	1	1	1	LUA-674	epsilon	8.2793	8.1031	8.0757	8.6995	9.0468	8.9705	8.6067	8.7341	7.3464	8.6600
+218399_s_at	Analyte 109	109	dp53	55038	CDCA4	cell division cycle associated 4	1	1	1	LUA-595	epsilon	8.8642	8.7020	9.0294	7.8681	7.9624	7.9769	7.5328	8.1692	9.1772	7.7814
+212054_x_at	Analyte 110	110	dp53	23061	TBC1D9B	TBC1 domain family, member 9B (with GRAM domain)	1	1	1	LUA-1288	epsilon	8.6600	8.1665	6.0587	8.1936	6.4156	6.9208	8.1665	8.4506	6.5412	6.4341
+201671_x_at	Analyte 110	110	dp52	9097	USP14	ubiquitin specific peptidase 14 (tRNA-guanine transglycosylase)	1	1	1	LUA-1051	epsilon	6.7964	6.5054	7.5104	7.5012	7.8914	7.7575	6.8764	7.4732	8.4885	7.7096
+202630_at	Analyte 111	111	dp52	10513	APPBP2	amyloid beta precursor protein (cytoplasmic tail) binding protein 2	1	1	1	LUA-964	epsilon	11.1190	11.1004	10.9840	10.7925	11.6555	10.9654	10.8315	11.0324	11.5984	11.5907
+202870_s_at	Analyte 111	111	dp53	991	CDC20	cell division cycle 20 homolog (S. cerevisiae)	1	1	1	LUA-3765	epsilon	12.5157	12.6188	12.4583	11.9206	12.3144	11.9581	11.4054	12.2091	13.0719	12.5157
+218742_at	Analyte 112	112	dp53	64428	NARFL	nuclear prelamin A recognition factor-like	1	1	1	LUA-146	epsilon	7.5064	7.7735	7.8862	7.9713	7.7316	8.1565	7.6015	7.7461	8.6152	7.7421
+200081_s_at	Analyte 112	112	dp52	6194	RPS6	ribosomal protein S6	1	1	1	LUA-3529	epsilon	14.4730	14.4730	14.4730	14.3828	14.3828	14.4730	14.2926	14.4730	14.4730	14.4730
+201788_at	Analyte 113	113	dp53	11325	DDX42	DEAD (Asp-Glu-Ala-Asp) box polypeptide 42	1	1	1	LUA-68	epsilon	8.8728	8.6131	11.7030	8.1692	8.5209	8.2691	8.4190	8.4867	8.5310	8.8642
+200789_at	Analyte 113	113	dp52	1891	ECH1	enoyl CoA hydratase 1, peroxisomal	1	1	1	LUA-3474	epsilon	11.9756	11.9974	12.2605	12.0694	11.9756	12.0694	12.0694	12.0414	12.0414	11.6716
+201833_at	Analyte 114	114	dp52	3066	HDAC2	histone deacetylase 2	1	1	1	LUA-997	epsilon	9.9602	9.5339	9.7102	9.7436	9.3735	9.5368	9.6580	9.5847	9.4010	9.5956
+204549_at	Analyte 114	114	dp53	9641	IKBKE	inhibitor of kappa light polypeptide gene enhancer in B-cells, kinase epsilon	1	1	1	LUA-775	epsilon	4.9934	9.9814	4.1938	9.1618	10.0739	4.2303	5.1996	4.6254	5.9079	4.4266
+216598_s_at	Analyte 115	115	dp53	6347	CCL2	chemokine (C-C motif) ligand 2	1	1	1	LUA-3724	epsilon	4.5079	5.2465	5.5741	6.0113	5.8152	4.8059	4.5731	5.2262	4.7466	9.5177
+203277_at	Analyte 115	115	dp52	1676	DFFA	DNA fragmentation factor, 45kDa, alpha polypeptide	1	1	1	LUA-3959	epsilon	9.0536	9.5222	10.3354	10.7130	9.6334	10.2155	9.1699	10.2119	8.9288	8.8956
+203465_at	Analyte 116	116	dp52	9801	MRPL19	mitochondrial ribosomal protein L19	1	1	1	LUA-681	epsilon	11.3174	10.9909	11.1636	10.6144	10.6191	11.0206	11.3858	11.1302	11.5005	11.1787
+40829_at	Analyte 116	116	dp53	23038	WDTC1	WD and tetratricopeptide repeats 1	1	1	1	LUA-2036	epsilon	7.2993	7.7350	7.1818	6.9632	7.3395	7.3443	8.1131	7.6699	7.4200	7.0895
+56197_at	Analyte 117	117	dp53	57048	PLSCR3	phospholipid scramblase 3	1	1	1	LUA-4094	epsilon	8.1665	8.1279	8.0343	7.7958	8.3099	7.5360	8.4690	8.1447	9.4122	7.9816
+212287_at	Analyte 117	117	dp52	23512	SUZ12	suppressor of zeste 12 homolog (Drosophila)	1	1	1	LUA-3806	epsilon	9.5519	9.4753	9.7354	10.2191	9.4994	9.8091	9.2201	9.7575	8.4190	9.2579
+203575_at	Analyte 118	118	dp52	1459	CSNK2A2	casein kinase 2, alpha prime polypeptide	1	1	1	LUA-1213	epsilon	6.7533	5.3714	5.6845	5.7393	6.3503	6.3038	6.6930	5.3272	6.5616	7.7501
+212206_s_at	Analyte 118	118	dp53	94239	H2AFV	H2A histone family, member V	1	1	1	LUA-704	epsilon	5.1014	7.2712	7.7283	8.1692	7.9150	3.7516	5.1996	7.4156	4.0742	6.0171
+218039_at	Analyte 119	119	dp53	51203	NUSAP1	nucleolar and spindle associated protein 1	1	1	1	LUA-928	epsilon	8.8277	9.0845	9.0717	8.8563	4.2303	8.8907	9.2142	9.1335	9.4858	9.0260
+213191_at	Analyte 119	119	dp52	148022	TICAM1	toll-like receptor adaptor molecule 1	1	1	1	LUA-3860	epsilon	5.4501	4.9438	5.6286	6.1721	7.7888	6.4086	5.4432	5.8370	5.4501	6.0587
+213689_x_at	Analyte 120	120	dp53	388650	FAM69A	family with sequence similarity 69, member A	1	1	1	LUA-1243	epsilon	9.0445	9.3524	9.9307	10.5249	9.8864	10.3952	9.4518	9.2887	9.6719	8.2248
+201729_s_at	Analyte 120	120	dp52	9703	KIAA0100	KIAA0100	1	1	1	LUA-334	epsilon	8.6936	8.7424	8.4480	8.4818	8.4334	8.4704	8.2020	8.5672	8.4074	9.1897
+201014_s_at	Analyte 121	121	dp52	10606	PAICS	phosphoribosylaminoimidazole carboxylase, phosphoribosylaminoimidazole succinocarboxamide synthetase	1	1	1	LUA-4179	epsilon	7.7838	7.4638	7.0577	7.3419	7.4200	7.7575	7.7914	7.0299	7.3464	8.1790
+213324_at	Analyte 121	121	dp53	6714	SRC	v-src sarcoma (Schmidt-Ruppin A-2) viral oncogene homolog (avian)	1	1	1	LUA-3797	epsilon	5.1905	3.8074	4.0742	4.1172	4.2303	4.4158	4.3270	4.6254	4.8059	5.6845
+211518_s_at	Analyte 122	122	dp53	652	BMP4	bone morphogenetic protein 4	1	1	1	LUA-3682	epsilon	7.0774	7.3053	8.9214	9.2723	6.9777	8.0685	7.3700	7.3464	7.6353	6.1969
+204252_at	Analyte 122	122	dp52	1017	CDK2	cyclin-dependent kinase 2	1	1	1	LUA-391	epsilon	9.6011	9.5056	8.3158	8.5989	8.4334	8.9214	9.4347	9.0879	10.1438	9.2908
+218995_s_at	Analyte 123	123	dp52	1906	EDN1	endothelin 1	1	1	1	LUA-3980	epsilon	9.2866	8.9096	9.7973	10.2519	9.4229	9.9143	9.0902	9.6628	9.0791	8.5392
+212166_at	Analyte 123	123	dp53	23039	XPO7	exportin 7	1	1	1	LUA-650	epsilon	8.3219	8.1075	7.7283	6.8911	6.4156	7.4391	8.1665	7.7791	7.4200	7.7187
+220643_s_at	Analyte 124	124	dp53	55179	FAIM	Fas apoptotic inhibitory molecule	1	1	1	LUA-805	epsilon	7.9037	7.7049	9.2887	9.2908	8.7354	9.0365	7.4987	8.0936	6.8652	8.7612
+201778_s_at	Analyte 124	124	dp52	9813	KIAA0494	KIAA0494	1	1	1	LUA-474	epsilon	8.7948	8.2793	8.3734	8.5037	7.9353	7.7316	8.1398	8.7640	8.2456	7.9353
+219076_s_at	Analyte 125	125	dp53	5827	PXMP2	peroxisomal membrane protein 2, 22kDa	1	1	1	LUA-4395	epsilon	10.1055	10.3146	10.2981	9.4721	11.7453	10.1470	9.6213	10.0802	9.2142	10.0217
+201471_s_at	Analyte 125	125	dp52	8878	SQSTM1	sequestosome 1	1	1	1	LUA-3793	epsilon	12.3381	12.2298	11.9050	11.8574	12.5157	11.8574	12.0959	12.3144	11.8433	12.0694
+200989_at	Analyte 126	126	dp52	3091	HIF1A	hypoxia inducible factor 1, alpha subunit (basic helix-loop-helix transcription factor)	1	1	1	LUA-4240	epsilon	13.2844	13.2357	13.4607	13.3568	13.4607	13.5526	13.2844	13.3568	12.7662	13.2844
+203342_at	Analyte 126	126	dp53	10245	TIMM17B	translocase of inner mitochondrial membrane 17 homolog B (yeast)	1	1	1	LUA-847	epsilon	11.5984	11.4620	11.1190	11.0579	11.3266	10.8792	11.5761	11.4769	11.4355	11.3266
+209367_at	Analyte 127	127	dp53	6813	STXBP2	syntaxin binding protein 2	1	1	1	LUA-4420	epsilon	7.4921	8.4985	7.0118	6.3076	8.7574	7.3580	7.6309	8.3517	8.3414	7.5104
+202749_at	Analyte 127	127	dp52	7485	WRB	tryptophan rich basic protein	1	1	1	LUA-982	epsilon	8.4257	7.7814	7.7976	7.8520	7.6452	8.2032	8.3033	7.2115	7.6651	8.4885
+202942_at	Analyte 128	128	dp52	2109	ETFB	electron-transfer-flavoprotein, beta polypeptide	1	1	1	LUA-3496	epsilon	10.8230	10.6328	8.2803	10.1055	10.4595	10.2849	10.8128	10.8014	10.6410	10.8571
+203565_s_at	Analyte 128	128	dp53	4331	MNAT1	menage a trois homolog 1, cyclin H assembly factor (Xenopus laevis)	1	1	1	LUA-3037	epsilon	8.1131	8.1352	10.2119	7.7262	8.7153	8.1936	7.9037	8.0085	8.0054	8.3074
+212765_at	Analyte 129	129	dp52	23271	CAMSAP2	calmodulin regulated spectrin-associated protein family, member 2	1	1	1	LUA-3	epsilon	10.1914	10.3952	11.2401	11.5453	10.6521	11.0579	10.4679	10.8974	10.2758	10.0703
+202854_at	Analyte 129	129	dp53	3251	HPRT1	hypoxanthine phosphoribosyltransferase 1	1	1	1	LUA-1097	epsilon	11.3266	11.1702	10.6101	10.3984	11.3858	11.4620	10.8014	10.4508	10.9771	11.4769
+202986_at	Analyte 130	130	dp52	9915	ARNT2	aryl-hydrocarbon receptor nuclear translocator 2	1	1	1	LUA-339	epsilon	10.8571	11.6155	12.1876	12.6866	11.7635	12.0184	10.9654	11.5907	9.7830	10.0457
+209567_at	Analyte 130	130	dp53	23212	RRS1	RRS1 ribosome biogenesis regulator homolog (S. cerevisiae)	1	1	1	LUA-4049	epsilon	8.2123	7.9150	7.9990	7.4327	7.7609	7.5938	7.6595	7.8587	7.8438	8.5845
+219384_s_at	Analyte 131	131	dp53	23536	ADAT1	adenosine deaminase, tRNA-specific 1	1	1	1	LUA-2006	epsilon	7.6015	7.2845	8.1075	8.3982	7.7316	8.0054	7.9353	8.0085	8.3490	7.3023
+200053_at	Analyte 131	131	dp52	9552	SPAG7	sperm associated antigen 7	1	1	1	LUA-407	epsilon	10.2191	10.3674	10.3507	10.5837	10.4248	10.4093	10.3278	10.4155	10.3674	10.4410
+212644_s_at	Analyte 132	132	dp52	93487	MAPK1IP1L	mitogen-activated protein kinase 1 interacting protein 1-like	1	1	1	LUA-856	epsilon	9.5620	9.3247	9.1216	9.2866	8.6784	8.8031	9.4483	9.2353	10.9443	9.6213
+218206_x_at	Analyte 132	132	dp53	51282	SCAND1	SCAN domain containing 1	1	1	1	LUA-865	epsilon	11.5244	11.4769	10.8230	10.6977	10.7925	11.2530	11.1570	11.4355	8.4289	11.1570
+209215_at	Analyte 133	133	dp53	10227	MFSD10	major facilitator superfamily domain containing 10	1	1	1	LUA-4393	epsilon	9.6529	10.2191	9.5276	10.4327	9.7031	9.4721	9.9331	9.5780	9.2887	9.8772
+202911_at	Analyte 133	133	dp52	2956	MSH6	mutS homolog 6 (E. coli)	1	1	1	LUA-1330	epsilon	10.3179	9.8696	10.2652	9.8578	10.3952	10.0615	10.4093	10.3507	10.6714	10.4794
+209029_at	Analyte 134	134	dp53	50813	COPS7A	COP9 constitutive photomorphogenic homolog subunit 7A (Arabidopsis)	1	1	1	LUA-873	epsilon	9.2243	9.6903	9.0403	8.8299	11.5347	8.7914	10.1682	9.4402	9.5519	9.1813
+202954_at	Analyte 134	134	dp52	11065	UBE2C	ubiquitin-conjugating enzyme E2C	1	1	1	LUA-1176	epsilon	11.3858	10.8914	10.9840	10.5387	9.3890	10.7672	11.1190	10.8792	10.8853	11.1469
+218034_at	Analyte 135	135	dp53	51024	FIS1	fission 1 (mitochondrial outer membrane) homolog (S. cerevisiae)	1	1	1	LUA-703	epsilon	9.2243	9.5716	9.2887	8.7341	8.8728	9.1517	10.0457	9.1151	10.9545	9.1335
+203285_s_at	Analyte 135	135	dp52	9653	HS2ST1	heparan sulfate 2-O-sulfotransferase 1	1	1	1	LUA-1302	epsilon	4.6254	4.9934	5.0186	5.4020	2.7934	4.9337	5.0719	4.9934	4.9622	4.9706
+218375_at	Analyte 136	136	dp53	53343	NUDT9	nudix (nucleoside diphosphate linked moiety X)-type motif 9	1	1	1	LUA-5	epsilon	8.4955	8.6722	8.8031	8.6811	8.3219	8.6270	8.4690	8.5609	8.2020	8.4848
+212300_at	Analyte 136	136	dp52	200081	TXLNA	taxilin alpha	1	1	1	LUA-486	epsilon	10.5430	10.2578	10.4794	10.0830	10.4855	10.2981	10.2519	10.5353	9.7638	10.8376
+200621_at	Analyte 137	137	dp53	1465	CSRP1	cysteine and glycine-rich protein 1	1	1	1	LUA-851	epsilon	12.9899	13.0274	12.6866	12.4583	13.0274	13.1028	13.1473	13.1473	12.7232	12.9473
+200666_s_at	Analyte 137	137	dp52	3337	DNAJB1	DnaJ (Hsp40) homolog, subfamily B, member 1	1	1	1	LUA-862	epsilon	11.2615	10.5319	10.4736	10.3212	10.4371	10.4508	10.4930	10.5973	10.2119	10.7768
+219051_x_at	Analyte 138	138	dp53	79006	METRN	meteorin, glial cell differentiation regulator	1	1	1	LUA-4021	epsilon	9.7436	10.0116	9.7031	9.5847	7.5237	9.8772	8.7536	8.4787	8.1131	10.0775
+202633_at	Analyte 138	138	dp52	11073	TOPBP1	topoisomerase (DNA) II binding protein 1	1	1	1	LUA-787	epsilon	8.6995	8.6359	8.9780	9.0811	8.8997	8.8207	9.9896	9.3304	9.3890	8.6906
+200045_at	Analyte 139	139	dp52	23	ABCF1	ATP-binding cassette, sub-family F (GCN20), member 1	1	1	1	LUA-523	epsilon	9.8013	9.8384	9.3026	9.7830	9.7638	9.7066	9.9225	9.6827	10.4155	9.8899
+203054_s_at	Analyte 139	139	dp53	6988	TCTA	T-cell leukemia translocation altered gene	1	1	1	LUA-864	epsilon	7.9951	9.0327	9.8899	8.7045	8.4257	8.5554	8.9599	8.1978	8.6838	9.0159
+201212_at	Analyte 140	140	dp52	5641	LGMN	legumain	1	1	1	LUA-3590	epsilon	7.7521	7.5777	7.1295	7.3260	7.0801	6.4399	7.2790	7.4250	7.8489	7.9495
+212997_s_at	Analyte 140	140	dp53	11011	TLK2	tousled-like kinase 2	1	1	1	LUA-984	epsilon	10.2119	10.6761	10.3626	10.2652	10.9266	10.6410	10.7130	10.4825	11.1469	10.6238
+212795_at	Analyte 141	141	dp53	23325	KIAA1033	KIAA1033	1	1	1	LUA-853	epsilon	2.9543	7.9506	3.6392	7.2458	8.1565	7.7735	8.2793	3.4858	3.6392	2.7934
+204748_at	Analyte 141	141	dp52	5743	PTGS2	prostaglandin-endoperoxide synthase 2 (prostaglandin G/H synthase and cyclooxygenase)	1	1	1	LUA-3425	epsilon	8.3753	2.5613	8.3335	2.7934	3.5447	3.5257	3.1600	7.7976	8.3678	8.0526
+209015_s_at	Analyte 142	142	dp53	10049	DNAJB6	DnaJ (Hsp40) homolog, subfamily B, member 6	1	1	1	LUA-3067	epsilon	11.2095	11.0473	11.0896	12.1677	10.6410	11.1396	10.1615	10.5473	10.0703	10.9158
+210145_at	Analyte 142	142	dp52	5321	PLA2G4A	phospholipase A2, group IVA (cytosolic, calcium-dependent)	1	1	1	LUA-3227	epsilon	9.8151	10.3744	11.6155	11.7974	11.4899	11.7841	10.9443	11.2219	10.7463	9.8830
+200768_s_at	Analyte 143	143	dp52	4144	MAT2A	methionine adenosyltransferase II, alpha	1	1	1	LUA-3011	epsilon	11.7453	11.5632	11.7974	11.9581	11.8121	11.9050	11.3636	11.9206	11.4111	11.4355
+221060_s_at	Analyte 143	143	dp53	7099	TLR4	toll-like receptor 4	1	1	1	LUA-3870	epsilon	11.7174	3.5257	4.3406	11.9974	3.6787	4.0335	11.6372	4.0890	4.8654	11.4279
+221750_at	Analyte 144	144	dp53	3157	HMGCS1	3-hydroxy-3-methylglutaryl-CoA synthase 1 (soluble)	1	1	1	LUA-3553	epsilon	11.1088	11.2275	10.9545	10.6057	11.0377	10.8571	11.5043	11.2698	8.8445	11.0686
+201620_at	Analyte 144	144	dp52	8720	MBTPS1	membrane-bound transcription factor peptidase, site 1	1	1	1	LUA-383	epsilon	8.5100	8.3982	8.5746	8.0085	9.0403	8.5209	8.6152	8.3954	11.8702	8.6722
+212458_at	Analyte 145	145	dp53	200734	SPRED2	sprouty-related, EVH1 domain containing 2	1	1	1	LUA-485	epsilon	8.7146	6.6157	9.2480	9.1411	5.9403	8.5956	9.1492	8.8031	9.6091	8.8766
+204937_s_at	Analyte 145	145	dp52	10782	ZNF274	zinc finger protein 274	1	1	1	LUA-586	epsilon	6.8390	7.5636	7.3395	7.4094	8.4033	6.1337	7.6275	6.8467	8.1858	6.7579
+201560_at	Analyte 146	146	dp52	25932	CLIC4	chloride intracellular channel 4	1	1	1	LUA-4440	epsilon	10.9034	11.0796	10.9266	10.4155	10.9443	10.7566	11.0896	10.8376	10.9909	11.0140
+202889_x_at	Analyte 146	146	dp53	9053	MAP7	microtubule-associated protein 7	1	1	1	LUA-3327	epsilon	8.9288	8.3855	10.4508	8.3374	8.3706	8.4593	8.1910	8.6359	8.5688	8.8445
+219270_at	Analyte 147	147	dp53	79094	CHAC1	ChaC, cation transport regulator homolog 1 (E. coli)	1	1	1	LUA-2031	epsilon	9.7154	9.1877	10.5906	11.2822	10.9353	11.1980	9.6676	10.6667	10.6328	8.9944
+208624_s_at	Analyte 147	147	dp52	1981	EIF4G1	eukaryotic translation initiation factor 4 gamma, 1	1	1	1	LUA-4009	epsilon	9.3071	9.6955	8.9978	8.9404	8.9172	8.7139	9.0501	9.6152	9.4443	9.6273
+205504_at	Analyte 148	148	dp52	695	BTK	Bruton agammaglobulinemia tyrosine kinase	1	1	1	LUA-3691	epsilon	3.1600	3.9300	3.7875	3.5257	4.5731	5.3068	2.9543	3.8679	4.3643	3.6029
+200981_x_at	Analyte 148	148	dp53	2778	GNAS	GNAS complex locus	1	1	1	LUA-636	epsilon	14.2926	14.0740	14.0740	14.0740	14.0740	14.0740	4.9337	14.2926	14.2926	14.0740
+201058_s_at	Analyte 149	149	dp52	10398	MYL9	myosin, light chain 9, regulatory	1	1	1	LUA-3070	epsilon	6.9947	7.3335	7.7133	7.6894	7.9353	7.5262	6.0727	7.7735	7.3464	6.9208
+218104_at	Analyte 149	149	dp53	54881	TEX10	testis expressed 10	1	1	1	LUA-186	epsilon	5.3272	6.4890	6.2148	8.5129	6.0657	8.3753	7.8652	6.9110	6.0587	4.8825
+200830_at	Analyte 150	150	dp52	5708	PSMD2	proteasome (prosome, macropain) 26S subunit, non-ATPase, 2	1	1	1	LUA-3390	epsilon	11.8702	12.0414	11.7635	11.8702	11.5632	11.7635	11.9974	12.1351	11.7974	11.8262
+219711_at	Analyte 150	150	dp53	54807	ZNF586	zinc finger protein 586	1	1	1	LUA-3878	epsilon	6.5616	6.1065	7.0118	7.0412	6.5699	7.3580	6.2708	5.8152	7.2712	6.6783
+200614_at	Analyte 151	151	dp52	1213	CLTC	clathrin, heavy chain (Hc)	1	1	1	LUA-3922	epsilon	13.1473	13.2844	13.1926	13.1473	13.7036	13.2357	13.5526	13.1926	13.2844	13.7036
+205039_s_at	Analyte 151	151	dp53	10320	IKZF1	IKAROS family zinc finger 1 (Ikaros)	1	1	1	LUA-4329	epsilon	3.6029	3.6392	4.7172	4.4383	13.3568	4.8059	4.3845	4.8479	4.6686	3.9590
+213419_at	Analyte 152	152	dp53	323	APBB2	amyloid beta (A4) precursor protein-binding, family B, member 2	1	1	1	LUA-3254	epsilon	7.6275	8.2619	8.2939	10.3278	7.9416	8.4437	7.9679	8.4196	7.9990	7.7541
+202282_at	Analyte 152	152	dp52	3028	HSD17B10	hydroxysteroid (17-beta) dehydrogenase 10	1	1	1	LUA-661	epsilon	10.5973	10.7925	10.2519	9.6273	10.3146	10.2255	10.7852	10.7347	11.5244	10.5011
+212047_s_at	Analyte 153	153	dp53	26001	RNF167	ring finger protein 167	1	1	1	LUA-168	epsilon	10.1332	10.3881	10.0150	10.2981	10.0039	10.5737	10.5088	9.9166	6.4497	10.3674
+204729_s_at	Analyte 153	153	dp52	6804	STX1A	syntaxin 1A (brain)	1	1	1	LUA-766	epsilon	7.4517	7.6146	7.2712	7.5328	7.3658	7.0895	7.8797	7.4593	8.0116	7.9951
+200966_x_at	Analyte 154	154	dp52	226	ALDOA	aldolase A, fructose-bisphosphate	1	1	1	LUA-3630	epsilon	11.9334	11.6555	11.2938	11.5907	12.0414	11.8828	11.1396	11.8702	10.5387	12.0184
+206070_s_at	Analyte 154	154	dp53	2042	EPHA3	EPH receptor A3	1	1	1	LUA-4017	epsilon	4.9014	5.1014	6.2321	5.9079	5.0360	5.8077	4.5428	5.7202	5.9079	12.3381
+205026_at	Analyte 155	155	dp52	6777	STAT5B	signal transducer and activator of transcription 5B	1	1	1	LUA-3802	epsilon	3.6787	4.2436	2.5613	3.6787	4.1814	2.7934	4.7773	3.5257	4.2303	4.3845
+211758_x_at	Analyte 155	155	dp53	10190	TXNDC9	thioredoxin domain containing 9	1	1	1	LUA-793	epsilon	8.5956	8.3128	8.6600	8.3158	8.3374	8.2713	8.2084	8.0597	8.1447	8.7728
+203418_at	Analyte 156	156	dp52	890	CCNA2	cyclin A2	1	1	1	LUA-4055	epsilon	9.1411	8.8887	8.7612	8.7833	8.7744	8.9546	8.9637	9.8151	9.6182	9.9225
+212399_s_at	Analyte 156	156	dp53	9686	VGLL4	vestigial like 4 (Drosophila)	1	1	1	LUA-3231	epsilon	9.6719	9.6213	9.5601	9.6397	9.8384	9.7638	10.0703	8.5392	7.1392	9.3026
+205467_at	Analyte 157	157	dp53	843	CASP10	caspase 10, apoptosis-related cysteine peptidase	1	1	1	LUA-3710	epsilon	7.2105	7.7958	7.6046	8.4704	7.5598	7.1392	7.3545	7.6595	7.2105	6.0727
+202675_at	Analyte 157	157	dp52	6390	SDHB	succinate dehydrogenase complex, subunit B, iron sulfur (Ip)	1	1	1	LUA-1105	epsilon	11.4519	11.1980	11.2219	10.7672	10.8128	10.9909	11.2401	11.0140	11.3088	11.1702
+214447_at	Analyte 158	158	dp52	2113	ETS1	v-ets erythroblastosis virus E26 oncogene homolog 1 (avian)	1	1	1	LUA-4041	epsilon	7.9293	7.7421	9.3584	9.4288	9.2579	9.5276	8.3297	8.9993	9.4010	7.9037
+221741_s_at	Analyte 158	158	dp53	54915	YTHDF1	YTH domain family, member 1	1	1	1	LUA-1301	epsilon	9.5308	9.2908	8.1978	8.5905	8.3374	8.4593	9.4691	9.6759	8.2123	9.9673
+205451_at	Analyte 159	159	dp52	4303	FOXO4	forkhead box O4	1	1	1	LUA-320	epsilon	5.2465	5.7393	5.9079	5.9202	5.6680	5.7330	6.4457	5.7472	5.5237	5.8226
+211747_s_at	Analyte 159	159	dp53	23658	LSM5	LSM5 homolog, U6 small nuclear RNA associated (S. cerevisiae)	1	1	1	LUA-4346	epsilon	12.6866	12.1351	12.4932	11.7030	11.8702	11.7974	11.6303	12.0694	11.3383	11.8702
+201870_at	Analyte 160	160	dp52	10953	TOMM34	translocase of outer mitochondrial membrane 34	1	1	1	LUA-564	epsilon	8.0328	7.5237	7.7421	7.6292	7.6417	7.4156	7.0524	7.7241	6.9632	8.0828
+202778_s_at	Analyte 160	160	dp53	7750	ZMYM2	zinc finger, MYM-type 2	1	1	1	LUA-1104	epsilon	10.0615	10.0893	10.1014	9.6011	10.3278	9.8013	10.3881	10.1241	10.3507	10.4930
+218743_at	Analyte 161	161	dp53	79643	CHMP6	charged multivesicular body protein 6	1	1	1	LUA-1311	epsilon	5.1514	4.4383	5.6045	5.2891	4.8735	4.8735	4.4383	5.1326	7.5985	4.4266
+202220_at	Analyte 161	161	dp52	22889	KIAA0907	KIAA0907	1	1	1	LUA-839	epsilon	9.0403	8.7669	8.9978	8.5989	8.8031	8.8103	8.6359	8.7482	8.8031	8.9404
+207181_s_at	Analyte 162	162	dp53	840	CASP7	caspase 7, apoptosis-related cysteine peptidase	1	1	1	LUA-3717	epsilon	7.9416	8.6237	7.4250	8.4925	6.9390	8.8728	8.1031	7.5211	7.7541	8.1692
+200697_at	Analyte 162	162	dp52	3098	HK1	hexokinase 1	1	1	1	LUA-3548	epsilon	8.7536	7.9416	8.3464	7.6743	8.2713	8.1352	8.6784	8.5609	8.6722	9.0042
+202466_at	Analyte 163	163	dp52	11044	PAPD7	PAP associated domain containing 7	1	1	1	LUA-51	epsilon	10.7463	11.5005	11.7583	12.7232	11.3131	12.0959	11.2822	11.9460	11.2219	10.1579
+205452_at	Analyte 163	163	dp53	9488	PIGB	phosphatidylinositol glycan anchor biosynthesis, class B	1	1	1	LUA-88	epsilon	8.3834	8.7020	8.1418	7.9905	8.1747	8.0828	8.4848	8.5905	9.1184	7.8862
+210416_s_at	Analyte 164	164	dp53	11200	CHEK2	CHK2 checkpoint homolog (S. pombe)	1	1	1	LUA-3033	epsilon	7.6595	7.2105	7.3231	7.1958	7.6981	12.0414	7.0657	7.3201	7.2817	7.5394
+202185_at	Analyte 164	164	dp52	8985	PLOD3	procollagen-lysine, 2-oxoglutarate 5-dioxygenase 3	1	1	1	LUA-4015	epsilon	12.1060	12.1060	11.9669	12.2298	12.3381	12.3898	12.0514	12.5157	12.3673	12.3144
+204617_s_at	Analyte 165	165	dp53	65057	ACD	adrenocortical dysplasia homolog (mouse)	1	1	1	LUA-1331	epsilon	9.2946	8.9637	9.5131	9.6719	9.0879	9.4347	7.1818	9.4858	7.0010	6.9058
+202125_s_at	Analyte 165	165	dp52	66008	TRAK2	trafficking protein, kinesin binding 2	1	1	1	LUA-1114	epsilon	6.8051	6.8744	7.1483	6.5195	5.9202	6.7984	8.4459	6.5658	8.5209	8.9324
+212894_at	Analyte 166	166	dp53	6832	SUPV3L1	suppressor of var1, 3-like 1 (S. cerevisiae)	1	1	1	LUA-71	epsilon	10.6761	11.5984	11.9460	12.7662	11.6303	12.1677	11.3764	12.1876	11.2530	10.7852
+202550_s_at	Analyte 166	166	dp52	9217	VAPB	VAMP (vesicle-associated membrane protein)-associated protein B and C	1	1	1	LUA-573	epsilon	9.9166	9.6628	9.3247	9.2663	9.6434	9.1877	9.4259	9.4347	9.7255	9.6827
+212485_at	Analyte 167	167	dp53	23131	GPATCH8	G patch domain containing 8	1	1	1	LUA-758	epsilon	6.1808	6.1502	6.0427	5.5550	6.7852	5.8226	6.4746	6.1065	7.0269	5.5837
+200807_s_at	Analyte 167	167	dp52	3329	HSPD1	heat shock 60kDa protein 1 (chaperonin)	1	1	1	LUA-4281	epsilon	11.7030	11.4167	11.0579	11.1139	11.1469	10.8315	10.5906	11.1088	10.1166	11.4620
+203755_at	Analyte 168	168	dp52	701	BUB1B	budding uninhibited by benzimidazoles 1 homolog beta (yeast)	1	1	1	LUA-1013	epsilon	9.0902	9.7973	10.3984	10.8437	10.1914	10.2725	10.0390	9.8091	9.9307	9.1279
+207334_s_at	Analyte 168	168	dp53	7048	TGFBR2	transforming growth factor, beta receptor II (70/80kDa)	1	1	1	LUA-3850	epsilon	5.9906	5.4926	5.7837	5.3790	9.4858	5.8321	5.2262	5.0534	5.8077	5.4271
+203931_s_at	Analyte 169	169	dp52	6182	MRPL12	mitochondrial ribosomal protein L12	1	1	1	LUA-37	epsilon	12.2605	12.3144	12.2298	11.6070	12.1876	12.3144	12.1351	12.0959	12.1677	12.4932
+218902_at	Analyte 169	169	dp53	4851	NOTCH1	notch 1	1	1	1	LUA-3117	epsilon	9.1248	9.6334	9.6827	10.1241	9.2142	10.3881	9.6719	10.3116	10.0893	8.9637
+201695_s_at	Analyte 170	170	dp52	4860	PNP	purine nucleoside phosphorylase	1	1	1	LUA-1166	epsilon	11.8121	11.5453	11.5907	10.9034	11.4279	11.2938	11.3383	11.4899	11.3516	11.4899
+201469_s_at	Analyte 170	170	dp53	6464	SHC1	SHC (Src homology 2 domain containing) transforming protein 1	1	1	1	LUA-3557	epsilon	7.4638	8.1131	8.5338	8.5609	7.4638	7.9516	7.6015	8.0936	8.4985	7.4036
+221482_s_at	Analyte 171	171	dp53	10776	ARPP19	cAMP-regulated phosphoprotein, 19kDa	1	1	1	LUA-4296	epsilon	10.3881	10.4093	9.5847	9.5900	9.9166	9.6827	10.4736	9.8864	10.5473	10.1470
+204039_at	Analyte 171	171	dp52	1050	CEBPA	CCAAT/enhancer binding protein (C/EBP), alpha	1	1	1	LUA-3901	epsilon	6.7282	6.4086	5.5932	5.1109	5.8943	4.9539	6.3713	5.7953	6.6114	6.4920
+201052_s_at	Analyte 172	172	dp52	9491	PSMF1	proteasome (prosome, macropain) inhibitor subunit 1 (PI31)	1	1	1	LUA-3419	epsilon	8.2045	8.6936	8.8563	9.2142	8.8031	9.3735	8.4532	8.8563	8.7146	8.3439
+34408_at	Analyte 172	172	dp53	6253	RTN2	reticulon 2	1	1	1	LUA-734	epsilon	10.4155	11.0140	11.7299	12.2091	10.5088	11.6875	11.0796	11.5244	11.1787	10.2086
+89476_r_at	Analyte 173	173	dp53	79716	NPEPL1	aminopeptidase-like 1	1	1	1	LUA-276	epsilon	10.5169	10.6410	10.0390	10.3709	10.5169	10.3212	10.8792	10.5633	11.0579	10.3278
+202413_s_at	Analyte 173	173	dp52	7398	USP1	ubiquitin specific peptidase 1	1	1	1	LUA-1156	epsilon	6.7533	6.5818	6.3953	5.8553	6.5098	6.1028	6.4341	6.1898	5.9623	7.0269
+201528_at	Analyte 174	174	dp52	6117	RPA1	replication protein A1, 70kDa	1	1	1	LUA-798	epsilon	10.6144	10.6858	10.5011	9.9429	10.2519	10.2981	11.2938	10.3278	11.4519	10.6928
+221562_s_at	Analyte 174	174	dp53	23410	SIRT3	sirtuin 3	1	1	1	LUA-3569	epsilon	5.7676	6.0056	7.1428	6.7964	6.6930	7.8050	6.1145	6.5859	6.7887	6.4020
+217906_at	Analyte 175	175	dp52	23588	KLHDC2	kelch domain containing 2	1	1	1	LUA-1015	epsilon	11.2275	11.4519	11.0796	10.5169	11.2275	11.1302	11.5005	10.9158	11.5632	11.2698
+215884_s_at	Analyte 175	175	dp53	29978	UBQLN2	ubiquilin 2	1	1	1	LUA-619	epsilon	7.6894	7.5360	8.0116	7.9369	7.2676	7.8998	7.2993	7.5524	6.9208	8.1131
+203301_s_at	Analyte 176	176	dp53	9988	DMTF1	cyclin D binding myb-like transcription factor 1	1	1	1	LUA-1172	epsilon	7.7976	6.8273	7.0470	9.1558	6.3281	8.5704	7.3231	7.3076	7.5821	7.1224
+201819_at	Analyte 176	176	dp52	949	SCARB1	scavenger receptor class B, member 1	1	1	1	LUA-167	epsilon	8.8517	8.9461	8.2248	8.0028	8.0546	7.7015	8.8500	8.7153	9.7575	9.0042
+204809_at	Analyte 177	177	dp53	10845	CLPX	ClpX caseinolytic peptidase X homolog (E. coli)	1	1	1	LUA-1173	epsilon	9.1917	9.0159	8.8121	8.4704	8.7354	8.7536	9.1897	8.7045	9.5339	9.1659
+210986_s_at	Analyte 177	177	dp52	7168	TPM1	tropomyosin 1 (alpha)	1	1	1	LUA-3832	epsilon	10.8687	10.7078	10.7925	10.5906	10.9158	10.9096	10.7925	10.7347	10.3354	10.9545
+201078_at	Analyte 178	178	dp52	9375	TM9SF2	transmembrane 9 superfamily member 2	1	1	1	LUA-808	epsilon	7.9197	8.2123	7.9243	7.8748	8.5845	7.1609	7.3484	8.1533	8.0453	8.4074
+218794_s_at	Analyte 178	178	dp53	54957	TXNL4B	thioredoxin-like 4B	1	1	1	LUA-95	epsilon	8.5609	7.4517	6.6806	5.9462	6.6402	8.1833	8.0910	7.0834	6.2969	7.0598
+203952_at	Analyte 179	179	dp52	22926	ATF6	activating transcription factor 6	1	1	1	LUA-3662	epsilon	8.2434	7.8914	7.9243	8.0085	8.2020	8.1054	8.0328	7.9293	8.3678	8.1031
+219127_at	Analyte 179	179	dp53	79170	PRR15L	proline rich 15-like	1	1	1	LUA-671	epsilon	6.6486	6.9372	7.0701	7.2368	6.4497	7.0326	7.1609	6.8390	7.2397	6.7768
+202900_s_at	Analyte 180	180	dp52	4927	NUP88	nucleoporin 88kDa	1	1	1	LUA-4321	epsilon	10.8128	9.8830	9.9814	10.4093	10.7026	10.6610	10.2981	10.6521	11.5907	10.5319
+204542_at	Analyte 180	180	dp53	10610	ST6GALNAC2	ST6 (alpha-N-acetyl-neuraminyl-2,3-beta-galactosyl-1,3)-N-acetylgalactosaminide alpha-2,6-sialyltransferase 2	1	1	1	LUA-933	epsilon	9.7638	10.7463	10.7672	9.6955	9.9638	9.9602	11.1469	9.9673	10.3952	10.9909
+208847_s_at	Analyte 181	181	dp53	128	ADH5	alcohol dehydrogenase 5 (class III), chi polypeptide	1	1	1	LUA-3350	epsilon	9.6273	9.4632	9.7509	8.2084	8.2295	9.3835	9.3554	7.7609	9.2579	9.8696
+206109_at	Analyte 181	181	dp52	2523	FUT1	fucosyltransferase 1 (galactoside 2-alpha-L-fucosyltransferase, H blood group)	1	1	1	LUA-1127	epsilon	7.2194	7.5499	8.0196	9.0581	9.2663	8.7728	8.2899	9.0772	8.3876	7.1464
+218193_s_at	Analyte 182	182	dp53	51026	GOLT1B	golgi transport 1B	1	1	1	LUA-4494	epsilon	9.2693	8.3414	9.2104	8.4532	4.7369	8.3678	8.6460	8.8941	8.0963	8.6460
+209586_s_at	Analyte 182	182	dp52	58497	PRUNE	prune homolog (Drosophila)	1	1	1	LUA-978	epsilon	5.0360	5.1905	5.3272	5.3165	7.7521	5.3068	6.0587	5.1602	5.6217	5.1797
+204788_s_at	Analyte 183	183	dp53	5498	PPOX	protoporphyrinogen oxidase	1	1	1	LUA-1026	epsilon	7.9713	8.4690	9.1897	10.2380	9.0007	9.0210	7.9037	8.8685	7.6445	7.3464
+201260_s_at	Analyte 183	183	dp52	6856	SYPL1	synaptophysin-like 1	1	1	1	LUA-1249	epsilon	12.1451	12.3673	12.1677	11.7453	12.3898	11.9974	12.4932	12.1060	12.4276	12.2798
+221732_at	Analyte 184	184	dp53	124583	CANT1	calcium activated nucleotidase 1	1	1	1	LUA-693	epsilon	11.3940	11.5043	11.3858	11.3088	11.1088	11.1895	11.5984	11.4167	11.7453	11.2938
+212557_at	Analyte 184	184	dp52	26036	ZNF451	zinc finger protein 451	1	1	1	LUA-74	epsilon	7.3335	6.9005	6.7025	6.7207	7.7888	6.6930	7.0353	6.9884	7.5636	6.8764
+217080_s_at	Analyte 185	185	dp53	9455	HOMER2	homer homolog 2 (Drosophila)	1	1	1	LUA-738	epsilon	9.4866	10.1113	9.2285	8.8956	9.0210	9.5780	8.7536	8.9214	9.0007	9.3260
+202100_at	Analyte 185	185	dp52	5899	RALB	v-ral simian leukemia viral oncogene homolog B (ras related; GTP binding protein)	1	1	1	LUA-3458	epsilon	10.4093	9.5131	10.0322	9.7128	9.9429	8.9037	9.6273	9.9602	10.0974	10.2725
+205172_x_at	Analyte 186	186	dp53	1212	CLTB	clathrin, light chain B	1	1	1	LUA-4509	epsilon	11.5632	7.5856	10.6761	11.3940	10.8687	11.0896	7.6865	11.5632	11.7841	11.3636
+203659_s_at	Analyte 186	186	dp52	10206	TRIM13	tripartite motif containing 13	1	1	1	LUA-811	epsilon	7.5262	11.3383	8.1596	8.5787	7.9769	8.0028	6.8565	7.5328	7.7863	6.8764
+201178_at	Analyte 187	187	dp52	25793	FBXO7	F-box protein 7	1	1	1	LUA-1098	epsilon	8.1064	7.6292	8.1326	7.5211	7.9769	7.5598	7.6417	7.8914	8.5392	8.2899
+205450_at	Analyte 187	187	dp53	5255	PHKA1	phosphorylase kinase, alpha 1 (muscle)	1	1	1	LUA-349	epsilon	6.4746	6.2937	6.2593	6.6639	6.9777	6.2593	6.6363	6.4890	7.0895	6.4746
+208905_at	Analyte 188	188	dp53	54205	CYCS	cytochrome c, somatic	1	1	1	LUA-3951	epsilon	9.8801	9.7102	9.9971	9.3247	9.9638	9.5956	9.2353	9.4994	6.1631	3.6392
+37152_at	Analyte 188	188	dp52	5467	PPARD	peroxisome proliferator-activated receptor delta	1	1	1	LUA-3264	epsilon	6.2421	5.9969	5.9305	6.8390	6.1502	6.6199	6.2148	6.3366	8.2343	6.0884
+204143_s_at	Analyte 189	189	dp52	55556	ENOSF1	enolase superfamily member 1	1	1	1	LUA-3273	epsilon	6.4020	6.2270	6.0056	5.4362	5.8420	5.9522	6.3436	6.3366	6.6783	6.0279
+206571_s_at	Analyte 189	189	dp53	9448	MAP4K4	mitogen-activated protein kinase kinase kinase kinase 4	1	1	1	LUA-4217	epsilon	5.6516	5.0719	3.6787	6.8581	7.2565	3.6029	5.2971	5.1905	4.5950	7.2317
+203117_s_at	Analyte 190	190	dp53	9924	PAN2	PAN2 poly(A) specific ribonuclease subunit homolog (S. cerevisiae)	1	1	1	LUA-195	epsilon	3.2829	5.8420	2.7934	5.9305	7.5237	3.2486	2.7934	3.2486	6.5859	6.8098
+208992_s_at	Analyte 190	190	dp52	6774	STAT3	signal transducer and activator of transcription 3 (acute-phase response factor)	1	1	1	LUA-3799	epsilon	4.8479	3.5637	5.3272	3.2486	3.9300	4.9820	5.4729	5.9697	2.9543	4.3406
+202726_at	Analyte 191	191	dp52	3978	LIG1	ligase I, DNA, ATP-dependent	1	1	1	LUA-1279	epsilon	9.8578	9.5620	8.6876	9.6500	8.9172	9.4561	9.5131	9.5222	9.4661	9.7542
+204517_at	Analyte 191	191	dp53	5480	PPIC	peptidylprolyl isomerase C (cyclophilin C)	1	1	1	LUA-4354	epsilon	11.6555	11.5761	11.4620	10.6521	11.4054	8.6359	11.7974	11.0796	11.7635	11.7299
+208708_x_at	Analyte 192	192	dp53	1983	EIF5	eukaryotic translation initiation factor 5	1	1	1	LUA-3268	epsilon	11.4899	11.2401	11.4054	11.3858	10.8571	11.3858	10.6858	11.4054	11.0796	11.3383
+204000_at	Analyte 192	192	dp52	10681	GNB5	guanine nucleotide binding protein (G protein), beta 5	1	1	1	LUA-1290	epsilon	6.4579	6.6930	6.8273	7.0118	7.0801	7.2872	7.5475	6.7818	7.7241	6.8911
+209576_at	Analyte 193	193	dp53	2770	GNAI1	guanine nucleotide binding protein (G protein), alpha inhibiting activity polypeptide 1	1	1	1	LUA-4185	epsilon	4.7466	4.8479	4.6363	4.7867	5.9770	10.2578	3.8838	4.7961	5.0060	4.5311
+201626_at	Analyte 193	193	dp52	3638	INSIG1	insulin induced gene 1	1	1	1	LUA-1335	epsilon	11.3088	10.9266	11.0025	10.7390	11.1895	10.9096	10.9158	10.8128	10.4595	10.8179
+218457_s_at	Analyte 194	194	dp52	1788	DNMT3A	DNA (cytosine-5-)-methyltransferase 3 alpha	1	1	1	LUA-3968	epsilon	10.0251	10.0615	10.6238	11.1302	10.4930	10.9443	9.8013	10.4970	10.1332	9.3785
+217758_s_at	Analyte 194	194	dp53	56889	TM9SF3	transmembrane 9 superfamily member 3	1	1	1	LUA-796	epsilon	8.6600	8.4480	8.3086	8.3587	7.7316	8.2456	8.6995	8.3876	8.6359	10.4283
+203119_at	Analyte 195	195	dp53	79080	CCDC86	coiled-coil domain containing 86	1	1	1	LUA-1352	epsilon	9.8212	10.4736	10.3438	9.4051	8.5609	8.9809	10.4017	10.2191	10.8014	8.8445
+202708_s_at	Analyte 195	195	dp52	8349	HIST2H2BE	histone cluster 2, H2be	1	1	1	LUA-258	epsilon	9.2104	9.3683	9.4805	10.5973	9.7575	10.0703	9.5582	9.4518	9.2480	9.7102
+203186_s_at	Analyte 196	196	dp52	6275	S100A4	S100 calcium binding protein A4	1	1	1	LUA-4199	epsilon	5.8226	6.2148	6.0279	6.2321	6.5818	6.2148	6.1028	6.0884	5.1014	5.6680
+204587_at	Analyte 196	196	dp53	9016	SLC25A14	solute carrier family 25 (mitochondrial carrier, brain), member 14	1	1	1	LUA-768	epsilon	4.9014	4.9706	5.0360	4.7867	4.2303	4.6363	4.1694	3.5833	2.7934	4.1938
+200915_x_at	Analyte 197	197	dp52	3895	KTN1	kinectin 1 (kinesin receptor)	1	1	1	LUA-1277	epsilon	10.2053	10.2725	10.1682	10.5319	10.1835	10.3354	10.0251	10.1166	10.4327	10.6761
+336_at	Analyte 197	197	dp53	6915	TBXA2R	thromboxane A2 receptor	1	1	1	LUA-3809	epsilon	6.1631	5.9842	5.8226	6.3953	6.3953	6.1463	5.4020	6.0587	6.8051	5.5629
+202117_at	Analyte 198	198	dp52	392	ARHGAP1	Rho GTPase activating protein 1	1	1	1	LUA-1054	epsilon	10.1749	9.9746	9.7436	9.7542	9.3491	9.9043	10.1369	10.0703	9.9520	10.1055
+219208_at	Analyte 198	198	dp53	80204	FBXO11	F-box protein 11	1	1	1	LUA-4058	epsilon	5.6763	6.2817	5.6974	6.2937	7.3988	6.8764	5.6516	6.1065	7.0269	6.5258
+217168_s_at	Analyte 199	199	dp53	9709	HERPUD1	homocysteine-inducible, endoplasmic reticulum stress-inducible, ubiquitin-like domain member 1	1	1	1	LUA-1247	epsilon	7.4124	7.7049	7.5295	7.7735	7.8110	7.7888	7.7673	7.4415	7.6445	9.4721
+206723_s_at	Analyte 199	199	dp52	9170	LPAR2	lysophosphatidic acid receptor 2	1	1	1	LUA-3597	epsilon	9.3397	9.2319	8.9461	9.5276	9.1917	9.3126	8.8299	9.2887	9.2946	8.0656
+201913_s_at	Analyte 200	200	dp52	80347	COASY	CoA synthase	1	1	1	LUA-3036	epsilon	6.4579	6.3503	6.9408	6.3569	7.2105	6.8428	6.4086	6.3953	6.6783	6.6978
+210115_at	Analyte 200	200	dp53	116832	RPL39L	ribosomal protein L39-like	1	1	1	LUA-4343	epsilon	5.3569	4.4050	4.3406	3.3755	4.9225	3.7516	4.0200	4.0050	3.9900	4.7867
+205750_at	Analyte 201	201	dp53	670	BPHL	biphenyl hydrolase-like (serine hydrolase)	1	1	1	LUA-50	epsilon	7.1112	7.3545	7.3231	5.7953	6.7245	6.7579	8.6876	7.1919	7.0895	8.4257
+202677_at	Analyte 201	201	dp52	5921	RASA1	RAS p21 protein activator (GTPase activating protein) 1	1	1	1	LUA-3471	epsilon	8.1378	8.3316	8.6131	7.7609	8.1398	8.2992	7.9905	8.0453	8.2814	7.4124
+201855_s_at	Analyte 202	202	dp52	23300	ATMIN	ATM interactor	1	1	1	LUA-4023	epsilon	8.9874	8.5609	8.7341	7.6452	7.8998	8.2343	8.6152	8.8887	8.2456	9.2480
+202788_at	Analyte 202	202	dp53	7867	MAPKAPK3	mitogen-activated protein kinase-activated protein kinase 3	1	1	1	LUA-1155	epsilon	6.3686	6.2708	6.5818	8.3982	5.4020	6.3660	5.7056	6.1263	5.5741	6.2593
+202763_at	Analyte 203	203	dp52	836	CASP3	caspase 3, apoptosis-related cysteine peptidase	1	1	1	LUA-1001	epsilon	8.9705	9.0403	10.1835	10.8230	9.6051	10.1544	9.5780	9.8258	9.9166	9.2201
+209179_s_at	Analyte 203	203	dp53	79143	MBOAT7	membrane bound O-acyltransferase domain containing 7	1	1	1	LUA-344	epsilon	11.8574	11.9334	11.4167	11.7174	11.1246	11.1570	11.8828	11.6875	12.2971	11.6875
+218961_s_at	Analyte 204	204	dp53	11284	PNKP	polynucleotide kinase 3'-phosphatase	1	1	1	LUA-830	epsilon	7.4327	8.2343	8.0343	7.1743	8.0936	7.7187	8.2084	7.9951	8.7833	7.9243
+201762_s_at	Analyte 204	204	dp52	5721	PSME2	proteasome (prosome, macropain) activator subunit 2 (PA28 beta)	1	1	1	LUA-3406	epsilon	12.3144	12.4932	12.2798	12.1351	12.4276	12.2091	12.4276	12.2605	12.3381	12.0959
+201591_s_at	Analyte 205	205	dp52	11188	NISCH	nischarin	1	1	1	LUA-1360	epsilon	7.7049	7.2946	7.6292	6.7488	7.8914	8.0453	7.2641	7.0470	7.5262	7.7641
+206770_s_at	Analyte 205	205	dp53	23443	SLC35A3	solute carrier family 35 (UDP-N-acetylglucosamine (UDP-GlcNAc) transporter), member A3	1	1	1	LUA-4085	epsilon	6.3853	5.9770	5.9202	7.8622	5.5398	6.0332	6.0884	6.3000	5.3943	6.1969
+206688_s_at	Analyte 206	206	dp52	10898	CPSF4	cleavage and polyadenylation specific factor 4, 30kDa	1	1	1	LUA-868	epsilon	10.3046	10.2943	9.8384	9.7675	9.3397	10.0830	10.5787	9.9043	11.1046	10.1406
+208190_s_at	Analyte 206	206	dp53	51599	LSR	lipolysis stimulated lipoprotein receptor	1	1	1	LUA-78	epsilon	9.5093	9.6091	9.0445	8.4423	10.2459	8.9433	9.8446	10.3354	9.2201	9.4518
+201098_at	Analyte 207	207	dp52	9276	COPB2	coatomer protein complex, subunit beta 2 (beta prime)	1	1	1	LUA-740	epsilon	11.2401	11.4355	10.9034	10.6667	11.5984	10.9266	11.4519	11.1190	11.6875	11.5043
+207968_s_at	Analyte 207	207	dp53	4208	MEF2C	myocyte enhancer factor 2C	1	1	1	LUA-3019	epsilon	5.8943	6.2470	5.7138	6.3660	4.3134	5.2722	5.1690	5.2891	6.0332	5.2175
+203725_at	Analyte 208	208	dp52	1647	GADD45A	growth arrest and DNA-damage-inducible, alpha	1	1	1	LUA-196	epsilon	9.1659	8.9910	9.0468	9.0260	9.1772	9.0625	8.8642	8.8766	7.1023	9.1466
+202040_s_at	Analyte 208	208	dp53	5927	KDM5A	lysine (K)-specific demethylase 5A	1	1	1	LUA-893	epsilon	6.6281	7.4771	6.3436	7.0412	7.0299	6.6064	6.9576	7.5394	9.0902	6.7282
+221856_s_at	Analyte 209	209	dp53	55793	FAM63A	family with sequence similarity 63, member A	1	1	1	LUA-748	epsilon	8.6600	8.7833	8.1031	9.4176	7.8413	8.0685	7.7461	8.9910	9.0424	8.1418
+200071_at	Analyte 209	209	dp52	10285	SMNDC1	survival motor neuron domain containing 1	1	1	1	LUA-1046	epsilon	8.2509	8.0784	8.9546	8.1031	8.8031	8.8139	8.4057	8.2939	7.8050	8.8728
+201270_x_at	Analyte 210	210	dp52	23386	NUDCD3	NudC domain containing 3	1	1	1	LUA-1084	epsilon	8.6753	8.3202	8.9288	8.9618	8.1103	9.1120	8.8956	9.0536	9.2432	9.2319
+203582_s_at	Analyte 210	210	dp53	5867	RAB4A	RAB4A, member RAS oncogene family	1	1	1	LUA-4489	epsilon	9.3735	9.0845	7.9353	7.5768	9.4483	7.5012	7.4613	7.2619	7.7939	7.9516
+203639_s_at	Analyte 211	211	dp52	2263	FGFR2	fibroblast growth factor receptor 2	1	1	1	LUA-4115	epsilon	7.1295	8.7341	10.5128	10.6858	10.3674	10.3773	6.6199	10.1914	7.9864	7.6116
+209100_at	Analyte 211	211	dp53	7866	IFRD2	interferon-related developmental regulator 2	1	1	1	LUA-688	epsilon	10.8437	10.6667	8.1978	9.3969	8.3794	8.4818	9.8801	7.8748	9.7317	10.9266
+217867_x_at	Analyte 212	212	dp53	25825	BACE2	beta-site APP-cleaving enzyme 2	1	1	1	LUA-4391	epsilon	8.1565	7.8110	7.7501	7.6623	9.5928	8.5609	7.7096	8.4321	8.8445	8.0041
+202540_s_at	Analyte 212	212	dp52	3156	HMGCR	3-hydroxy-3-methylglutaryl-CoA reductase	1	1	1	LUA-3094	epsilon	9.1877	9.4858	9.4874	9.4874	8.5364	9.6903	9.2480	9.5368	7.4065	8.9705
+210754_s_at	Analyte 213	213	dp53	4067	LYN	v-yes-1 Yamaguchi sarcoma viral related oncogene homolog	1	1	1	LUA-926	epsilon	4.3524	5.0447	5.2175	10.7852	10.6858	4.2868	4.5731	4.9014	5.1905	4.1938
+202433_at	Analyte 213	213	dp52	10237	SLC35B1	solute carrier family 35, member B1	1	1	1	LUA-995	epsilon	11.7841	11.7841	11.5632	11.4437	11.8828	11.5005	11.7635	11.3940	11.4279	11.6303
+218170_at	Analyte 214	214	dp53	51015	ISOC1	isochorismatase domain containing 1	1	1	1	LUA-157	epsilon	11.6875	11.7583	12.0694	12.0184	11.7174	12.1876	11.5907	11.8828	11.7299	11.7174
+203167_at	Analyte 214	214	dp52	7077	TIMP2	TIMP metallopeptidase inhibitor 2	1	1	1	LUA-4161	epsilon	8.4074	8.0343	8.6418	9.3683	8.7833	8.8364	7.6651	8.4378	7.1563	7.6623
+201536_at	Analyte 215	215	dp53	1845	DUSP3	dual specificity phosphatase 3	1	1	1	LUA-3970	epsilon	6.4156	6.5195	6.4216	8.1398	6.3686	7.8949	5.8486	5.8680	4.8654	6.4341
+205036_at	Analyte 215	215	dp52	11157	LSM6	LSM6 homolog, U6 small nuclear RNA associated (S. cerevisiae)	1	1	1	LUA-3987	epsilon	7.3484	7.3260	8.0424	6.4341	7.7521	6.5002	6.9189	7.4250	6.4156	8.0424
+200622_x_at	Analyte 216	216	dp52	808	CALM3	calmodulin 3 (phosphorylase kinase, delta)	1	1	1	LUA-3702	epsilon	7.1659	6.7964	7.7575	8.3219	8.9324	8.2899	7.1919	7.2194	7.1473	6.6486
+205130_at	Analyte 216	216	dp53	5891	MOK	MOK protein kinase	1	1	1	LUA-152	epsilon	5.5932	4.5840	5.8370	5.5550	7.8413	6.8565	6.0332	5.0186	5.1326	7.5617
+216347_s_at	Analyte 217	217	dp53	23368	PPP1R13B	protein phosphatase 1, regulatory subunit 13B	1	1	1	LUA-3276	epsilon	7.2993	7.9506	8.9599	7.0412	8.8563	7.1224	8.0028	7.4987	7.8552	7.4613
+202797_at	Analyte 217	217	dp52	22908	SACM1L	SAC1 suppressor of actin mutations 1-like (yeast)	1	1	1	LUA-1316	epsilon	8.4459	8.6838	8.2434	9.2285	7.6417	8.6517	8.8299	8.7640	9.0468	8.3982
+202500_at	Analyte 218	218	dp53	3300	DNAJB2	DnaJ (Hsp40) homolog, subfamily B, member 2	1	1	1	LUA-1284	epsilon	9.0943	9.2432	8.9364	8.7574	8.6131	8.6811	9.1492	8.8364	8.6237	10.1286
+202396_at	Analyte 218	218	dp52	10915	TCERG1	transcription elongation regulator 1	1	1	1	LUA-1133	epsilon	9.9896	9.9120	9.8091	9.5339	9.5780	9.5550	9.6903	9.6273	10.0322	9.4483
+218421_at	Analyte 219	219	dp53	64781	CERK	ceramide kinase	1	1	1	LUA-356	epsilon	7.2317	7.1483	8.1833	8.9809	8.7669	8.9637	8.0424	8.3834	7.4613	7.6942
+201985_at	Analyte 219	219	dp52	9897	KIAA0196	KIAA0196	1	1	1	LUA-1241	epsilon	10.7304	10.8315	11.3324	11.7299	11.0632	11.4769	10.5557	11.2095	10.8571	10.5940
+215116_s_at	Analyte 220	220	dp52	1759	DNM1	dynamin 1	1	1	1	LUA-4347	epsilon	6.1028	6.6930	6.5366	6.6806	6.8809	6.2321	7.2534	6.7245	7.3023	11.9974
+217933_s_at	Analyte 220	220	dp53	51056	LAP3	leucine aminopeptidase 3	1	1	1	LUA-813	epsilon	11.9206	12.1451	12.3144	12.3381	11.8574	12.5856	11.9334	12.3381	11.9050	7.0598
+202887_s_at	Analyte 221	221	dp52	54541	DDIT4	DNA-damage-inducible transcript 4	1	1	1	LUA-1248	epsilon	10.2906	10.1166	9.8258	9.5550	11.0796	10.3542	10.0184	10.2758	10.1241	8.4925
+212871_at	Analyte 221	221	dp53	8550	MAPKAPK5	mitogen-activated protein kinase-activated protein kinase 5	1	1	1	LUA-472	epsilon	8.1978	8.4480	8.4011	7.9150	8.2691	8.7536	8.5283	8.1447	8.4289	10.0974
+205633_s_at	Analyte 222	222	dp52	211	ALAS1	aminolevulinate, delta-, synthase 1	1	1	1	LUA-1204	epsilon	11.4769	11.6716	12.3381	12.5856	12.0959	12.6514	11.7030	12.3898	11.8828	11.5244
+209526_s_at	Analyte 222	222	dp53	50810	HDGFRP3	hepatoma-derived growth factor, related protein 3	1	1	1	LUA-4282	epsilon	9.1772	9.4632	9.4347	8.8299	8.6876	9.1736	9.7638	9.2142	9.7730	9.6091
+200816_s_at	Analyte 223	223	dp52	5048	PAFAH1B1	platelet-activating factor acetylhydrolase 1b, regulatory subunit 1 (45kDa)	1	1	1	LUA-394	epsilon	9.8963	10.5473	10.6521	11.6303	10.3438	11.3266	10.2380	11.2938	10.6714	10.1113
+206099_at	Analyte 223	223	dp53	5583	PRKCH	protein kinase C, eta	1	1	1	LUA-3329	epsilon	6.5818	5.9462	5.4020	5.9770	6.5002	5.6516	5.4926	5.3642	6.0587	5.8077
+201896_s_at	Analyte 224	224	dp52	84722	PSRC1	proline/serine-rich coiled-coil 1	1	1	1	LUA-725	epsilon	10.2281	8.5787	10.7347	11.0272	11.0272	11.3636	10.2086	10.5837	10.6521	10.2578
+203885_at	Analyte 224	224	dp53	23011	RAB21	RAB21, member RAS oncogene family	1	1	1	LUA-141	epsilon	8.6857	10.3438	8.9839	9.6903	8.5989	9.0501	8.3414	8.8685	9.3247	8.7728
+218498_s_at	Analyte 225	225	dp52	30001	ERO1L	ERO1-like (S. cerevisiae)	1	1	1	LUA-4034	epsilon	5.6045	5.7056	5.1514	7.7133	8.5364	5.5038	4.8157	5.5038	5.8321	5.7330
+209337_at	Analyte 225	225	dp53	11168	PSIP1	PC4 and SFRS1 interacting protein 1	1	1	1	LUA-4444	epsilon	8.4719	8.5283	8.4925	5.4501	4.0890	8.3202	8.5100	8.5209	8.5688	8.6460
+203381_s_at	Analyte 226	226	dp52	348	APOE	apolipoprotein E	1	1	1	LUA-3646	epsilon	8.0390	5.5324	5.6286	5.6516	9.0625	5.5629	8.2814	4.4500	7.2194	6.3503
+204313_s_at	Analyte 226	226	dp53	1385	CREB1	cAMP responsive element binding protein 1	1	1	1	LUA-566	epsilon	5.1905	8.2509	8.5458	9.3427	4.4050	9.1736	4.7270	8.6359	4.1172	8.2248
+203640_at	Analyte 227	227	dp53	10150	MBNL2	muscleblind-like 2 (Drosophila)	1	1	1	LUA-1077	epsilon	7.6452	8.9404	9.3137	7.8888	7.9928	7.3889	8.0656	8.9061	8.9214	9.1017
+202689_at	Analyte 227	227	dp52	29890	RBM15B	RNA binding motif protein 15B	1	1	1	LUA-1200	epsilon	8.8067	7.7609	8.2655	8.9251	9.0445	8.4704	9.0007	7.9018	7.4065	8.2479
+218744_s_at	Analyte 228	228	dp53	29763	PACSIN3	protein kinase C and casein kinase substrate in neurons 3	1	1	1	LUA-4104	epsilon	7.0628	7.1659	7.0701	7.7072	7.4638	6.8958	7.4638	6.8764	8.5816	6.7768
+201519_at	Analyte 228	228	dp52	9868	TOMM70A	translocase of outer mitochondrial membrane 70 homolog A (S. cerevisiae)	1	1	1	LUA-34	epsilon	9.3969	9.1279	9.6397	9.6182	9.2480	9.8696	9.7730	9.6472	10.4679	9.6903
+209213_at	Analyte 229	229	dp52	873	CBR1	carbonyl reductase 1	1	1	1	LUA-3398	epsilon	8.9324	9.0445	8.4410	8.5609	8.4719	8.5209	8.7948	8.5956	8.8642	8.4653
+211783_s_at	Analyte 229	229	dp53	9112	MTA1	metastasis associated 1	1	1	1	LUA-17	epsilon	10.8792	11.1190	10.5249	10.5557	11.2530	10.5249	11.1004	10.6928	11.1895	11.0025
+208634_s_at	Analyte 230	230	dp53	23499	MACF1	microtubule-actin crosslinking factor 1	1	1	1	LUA-3315	epsilon	8.4257	8.7214	8.4190	7.3099	8.0453	7.2641	8.2295	8.8242	8.4848	9.4858
+202545_at	Analyte 230	230	dp52	5580	PRKCD	protein kinase C, delta	1	1	1	LUA-1321	epsilon	9.2142	9.3683	7.6178	8.3033	9.0772	8.3587	9.2432	8.2655	9.8801	8.7367
+205899_at	Analyte 231	231	dp53	8900	CCNA1	cyclin A1	1	1	1	LUA-3732	epsilon	6.6715	6.0427	8.3267	8.0357	11.6372	6.0884	6.5587	7.0043	6.2969	5.8943
+212740_at	Analyte 231	231	dp52	30849	PIK3R4	phosphoinositide-3-kinase, regulatory subunit 4	1	1	1	LUA-3216	epsilon	7.8489	7.1958	7.3781	7.3740	7.0524	7.4438	7.3365	7.8050	7.5434	7.5017
+202332_at	Analyte 232	232	dp52	1454	CSNK1E	casein kinase 1, epsilon	1	1	1	LUA-3943	epsilon	8.8406	9.1335	9.2353	9.4347	9.2432	9.6500	9.1089	9.0327	9.0791	8.7989
+209806_at	Analyte 232	232	dp53	85236	HIST1H2BK	histone cluster 1, H2bk	1	1	1	LUA-683	epsilon	12.1677	12.1677	11.7841	11.6372	11.4620	8.5704	12.3673	12.0514	12.5702	12.0514
+201466_s_at	Analyte 233	233	dp52	3725	JUN	jun proto-oncogene	1	1	1	LUA-1281	epsilon	7.2458	6.6930	7.7575	7.8110	6.9604	7.0746	7.1184	6.6199	7.6086	6.8273
+212694_s_at	Analyte 233	233	dp53	5096	PCCB	propionyl CoA carboxylase, beta polypeptide	1	1	1	LUA-4364	epsilon	11.1396	11.2698	10.9353	10.7566	10.9909	10.8230	11.2572	11.2275	11.5453	11.2401
+221610_s_at	Analyte 234	234	dp53	55620	STAP2	signal transducing adaptor family member 2	1	1	1	LUA-2017	epsilon	8.7640	8.8540	8.9364	7.5985	8.9780	7.5023	7.6865	7.7939	8.0627	8.0910
+217766_s_at	Analyte 234	234	dp52	23585	TMEM50A	transmembrane protein 50A	1	1	1	LUA-3209	epsilon	8.2619	8.3074	8.4985	8.3464	8.0196	8.6044	8.3517	8.7536	8.8766	8.7833
+203201_at	Analyte 235	235	dp53	5373	PMM2	phosphomannomutase 2	1	1	1	LUA-559	epsilon	10.9654	12.0959	12.0464	12.6188	11.4519	11.4054	11.9206	11.3383	11.2822	11.0473
+201825_s_at	Analyte 235	235	dp52	51097	SCCPDH	saccharopine dehydrogenase (putative)	1	1	1	LUA-1138	epsilon	12.1351	11.7635	11.5761	11.2615	12.0604	11.8702	11.6155	11.8574	11.9334	11.9050
+217989_at	Analyte 236	236	dp53	51170	HSD17B11	hydroxysteroid (17-beta) dehydrogenase 11	1	1	1	LUA-3560	epsilon	5.1014	5.1014	5.6680	5.8943	5.2262	5.2262	5.1014	5.5629	4.4621	5.2891
+208763_s_at	Analyte 236	236	dp52	1831	TSC22D3	TSC22 domain family, member 3	1	1	1	LUA-3834	epsilon	10.2281	10.0039	10.0659	9.5056	9.9896	9.5131	9.7675	9.8772	9.5427	10.1947
+220127_s_at	Analyte 237	237	dp53	54850	FBXL12	F-box and leucine-rich repeat protein 12	1	1	1	LUA-942	epsilon	6.9058	7.2368	7.4415	8.4885	10.2578	6.9632	6.4890	7.5475	6.7533	6.8428
+204654_s_at	Analyte 237	237	dp52	7020	TFAP2A	transcription factor AP-2 alpha (activating enhancer binding protein 2 alpha)	1	1	1	LUA-3814	epsilon	9.8501	10.1241	11.3088	11.9050	11.1570	11.3764	10.1166	10.8230	10.0496	10.2281
+221531_at	Analyte 238	238	dp53	80349	WDR61	WD repeat domain 61	1	1	1	LUA-4445	epsilon	10.3087	10.1332	10.1615	9.8151	10.0739	9.8633	11.0473	11.3636	9.4874	9.3397
+218149_s_at	Analyte 238	238	dp52	55893	ZNF395	zinc finger protein 395	1	1	1	LUA-1282	epsilon	9.8384	10.9654	11.5347	11.8828	11.5005	11.2822	10.2255	10.5906	10.7672	10.2578
+204781_s_at	Analyte 239	239	dp53	355	FAS	Fas (TNF receptor superfamily, member 6)	1	1	1	LUA-97	epsilon	3.8274	3.1600	8.7833	3.9445	9.5276	4.4621	8.5672	3.8274	9.0902	3.3172
+202261_at	Analyte 239	239	dp52	6944	VPS72	vacuolar protein sorting 72 homolog (S. cerevisiae)	1	1	1	LUA-550	epsilon	9.3273	9.6273	9.6759	10.8853	10.4794	10.2343	9.6365	9.6334	9.9814	9.2723
+205046_at	Analyte 240	240	dp53	1062	CENPE	centromere protein E, 312kDa	1	1	1	LUA-1337	epsilon	6.5321	7.0075	6.8855	6.7887	5.9770	5.8420	7.0118	6.2650	9.1877	6.6157
+201561_s_at	Analyte 240	240	dp52	22883	CLSTN1	calsyntenin 1	1	1	1	LUA-4073	epsilon	8.3158	8.2434	8.2655	8.4347	8.2939	8.1279	8.7139	8.2655	7.6942	8.5746
+201200_at	Analyte 241	241	dp53	8804	CREG1	cellular repressor of E1A-stimulated genes 1	1	1	1	LUA-414	epsilon	11.1302	11.4279	10.4283	11.4899	9.8864	10.2791	11.0140	10.1615	11.8262	11.2822
+203218_at	Analyte 241	241	dp52	5601	MAPK9	mitogen-activated protein kinase 9	1	1	1	LUA-1109	epsilon	10.6283	11.0324	11.3636	10.9353	11.1004	11.2219	11.5347	11.1570	11.1396	10.8376
+219742_at	Analyte 242	242	dp53	80758	PRR7	proline rich 7 (synaptic)	1	1	1	LUA-381	epsilon	7.4638	7.0010	6.5195	6.0820	7.6015	8.2939	6.6608	7.1659	8.8728	7.2845
+200711_s_at	Analyte 242	242	dp52	6500	SKP1	S-phase kinase-associated protein 1	1	1	1	LUA-3574	epsilon	8.5037	7.9741	7.8081	7.3740	8.5364	7.4327	7.6086	7.8413	7.4638	8.3734
+202868_s_at	Analyte 243	243	dp52	10775	POP4	processing of precursor 4, ribonuclease P/MRP subunit (S. cerevisiae)	1	1	1	LUA-1044	epsilon	9.8899	9.9520	9.7354	9.3810	9.6759	9.7436	9.7973	9.5368	9.8446	10.0322
+213851_at	Analyte 243	243	dp53	375346	TMEM110	transmembrane protein 110	1	1	1	LUA-4071	epsilon	6.2877	5.4100	4.6363	5.4179	5.4729	4.7270	5.8874	6.0332	6.2969	5.2891
+201146_at	Analyte 244	244	dp52	4780	NFE2L2	nuclear factor (erythroid-derived 2)-like 2	1	1	1	LUA-996	epsilon	9.0294	8.8685	9.2432	9.2456	9.0625	9.1813	8.8563	8.4925	8.4437	9.2104
+219968_at	Analyte 244	244	dp53	51385	ZNF589	zinc finger protein 589	1	1	1	LUA-201	epsilon	6.6930	6.9189	7.5524	8.0453	6.8295	7.1464	8.3414	6.9408	9.3631	5.7551
+208478_s_at	Analyte 245	245	dp53	581	BAX	BCL2-associated X protein	1	1	1	LUA-3672	epsilon	10.0390	10.4371	10.6667	11.0796	10.2849	10.7212	10.1055	10.7130	9.6273	9.0902
+201032_at	Analyte 245	245	dp52	10904	BLCAP	bladder cancer associated protein	1	1	1	LUA-1227	epsilon	9.5847	9.4259	8.7728	9.0581	8.6648	9.2723	9.1598	9.3116	10.3802	9.7031
+217752_s_at	Analyte 246	246	dp53	55748	CNDP2	CNDP dipeptidase 2 (metallopeptidase M20 family)	1	1	1	LUA-215	epsilon	10.3278	10.5387	10.1749	9.9673	10.0184	10.0457	10.6144	10.4825	10.5737	10.4736
+202916_s_at	Analyte 246	246	dp52	9917	FAM20B	family with sequence similarity 20, member B	1	1	1	LUA-565	epsilon	7.7521	7.7501	7.7888	8.1476	8.1883	8.0196	7.9816	7.6066	8.6906	7.5262
+207808_s_at	Analyte 247	247	dp52	5627	PROS1	protein S (alpha)	1	1	1	LUA-3368	epsilon	3.9148	2.9543	3.1600	2.5613	2.9543	3.1158	3.2486	2.5613	3.8477	4.7369
+207196_s_at	Analyte 247	247	dp53	10318	TNIP1	TNFAIP3 interacting protein 1	1	1	1	LUA-182	epsilon	7.6015	7.6524	7.2458	7.7791	7.4638	7.9495	7.9455	7.6396	8.0343	7.7814
+212180_at	Analyte 248	248	dp52	1399	CRKL	v-crk sarcoma virus CT10 oncogene homolog (avian)-like	1	1	1	LUA-109	epsilon	10.3578	10.4855	9.9043	10.3438	10.0830	9.8501	10.4448	10.2652	10.4765	10.3881
+222125_s_at	Analyte 248	248	dp53	54681	P4HTM	prolyl 4-hydroxylase, transmembrane (endoplasmic reticulum)	1	1	1	LUA-4463	epsilon	9.4483	9.6011	10.3744	9.4632	8.8927	10.1914	9.7414	9.2596	8.6600	9.3631
+208872_s_at	Analyte 249	249	dp53	7905	REEP5	receptor accessory protein 5	1	1	1	LUA-4234	epsilon	10.3472	10.1055	10.0534	7.0412	10.1682	10.1406	9.3427	9.8864	8.8997	10.4855
+203521_s_at	Analyte 249	249	dp52	24149	ZNF318	zinc finger protein 318	1	1	1	LUA-1004	epsilon	5.2262	5.8805	5.8616	9.4501	6.3503	5.4501	6.1337	5.3272	5.9623	5.9969
+217809_at	Analyte 250	250	dp53	28969	BZW2	basic leucine zipper and W2 domains 2	1	1	1	LUA-423	epsilon	10.4736	11.3088	11.6303	11.4167	11.6155	11.5347	11.4899	10.1055	9.6580	10.1286
+208647_at	Analyte 250	250	dp52	2222	FDFT1	farnesyl-diphosphate farnesyltransferase 1	1	1	1	LUA-1005	epsilon	11.6372	10.5169	10.4855	10.4736	10.4155	10.5515	10.3744	11.3516	10.8853	11.4167
+204605_at	Analyte 251	251	dp53	10668	CGRRF1	cell growth regulator with ring finger domain 1	1	1	1	LUA-403	epsilon	9.0772	8.8121	9.1335	9.0902	9.2946	8.4011	8.7354	8.5011	8.3490	9.0536
+201391_at	Analyte 251	251	dp52	10131	TRAP1	TNF receptor-associated protein 1	1	1	1	LUA-1190	epsilon	10.4017	10.4508	10.1507	10.1166	10.2725	10.2155	10.5249	10.2849	10.4893	10.4508
+219082_at	Analyte 252	252	dp53	51005	AMDHD2	amidohydrolase domain containing 2	1	1	1	LUA-164	epsilon	8.8484	8.6722	8.1418	7.1184	10.2191	7.7976	10.3507	8.3414	10.7304	8.2793
+202678_at	Analyte 252	252	dp52	2958	GTF2A2	general transcription factor IIA, 2, 12kDa	1	1	1	LUA-749	epsilon	10.3744	10.6057	10.3212	9.9283	9.0625	9.9143	9.5847	10.0217	9.9466	10.2191
+205161_s_at	Analyte 253	253	dp53	8800	PEX11A	peroxisomal biogenesis factor 11 alpha	1	1	1	LUA-367	epsilon	5.3866	5.6356	4.4158	4.5428	5.8152	5.2262	4.6786	5.1109	4.7466	4.9438
+207805_s_at	Analyte 253	253	dp52	5715	PSMD9	proteasome (prosome, macropain) 26S subunit, non-ATPase, 9	1	1	1	LUA-3401	epsilon	10.4448	10.3354	10.0251	9.6580	9.7392	10.0287	10.0802	9.8258	10.2343	10.1947
+219821_s_at	Analyte 254	254	dp53	54438	GFOD1	glucose-fructose oxidoreductase domain containing 1	1	1	1	LUA-728	epsilon	5.7266	5.4631	5.2175	6.4920	8.8207	10.4736	5.9623	6.0332	6.7887	5.7757
+203208_s_at	Analyte 254	254	dp52	9650	MTFR1	mitochondrial fission regulator 1	1	1	1	LUA-960	epsilon	10.0184	9.7509	10.4124	10.4930	10.5249	9.6955	9.7897	9.9971	9.4259	9.8633
+221142_s_at	Analyte 255	255	dp53	55825	PECR	peroxisomal trans-2-enoyl-CoA reductase	1	1	1	LUA-2015	epsilon	6.6608	6.4216	6.7984	6.7025	6.6670	7.0201	6.3953	5.9079	6.1631	6.5258
+201899_s_at	Analyte 255	255	dp52	7319	UBE2A	ubiquitin-conjugating enzyme E2A	1	1	1	LUA-918	epsilon	11.1702	11.1302	11.1396	10.3507	10.5837	10.4970	11.3174	11.0896	11.4899	11.1004
+202891_at	Analyte 256	256	dp52	4817	NIT1	nitrilase 1	1	1	1	LUA-1091	epsilon	9.5900	10.3802	11.3324	11.6716	10.5906	11.4519	10.3212	10.6858	9.7392	9.6676
+203373_at	Analyte 256	256	dp53	8835	SOCS2	suppressor of cytokine signaling 2	1	1	1	LUA-690	epsilon	6.0384	6.3686	6.8508	7.2598	6.7579	6.6608	6.7245	6.6486	6.4746	5.5837
+205691_at	Analyte 257	257	dp52	9143	SYNGR3	synaptogyrin 3	1	1	1	LUA-745	epsilon	4.2303	7.6675	3.5833	3.3172	7.5499	7.0075	7.4094	3.7141	7.5524	7.4545
+218249_at	Analyte 257	257	dp53	64429	ZDHHC6	zinc finger, DHHC-type containing 6	1	1	1	LUA-1	epsilon	7.8255	5.4100	7.5768	6.9799	4.9706	3.7516	4.7270	7.3395	3.7329	4.6579
+205055_at	Analyte 258	258	dp53	3682	ITGAE	integrin, alpha E (antigen CD103, human mucosal lymphocyte antigen 1; alpha polypeptide)	1	1	1	LUA-106	epsilon	9.4691	9.5276	9.7675	9.4632	9.5620	9.7255	9.3137	9.6051	10.1055	9.5177
+207535_s_at	Analyte 258	258	dp52	4791	NFKB2	nuclear factor of kappa light polypeptide gene enhancer in B-cells 2 (p49/p100)	1	1	1	LUA-3089	epsilon	4.1037	4.0890	4.7369	4.8735	4.5731	4.1441	4.0742	4.3524	5.5989	4.9113
+201314_at	Analyte 259	259	dp52	10494	STK25	serine/threonine kinase 25	1	1	1	LUA-1232	epsilon	11.1004	11.0896	11.4769	11.2275	11.1396	11.3383	11.5244	11.3174	11.2275	11.2219
+204808_s_at	Analyte 259	259	dp53	10329	TMEM5	transmembrane protein 5	1	1	1	LUA-1358	epsilon	9.8801	11.4899	9.7730	9.0772	8.6722	9.0501	9.2561	9.5056	9.0424	9.7154
+202394_s_at	Analyte 260	260	dp52	55324	ABCF3	ATP-binding cassette, sub-family F (GCN20), member 3	1	1	1	LUA-752	epsilon	9.7864	9.5780	9.4721	8.9618	9.2723	9.4994	9.6472	9.6903	9.9043	9.9120
+213995_at	Analyte 260	260	dp53	27109	ATP5S	ATP synthase, H+ transporting, mitochondrial Fo complex, subunit s (factor B)	1	1	1	LUA-250	epsilon	8.7833	8.3236	8.5392	7.4732	8.0936	7.8748	7.9603	8.3099	7.7072	8.9461
+213669_at	Analyte 261	261	dp52	23149	FCHO1	FCH domain only 1	1	1	1	LUA-4095	epsilon	7.5768	7.4036	7.6178	7.8520	8.1031	7.7939	6.3853	7.1428	6.8508	5.7330
+217722_s_at	Analyte 261	261	dp53	51335	NGRN	neugrin, neurite outgrowth associated	1	1	1	LUA-1263	epsilon	5.8486	6.1898	6.2593	7.0412	5.5398	5.8874	7.1392	6.0332	5.3068	8.3202
+213844_at	Analyte 262	262	dp53	3202	HOXA5	homeobox A5	1	1	1	LUA-4060	epsilon	6.7367	6.9604	8.3876	8.5364	6.2817	7.3053	7.1609	7.0972	6.7533	8.5100
+202696_at	Analyte 262	262	dp52	9943	OXSR1	oxidative-stress responsive 1	1	1	1	LUA-1317	epsilon	8.4653	8.3490	7.6743	7.5104	8.0357	8.3915	8.1533	7.7838	8.4704	7.8622
+200678_x_at	Analyte 263	263	dp53	2896	GRN	granulin	1	1	1	LUA-328	epsilon	11.1895	11.1396	10.5319	10.8687	11.2095	9.2663	11.3940	11.2615	11.3940	11.3764
+201074_at	Analyte 263	263	dp52	6599	SMARCC1	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily c, member 1	1	1	1	LUA-717	epsilon	9.4753	8.9096	8.7020	9.0445	9.1248	10.8437	8.9214	9.1279	8.8207	9.4661
+218014_at	Analyte 264	264	dp53	79902	NUP85	nucleoporin 85kDa	1	1	1	LUA-332	epsilon	10.0775	10.3067	9.8539	9.8343	9.8303	9.7703	10.0322	9.9855	10.1792	10.0893
+219461_at	Analyte 264	264	dp52	56924	PAK6	p21 protein (Cdc42/Rac)-activated kinase 6	1	1	1	LUA-3151	epsilon	2.5613	3.7141	3.4374	3.7875	5.6516	2.5613	3.6392	3.9445	3.5637	3.4065
+205498_at	Analyte 265	265	dp52	2690	GHR	growth hormone receptor	1	1	1	LUA-4174	epsilon	6.0587	6.8318	6.8098	6.2650	3.5447	6.5366	7.0240	6.5098	6.9005	3.9900
+221046_s_at	Analyte 265	265	dp53	29083	GTPBP8	GTP-binding protein 8 (putative)	1	1	1	LUA-624	epsilon	4.2868	4.8479	4.6363	3.0717	6.6402	3.8274	3.4374	4.0890	4.5525	7.0895
+209092_s_at	Analyte 266	266	dp52	51031	GLOD4	glyoxalase domain containing 4	1	1	1	LUA-1089	epsilon	10.2615	9.7154	10.1947	9.1151	9.5716	9.9673	10.0615	9.6719	9.1813	9.7730
+208820_at	Analyte 266	266	dp53	5747	PTK2	PTK2 protein tyrosine kinase 2	1	1	1	LUA-890	epsilon	10.5011	10.1914	9.3273	10.3087	10.4508	9.1618	9.3969	10.3116	7.9516	10.4155
+202246_s_at	Analyte 267	267	dp52	1019	CDK4	cyclin-dependent kinase 4	1	1	1	LUA-3778	epsilon	12.3898	11.9460	11.5984	11.5632	11.9974	11.6155	11.6875	11.8433	11.8121	11.9206
+203464_s_at	Analyte 267	267	dp53	22905	EPN2	epsin 2	1	1	1	LUA-860	epsilon	11.7299	8.6600	9.0902	8.7760	8.3099	8.6811	8.6936	8.7396	9.1279	8.3794
+220094_s_at	Analyte 268	268	dp53	63933	CCDC90A	coiled-coil domain containing 90A	1	1	1	LUA-3403	epsilon	7.0470	6.9189	7.3464	7.2230	6.8911	8.5704	6.9311	8.2123	5.6436	6.6670
+203233_at	Analyte 268	268	dp52	3566	IL4R	interleukin 4 receptor	1	1	1	LUA-1042	epsilon	7.8797	7.6417	8.3587	8.6460	8.4033	7.6086	7.7914	7.5985	7.6275	7.8110
+212943_at	Analyte 269	269	dp53	9847	KIAA0528	KIAA0528	1	1	1	LUA-1119	epsilon	10.1981	10.2380	10.0150	10.0039	9.7897	10.1749	10.1544	10.2459	10.5633	10.3067
+218292_s_at	Analyte 269	269	dp52	51422	PRKAG2	protein kinase, AMP-activated, gamma 2 non-catalytic subunit	1	1	1	LUA-3300	epsilon	6.4920	6.5616	6.5900	6.9140	6.1502	6.1898	6.8565	5.6286	7.2194	6.2270
+205051_s_at	Analyte 270	270	dp52	3815	KIT	v-kit Hardy-Zuckerman 4 feline sarcoma viral oncogene homolog	1	1	1	LUA-1116	epsilon	3.9148	4.8157	4.0335	5.2465	4.4621	4.8479	4.6060	3.3172	5.1014	4.0469
+218046_s_at	Analyte 270	270	dp53	51021	MRPS16	mitochondrial ribosomal protein S16	1	1	1	LUA-4510	epsilon	11.2822	11.3899	10.8792	10.4552	11.1980	10.7925	10.8504	11.1396	10.7566	11.3088
+207238_s_at	Analyte 271	271	dp52	5788	PTPRC	protein tyrosine phosphatase, receptor type, C	1	1	1	LUA-3430	epsilon	8.4532	8.5100	9.9393	10.4213	9.7973	10.3438	8.9404	9.6628	9.3584	8.6302
+200024_at	Analyte 271	271	dp53	6193	RPS5	ribosomal protein S5	1	1	1	LUA-3527	epsilon	6.5054	7.0774	6.7148	6.0113	7.7114	6.7579	6.7245	6.5258	7.0470	7.0043
+221567_at	Analyte 272	272	dp53	8996	NOL3	nucleolar protein 3 (apoptosis repressor with CARD domain)	1	1	1	LUA-1002	epsilon	11.0846	10.8437	11.0140	9.9520	9.3969	11.0796	9.8801	10.1369	9.2104	9.6955
+203405_at	Analyte 272	272	dp52	8624	PSMG1	proteasome (prosome, macropain) assembly chaperone 1	1	1	1	LUA-1153	epsilon	9.9971	10.1682	10.5128	10.5737	10.8315	10.5088	10.4371	10.8376	10.7026	10.8974
+218215_s_at	Analyte 273	273	dp53	7376	NR1H2	nuclear receptor subfamily 1, group H, member 2	1	1	1	LUA-371	epsilon	7.7735	8.0891	7.8438	8.5845	7.8748	8.4065	8.2479	7.8282	9.8633	7.4200
+212281_s_at	Analyte 273	273	dp52	27346	TMEM97	transmembrane protein 97	1	1	1	LUA-3827	epsilon	10.7026	10.2849	10.3146	10.1113	9.8013	10.4595	10.1835	10.2053	8.9546	10.7130
+201932_at	Analyte 274	274	dp52	10489	LRRC41	leucine rich repeat containing 41	1	1	1	LUA-1014	epsilon	11.5453	11.4054	11.9334	12.1060	11.8262	12.4276	11.1895	11.8121	9.1335	11.5005
+205190_at	Analyte 274	274	dp53	5357	PLS1	plastin 1	1	1	1	LUA-1193	epsilon	9.4691	9.2723	9.3631	8.5500	9.3137	8.9910	9.0811	9.3458	11.2095	9.5620
+218845_at	Analyte 275	275	dp53	56940	DUSP22	dual specificity phosphatase 22	1	1	1	LUA-4460	epsilon	6.9058	6.6157	8.6330	8.1398	5.7202	8.1131	8.1326	8.6067	6.0587	6.9408
+212453_at	Analyte 275	275	dp52	26128	KIAA1279	KIAA1279	1	1	1	LUA-190	epsilon	8.2814	7.7262	7.3099	6.8809	7.8587	6.8855	7.1483	7.1184	7.8371	8.2992
+203379_at	Analyte 276	276	dp53	6195	RPS6KA1	ribosomal protein S6 kinase, 90kDa, polypeptide 1	1	1	1	LUA-4201	epsilon	8.3517	8.5338	8.2713	7.7072	8.4867	8.3335	8.7833	8.6359	9.4518	8.7880
+202371_at	Analyte 276	276	dp52	79921	TCEAL4	transcription elongation factor A (SII)-like 4	1	1	1	LUA-1231	epsilon	11.6716	11.7974	11.8121	11.6875	12.2605	12.1451	11.8574	11.7974	11.6155	11.8828
+203302_at	Analyte 277	277	dp53	1633	DCK	deoxycytidine kinase	1	1	1	LUA-931	epsilon	9.5308	8.3128	8.2479	8.7574	9.1699	9.3335	8.3632	9.0625	7.9400	8.2123
+202184_s_at	Analyte 277	277	dp52	55746	NUP133	nucleoporin 133kDa	1	1	1	LUA-1256	epsilon	8.6439	8.9780	9.1216	8.7880	8.4985	8.7045	8.9705	8.4065	9.2760	9.1151
+202153_s_at	Analyte 278	278	dp52	23636	NUP62	nucleoporin 62kDa	1	1	1	LUA-72	epsilon	9.6580	9.6529	9.1772	8.6648	9.5131	9.4858	9.5620	9.7031	9.8151	10.1749
+215945_s_at	Analyte 278	278	dp53	23321	TRIM2	tripartite motif containing 2	1	1	1	LUA-4070	epsilon	7.0326	7.9384	9.6529	9.2061	8.2045	8.4321	7.5328	8.1692	7.6178	6.5957
+204466_s_at	Analyte 279	279	dp53	6622	SNCA	synuclein, alpha (non A4 component of amyloid precursor)	1	1	1	LUA-3589	epsilon	10.2849	10.4184	10.2758	10.4552	10.8014	10.4371	10.9310	10.4017	11.2938	10.3507
+208611_s_at	Analyte 279	279	dp52	6709	SPTAN1	spectrin, alpha, non-erythrocytic 1 (alpha-fodrin)	1	1	1	LUA-3791	epsilon	3.5637	3.8997	4.1037	4.3270	4.7773	3.8838	4.1037	4.2868	3.5257	3.9148
+208309_s_at	Analyte 280	280	dp52	10892	MALT1	mucosa associated lymphoid tissue lymphoma translocation gene 1	1	1	1	LUA-1242	epsilon	7.7641	7.9243	7.9864	7.3053	8.0196	7.2872	6.9372	7.3260	8.3074	8.1031
+218679_s_at	Analyte 280	280	dp53	51160	VPS28	vacuolar protein sorting 28 homolog (S. cerevisiae)	1	1	1	LUA-710	epsilon	8.4787	7.0922	6.7427	8.2919	5.7895	8.1719	7.8438	8.2140	6.7025	7.3395
+219573_at	Analyte 281	281	dp53	55604	LRRC16A	leucine rich repeat containing 16A	1	1	1	LUA-108	epsilon	4.7030	5.6045	4.7773	5.3569	5.4729	5.1109	4.8735	5.5932	4.9225	5.1514
+217784_at	Analyte 281	281	dp52	10652	YKT6	YKT6 v-SNARE homolog (S. cerevisiae)	1	1	1	LUA-4340	epsilon	8.3876	8.4190	8.2140	7.9560	8.2509	8.2032	8.5905	8.2230	8.4190	8.7989
+207993_s_at	Analyte 282	282	dp53	11261	CHP	calcium binding protein P22	1	1	1	LUA-3917	epsilon	4.2569	4.1814	3.8477	3.4616	3.0717	4.0742	3.8838	4.1938	3.4374	5.1109
+209408_at	Analyte 282	282	dp52	11004	KIF2C	kinesin family member 2C	1	1	1	LUA-1217	epsilon	5.6974	5.2891	5.3790	5.6974	5.8553	5.9079	5.5324	5.6910	4.9622	6.0884
+202784_s_at	Analyte 283	283	dp52	23530	NNT	nicotinamide nucleotide transhydrogenase	1	1	1	LUA-639	epsilon	7.9645	7.4613	7.3658	7.5499	7.8587	7.8371	7.4327	7.3889	7.2458	8.4423
+209262_s_at	Analyte 283	283	dp53	2063	NR2F6	nuclear receptor subfamily 2, group F, member 6	1	1	1	LUA-4048	epsilon	10.3354	10.0703	10.7768	11.5761	10.4093	11.0025	10.1914	11.0473	10.3013	7.7187
+202310_s_at	Analyte 284	284	dp52	1277	COL1A1	collagen, type I, alpha 1	1	1	1	LUA-3923	epsilon	4.4500	5.8273	6.0884	4.1694	6.2650	5.4100	5.9842	5.6910	6.5699	5.7953
+218695_at	Analyte 284	284	dp53	54512	EXOSC4	exosome component 4	1	1	1	LUA-2007	epsilon	6.6281	4.4853	4.8915	6.2148	4.1441	3.5637	4.4050	4.5079	5.3068	4.6579
+204695_at	Analyte 285	285	dp52	993	CDC25A	cell division cycle 25 homolog A (S. pombe)	1	1	1	LUA-3766	epsilon	7.0162	7.0867	5.9623	6.5195	4.5731	6.1145	6.5818	6.7533	7.4545	6.7964
+208690_s_at	Analyte 285	285	dp53	9124	PDLIM1	PDZ and LIM domain 1	1	1	1	LUA-4320	epsilon	8.8927	9.1877	9.0581	9.3584	9.4347	9.4661	9.2946	9.4661	9.6434	9.8384
+218358_at	Analyte 286	286	dp53	79174	CRELD2	cysteine-rich with EGF-like domains 2	1	1	1	LUA-32	epsilon	7.4124	7.8282	7.8748	8.3297	7.9150	7.7421	7.8652	7.5211	7.6046	7.2565
+201746_at	Analyte 286	286	dp52	7157	TP53	tumor protein p53	1	1	1	LUA-3851	epsilon	11.4167	11.0579	10.8687	10.8853	10.9771	11.0686	11.0686	11.3764	10.5906	11.5632
+200791_s_at	Analyte 287	287	dp52	8826	IQGAP1	IQ motif containing GTPase activating protein 1	1	1	1	LUA-345	epsilon	9.4288	8.6876	9.3957	9.8830	9.5131	9.9331	8.5609	9.1517	9.4604	9.6152
+216913_s_at	Analyte 287	287	dp53	23223	RRP12	ribosomal RNA processing 12 homolog (S. cerevisiae)	1	1	1	LUA-1124	epsilon	8.6302	9.3969	8.4437	8.6574	8.3954	8.9599	9.3273	9.5487	8.2919	8.8299
+209608_s_at	Analyte 288	288	dp53	39	ACAT2	acetyl-CoA acetyltransferase 2	1	1	1	LUA-4410	epsilon	8.4848	8.1352	7.6942	8.9809	3.8838	8.2456	3.6964	7.9905	5.2633	8.1565
+201693_s_at	Analyte 288	288	dp52	1958	EGR1	early growth response 1	1	1	1	LUA-3983	epsilon	5.7138	5.6598	4.5194	5.6217	6.0427	5.9305	5.9403	5.8370	7.0801	6.7207
+207847_s_at	Analyte 289	289	dp52	4582	MUC1	mucin 1, cell surface associated	1	1	1	LUA-3050	epsilon	7.3150	6.8855	6.8958	6.8390	7.3658	7.2712	6.7887	6.3853	6.9408	7.1708
+212910_at	Analyte 289	289	dp53	57215	THAP11	THAP domain containing 11	1	1	1	LUA-806	epsilon	6.4457	6.0427	5.2891	4.8157	5.4020	6.0113	5.7895	7.4810	5.1602	5.7056
+209464_at	Analyte 290	290	dp52	9212	AURKB	aurora kinase B	1	1	1	LUA-3666	epsilon	10.5319	10.5088	11.4279	11.9334	11.3764	11.8262	10.7026	11.4620	10.7925	10.5387
+203973_s_at	Analyte 290	290	dp53	1052	CEBPD	CCAAT/enhancer binding protein (C/EBP), delta	1	1	1	LUA-3423	epsilon	7.3580	7.7673	8.0526	8.3982	8.7045	8.4065	7.4545	8.2388	7.6837	7.3658
+211015_s_at	Analyte 291	291	dp52	3308	HSPA4	heat shock 70kDa protein 4	1	1	1	LUA-80	epsilon	10.8315	10.6928	11.0272	11.5024	10.7212	10.7130	10.4794	11.0025	10.7852	10.6410
+215903_s_at	Analyte 291	291	dp53	23139	MAST2	microtubule associated serine/threonine kinase 2	1	1	1	LUA-1126	epsilon	7.4036	7.2534	7.1919	7.6210	7.1143	6.9208	7.3443	7.5785	8.1447	7.2105
+218547_at	Analyte 292	292	dp53	79947	DHDDS	dehydrodolichyl diphosphate synthase	1	1	1	LUA-2030	epsilon	7.0326	7.4517	7.6623	8.0526	7.7114	7.1889	7.6146	7.6981	7.9624	7.6894
+201292_at	Analyte 292	292	dp52	7153	TOP2A	topoisomerase (DNA) II alpha 170kDa	1	1	1	LUA-77	epsilon	11.8828	11.9756	11.8574	11.4279	11.9206	11.5761	12.1060	11.8262	12.0184	12.1351
+209304_x_at	Analyte 293	293	dp53	4616	GADD45B	growth arrest and DNA-damage-inducible, beta	1	1	1	LUA-820	epsilon	5.9906	5.4631	5.0719	4.6363	5.1797	5.4827	6.0332	5.7202	7.5768	5.9572
+203315_at	Analyte 293	293	dp52	8440	NCK2	NCK adaptor protein 2	1	1	1	LUA-3081	epsilon	7.1659	6.7245	6.6402	6.3783	6.8809	6.5900	6.9005	6.4746	6.2650	6.7964
+204092_s_at	Analyte 294	294	dp52	6790	AURKA	aurora kinase A	1	1	1	LUA-3665	epsilon	7.8949	7.8520	8.0627	7.8110	8.2211	8.1883	7.9243	8.1747	7.5262	7.8622
+203288_at	Analyte 294	294	dp53	9710	KIAA0355	KIAA0355	1	1	1	LUA-4075	epsilon	5.5324	4.5311	5.1217	4.2436	5.4729	4.1938	4.3270	6.2937	5.4827	4.7172
+203188_at	Analyte 295	295	dp52	11041	B3GNT1	UDP-GlcNAc:betaGal beta-1,3-N-acetylglucosaminyltransferase 1	1	1	1	LUA-881	epsilon	7.6353	7.8748	7.8622	7.5499	8.0873	7.1743	7.5785	8.0254	7.8652	8.3439
+203303_at	Analyte 295	295	dp53	6990	DYNLT3	dynein, light chain, Tctex-type 3	1	1	1	LUA-3469	epsilon	8.7146	6.8051	6.3076	6.5900	6.7852	8.1447	6.6114	6.8273	6.9311	7.1938
+204995_at	Analyte 296	296	dp52	8851	CDK5R1	cyclin-dependent kinase 5, regulatory subunit 1 (p35)	1	1	1	LUA-3885	epsilon	3.7695	4.0890	3.8997	4.6060	4.9934	4.5079	3.9590	3.7695	4.4266	4.1574
+218571_s_at	Analyte 296	296	dp53	29082	CHMP4A	charged multivesicular body protein 4A	1	1	1	LUA-87	epsilon	10.0703	10.4679	10.2906	9.8963	10.5557	10.3146	10.3578	10.3674	9.9673	10.4213
+203546_at	Analyte 297	297	dp53	9670	IPO13	importin 13	1	1	1	LUA-818	epsilon	7.1112	7.1224	6.7148	8.6173	8.1565	6.7768	7.9353	6.3615	8.5956	6.2421
+201339_s_at	Analyte 297	297	dp52	6342	SCP2	sterol carrier protein 2	1	1	1	LUA-4479	epsilon	8.1326	8.0254	7.9506	7.2425	6.8724	7.9197	6.9821	7.4250	7.1143	7.3260
+221449_s_at	Analyte 298	298	dp53	81533	ITFG1	integrin alpha FG-GAP repeat containing 1	1	1	1	LUA-570	epsilon	7.5064	7.8797	5.4926	6.3366	4.8735	7.5211	6.6715	7.6942	5.8616	6.5076
+204828_at	Analyte 298	298	dp52	5883	RAD9A	RAD9 homolog A (S. pombe)	1	1	1	LUA-541	epsilon	6.8724	6.9821	6.9684	7.4844	7.0801	6.1898	7.3988	6.5658	7.3150	7.4327
+203258_at	Analyte 299	299	dp52	10589	DRAP1	DR1-associated protein 1 (negative cofactor 2 alpha)	1	1	1	LUA-747	epsilon	9.2353	9.5956	9.1598	9.1466	9.8212	9.4288	10.1470	9.7993	10.8230	9.4347
+209875_s_at	Analyte 299	299	dp53	6696	SPP1	secreted phosphoprotein 1	1	1	1	LUA-3787	epsilon	9.8665	3.6392	3.5257	4.0469	3.2829	3.3172	3.0717	4.3134	9.2579	3.8679
+200825_s_at	Analyte 300	300	dp53	10525	HYOU1	hypoxia up-regulated 1	1	1	1	LUA-903	epsilon	9.5222	9.9166	11.0377	10.2849	9.6182	10.0184	10.1749	10.6057	9.6676	9.2432
+205202_at	Analyte 300	300	dp52	5110	PCMT1	protein-L-isoaspartate (D-aspartate) O-methyltransferase	1	1	1	LUA-905	epsilon	10.6521	10.5633	10.4595	11.4054	10.5387	10.7768	10.6465	10.0217	10.6610	10.5249
+209189_at	Analyte 301	301	dp53	2353	FOS	FBJ murine osteosarcoma viral oncogene homolog	1	1	1	LUA-1106	epsilon	4.5840	6.5699	3.7516	7.2900	3.4616	4.4621	6.5587	6.9372	3.6029	6.5616
+210105_s_at	Analyte 301	301	dp52	2534	FYN	FYN oncogene related to SRC, FGR, YES	1	1	1	LUA-4154	epsilon	6.0727	3.8679	6.7663	4.3270	6.3000	6.7984	4.6363	3.9445	6.1463	3.4065
+219952_s_at	Analyte 302	302	dp53	57192	MCOLN1	mucolipin 1	1	1	1	LUA-1140	epsilon	4.7961	3.9745	4.5428	3.7141	5.1420	4.0335	4.8385	4.7773	4.5525	3.7141
+202431_s_at	Analyte 302	302	dp52	4609	MYC	v-myc myelocytomatosis viral oncogene homolog (avian)	1	1	1	LUA-100	epsilon	10.0116	10.0322	10.0659	9.3944	10.0116	9.5716	9.9520	9.8384	10.1438	10.0830
+201565_s_at	Analyte 303	303	dp53	3398	ID2	inhibitor of DNA binding 2, dominant negative helix-loop-helix protein	1	1	1	LUA-3290	epsilon	6.3000	7.2641	8.5037	6.4684	6.1263	6.7579	6.4537	6.6014	6.4276	6.2762
+203616_at	Analyte 303	303	dp52	5423	POLB	polymerase (DNA directed), beta	1	1	1	LUA-60	epsilon	7.7939	8.2176	7.3658	7.7350	7.6942	7.7015	7.5104	7.3616	7.5785	7.5017
+209662_at	Analyte 304	304	dp52	1070	CETN3	centrin, EF-hand protein, 3	1	1	1	LUA-956	epsilon	8.6173	8.1833	9.2018	8.6648	9.2319	8.9324	8.5704	8.9364	8.7482	8.9214
+204679_at	Analyte 304	304	dp53	3775	KCNK1	potassium channel, subfamily K, member 1	1	1	1	LUA-3575	epsilon	8.9780	8.8121	8.4347	7.9369	8.0707	7.5360	7.4250	7.7283	7.0628	8.0730
+212849_at	Analyte 305	305	dp53	8312	AXIN1	axin 1	1	1	1	LUA-3668	epsilon	7.0774	7.6086	7.7072	7.6086	8.2132	8.0328	7.4036	7.6865	7.6786	7.3658
+201664_at	Analyte 305	305	dp52	10051	SMC4	structural maintenance of chromosomes 4	1	1	1	LUA-585	epsilon	10.5249	10.2306	10.4124	10.1835	10.1406	10.2519	10.1369	10.2758	9.6182	10.6328
+202052_s_at	Analyte 306	306	dp53	26064	RAI14	retinoic acid induced 14	1	1	1	LUA-1328	epsilon	6.5321	7.9884	8.1054	7.9416	7.1859	7.3298	7.9455	7.2845	7.4963	6.6608
+201827_at	Analyte 306	306	dp52	6603	SMARCD2	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily d, member 2	1	1	1	LUA-755	epsilon	11.9460	11.8828	11.1980	11.1895	11.2656	11.1469	11.9460	11.5453	12.3898	11.5984
+218435_at	Analyte 307	307	dp53	29103	DNAJC15	DnaJ (Hsp40) homolog, subfamily C, member 15	1	1	1	LUA-4523	epsilon	10.2981	9.7703	10.1014	9.6827	10.1544	7.3395	9.3427	9.7638	6.9372	10.1166
+201875_s_at	Analyte 307	307	dp52	9019	MPZL1	myelin protein zero-like 1	1	1	1	LUA-1216	epsilon	8.0041	7.4036	7.6417	7.3201	7.5104	10.1332	7.1052	7.5598	9.0536	8.2045
+213150_at	Analyte 308	308	dp53	3206	HOXA10	homeobox A10	1	1	1	LUA-1012	epsilon	6.3686	6.4216	6.1190	5.6356	6.0279	11.1787	6.1853	5.8152	6.9736	5.8486
+202647_s_at	Analyte 308	308	dp52	4893	NRAS	neuroblastoma RAS viral (v-ras) oncogene homolog	1	1	1	LUA-3122	epsilon	11.2530	10.9771	11.1787	11.0473	11.9050	11.5632	10.7212	10.9353	10.1981	11.3858
+208050_s_at	Analyte 309	309	dp53	835	CASP2	caspase 2, apoptosis-related cysteine peptidase	1	1	1	LUA-3711	epsilon	5.7837	6.0948	5.8370	5.8420	5.9079	5.9403	5.7056	6.4457	6.0332	6.1631
+201323_at	Analyte 309	309	dp52	10969	EBNA1BP2	EBNA1 binding protein 2	1	1	1	LUA-1348	epsilon	11.0206	10.7390	10.9443	10.8128	10.3578	10.6858	10.3802	10.7852	10.2343	10.8974
+208407_s_at	Analyte 310	310	dp53	1500	CTNND1	catenin (cadherin-associated protein), delta 1	1	1	1	LUA-1246	epsilon	8.3587	9.0260	9.6273	10.7768	8.9061	9.5847	9.1216	9.5487	6.5412	6.6157
+203648_at	Analyte 310	310	dp52	9797	TATDN2	TatD DNase domain containing 2	1	1	1	LUA-4065	epsilon	6.5557	6.7245	6.0884	5.9842	4.4964	6.9110	6.5818	6.0056	8.7640	7.6439
+201186_at	Analyte 311	311	dp52	4043	LRPAP1	low density lipoprotein receptor-related protein associated protein 1	1	1	1	LUA-743	epsilon	10.6057	10.5557	10.0457	10.0116	9.9331	10.4448	10.5319	10.6410	9.3427	10.7212
+214741_at	Analyte 311	311	dp53	7690	ZNF131	zinc finger protein 131	1	1	1	LUA-618	epsilon	9.1517	9.1598	10.7130	10.5633	10.4679	9.8151	9.3631	9.5601	11.0896	9.3260
+221478_at	Analyte 312	312	dp52	665	BNIP3L	BCL2/adenovirus E1B 19kDa interacting protein 3-like	1	1	1	LUA-3686	epsilon	6.4920	6.5957	7.4685	7.6743	8.5845	6.5098	6.6806	6.2817	8.1936	6.6486
+218780_at	Analyte 312	312	dp53	29911	HOOK2	hook homolog 2 (Drosophila)	1	1	1	LUA-608	epsilon	8.2248	8.1910	6.3436	5.5237	6.5957	8.2230	7.7673	8.3587	6.8855	8.2140
+216836_s_at	Analyte 313	313	dp53	2064	ERBB2	v-erb-b2 erythroblastic leukemia viral oncogene homolog 2, neuro/glioblastoma derived oncogene homolog (avian)	1	1	1	LUA-4398	epsilon	9.2908	9.2832	9.3116	9.0327	5.2722	8.6623	9.4402	9.7780	9.3247	9.7973
+208398_s_at	Analyte 313	313	dp52	9519	TBPL1	TBP-like 1	1	1	1	LUA-822	epsilon	7.8489	7.5777	7.5012	6.8273	8.3552	6.4621	7.2124	6.7818	6.7282	7.1859
+202809_s_at	Analyte 314	314	dp53	65123	INTS3	integrator complex subunit 3	1	1	1	LUA-22	epsilon	8.4690	8.2248	8.7669	11.1469	8.6587	8.8277	8.3876	8.8121	9.0327	8.6067
+211318_s_at	Analyte 314	314	dp52	8480	RAE1	RAE1 RNA export 1 homolog (S. pombe)	1	1	1	LUA-780	epsilon	11.5043	11.3174	11.1396	9.0581	10.8230	10.8914	11.0272	11.1004	10.9353	11.2095
+203213_at	Analyte 315	315	dp52	983	CDK1	cyclin-dependent kinase 1	1	1	1	LUA-3420	epsilon	10.4595	10.3212	10.1332	10.0703	9.7204	9.7509	10.3396	10.2255	9.9746	10.1835
+212968_at	Analyte 315	315	dp53	5986	RFNG	RFNG O-fucosylpeptide 3-beta-N-acetylglucosaminyltransferase	1	1	1	LUA-535	epsilon	9.0076	9.1466	8.7424	9.3137	10.3087	10.1113	8.9096	9.3969	8.9780	8.6021
+221779_at	Analyte 316	316	dp53	85377	MICALL1	MICAL-like 1	1	1	1	LUA-2026	epsilon	4.9337	5.0447	3.8477	5.0919	8.4653	5.3790	5.2722	4.7466	5.4827	5.6217
+203306_s_at	Analyte 316	316	dp52	10559	SLC35A1	solute carrier family 35 (CMP-sialic acid transporter), member A1	1	1	1	LUA-915	epsilon	10.0322	9.8474	10.0039	9.7973	10.0457	9.8343	9.8501	9.7509	10.1649	9.8501
+203068_at	Analyte 317	317	dp53	9903	KLHL21	kelch-like 21 (Drosophila)	1	1	1	LUA-1179	epsilon	4.9539	8.7948	3.9590	3.4616	4.6363	4.1037	3.5447	8.8517	3.0717	4.3643
+201709_s_at	Analyte 317	317	dp52	8508	NIPSNAP1	nipsnap homolog 1 (C. elegans)	1	1	1	LUA-792	epsilon	9.3969	9.6827	8.8956	9.1089	9.5582	9.3397	9.4051	8.9618	10.3212	9.3735
+202518_at	Analyte 318	318	dp52	9275	BCL7B	B-cell CLL/lymphoma 7B	1	1	1	LUA-760	epsilon	6.1337	6.1190	6.0884	5.8805	6.5616	5.7330	6.2877	6.2372	6.3713	5.9202
+203221_at	Analyte 318	318	dp53	7088	TLE1	transducin-like enhancer of split 1 (E(sp1) homolog, Drosophila)	1	1	1	LUA-923	epsilon	11.0377	10.9398	10.9654	10.2306	11.0025	10.7304	11.1787	10.9909	11.0686	11.1396
+203705_s_at	Analyte 319	319	dp53	8324	FZD7	frizzled family receptor 7	1	1	1	LUA-4156	epsilon	6.2650	6.8467	7.1082	6.9005	6.6670	6.3366	6.9736	6.5859	9.3524	6.7663
+203046_s_at	Analyte 319	319	dp52	8914	TIMELESS	timeless homolog (Drosophila)	1	1	1	LUA-79	epsilon	10.6928	10.6144	10.1507	10.2578	10.0893	10.1166	10.5011	10.6144	10.8437	10.6521
+203073_at	Analyte 320	320	dp53	22796	COG2	component of oligomeric golgi complex 2	1	1	1	LUA-611	epsilon	7.2534	8.2509	7.1818	8.1533	6.4497	8.3414	6.8098	7.0353	6.6639	8.3678
+212648_at	Analyte 320	320	dp52	54505	DHX29	DEAH (Asp-Glu-Ala-His) box polypeptide 29	1	1	1	LUA-759	epsilon	8.0627	7.2598	7.9384	7.0118	7.6116	7.4879	7.5856	7.8984	8.1858	7.4732
+201069_at	Analyte 321	321	dp52	4313	MMP2	matrix metallopeptidase 2 (gelatinase A, 72kDa gelatinase, 72kDa type IV collagenase)	1	1	1	LUA-3029	epsilon	8.7214	9.2480	10.2380	11.1570	9.2579	10.6328	8.9461	9.9746	8.3074	7.8914
+218001_at	Analyte 321	321	dp53	51116	MRPS2	mitochondrial ribosomal protein S2	1	1	1	LUA-737	epsilon	10.8914	11.1088	10.6610	10.2255	10.4017	10.0077	11.1302	10.6238	11.0025	10.7566
+218474_s_at	Analyte 322	322	dp53	54442	KCTD5	potassium channel tetramerisation domain containing 5	1	1	1	LUA-1364	epsilon	7.3443	7.6210	7.3861	6.8581	7.2267	6.8724	7.8914	7.0657	8.3316	7.3861
+203919_at	Analyte 322	322	dp52	6919	TCEA2	transcription elongation factor A (SII), 2	1	1	1	LUA-39	epsilon	9.8013	10.1835	10.1166	10.3802	10.6191	10.3542	10.2578	10.2906	10.8128	10.0005
+217931_at	Analyte 323	323	dp53	10695	CNPY3	canopy 3 homolog (zebrafish)	1	1	1	LUA-439	epsilon	6.9311	8.4719	8.1279	6.7663	5.7202	8.0546	6.7964	7.1659	7.2900	8.0041
+202949_s_at	Analyte 323	323	dp52	2274	FHL2	four and a half LIM domains 2	1	1	1	LUA-222	epsilon	7.8622	7.6786	6.8724	7.8110	7.8587	7.1743	8.0156	8.2899	8.1631	7.3545
+202604_x_at	Analyte 324	324	dp53	102	ADAM10	ADAM metallopeptidase domain 10	1	1	1	LUA-975	epsilon	8.0567	8.2020	8.1131	8.2619	8.3099	8.0685	8.3834	8.1596	9.2353	8.2713
+200895_s_at	Analyte 324	324	dp52	2288	FKBP4	FK506 binding protein 4, 59kDa	1	1	1	LUA-321	epsilon	12.6188	12.7662	13.1473	13.2357	12.5856	12.5548	12.9473	12.7662	12.9251	12.2605
+205173_x_at	Analyte 325	325	dp53	965	CD58	CD58 molecule	1	1	1	LUA-4	epsilon	9.7675	9.5900	9.6011	8.9037	8.3219	9.1216	9.5025	9.1793	7.1224	9.5276
+202423_at	Analyte 325	325	dp52	7994	KAT6A	K(lysine) acetyltransferase 6A	1	1	1	LUA-992	epsilon	6.9189	6.9821	6.6402	6.8098	6.3000	6.6486	7.3099	6.8565	9.5928	6.9576
+211297_s_at	Analyte 326	326	dp52	1022	CDK7	cyclin-dependent kinase 7	1	1	1	LUA-3887	epsilon	10.7768	10.9158	10.5973	10.0775	10.6761	10.2652	11.2219	10.5353	11.3764	10.4679
+203130_s_at	Analyte 326	326	dp53	3800	KIF5C	kinesin family member 5C	1	1	1	LUA-191	epsilon	4.7961	4.7172	4.7773	4.5428	9.8734	5.5741	10.6328	4.7466	4.5950	4.5311
+210719_s_at	Analyte 327	327	dp53	10362	HMG20B	high mobility group 20B	1	1	1	LUA-380	epsilon	11.0473	11.3899	10.4679	10.6283	11.0140	10.5973	11.8433	11.2401	12.6514	10.7672
+204089_x_at	Analyte 327	327	dp52	4216	MAP3K4	mitogen-activated protein kinase kinase kinase 4	1	1	1	LUA-638	epsilon	4.3134	4.9438	4.8271	4.8479	4.9539	4.3845	5.4729	4.1441	5.6763	5.5237
+202927_at	Analyte 328	328	dp53	5300	PIN1	peptidylprolyl cis/trans isomerase, NIMA-interacting 1	1	1	1	LUA-1137	epsilon	10.2791	11.0686	10.3881	10.0251	10.2053	10.0893	11.3266	10.2981	10.2519	10.7463
+201531_at	Analyte 328	328	dp52	7538	ZFP36	zinc finger protein 36, C3H type, homolog (mouse)	1	1	1	LUA-1257	epsilon	11.0206	10.5837	11.2275	11.1702	11.6875	11.3516	10.7304	10.8687	11.6555	11.1980
+202794_at	Analyte 329	329	dp52	3628	INPP1	inositol polyphosphate-1-phosphatase	1	1	1	LUA-1296	epsilon	4.6254	5.7757	6.1721	4.5840	7.8587	7.6417	5.3165	5.4362	5.7472	4.5840
+219061_s_at	Analyte 329	329	dp53	8270	LAGE3	L antigen family, member 3	1	1	1	LUA-3585	epsilon	8.1978	8.0028	4.1307	6.9799	3.7329	5.7056	7.7461	8.0343	7.9243	8.3876
+207419_s_at	Analyte 330	330	dp52	5880	RAC2	ras-related C3 botulinum toxin substrate 2 (rho family, small GTP binding protein Rac2)	1	1	1	LUA-3451	epsilon	9.5780	3.3172	3.4374	11.0140	4.0335	3.8838	3.3172	3.4374	4.5079	3.2486
+218856_at	Analyte 330	330	dp53	27242	TNFRSF21	tumor necrosis factor receptor superfamily, member 21	1	1	1	LUA-1292	epsilon	4.7030	10.1544	10.2758	5.6045	9.9971	10.5319	10.0974	10.1749	10.6238	9.3524
+203665_at	Analyte 331	331	dp52	3162	HMOX1	heme oxygenase (decycling) 1	1	1	1	LUA-4266	epsilon	6.8273	6.0727	6.8724	6.1541	7.9353	6.5699	7.2397	6.7818	5.7472	6.4920
+206364_at	Analyte 331	331	dp53	9928	KIF14	kinesin family member 14	1	1	1	LUA-583	epsilon	6.1463	7.1919	5.4271	4.1172	5.5989	5.4631	6.0332	6.0332	7.4200	4.7867
+211980_at	Analyte 332	332	dp52	1282	COL4A1	collagen, type IV, alpha 1	1	1	1	LUA-3926	epsilon	5.7953	6.8744	7.5803	7.5499	7.2817	7.5636	6.5412	7.2425	7.7735	5.8805
+208891_at	Analyte 332	332	dp53	1848	DUSP6	dual specificity phosphatase 6	1	1	1	LUA-3972	epsilon	7.3917	5.7953	6.4537	8.5364	5.3378	6.9821	7.2230	6.2650	5.9969	7.1023
+209163_at	Analyte 333	333	dp53	1534	CYB561	cytochrome b-561	1	1	1	LUA-4422	epsilon	11.6155	11.8262	11.3764	11.2530	8.6439	11.6555	11.7174	8.5704	11.6716	11.7841
+201719_s_at	Analyte 333	333	dp52	2037	EPB41L2	erythrocyte membrane protein band 4.1-like 2	1	1	1	LUA-558	epsilon	8.3439	8.2176	7.8984	7.6292	7.7049	7.6086	8.1476	7.6786	8.7948	8.4321
+201040_at	Analyte 334	334	dp52	2771	GNAI2	guanine nucleotide binding protein (G protein), alpha inhibiting activity polypeptide 2	1	1	1	LUA-1329	epsilon	8.2211	7.1818	7.7939	6.9372	8.7482	7.7015	7.7262	8.4378	7.1563	7.3917
+201185_at	Analyte 334	334	dp53	5654	HTRA1	HtrA serine peptidase 1	1	1	1	LUA-4313	epsilon	7.3580	8.0730	8.8642	8.9910	7.0299	8.8540	6.7768	7.5892	4.3134	8.4184
+36936_at	Analyte 335	335	dp52	7264	TSTA3	tissue specific transplantation antigen P35B	1	1	1	LUA-1268	epsilon	7.7350	7.2946	6.9576	5.0060	7.2946	6.5616	6.8855	7.6066	6.3903	7.9037
+204042_at	Analyte 335	335	dp53	10810	WASF3	WAS protein family, member 3	1	1	1	LUA-65	epsilon	4.7961	5.3866	4.8574	7.4036	5.4729	4.5525	5.0060	6.1631	3.7329	6.2421
+201697_s_at	Analyte 336	336	dp52	1786	DNMT1	DNA (cytosine-5-)-methyltransferase 1	1	1	1	LUA-837	epsilon	11.9050	12.0514	11.8828	11.8262	11.5244	11.7174	11.9756	11.9581	12.0959	11.8574
+209109_s_at	Analyte 336	336	dp53	7105	TSPAN6	tetraspanin 6	1	1	1	LUA-4528	epsilon	7.9603	8.0028	7.8914	6.7325	8.2295	7.7838	8.2655	7.6595	8.3753	7.8772
+212231_at	Analyte 337	337	dp53	23014	FBXO21	F-box protein 21	1	1	1	LUA-843	epsilon	10.9771	11.2219	11.5005	11.9756	11.4167	11.8433	10.8687	11.5347	10.3278	11.1088
+209515_s_at	Analyte 337	337	dp52	5873	RAB27A	RAB27A, member RAS oncogene family	1	1	1	LUA-716	epsilon	6.8565	6.9821	6.8724	7.7609	7.2946	7.1295	7.0774	6.9311	7.0353	6.6363
+1007_s_at	Analyte 338	338	dp52	780	DDR1	discoidin domain receptor tyrosine kinase 1	1	1	1	LUA-47	epsilon	8.5417	8.3753	8.0627	8.6237	8.9637	9.1120	8.3743	8.7760	9.6993	8.8103
+218852_at	Analyte 338	338	dp53	55012	PPP2R3C	protein phosphatase 2, regulatory subunit B'', gamma	1	1	1	LUA-9	epsilon	7.6439	8.8031	8.6205	7.3952	7.4987	8.0963	9.1772	7.9769	7.9624	8.0225
+206170_at	Analyte 339	339	dp53	154	ADRB2	adrenergic, beta-2-, receptor, surface	1	1	1	LUA-3611	epsilon	4.1307	4.0335	3.0717	5.2087	4.6786	6.6064	3.8838	7.3740	8.4506	2.5613
+202651_at	Analyte 339	339	dp52	9926	LPGAT1	lysophosphatidylglycerol acyltransferase 1	1	1	1	LUA-1019	epsilon	8.0526	7.6918	7.5104	7.5499	7.6309	7.7015	7.9516	8.2479	7.3464	7.9416
+202703_at	Analyte 340	340	dp52	8446	DUSP11	dual specificity phosphatase 11 (RNA/RNP complex 1-interacting)	1	1	1	LUA-1221	epsilon	9.7354	9.9602	10.5633	11.4437	9.9520	10.5169	9.8091	10.0322	9.4259	9.3126
+209409_at	Analyte 340	340	dp53	2887	GRB10	growth factor receptor-bound protein 10	1	1	1	LUA-3534	epsilon	4.9934	5.6845	5.9403	5.1905	5.6286	3.9445	5.0060	5.7757	5.4827	4.9438
+204475_at	Analyte 341	341	dp53	4312	MMP1	matrix metallopeptidase 1 (interstitial collagenase)	1	1	1	LUA-3028	epsilon	5.5550	5.2465	5.7837	5.9462	6.5484	5.2262	4.0469	5.5398	5.6436	4.8825
+203120_at	Analyte 341	341	dp52	7159	TP53BP2	tumor protein p53 binding protein, 2	1	1	1	LUA-666	epsilon	9.9393	10.1470	10.0775	9.8212	10.1615	9.9814	9.9673	9.5716	9.8963	9.9393
+202284_s_at	Analyte 342	342	dp52	1026	CDKN1A	cyclin-dependent kinase inhibitor 1A (p21, Cip1)	1	1	1	LUA-10	epsilon	11.9581	11.6372	11.5453	11.6070	11.7299	11.7583	11.1702	11.7841	11.1570	11.7635
+204812_at	Analyte 342	342	dp53	9183	ZW10	ZW10, kinetochore associated, homolog (Drosophila)	1	1	1	LUA-546	epsilon	7.3917	7.3917	7.4415	7.9150	6.6670	7.1889	7.2458	7.9353	8.0254	7.3023
+209083_at	Analyte 343	343	dp53	11151	CORO1A	coronin, actin binding protein, 1A	1	1	1	LUA-866	epsilon	8.1418	8.0891	6.5002	9.8772	9.4721	9.2432	6.8724	9.4086	9.4994	6.7488
+202011_at	Analyte 343	343	dp52	7082	TJP1	tight junction protein 1 (zona occludens 1)	1	1	1	LUA-3821	epsilon	7.0162	6.9408	8.0483	6.1028	5.7472	6.6715	8.0567	7.0746	7.4359	7.8622
+203192_at	Analyte 344	344	dp52	10058	ABCB6	ATP-binding cassette, sub-family B (MDR/TAP), member 6	1	1	1	LUA-1355	epsilon	9.3458	9.4402	9.1216	9.3116	9.2908	9.3126	9.2887	9.1897	9.3427	9.2723
+209045_at	Analyte 344	344	dp53	7511	XPNPEP1	X-prolyl aminopeptidase (aminopeptidase P) 1, soluble	1	1	1	LUA-433	epsilon	6.7852	5.9462	6.9110	6.0113	5.2262	6.4276	6.3295	6.3076	6.9884	6.4341
+205088_at	Analyte 345	345	dp53	10046	MAMLD1	mastermind-like domain containing 1	1	1	1	LUA-555	epsilon	4.3524	4.6471	11.5043	4.6363	11.7583	4.4158	4.2569	4.8479	4.9225	4.2436
+201761_at	Analyte 345	345	dp52	10797	MTHFD2	methylenetetrahydrofolate dehydrogenase (NADP+ dependent) 2, methenyltetrahydrofolate cyclohydrolase	1	1	1	LUA-1108	epsilon	11.7635	11.8574	11.9974	11.2698	12.4583	11.6372	11.7841	11.7030	11.5043	11.7583
+217901_at	Analyte 346	346	dp53	1829	DSG2	desmoglein 2	1	1	1	LUA-3459	epsilon	7.2993	7.7541	7.0895	7.0867	7.1464	8.4818	7.6210	6.9736	8.6359	7.7316
+203456_at	Analyte 346	346	dp52	11230	PRAF2	PRA1 domain family, member 2	1	1	1	LUA-70	epsilon	8.4885	8.7139	8.1719	8.0254	8.8277	7.4573	8.5500	8.6811	6.9140	8.9096
+202776_at	Analyte 347	347	dp52	30836	DNTTIP2	deoxynucleotidyltransferase, terminal, interacting protein 2	1	1	1	LUA-914	epsilon	9.4122	9.6759	9.3957	9.1699	10.2791	9.5056	9.5519	9.5956	10.4017	9.8578
+222217_s_at	Analyte 347	347	dp53	11000	SLC27A3	solute carrier family 27 (fatty acid transporter), member 3	1	1	1	LUA-246	epsilon	9.9283	10.4794	10.6928	11.2938	9.1813	10.6928	10.5169	10.5557	9.2663	9.0403
+202910_s_at	Analyte 348	348	dp53	976	CD97	CD97 molecule	1	1	1	LUA-98	epsilon	6.7663	6.1721	6.9821	6.0528	6.5258	6.2593	6.7056	6.2148	6.8855	6.8428
+202602_s_at	Analyte 348	348	dp52	27336	HTATSF1	HIV-1 Tat specific factor 1	1	1	1	LUA-1034	epsilon	11.9974	11.9206	12.1060	12.0959	11.8433	12.1060	12.0184	12.1451	11.9756	11.8433
+201887_at	Analyte 349	349	dp53	3597	IL13RA1	interleukin 13 receptor, alpha 1	1	1	1	LUA-1305	epsilon	7.9516	8.2814	8.5100	8.6811	7.6894	7.6786	7.9353	8.3297	9.5582	7.6210
+201774_s_at	Analyte 349	349	dp52	9918	NCAPD2	non-SMC condensin I complex, subunit D2	1	1	1	LUA-894	epsilon	9.0625	9.1216	9.4402	9.9896	9.1598	9.4443	9.1813	9.3631	8.6517	8.9096
+203566_s_at	Analyte 350	350	dp53	178	AGL	amylo-alpha-1, 6-glucosidase, 4-alpha-glucanotransferase	1	1	1	LUA-609	epsilon	5.2811	4.7172	6.0171	6.0528	6.1969	6.0587	5.5471	5.2891	5.3569	5.0060
+201361_at	Analyte 350	350	dp52	79073	TMEM109	transmembrane protein 109	1	1	1	LUA-696	epsilon	9.6676	9.8474	9.2561	9.2946	9.2061	9.4561	9.7317	9.6397	9.9602	9.8013
+201853_s_at	Analyte 351	351	dp53	994	CDC25B	cell division cycle 25 homolog B (S. pombe)	1	1	1	LUA-3768	epsilon	12.2091	11.8702	11.8262	11.2095	11.9581	11.7030	12.1677	11.9756	3.9900	12.2298
+202637_s_at	Analyte 351	351	dp52	3383	ICAM1	intercellular adhesion molecule 1	1	1	1	LUA-4283	epsilon	3.9590	5.1905	3.7141	4.3270	4.7773	4.7668	4.7773	4.3524	5.8321	5.4566
+209603_at	Analyte 352	352	dp53	2625	GATA3	GATA binding protein 3	1	1	1	LUA-669	epsilon	10.8014	10.9034	10.5387	10.4794	11.1246	10.6238	11.5453	10.8571	11.5761	11.2530
+202188_at	Analyte 352	352	dp52	9688	NUP93	nucleoporin 93kDa	1	1	1	LUA-170	epsilon	7.9495	7.6015	7.9645	8.1103	7.7976	7.9416	7.4391	7.9560	7.0118	7.9603
+204458_at	Analyte 353	353	dp52	23659	PLA2G15	phospholipase A2, group XV	1	1	1	LUA-1076	epsilon	6.7719	7.1818	6.4399	6.0727	8.9503	6.3783	7.1052	6.7245	7.6942	7.4732
+209507_at	Analyte 353	353	dp53	6119	RPA3	replication protein A3, 14kDa	1	1	1	LUA-446	epsilon	9.1335	9.0007	8.7424	8.6131	6.2421	9.2432	8.4410	9.0811	6.4086	9.6334
+201080_at	Analyte 354	354	dp52	8396	PIP4K2B	phosphatidylinositol-5-phosphate 4-kinase, type II, beta	1	1	1	LUA-272	epsilon	11.1570	5.2891	4.1574	4.3270	4.7172	4.6786	5.3714	4.7172	4.6254	5.3790
+202720_at	Analyte 354	354	dp53	26136	TES	testis derived transcript (3 LIM domains)	1	1	1	LUA-3813	epsilon	6.0469	11.2530	11.7453	12.1876	11.5043	11.9756	11.2572	11.6303	10.4213	10.6610
+201959_s_at	Analyte 355	355	dp52	23077	MYCBP2	MYC binding protein 2	1	1	1	LUA-1053	epsilon	6.6114	10.4184	6.4684	6.2650	6.0427	5.6845	7.1295	6.8911	7.3464	6.2937
+203458_at	Analyte 355	355	dp53	6697	SPR	sepiapterin reductase (7,8-dihydrobiopterin:NADP+ oxidoreductase)	1	1	1	LUA-1007	epsilon	10.4283	6.7768	9.9466	10.0184	9.8578	9.7575	9.9466	10.2578	10.2191	10.3067
+201121_s_at	Analyte 356	356	dp52	10857	PGRMC1	progesterone receptor membrane component 1	1	1	1	LUA-162	epsilon	12.0514	12.0694	11.8702	11.2219	11.2822	11.5043	11.9581	11.9334	12.1451	11.9756
+205205_at	Analyte 356	356	dp53	5971	RELB	v-rel reticuloendotheliosis viral oncogene homolog B	1	1	1	LUA-4039	epsilon	5.9079	6.3267	5.6516	5.7551	6.1969	6.2817	5.7393	6.3615	6.2969	6.0427
+201000_at	Analyte 357	357	dp52	16	AARS	alanyl-tRNA synthetase	1	1	1	LUA-1238	epsilon	11.4279	11.1895	10.7852	10.9545	11.7030	11.2698	11.1980	11.1980	11.2615	11.4054
+209588_at	Analyte 357	357	dp53	2048	EPHB2	EPH receptor B2	1	1	1	LUA-4018	epsilon	5.3272	5.0186	5.1217	5.3378	5.3714	5.4362	3.5447	5.4501	4.4050	4.1172
+202756_s_at	Analyte 358	358	dp52	2817	GPC1	glypican 1	1	1	1	LUA-729	epsilon	7.3740	7.6417	7.4545	8.0828	8.0546	8.2803	7.6942	8.0873	8.0707	7.0269
+212973_at	Analyte 358	358	dp53	22934	RPIA	ribose 5-phosphate isomerase A	1	1	1	LUA-18	epsilon	10.7852	10.5737	10.5737	9.8343	10.8792	10.4213	10.3146	10.3212	10.5837	10.7925
+201767_s_at	Analyte 359	359	dp52	60528	ELAC2	elaC homolog 2 (E. coli)	1	1	1	LUA-515	epsilon	11.5907	11.5244	11.7174	11.8262	11.3636	11.4355	11.5632	11.3858	11.4769	11.3516
+212070_at	Analyte 359	359	dp53	9289	GPR56	G protein-coupled receptor 56	1	1	1	LUA-553	epsilon	10.5088	10.2791	10.1406	10.4679	10.3881	9.7830	10.9771	11.7376	10.3438	10.5837
+207877_s_at	Analyte 360	360	dp53	4931	NVL	nuclear VCP-like	1	1	1	LUA-829	epsilon	7.5636	9.3969	9.8696	10.7304	9.7317	9.9393	9.4858	9.7436	9.6334	8.8517
+202446_s_at	Analyte 360	360	dp52	5359	PLSCR1	phospholipid scramblase 1	1	1	1	LUA-1300	epsilon	6.4276	6.8581	6.4684	7.0801	6.7367	7.4626	6.1463	6.8005	5.7837	7.3260
+205393_s_at	Analyte 361	361	dp53	1111	CHEK1	CHK1 checkpoint homolog (S. pombe)	1	1	1	LUA-3915	epsilon	9.2018	9.4721	10.2578	11.1396	9.7730	10.2053	8.8121	10.0039	9.2018	9.0772
+202087_s_at	Analyte 361	361	dp52	1514	CTSL1	cathepsin L1	1	1	1	LUA-4331	epsilon	12.2298	12.2605	12.1451	11.8262	12.6514	12.3381	12.4583	12.2798	12.1876	12.1677
+200766_at	Analyte 362	362	dp52	1509	CTSD	cathepsin D	1	1	1	LUA-501	epsilon	12.9029	12.7232	12.6188	13.1926	12.6866	12.7662	12.8067	12.9473	13.1473	12.7232
+210153_s_at	Analyte 362	362	dp53	4200	ME2	malic enzyme 2, NAD(+)-dependent, mitochondrial	1	1	1	LUA-4247	epsilon	6.7088	6.4579	6.4890	12.8547	6.9140	5.7757	6.4156	6.1808	6.4746	12.7662
+209435_s_at	Analyte 363	363	dp52	9181	ARHGEF2	Rho/Rac guanine nucleotide exchange factor (GEF) 2	1	1	1	LUA-1125	epsilon	5.4876	5.5150	5.5324	5.7266	5.0719	5.4100	5.8680	4.9337	5.5989	5.2549
+205463_s_at	Analyte 363	363	dp53	5154	PDGFA	platelet-derived growth factor alpha polypeptide	1	1	1	LUA-3158	epsilon	9.0717	9.5519	8.9061	8.6330	8.9944	8.7536	9.2018	9.3835	9.3116	9.2866
+201234_at	Analyte 364	364	dp52	3611	ILK	integrin-linked kinase	1	1	1	LUA-1198	epsilon	8.5283	8.0567	8.2992	8.2702	8.5672	8.1747	8.3158	8.3743	8.1747	8.1352
+214061_at	Analyte 364	364	dp53	93594	WDR67	WD repeat domain 67	1	1	1	LUA-613	epsilon	7.6178	8.7509	7.4036	7.5023	7.1859	7.3053	8.7536	7.2845	9.0625	8.7728
+203574_at	Analyte 365	365	dp52	4783	NFIL3	nuclear factor, interleukin 3 regulated	1	1	1	LUA-880	epsilon	7.7838	8.8406	7.2598	6.9979	8.6237	8.6722	7.6452	7.4593	8.9131	7.9353
+203696_s_at	Analyte 365	365	dp53	5982	RFC2	replication factor C (activator 1) 2, 40kDa	1	1	1	LUA-1130	epsilon	8.7482	7.9884	8.7139	8.8500	7.7791	7.1500	9.0445	8.8121	7.5023	8.6460
+202208_s_at	Analyte 366	366	dp52	10123	ARL4C	ADP-ribosylation factor-like 4C	1	1	1	LUA-3364	epsilon	7.5262	7.9353	8.0254	8.8642	7.2817	8.1665	7.5636	8.4719	7.4359	6.9821
+218316_at	Analyte 366	366	dp53	26520	TIMM9	translocase of inner mitochondrial membrane 9 homolog (yeast)	1	1	1	LUA-602	epsilon	12.3673	12.2798	12.0464	11.0025	12.0184	11.6716	12.5548	11.7376	12.2971	11.9334
+202119_s_at	Analyte 367	367	dp52	8895	CPNE3	copine III	1	1	1	LUA-1010	epsilon	12.4932	12.4276	12.3673	12.2798	12.1677	12.4932	12.3898	12.5548	12.2298	12.3898
+205085_at	Analyte 367	367	dp53	4998	ORC1	origin recognition complex, subunit 1	1	1	1	LUA-548	epsilon	9.6091	10.1406	10.6410	11.5347	10.2343	10.7463	9.9003	10.4448	10.0150	12.8067
+205500_at	Analyte 368	368	dp52	727	C5	complement component 5	1	1	1	LUA-3696	epsilon	5.4501	6.0171	6.5587	8.2434	6.4890	7.7575	5.8077	5.6045	5.9623	5.9202
+214086_s_at	Analyte 368	368	dp53	10038	PARP2	poly (ADP-ribose) polymerase 2	1	1	1	LUA-1180	epsilon	8.3954	8.4480	8.7424	6.7325	8.6067	5.7757	8.6302	8.2388	8.4506	8.4057
+219016_at	Analyte 369	369	dp53	60493	FASTKD5	FAST kinase domains 5	1	1	1	LUA-6	epsilon	8.4011	7.8681	7.9037	7.4613	7.2267	9.3584	7.9679	7.6243	8.1054	7.7814
+201462_at	Analyte 369	369	dp52	9805	SCRN1	secernin 1	1	1	1	LUA-405	epsilon	9.7031	9.3835	9.3735	9.8665	10.1166	10.0287	9.6365	9.9120	9.5668	9.5427
+209166_s_at	Analyte 370	370	dp52	4125	MAN2B1	mannosidase, alpha, class 2B, member 1	1	1	1	LUA-468	epsilon	8.5816	7.6918	7.0353	10.6761	10.5633	8.5209	7.8552	7.8862	10.0039	8.4196
+217777_s_at	Analyte 370	370	dp53	51495	PTPLAD1	protein tyrosine phosphatase-like A domain containing 1	1	1	1	LUA-907	epsilon	10.7925	10.3067	10.4213	7.2105	8.4074	10.5837	9.9746	10.5169	7.9400	10.5557
+219281_at	Analyte 371	371	dp53	4482	MSRA	methionine sulfoxide reductase A	1	1	1	LUA-2005	epsilon	6.9408	7.0201	7.1082	6.7663	6.0657	6.2593	7.1464	7.0043	7.2619	7.5821
+201502_s_at	Analyte 371	371	dp52	4792	NFKBIA	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor, alpha	1	1	1	LUA-3093	epsilon	11.1980	11.1469	10.6328	10.6410	10.7130	10.4825	10.9545	10.7566	11.1190	10.9398
+201572_x_at	Analyte 372	372	dp52	1635	DCTD	dCMP deaminase	1	1	1	LUA-1362	epsilon	7.1958	7.4036	6.1853	6.1263	7.1023	6.7282	6.6014	6.8911	7.1859	7.2712
+202761_s_at	Analyte 372	372	dp53	23224	SYNE2	spectrin repeat containing, nuclear envelope 2	1	1	1	LUA-181	epsilon	6.0279	6.7663	7.7072	7.2712	4.8271	5.8874	7.4545	5.7757	8.0963	6.1028
+201152_s_at	Analyte 373	373	dp52	4154	MBNL1	muscleblind-like (Drosophila)	1	1	1	LUA-91	epsilon	8.9978	8.5704	8.6722	9.8052	8.1476	8.5905	8.2540	8.2230	10.5088	9.0625
+201817_at	Analyte 373	373	dp53	9690	UBE3C	ubiquitin protein ligase E3C	1	1	1	LUA-1085	epsilon	10.3472	10.4017	10.1113	8.3374	9.8734	9.5222	10.6667	10.1369	8.3180	10.4093
+218175_at	Analyte 374	374	dp53	80212	CCDC92	coiled-coil domain containing 92	1	1	1	LUA-1271	epsilon	6.6486	7.1659	7.1224	6.7025	6.9140	6.7768	7.2872	10.1682	7.1743	7.1609
+203360_s_at	Analyte 374	374	dp52	26292	MYCBP	c-myc binding protein	1	1	1	LUA-4482	epsilon	11.1469	10.7078	10.8376	10.1682	10.2255	10.4283	10.5787	10.6610	10.4508	10.8792
+209774_x_at	Analyte 375	375	dp53	2920	CXCL2	chemokine (C-X-C motif) ligand 2	1	1	1	LUA-3946	epsilon	4.4743	5.1514	10.8571	4.0742	5.1420	11.2275	5.1014	4.3948	5.0060	4.5311
+202716_at	Analyte 375	375	dp52	5770	PTPN1	protein tyrosine phosphatase, non-receptor type 1	1	1	1	LUA-1224	epsilon	10.9443	10.5973	10.5473	10.9443	10.1055	10.4970	10.4155	10.9443	10.2758	10.6667
+202427_s_at	Analyte 376	376	dp52	25874	BRP44	brain protein 44	1	1	1	LUA-46	epsilon	10.5633	10.8014	10.8914	10.3881	10.5011	10.6521	10.6610	10.6328	10.4893	10.7347
+219184_x_at	Analyte 376	376	dp53	29928	TIMM22	translocase of inner mitochondrial membrane 22 homolog (yeast)	1	1	1	LUA-1203	epsilon	7.6942	7.5856	7.7283	7.7863	7.1859	7.6275	7.3053	7.8489	7.3260	7.1938
+204999_s_at	Analyte 377	377	dp53	22809	ATF5	activating transcription factor 5	1	1	1	LUA-159	epsilon	9.9120	9.8258	7.0299	10.3984	9.3273	10.0534	9.7102	10.1835	8.2230	10.0615
+203013_at	Analyte 377	377	dp52	11319	ECD	ecdysoneless homolog (Drosophila)	1	1	1	LUA-861	epsilon	7.9864	7.9603	8.0757	7.5856	7.0801	7.2565	8.0784	7.7072	9.8151	7.6981
+200810_s_at	Analyte 378	378	dp52	1153	CIRBP	cold inducible RNA binding protein	1	1	1	LUA-509	epsilon	10.2420	9.4259	9.4604	9.9780	10.1470	10.2981	9.2887	10.1544	8.0784	9.6580
+215093_at	Analyte 378	378	dp53	50814	NSDHL	NAD(P) dependent steroid dehydrogenase-like	1	1	1	LUA-1295	epsilon	9.3835	10.0830	10.4410	8.9324	8.8642	9.2908	10.3087	9.3397	10.3578	10.3438
+217761_at	Analyte 379	379	dp53	55256	ADI1	acireductone dioxygenase 1	1	1	1	LUA-3351	epsilon	6.5321	7.7049	6.1190	6.3366	5.3569	8.2123	6.2421	7.8748	8.0343	7.9679
+203927_at	Analyte 379	379	dp52	4794	NFKBIE	nuclear factor of kappa light polypeptide gene enhancer in B-cells inhibitor, epsilon	1	1	1	LUA-3103	epsilon	8.0041	5.6217	7.8081	7.4415	7.3658	7.1143	7.7015	7.1428	6.6114	5.5237
+218168_s_at	Analyte 380	380	dp53	56997	ADCK3	aarF domain containing kinase 3	1	1	1	LUA-3386	epsilon	5.0626	4.6254	4.6363	4.2436	10.6057	11.9206	12.6188	4.6254	4.2868	4.7564
+202458_at	Analyte 380	380	dp52	11098	PRSS23	protease, serine, 23	1	1	1	LUA-658	epsilon	12.1876	12.4583	11.9669	11.4769	11.5907	11.5984	12.1876	11.7174	12.2605	12.1060
+204093_at	Analyte 381	381	dp52	902	CCNH	cyclin H	1	1	1	LUA-3743	epsilon	8.0390	8.0627	8.0910	8.4184	8.1103	8.3915	7.5768	8.2992	7.1473	7.7958
+213343_s_at	Analyte 381	381	dp53	81544	GDPD5	glycerophosphodiester phosphodiesterase domain containing 5	1	1	1	LUA-3284	epsilon	6.4341	6.6440	5.9770	7.2230	6.4684	7.3053	6.0884	6.9736	5.9079	6.3281
+202733_at	Analyte 382	382	dp52	8974	P4HA2	prolyl 4-hydroxylase, alpha polypeptide II	1	1	1	LUA-603	epsilon	7.2817	7.3484	6.2817	6.9736	7.5768	7.1023	6.9632	6.3713	8.6044	7.8438
+202813_at	Analyte 382	382	dp53	6894	TARBP1	TAR (HIV-1) RNA binding protein 1	1	1	1	LUA-1322	epsilon	6.3503	6.1337	7.8282	5.4631	5.8805	5.5398	8.1075	7.6595	7.2817	7.0043
+200078_s_at	Analyte 383	383	dp52	533	ATP6V0B	ATPase, H+ transporting, lysosomal 21kDa, V0 subunit b	1	1	1	LUA-194	epsilon	7.9864	7.5237	7.6292	7.4250	7.5360	7.7575	6.9821	7.3889	6.0948	7.5475
+219222_at	Analyte 383	383	dp53	64080	RBKS	ribokinase	1	1	1	LUA-1363	epsilon	6.3076	5.8680	5.2549	5.0447	5.5989	5.2722	5.7895	5.5398	3.7329	5.3474
+200752_s_at	Analyte 384	384	dp52	823	CAPN1	calpain 1, (mu/I) large subunit	1	1	1	LUA-1229	epsilon	8.1064	8.1747	7.9864	8.1596	8.3297	8.0116	8.3033	8.1858	8.3876	8.3267
+212689_s_at	Analyte 384	384	dp53	55818	KDM3A	lysine (K)-specific demethylase 3A	1	1	1	LUA-460	epsilon	7.0628	7.2368	6.6114	6.7025	6.7579	6.4890	6.8467	6.9736	6.7025	6.9341
+211725_s_at	Analyte 385	385	dp53	637	BID	BH3 interacting domain death agonist	1	1	1	LUA-3383	epsilon	7.6786	5.3569	7.6086	8.4423	4.6363	5.7551	6.8318	7.8354	4.1172	5.7056
+202260_s_at	Analyte 385	385	dp52	6812	STXBP1	syntaxin binding protein 1	1	1	1	LUA-640	epsilon	5.4179	7.5499	4.9934	5.2465	7.3231	7.8587	5.2465	5.0719	6.2650	7.2712
+201125_s_at	Analyte 386	386	dp52	3693	ITGB5	integrin, beta 5	1	1	1	LUA-1346	epsilon	10.5430	10.6238	10.2306	9.9429	9.4402	9.7935	10.6761	10.4736	11.1046	10.6858
+203346_s_at	Analyte 386	386	dp53	22823	MTF2	metal response element binding transcription factor 2	1	1	1	LUA-835	epsilon	8.1833	7.3419	8.3517	7.4613	8.0707	7.4732	7.8388	8.1326	7.5104	7.9679
+208894_at	Analyte 387	387	dp53	3122	HLA-DRA	major histocompatibility complex, class II, DR alpha	1	1	1	LUA-4261	epsilon	5.2811	4.8735	5.3569	3.9445	6.0820	5.5398	5.0360	7.5636	7.9713	4.1172
+203123_s_at	Analyte 387	387	dp52	4891	SLC11A2	solute carrier family 11 (proton-coupled divalent metal ion transporters), member 2	1	1	1	LUA-887	epsilon	7.4517	8.2939	6.9777	7.2641	7.3464	7.4879	8.2211	6.4216	6.7207	6.7964
+203857_s_at	Analyte 388	388	dp52	10954	PDIA5	protein disulfide isomerase family A, member 5	1	1	1	LUA-40	epsilon	5.1326	4.8915	7.8438	5.1602	7.2105	4.9820	4.1307	5.5038	5.6763	5.2549
+204484_at	Analyte 388	388	dp53	5287	PIK3C2B	phosphoinositide-3-kinase, class 2, beta polypeptide	1	1	1	LUA-462	epsilon	8.3033	8.1910	4.9622	8.0910	5.0360	7.8949	8.3632	8.3099	8.8517	8.1936
+203911_at	Analyte 389	389	dp52	5909	RAP1GAP	RAP1 GTPase activating protein	1	1	1	LUA-1267	epsilon	7.8081	7.8371	7.5803	8.2020	8.5554	7.0588	7.8797	7.7072	8.9546	8.0343
+212833_at	Analyte 389	389	dp53	91137	SLC25A46	solute carrier family 25, member 46	1	1	1	LUA-82	epsilon	9.1248	9.0468	9.4051	6.5900	7.2676	8.7424	8.9096	8.5787	7.6178	9.1017
+212899_at	Analyte 390	390	dp53	23097	CDK19	cyclin-dependent kinase 19	1	1	1	LUA-934	epsilon	7.6015	8.4074	8.1883	7.2993	7.6699	7.9645	8.4690	8.1042	8.4410	7.9905
+205895_s_at	Analyte 390	390	dp52	9221	NOLC1	nucleolar and coiled-body phosphoprotein 1	1	1	1	LUA-1265	epsilon	9.6827	9.4122	9.5956	9.5056	9.1089	9.4229	8.9978	9.4753	9.5276	9.2319
+201432_at	Analyte 391	391	dp52	847	CAT	catalase	1	1	1	LUA-1202	epsilon	9.7864	9.5582	9.9896	9.9143	9.9429	10.1835	9.5249	9.6529	9.8151	9.5427
+204711_at	Analyte 391	391	dp53	9851	KIAA0753	KIAA0753	1	1	1	LUA-234	epsilon	7.2317	7.5360	7.4036	7.9905	7.2425	7.0010	7.8081	7.3076	6.9884	7.1112
+203367_at	Analyte 392	392	dp52	11072	DUSP14	dual specificity phosphatase 14	1	1	1	LUA-898	epsilon	7.8489	7.9645	7.9506	5.8321	7.4844	7.8862	7.1958	6.0884	7.9495	8.0343
+212462_at	Analyte 392	392	dp53	23522	KAT6B	K(lysine) acetyltransferase 6B	1	1	1	LUA-600	epsilon	5.9354	6.5195	6.0427	8.2540	4.1441	5.6516	5.9623	8.2713	6.8652	5.9572
+212624_s_at	Analyte 393	393	dp53	1123	CHN1	chimerin (chimaerin) 1	1	1	1	LUA-4401	epsilon	5.9354	3.2486	3.2829	7.1517	2.5613	4.3524	5.8226	4.2569	6.4746	3.4858
+208025_s_at	Analyte 393	393	dp52	8091	HMGA2	high mobility group AT-hook 2	1	1	1	LUA-4265	epsilon	3.3755	5.7757	6.5587	2.9543	5.6974	6.0727	3.3755	6.0727	3.2486	5.1326
+212143_s_at	Analyte 394	394	dp52	3486	IGFBP3	insulin-like growth factor binding protein 3	1	1	1	LUA-4328	epsilon	4.8479	6.1808	6.6608	6.2321	6.9005	6.4086	5.9079	6.6199	5.7837	5.9969
+210058_at	Analyte 394	394	dp53	5603	MAPK13	mitogen-activated protein kinase 13	1	1	1	LUA-4334	epsilon	6.9604	4.7961	5.1690	7.6623	4.8735	4.5525	6.8390	5.2262	7.0628	4.8385
+202241_at	Analyte 395	395	dp52	10221	TRIB1	tribbles homolog 1 (Drosophila)	1	1	1	LUA-33	epsilon	8.5704	8.5956	8.8766	9.7542	9.3890	9.5900	8.4925	9.4874	9.1492	8.1031
+218050_at	Analyte 395	395	dp53	51569	UFM1	ubiquitin-fold modifier 1	1	1	1	LUA-955	epsilon	9.6759	9.5427	9.6580	8.9503	7.9150	8.6876	9.2663	8.5458	7.7791	9.9602
+205349_at	Analyte 396	396	dp53	2769	GNA15	guanine nucleotide binding protein (G protein), alpha 15 (Gq class)	1	1	1	LUA-4184	epsilon	6.6014	8.3734	5.8874	7.5785	8.5704	7.2368	6.7056	7.0577	6.7533	8.5500
+203050_at	Analyte 396	396	dp52	7158	TP53BP1	tumor protein p53 binding protein 1	1	1	1	LUA-626	epsilon	8.3734	7.6292	7.6981	8.4985	7.4200	7.9864	8.0873	8.4065	8.0707	8.0116
+221308_at	Analyte 397	397	dp52	10818	FRS2	fibroblast growth factor receptor substrate 2	1	1	1	LUA-4147	epsilon	8.0936	8.6067	9.2596	9.8665	8.9705	10.9771	8.3236	9.6213	9.7973	9.0811
+217900_at	Analyte 397	397	dp53	55699	IARS2	isoleucyl-tRNA synthetase 2, mitochondrial	1	1	1	LUA-478	epsilon	11.2938	11.1570	11.0686	10.9158	10.9654	9.9971	10.9310	11.1469	7.7541	8.1565
+208945_s_at	Analyte 398	398	dp52	8678	BECN1	beclin 1, autophagy related	1	1	1	LUA-1209	epsilon	8.7367	8.4057	8.2084	8.2434	8.5364	7.3484	7.7541	7.9864	8.1075	8.1352
+209710_at	Analyte 398	398	dp53	2624	GATA2	GATA binding protein 2	1	1	1	LUA-1260	epsilon	7.1428	7.3419	7.2993	7.1919	7.5023	8.3517	8.7045	7.1295	6.5195	7.1295
+200698_at	Analyte 399	399	dp52	11014	KDELR2	KDEL (Lys-Asp-Glu-Leu) endoplasmic reticulum protein retention receptor 2	1	1	1	LUA-4477	epsilon	7.5262	7.7262	7.2598	6.5195	8.5845	6.4086	7.9816	6.9170	7.3023	7.2159
+209050_s_at	Analyte 399	399	dp53	5900	RALGDS	ral guanine nucleotide dissociation stimulator	1	1	1	LUA-3463	epsilon	9.2693	9.2142	9.1411	9.2561	5.1109	8.8540	9.7154	8.8941	9.8696	8.7509
+201727_s_at	Analyte 400	400	dp52	1994	ELAVL1	ELAV (embryonic lethal, abnormal vision, Drosophila)-like 1 (Hu antigen R)	1	1	1	LUA-990	epsilon	7.1483	7.3821	11.1636	7.2817	6.9604	7.8255	6.8273	7.2115	8.4704	7.5262
+202599_s_at	Analyte 400	400	dp53	8204	NRIP1	nuclear receptor interacting protein 1	1	1	1	LUA-1110	epsilon	11.3449	11.3764	6.3267	10.5088	10.6667	10.9353	11.4167	11.0686	11.5347	11.4519
+202705_at	Analyte 401	401	dp53	9133	CCNB2	cyclin B2	1	1	1	LUA-1038	epsilon	11.5761	11.5347	11.3516	11.1004	11.4769	11.4167	11.7299	10.9545	11.3174	11.5761
+204191_at	Analyte 401	401	dp52	3454	IFNAR1	interferon (alpha, beta and omega) receptor 1	1	1	1	LUA-4305	epsilon	8.1719	8.8242	9.4805	9.9602	8.7744	9.2142	8.6648	9.0117	9.2760	7.4545
+217871_s_at	Analyte 402	402	dp52	4282	MIF	macrophage migration inhibitory factor (glycosylation-inhibiting factor)	1	1	1	LUA-3025	epsilon	14.0740	14.2926	14.2926	13.5526	14.6142	14.2926	14.0740	14.0740	14.0740	14.2926
+200060_s_at	Analyte 402	402	dp53	10921	RNPS1	RNA binding protein S1, serine-rich domain	1	1	1	LUA-1063	epsilon	13.3568	13.1028	12.9899	12.4276	12.9473	12.9029	13.2357	12.9029	13.4607	13.1028
+205417_s_at	Analyte 403	403	dp52	1605	DAG1	dystroglycan 1 (dystrophin-associated glycoprotein 1)	1	1	1	LUA-3952	epsilon	7.0162	6.6532	6.3953	6.6759	6.6114	6.7984	7.0010	6.9576	6.6532	7.2442
+203408_s_at	Analyte 403	403	dp53	6304	SATB1	SATB homeobox 1	1	1	1	LUA-3549	epsilon	3.4858	3.4858	4.7773	3.5833	3.2829	4.5950	3.8838	5.5741	7.6353	5.8486
+221230_s_at	Analyte 404	404	dp53	51742	ARID4B	AT rich interactive domain 4B (RBP1-like)	1	1	1	LUA-698	epsilon	7.7241	8.1665	4.3845	7.7958	3.4616	4.1938	8.3099	8.0730	8.5458	8.0225
+218847_at	Analyte 404	404	dp52	10644	IGF2BP2	insulin-like growth factor 2 mRNA binding protein 2	1	1	1	LUA-4326	epsilon	4.0469	4.3643	7.1659	4.8479	7.0118	6.7984	4.2868	4.0469	3.8477	4.0469
+209531_at	Analyte 405	405	dp53	2954	GSTZ1	glutathione transferase zeta 1	1	1	1	LUA-4429	epsilon	11.0846	11.2822	11.2698	10.6283	10.5737	11.3088	11.2698	11.4519	11.2401	11.3174
+201393_s_at	Analyte 405	405	dp52	3482	IGF2R	insulin-like growth factor 2 receptor	1	1	1	LUA-284	epsilon	8.9172	9.0076	8.8406	9.5716	9.0327	9.0845	9.3944	9.3304	9.8801	8.8907
+218346_s_at	Analyte 406	406	dp53	27244	SESN1	sestrin 1	1	1	1	LUA-921	epsilon	7.1517	7.0299	6.6532	8.2793	6.5957	9.0210	6.3615	8.2540	6.3503	7.8050
+212665_at	Analyte 406	406	dp52	25976	TIPARP	TCDD-inducible poly(ADP-ribose) polymerase	1	1	1	LUA-4051	epsilon	8.0784	8.0116	7.9864	7.1609	7.7704	7.1958	7.8489	7.4517	7.8652	8.3439
+201380_at	Analyte 407	407	dp52	10491	CRTAP	cartilage associated protein	1	1	1	LUA-556	epsilon	7.8998	6.4950	6.7282	6.8390	6.0171	6.2937	6.8005	6.6806	8.4925	6.9170
+201997_s_at	Analyte 407	407	dp53	23013	SPEN	spen homolog, transcriptional regulator (Drosophila)	1	1	1	LUA-1205	epsilon	6.5818	8.1665	8.6838	4.7466	8.1692	8.7914	8.8121	8.5845	6.7533	8.5283
+218350_s_at	Analyte 408	408	dp52	51053	GMNN	geminin, DNA replication inhibitor	1	1	1	LUA-971	epsilon	11.1787	11.2615	11.1396	10.7212	10.8437	10.8687	10.9967	10.6761	11.4111	10.8179
+201102_s_at	Analyte 408	408	dp53	5211	PFKL	phosphofructokinase, liver	1	1	1	LUA-3173	epsilon	9.9466	9.7392	9.3458	10.0974	9.7436	9.6719	9.5956	10.0893	10.0150	10.0534
+202880_s_at	Analyte 409	409	dp52	9267	CYTH1	cytohesin 1	1	1	1	LUA-1074	epsilon	5.6286	5.3165	5.5471	5.2465	5.7472	4.7668	5.9202	5.4729	4.7773	5.5471
+203067_at	Analyte 409	409	dp53	8050	PDHX	pyruvate dehydrogenase complex, component X	1	1	1	LUA-133	epsilon	8.6857	8.8484	8.6648	8.3982	8.4653	8.4196	9.3810	8.5338	9.5093	8.7424
+221081_s_at	Analyte 410	410	dp53	79961	DENND2D	DENN/MADD domain containing 2D	1	1	1	LUA-1057	epsilon	5.5550	8.2992	8.3678	8.0453	6.2270	5.9969	8.9288	8.3099	8.7277	8.5640
+201494_at	Analyte 410	410	dp52	5547	PRCP	prolylcarboxypeptidase (angiotensinase C)	1	1	1	LUA-791	epsilon	7.6353	6.3295	6.5098	6.0384	7.8797	7.6595	5.8321	5.3943	5.5237	6.3503
+214074_s_at	Analyte 411	411	dp53	2017	CTTN	cortactin	1	1	1	LUA-3440	epsilon	7.6178	7.7958	6.8318	6.4920	7.4094	8.4955	7.5524	7.7461	7.7283	7.4415
+213720_s_at	Analyte 411	411	dp52	6597	SMARCA4	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily a, member 4	1	1	1	LUA-1233	epsilon	8.4459	8.5129	7.9243	7.8438	8.5114	7.8797	8.3954	8.6811	8.8563	8.3982
+202990_at	Analyte 412	412	dp52	5836	PYGL	phosphorylase, glycogen, liver	1	1	1	LUA-765	epsilon	8.6067	8.4885	8.2540	8.3033	9.5519	9.9746	8.6021	8.6021	8.7367	8.4753
+218108_at	Analyte 412	412	dp53	55148	UBR7	ubiquitin protein ligase E3 component n-recognin 7 (putative)	1	1	1	LUA-4057	epsilon	9.9746	9.8258	9.8539	9.6091	8.0028	8.4955	9.5900	9.7154	9.4721	10.2906
+210761_s_at	Analyte 413	413	dp53	2886	GRB7	growth factor receptor-bound protein 7	1	1	1	LUA-4219	epsilon	8.6237	9.9362	11.1004	11.2401	10.6328	10.3674	9.9971	10.0423	8.3316	8.1936
+201756_at	Analyte 413	413	dp52	6118	RPA2	replication protein A2, 32kDa	1	1	1	LUA-1319	epsilon	9.4994	8.7153	8.5746	8.7669	7.8318	8.2140	8.8766	8.6460	9.9393	9.0468
+204489_s_at	Analyte 414	414	dp53	960	CD44	CD44 molecule (Indian blood group)	1	1	1	LUA-1024	epsilon	8.1565	8.4257	9.2723	7.8888	10.0251	9.2908	8.7214	8.2793	7.7673	9.1659
+202454_s_at	Analyte 414	414	dp52	2065	ERBB3	v-erb-b2 erythroblastic leukemia viral oncogene homolog 3 (avian)	1	1	1	LUA-4020	epsilon	9.0007	9.1120	8.2803	8.7153	9.4051	8.6995	9.4259	9.0468	9.3890	8.6359
+202680_at	Analyte 415	415	dp52	2961	GTF2E2	general transcription factor IIE, polypeptide 2, beta 34kDa	1	1	1	LUA-945	epsilon	9.8013	9.2946	9.8446	9.7255	10.1113	10.2343	9.2596	9.5222	9.9307	9.7897
+218807_at	Analyte 415	415	dp53	10451	VAV3	vav 3 guanine nucleotide exchange factor	1	1	1	LUA-2035	epsilon	6.6715	6.7768	6.2593	6.4156	6.3281	6.0332	6.2421	6.6715	7.2619	6.4537
+221552_at	Analyte 416	416	dp53	57406	ABHD6	abhydrolase domain containing 6	1	1	1	LUA-1090	epsilon	6.1190	6.3953	6.7768	6.9260	7.9624	6.9208	6.2421	6.6608	6.5412	5.9572
+209860_s_at	Analyte 416	416	dp52	310	ANXA7	annexin A7	1	1	1	LUA-773	epsilon	9.1120	8.8685	9.1517	8.1103	9.4632	8.7367	8.8956	8.9364	8.5609	9.2142
+201460_at	Analyte 417	417	dp53	9261	MAPKAPK2	mitogen-activated protein kinase-activated protein kinase 2	1	1	1	LUA-3005	epsilon	10.3802	10.7768	10.2255	10.3146	11.4355	9.9896	10.7768	10.4213	10.9654	10.3578
+201266_at	Analyte 417	417	dp52	7296	TXNRD1	thioredoxin reductase 1	1	1	1	LUA-812	epsilon	11.3636	11.6303	11.4519	11.0686	10.4736	11.1190	11.4769	11.3266	11.7583	11.2615
+217873_at	Analyte 418	418	dp53	51719	CAB39	calcium binding protein 39	1	1	1	LUA-746	epsilon	5.8077	6.4579	6.7984	8.5283	5.1797	8.1447	6.2040	6.6715	6.0113	8.1936
+204451_at	Analyte 418	418	dp52	8321	FZD1	frizzled family receptor 1	1	1	1	LUA-4155	epsilon	7.5394	7.0353	7.6837	7.3740	7.3231	6.7282	7.0524	7.5785	7.5012	6.5818
+202950_at	Analyte 419	419	dp52	1429	CRYZ	crystallin, zeta (quinone reductase)	1	1	1	LUA-438	epsilon	8.6753	7.9741	8.0873	6.1028	6.3000	7.8110	7.8354	7.7541	7.8914	7.9037
+213135_at	Analyte 419	419	dp53	7074	TIAM1	T-cell lymphoma invasion and metastasis 1	1	1	1	LUA-3820	epsilon	7.6015	6.5557	6.1190	7.9293	8.5037	5.5932	6.5321	6.3267	6.7719	6.3686
+203105_s_at	Analyte 420	420	dp53	10059	DNM1L	dynamin 1-like	1	1	1	LUA-900	epsilon	10.0893	9.7638	9.5519	9.5456	7.5856	9.3458	9.9393	9.8501	9.8013	9.6011
+202812_at	Analyte 420	420	dp52	2548	GAA	glucosidase, alpha; acid	1	1	1	LUA-67	epsilon	7.9353	8.1031	7.8552	7.2124	9.0076	7.7791	7.8797	8.3743	8.0873	8.9573
+218102_at	Analyte 421	421	dp53	51071	DERA	deoxyribose-phosphate aldolase (putative)	1	1	1	LUA-965	epsilon	8.3033	8.4848	9.7255	9.5222	7.4478	9.3247	9.6529	7.6865	9.6903	8.4347
+203727_at	Analyte 421	421	dp52	6499	SKIV2L	superkiller viralicidic activity 2-like (S. cerevisiae)	1	1	1	LUA-836	epsilon	9.0902	9.3335	8.4867	7.8318	9.2201	8.4184	8.3743	8.9131	8.0567	9.3969
+202179_at	Analyte 422	422	dp52	642	BLMH	bleomycin hydrolase	1	1	1	LUA-1359	epsilon	6.1898	5.9305	5.8077	5.6763	5.4362	5.7953	6.1721	5.6680	6.3267	6.4156
+203038_at	Analyte 422	422	dp53	5796	PTPRK	protein tyrosine phosphatase, receptor type, K	1	1	1	LUA-1061	epsilon	10.7130	10.5906	10.9158	11.3516	10.5319	11.1004	10.8914	10.7768	10.3881	10.5737
+219352_at	Analyte 423	423	dp53	55008	HERC6	hect domain and RLD 6	1	1	1	LUA-673	epsilon	8.5500	5.4631	5.2549	7.1082	8.6587	7.9369	4.9539	4.6254	6.1337	5.7757
+212846_at	Analyte 423	423	dp52	23076	RRP1B	ribosomal RNA processing 1 homolog B (S. cerevisiae)	1	1	1	LUA-731	epsilon	8.7341	8.6574	8.4653	8.1833	6.9979	8.5404	8.4074	8.6205	8.3236	8.8139
+209467_s_at	Analyte 424	424	dp53	8569	MKNK1	MAP kinase interacting serine/threonine kinase 1	1	1	1	LUA-3027	epsilon	9.6434	10.4595	9.9746	10.2053	9.4518	9.6580	10.4283	9.3524	9.7128	8.9037
+200972_at	Analyte 424	424	dp52	10099	TSPAN3	tetraspanin 3	1	1	1	LUA-697	epsilon	7.4200	7.3821	7.2425	6.1898	7.0118	6.3569	7.4156	6.8911	7.3781	7.6786
+221641_s_at	Analyte 425	425	dp53	23597	ACOT9	acyl-CoA thioesterase 9	1	1	1	LUA-4297	epsilon	8.8173	8.5905	7.3335	8.9705	8.9599	7.7187	8.7728	7.8748	8.9637	9.0717
+202743_at	Analyte 425	425	dp52	8503	PIK3R3	phosphoinositide-3-kinase, regulatory subunit 3 (gamma)	1	1	1	LUA-3208	epsilon	8.1883	8.1418	8.5609	8.5672	7.9506	8.8364	8.0054	8.7914	7.9093	8.3439
+202417_at	Analyte 426	426	dp52	9817	KEAP1	kelch-like ECH-associated protein 1	1	1	1	LUA-744	epsilon	10.5787	10.6610	10.1947	10.3046	10.1332	10.3773	10.3952	10.4970	10.3087	10.8014
+203217_s_at	Analyte 426	426	dp53	8869	ST3GAL5	ST3 beta-galactoside alpha-2,3-sialyltransferase 5	1	1	1	LUA-756	epsilon	6.2877	10.0457	5.9969	6.2937	6.8295	7.0326	6.3076	9.9466	6.8051	6.3281
+202468_s_at	Analyte 427	427	dp53	8727	CTNNAL1	catenin (cadherin-associated protein), alpha-like 1	1	1	1	LUA-1070	epsilon	7.8748	7.7133	7.8282	7.8388	8.1302	7.9905	7.1609	7.7133	8.2793	7.8228
+212330_at	Analyte 427	427	dp52	7027	TFDP1	transcription factor Dp-1	1	1	1	LUA-3841	epsilon	10.0457	10.0184	9.6719	9.7317	9.4632	9.5368	8.7153	9.7102	7.0577	9.7730
+218581_at	Analyte 428	428	dp53	63874	ABHD4	abhydrolase domain containing 4	1	1	1	LUA-563	epsilon	8.6131	7.2194	7.4036	7.6417	6.6930	9.3969	8.5417	7.2619	7.4844	6.9684
+209257_s_at	Analyte 428	428	dp52	9126	SMC3	structural maintenance of chromosomes 3	1	1	1	LUA-825	epsilon	7.7350	8.4410	9.0159	9.4805	8.7214	8.4480	7.7976	8.7914	8.6784	8.4753
+205376_at	Analyte 429	429	dp53	8821	INPP4B	inositol polyphosphate-4-phosphatase, type II, 105kDa	1	1	1	LUA-778	epsilon	8.2702	8.7728	8.3414	8.0963	5.5629	8.4955	8.8728	8.5209	9.0159	6.9058
+201795_at	Analyte 429	429	dp52	3930	LBR	lamin B receptor	1	1	1	LUA-69	epsilon	6.3267	7.3099	6.3953	6.4537	7.5768	6.1145	6.9189	6.7964	7.2194	8.3099
+202494_at	Analyte 430	430	dp52	10450	PPIE	peptidylprolyl isomerase E (cyclophilin E)	1	1	1	LUA-720	epsilon	10.4855	10.4448	9.6903	9.3810	9.5847	10.4155	10.1113	9.7675	10.5557	9.9003
+212124_at	Analyte 430	430	dp53	57178	ZMIZ1	zinc finger, MIZ-type containing 1	1	1	1	LUA-111	epsilon	9.6434	9.9283	10.6101	10.2906	10.2652	9.4874	10.7390	10.5088	9.5222	10.4595
+208510_s_at	Analyte 431	431	dp53	5468	PPARG	peroxisome proliferator-activated receptor gamma	1	1	1	LUA-885	epsilon	7.6786	7.0201	6.8508	6.6114	6.1263	6.0884	5.9623	6.5258	7.0746	6.5957
+201174_s_at	Analyte 431	431	dp52	54386	TERF2IP	telomeric repeat binding factor 2, interacting protein	1	1	1	LUA-1152	epsilon	11.8262	11.8433	11.6716	11.3636	11.7841	11.7453	11.9050	11.6555	11.9206	11.6555
+201849_at	Analyte 432	432	dp52	664	BNIP3	BCL2/adenovirus E1B 19kDa interacting protein 3	1	1	1	LUA-692	epsilon	9.4347	9.7575	9.4483	8.8887	9.3335	9.0845	9.9225	8.9993	8.1326	9.5716
+205562_at	Analyte 432	432	dp53	10557	RPP38	ribonuclease P/MRP 38kDa subunit	1	1	1	LUA-110	epsilon	8.0225	7.7888	7.2368	7.3514	6.5484	7.2790	7.5328	7.7350	10.3013	7.5617
+203685_at	Analyte 433	433	dp52	596	BCL2	B-cell CLL/lymphoma 2	1	1	1	LUA-1011	epsilon	5.3714	5.9623	5.9522	5.7837	5.8321	4.8479	5.6680	5.4179	6.3903	5.9969
+208908_s_at	Analyte 433	433	dp53	831	CAST	calpastatin	1	1	1	LUA-667	epsilon	9.8303	9.8633	9.6955	10.0457	9.3584	9.6051	9.8151	10.0116	9.7897	9.9855
+217911_s_at	Analyte 434	434	dp53	9531	BAG3	BCL2-associated athanogene 3	1	1	1	LUA-142	epsilon	12.5856	12.5548	12.5157	12.2605	12.2091	12.2605	12.2798	12.5856	12.2091	12.6866
+201967_at	Analyte 434	434	dp52	10180	RBM6	RNA binding motif protein 6	1	1	1	LUA-817	epsilon	8.4057	8.7880	8.0627	8.2434	8.0196	8.0910	8.6237	8.4011	9.1917	8.3158
+202329_at	Analyte 435	435	dp52	1445	CSK	c-src tyrosine kinase	1	1	1	LUA-1368	epsilon	10.0534	9.9673	9.5900	9.2456	9.7830	9.6676	10.0077	9.8633	10.7212	10.0005
+40562_at	Analyte 435	435	dp53	2767	GNA11	guanine nucleotide binding protein (G protein), alpha 11 (Gq class)	1	1	1	LUA-784	epsilon	8.3099	8.3855	8.2899	8.1326	8.8364	8.3236	8.7424	8.1978	8.6359	8.7277
+202022_at	Analyte 436	436	dp52	230	ALDOC	aldolase C, fructose-bisphosphate	1	1	1	LUA-904	epsilon	5.9623	9.2663	5.9842	6.5699	6.3853	6.3038	6.4621	6.4950	8.4787	6.1400
+202349_at	Analyte 436	436	dp53	1861	TOR1A	torsin family 1, member A (torsin A)	1	1	1	LUA-1286	epsilon	9.2596	6.3686	9.1659	9.0902	9.3137	9.0943	8.8406	9.0717	6.6639	9.3835
+203775_at	Analyte 437	437	dp53	10165	SLC25A13	solute carrier family 25, member 13 (citrin)	1	1	1	LUA-1220	epsilon	10.2725	9.8772	10.1241	9.5780	9.9283	9.6152	9.5025	9.7780	9.6759	9.9855
+201649_at	Analyte 437	437	dp52	9246	UBE2L6	ubiquitin-conjugating enzyme E2L 6	1	1	1	LUA-936	epsilon	5.7393	6.9736	7.2598	7.7609	7.3464	7.0895	6.5054	5.9697	6.2209	5.6356
+207540_s_at	Analyte 438	438	dp52	6850	SYK	spleen tyrosine kinase	1	1	1	LUA-3817	epsilon	8.2899	6.3853	7.2845	8.0567	6.2650	6.8428	6.6486	7.9384	7.5434	6.3076
+209263_x_at	Analyte 438	438	dp53	7106	TSPAN4	tetraspanin 4	1	1	1	LUA-282	epsilon	5.9770	8.5392	8.1665	6.4457	8.4867	8.5845	8.4848	6.4457	5.0534	8.7045
+216321_s_at	Analyte 439	439	dp53	2908	NR3C1	nuclear receptor subfamily 3, group C, member 1 (glucocorticoid receptor)	1	1	1	LUA-45	epsilon	5.0626	4.7773	4.1938	4.5428	3.6029	5.1905	4.3643	4.1938	3.7329	4.6579
+203557_s_at	Analyte 439	439	dp52	5092	PCBD1	pterin-4 alpha-carbinolamine dehydratase/dimerization cofactor of hepatocyte nuclear factor 1 alpha	1	1	1	LUA-614	epsilon	12.0959	12.2091	12.0184	11.7583	12.1451	11.8121	12.2605	11.9974	12.1060	12.1876
+201611_s_at	Analyte 440	440	dp52	23463	ICMT	isoprenylcysteine carboxyl methyltransferase	1	1	1	LUA-1201	epsilon	9.0811	9.0925	8.5640	8.4289	7.7888	8.6418	9.4874	8.9037	9.1598	8.9809
+218145_at	Analyte 440	440	dp53	57761	TRIB3	tribbles homolog 3 (Drosophila)	1	1	1	LUA-1285	epsilon	11.3764	11.9581	12.1351	12.3673	12.5548	12.2298	12.0414	12.1677	11.7030	11.5453
+221539_at	Analyte 441	441	dp52	1978	EIF4EBP1	eukaryotic translation initiation factor 4E binding protein 1	1	1	1	LUA-4008	epsilon	9.2432	8.5845	8.4653	8.4074	9.2866	8.7728	8.5392	8.9780	7.9093	9.1411
+212660_at	Analyte 441	441	dp53	23338	PHF15	PHD finger protein 15	1	1	1	LUA-4013	epsilon	7.6786	9.1772	6.5002	6.8581	7.1143	7.4225	8.0656	8.1326	9.0260	7.8984
+211919_s_at	Analyte 442	442	dp53	7852	CXCR4	chemokine (C-X-C motif) receptor 4	1	1	1	LUA-3441	epsilon	8.8766	6.9189	7.7791	7.9905	8.2857	7.4036	5.9305	6.6486	7.1919	5.8486
+202382_s_at	Analyte 442	442	dp52	10007	GNPDA1	glucosamine-6-phosphate deaminase 1	1	1	1	LUA-1148	epsilon	8.6021	8.8322	8.8406	9.0581	9.4753	9.4443	8.8500	9.2946	8.9324	8.5392
+201700_at	Analyte 443	443	dp52	896	CCND3	cyclin D3	1	1	1	LUA-3740	epsilon	8.1279	7.5012	8.2084	8.2814	6.9979	7.5785	7.9951	8.0526	8.3876	8.0526
+219390_at	Analyte 443	443	dp53	55033	FKBP14	FK506 binding protein 14, 22 kDa	1	1	1	LUA-2008	epsilon	6.5818	3.6392	7.3053	3.6392	4.3134	3.9445	3.6029	3.5833	5.5550	5.0819
+208424_s_at	Analyte 444	444	dp53	57019	CIAPIN1	cytokine induced apoptosis inhibitor 1	1	1	1	LUA-845	epsilon	8.3219	8.7612	8.8887	8.9061	9.8091	9.1307	8.5956	8.8364	8.3180	8.2579
+203675_at	Analyte 444	444	dp52	4925	NUCB2	nucleobindin 2	1	1	1	LUA-694	epsilon	10.0974	10.1615	10.2191	9.8052	10.8914	10.2459	10.4855	10.4371	11.0272	10.3179
+213190_at	Analyte 445	445	dp53	91949	COG7	component of oligomeric golgi complex 7	1	1	1	LUA-1102	epsilon	8.0685	9.0772	8.6205	9.6676	8.6359	9.0717	9.3810	9.3247	7.3700	8.7277
+201980_s_at	Analyte 445	445	dp52	6251	RSU1	Ras suppressor protein 1	1	1	1	LUA-1287	epsilon	9.0468	8.4787	9.2142	9.0159	9.6273	9.7317	8.3202	8.6205	8.9978	9.4994
+206687_s_at	Analyte 446	446	dp52	5777	PTPN6	protein tyrosine phosphatase, non-receptor type 6	1	1	1	LUA-3429	epsilon	7.5821	7.4391	6.9979	7.3419	6.7719	7.2425	7.6786	7.5785	8.2540	7.4732
+209191_at	Analyte 446	446	dp53	84617	TUBB6	tubulin, beta 6	1	1	1	LUA-1356	epsilon	9.4866	9.7897	9.4288	9.2201	8.5989	9.3026	9.8696	9.4721	10.2459	9.6759
+202123_s_at	Analyte 447	447	dp53	25	ABL1	c-abl oncogene 1, non-receptor tyrosine kinase	1	1	1	LUA-312	epsilon	7.4391	8.6722	8.3876	7.0657	8.0054	7.0801	8.1910	8.0597	6.8318	7.7049
+204014_at	Analyte 447	447	dp52	1846	DUSP4	dual specificity phosphatase 4	1	1	1	LUA-3971	epsilon	8.4257	7.8228	7.2105	8.3219	8.8484	8.4410	8.9546	8.6936	8.5037	8.5956
+204826_at	Analyte 448	448	dp53	899	CCNF	cyclin F	1	1	1	LUA-1223	epsilon	7.8255	8.0028	7.6623	7.3952	7.2565	7.3889	7.4987	8.8242	7.5892	8.2939
+202006_at	Analyte 448	448	dp52	5782	PTPN12	protein tyrosine phosphatase, non-receptor type 12	1	1	1	LUA-645	epsilon	9.1120	8.7367	8.8927	8.5100	9.1877	8.4347	8.7880	8.3335	8.7146	9.1558
+200799_at	Analyte 449	449	dp53	3303	HSPA1A	heat shock 70kDa protein 1A	1	1	1	LUA-4272	epsilon	12.8547	12.6514	12.9029	12.5157	12.8547	12.9899	12.2298	12.8067	9.0076	12.9029
+202847_at	Analyte 449	449	dp52	5106	PCK2	phosphoenolpyruvate carboxykinase 2 (mitochondrial)	1	1	1	LUA-763	epsilon	10.4794	10.2943	10.3046	10.5011	11.1702	10.4825	10.3674	10.4595	10.7390	10.1682
+218898_at	Analyte 450	450	dp53	79850	FAM57A	family with sequence similarity 57, member A	1	1	1	LUA-497	epsilon	7.5475	8.0483	7.7704	7.3514	8.2992	7.4094	9.0943	7.3740	9.0943	7.9816
+203132_at	Analyte 450	450	dp52	5925	RB1	retinoblastoma 1	1	1	1	LUA-3475	epsilon	9.1659	8.8956	9.5222	9.5550	9.2797	9.1917	8.2939	9.2018	8.4011	9.1216
+217838_s_at	Analyte 451	451	dp53	51466	EVL	Enah/Vasp-like	1	1	1	LUA-3501	epsilon	10.1682	10.2119	8.8277	10.2459	10.7463	10.0077	10.6928	10.5249	10.6928	10.6057
+202722_s_at	Analyte 451	451	dp52	2673	GFPT1	glutamine--fructose-6-phosphate transaminase 1	1	1	1	LUA-947	epsilon	7.8081	7.6675	7.5598	7.6981	7.6595	7.6417	7.2712	7.2425	6.0948	7.5785
+211729_x_at	Analyte 452	452	dp52	644	BLVRA	biliverdin reductase A	1	1	1	LUA-3255	epsilon	10.4508	10.5011	10.2053	9.4501	9.7204	9.6759	10.9034	10.2519	11.1302	10.2281
+210640_s_at	Analyte 452	452	dp53	2852	GPER	G protein-coupled estrogen receptor 1	1	1	1	LUA-821	epsilon	7.2712	7.3700	9.3785	7.0412	7.1708	8.3099	7.7350	7.6146	8.5816	7.3023
+202623_at	Analyte 453	453	dp53	55837	EAPP	E2F-associated phosphoprotein	1	1	1	LUA-1101	epsilon	8.3297	7.4517	7.9713	7.4963	7.8110	7.6786	7.4810	7.4638	6.9777	7.8772
+202598_at	Analyte 453	453	dp52	6284	S100A13	S100 calcium binding protein A13	1	1	1	LUA-172	epsilon	13.0274	13.0719	13.0719	12.3898	12.8067	13.0274	12.9899	12.7232	12.9899	13.1926
+201995_at	Analyte 454	454	dp53	2131	EXT1	exostosin 1	1	1	1	LUA-1117	epsilon	10.6410	11.5907	12.3898	13.0274	12.1351	12.4583	11.4620	11.9050	11.0140	9.6472
+201710_at	Analyte 454	454	dp52	4605	MYBL2	v-myb myeloblastosis viral oncogene homolog (avian)-like 2	1	1	1	LUA-891	epsilon	9.8446	9.7317	9.4229	9.9043	9.3026	9.7935	9.0772	9.8696	9.5928	10.2578
+205909_at	Analyte 455	455	dp53	5427	POLE2	polymerase (DNA directed), epsilon 2 (p59 subunit)	1	1	1	LUA-511	epsilon	6.7088	7.1052	6.6114	6.4086	6.4684	6.8958	9.7542	6.4621	7.8282	6.5616
+203530_s_at	Analyte 455	455	dp52	6810	STX4	syntaxin 4	1	1	1	LUA-1056	epsilon	10.1579	9.9896	10.3087	10.0534	10.0390	10.3278	10.4213	10.3744	10.5973	9.9003
+213384_x_at	Analyte 456	456	dp53	5331	PLCB3	phospholipase C, beta 3 (phosphatidylinositol-specific)	1	1	1	LUA-3230	epsilon	9.7575	9.4994	9.5398	9.3026	10.6928	9.9283	9.7830	9.4086	9.5093	9.4604
+208716_s_at	Analyte 456	456	dp52	54499	TMCO1	transmembrane and coiled-coil domains 1	1	1	1	LUA-289	epsilon	10.9909	11.1787	10.6858	10.0893	10.0615	10.7026	10.9967	10.3881	10.9266	11.1895
+212875_s_at	Analyte 457	457	dp53	25966	C2CD2	C2 calcium-dependent domain containing 2	1	1	1	LUA-604	epsilon	4.1574	4.1307	5.4271	4.9438	5.0360	4.5950	9.7031	4.0050	4.6686	9.8446
+208644_at	Analyte 457	457	dp52	142	PARP1	poly (ADP-ribose) polymerase 1	1	1	1	LUA-3154	epsilon	10.3179	10.1749	10.2849	10.4448	10.3802	10.6057	10.2906	10.4283	10.2053	10.7347
+218093_s_at	Analyte 458	458	dp53	55608	ANKRD10	ankyrin repeat domain 10	1	1	1	LUA-1188	epsilon	5.9202	6.1502	4.9622	5.5237	5.2971	5.8616	5.8486	5.0919	5.6974	7.1392
+204610_s_at	Analyte 458	458	dp52	11007	CCDC85B	coiled-coil domain containing 85B	1	1	1	LUA-920	epsilon	8.5816	8.4190	8.5209	8.1103	8.2509	8.2579	8.2434	8.3464	8.2140	8.2691
+203409_at	Analyte 459	459	dp52	1643	DDB2	damage-specific DNA binding protein 2, 48kDa	1	1	1	LUA-1340	epsilon	9.3969	8.9546	8.9037	8.6876	8.6237	8.9993	8.0963	9.1598	7.6595	9.1897
+204977_at	Analyte 459	459	dp53	1662	DDX10	DEAD (Asp-Glu-Ala-Asp) box polypeptide 10	1	1	1	LUA-1350	epsilon	7.3917	7.8438	7.3464	7.1023	6.4156	7.0201	8.6574	7.9495	8.9839	7.3988
+203304_at	Analyte 460	460	dp52	25805	BAMBI	BMP and activin membrane-bound inhibitor homolog (Xenopus laevis)	1	1	1	LUA-772	epsilon	11.0025	10.7672	10.7026	10.1914	10.2906	10.0974	10.8504	10.7212	11.0473	11.0272
+203494_s_at	Analyte 460	460	dp53	9702	CEP57	centrosomal protein 57kDa	1	1	1	LUA-1349	epsilon	11.4054	8.0483	8.4190	8.2248	8.0707	7.9951	7.4200	8.5011	9.8578	7.3464
+201036_s_at	Analyte 461	461	dp52	3033	HADH	hydroxyacyl-CoA dehydrogenase	1	1	1	LUA-569	epsilon	10.2420	9.3584	9.8258	10.2758	10.3744	9.8830	9.9814	10.3802	10.2878	9.8258
+217763_s_at	Analyte 461	461	dp53	11031	RAB31	RAB31, member RAS oncogene family	1	1	1	LUA-1120	epsilon	9.3335	9.9043	10.3626	9.1917	9.1373	10.3087	9.1411	9.3760	9.2887	9.2018
+209380_s_at	Analyte 462	462	dp53	10057	ABCC5	ATP-binding cassette, sub-family C (CFTR/MRP), member 5	1	1	1	LUA-854	epsilon	4.4050	6.0427	5.5629	4.2063	5.0919	5.0186	5.6217	4.8735	3.4374	6.9341
+206662_at	Analyte 462	462	dp52	2745	GLRX	glutaredoxin (thioltransferase)	1	1	1	LUA-1234	epsilon	6.1028	6.5957	6.9311	6.8809	7.1295	6.4621	6.7488	5.9254	6.6114	5.1797
+202180_s_at	Analyte 463	463	dp52	9961	MVP	major vault protein	1	1	1	LUA-19	epsilon	8.5672	9.1699	7.9506	8.2702	9.4229	8.7728	9.4122	9.2104	9.5427	8.5746
+203209_at	Analyte 463	463	dp53	5985	RFC5	replication factor C (activator 1) 5, 36.5kDa	1	1	1	LUA-1318	epsilon	9.6213	8.4985	9.0076	9.4176	8.2857	9.5620	8.6838	8.5458	8.1378	9.4858
+203395_s_at	Analyte 464	464	dp53	3280	HES1	hairy and enhancer of split 1, (Drosophila)	1	1	1	LUA-1289	epsilon	9.7730	9.8963	9.9561	8.9503	10.0974	7.9369	9.9120	9.3760	7.4438	10.2380
+200783_s_at	Analyte 464	464	dp52	3925	STMN1	stathmin 1	1	1	1	LUA-57	epsilon	8.8956	8.3587	8.3202	7.2817	8.2434	9.4086	8.5011	8.0453	9.1089	8.6152
+202528_at	Analyte 465	465	dp52	2582	GALE	UDP-galactose-4-epimerase	1	1	1	LUA-668	epsilon	8.3439	8.6460	8.4867	8.4289	8.3552	8.6044	8.6418	8.3236	8.5905	8.6906
+213233_s_at	Analyte 465	465	dp53	55958	KLHL9	kelch-like 9 (Drosophila)	1	1	1	LUA-770	epsilon	6.9604	6.6608	6.6930	6.5557	6.5258	7.5104	6.9110	6.4457	6.8318	6.6783
+200636_s_at	Analyte 466	466	dp52	5792	PTPRF	protein tyrosine phosphatase, receptor type, F	1	1	1	LUA-633	epsilon	8.9404	9.1120	9.5716	9.6500	9.9120	9.8501	9.1335	9.2201	9.5668	8.6152
+217825_s_at	Analyte 466	466	dp53	51465	UBE2J1	ubiquitin-conjugating enzyme E2, J1, U	1	1	1	LUA-62	epsilon	8.1031	8.4347	8.7880	10.1332	8.6936	8.6270	8.4848	9.8963	8.4347	8.5905
+201968_s_at	Analyte 467	467	dp52	5236	PGM1	phosphoglucomutase 1	1	1	1	LUA-1252	epsilon	6.5098	6.6759	4.8271	7.5636	7.4844	3.9900	7.0774	7.1184	6.2209	7.6786
+202830_s_at	Analyte 467	467	dp53	2542	SLC37A4	solute carrier family 37 (glucose-6-phosphate transporter), member 4	1	1	1	LUA-1099	epsilon	4.4050	4.4383	7.0701	4.7172	3.9745	7.6275	4.8915	4.4266	3.9900	4.6579
+203570_at	Analyte 468	468	dp52	4016	LOXL1	lysyl oxidase-like 1	1	1	1	LUA-911	epsilon	10.1579	10.0534	9.6334	9.6182	9.4229	9.2018	9.5249	9.9393	9.5780	10.2981
+202240_at	Analyte 468	468	dp53	5347	PLK1	polo-like kinase 1	1	1	1	LUA-3252	epsilon	9.0159	9.3969	8.6936	8.4653	8.0707	8.0828	9.8578	9.0943	8.2919	9.4858
+201976_s_at	Analyte 469	469	dp52	4651	MYO10	myosin X	1	1	1	LUA-1196	epsilon	7.2641	6.6363	7.3917	6.6486	7.0524	6.3267	7.0922	5.9969	7.3150	6.8764
+203246_s_at	Analyte 469	469	dp53	10641	NPRL2	nitrogen permease regulator-like 2 (S. cerevisiae)	1	1	1	LUA-927	epsilon	5.6763	9.7830	5.7266	8.7367	4.8271	7.2458	5.5932	7.4415	5.2262	5.8486
+201847_at	Analyte 470	470	dp52	3988	LIPA	lipase A, lysosomal acid, cholesterol esterase	1	1	1	LUA-656	epsilon	10.0830	9.1618	9.8151	8.9993	9.6051	9.1411	8.9910	9.1411	8.7880	9.3126
+201608_s_at	Analyte 470	470	dp53	11137	PWP1	PWP1 homolog (S. cerevisiae)	1	1	1	LUA-1080	epsilon	9.2561	9.8578	9.0791	9.7031	8.4410	9.8963	9.8633	10.0615	10.7130	9.9331
+201397_at	Analyte 471	471	dp52	26227	PHGDH	phosphoglycerate dehydrogenase	1	1	1	LUA-21	epsilon	7.4810	7.2790	7.1659	7.0922	9.1248	7.8587	7.5104	7.2425	7.1958	7.4124
+212717_at	Analyte 471	471	dp53	9842	PLEKHM1	pleckstrin homology domain containing, family M (with RUN domain) member 1	1	1	1	LUA-785	epsilon	10.5906	11.3266	12.0959	12.5548	10.9545	12.0514	11.0579	11.6716	11.4620	10.2791
+207871_s_at	Analyte 472	472	dp52	7982	ST7	suppression of tumorigenicity 7	1	1	1	LUA-581	epsilon	6.1028	5.8273	5.4566	5.6763	4.7773	5.0719	5.1420	5.2633	5.8321	5.6045
+208626_s_at	Analyte 472	472	dp53	10493	VAT1	vesicle amine transport protein 1 homolog (T. californica)	1	1	1	LUA-8	epsilon	8.9637	8.3678	7.8748	8.2919	9.0879	8.3099	8.4190	8.4184	8.2655	8.6784
+209341_s_at	Analyte 473	473	dp52	3551	IKBKB	inhibitor of kappa light polypeptide gene enhancer in B-cells, kinase beta	1	1	1	LUA-1066	epsilon	4.6254	4.3845	4.9113	4.6686	3.3755	4.9014	5.0534	4.6887	4.2569	5.0447
+218755_at	Analyte 473	473	dp53	10112	KIF20A	kinesin family member 20A	1	1	1	LUA-52	epsilon	9.6903	9.7255	9.2946	9.0943	9.6182	9.2908	9.8384	9.5601	9.9971	10.2086
+203256_at	Analyte 474	474	dp53	1001	CDH3	cadherin 3, type 1, P-cadherin (placental)	1	1	1	LUA-719	epsilon	8.0873	7.4879	7.6894	5.7676	6.0013	6.1631	8.2295	6.7367	8.5114	6.1101
+202174_s_at	Analyte 474	474	dp52	5108	PCM1	pericentriolar material 1	1	1	1	LUA-1237	epsilon	6.9189	6.0820	6.1853	7.6046	7.9506	7.1500	6.0013	7.4879	5.2087	7.7641
+201631_s_at	Analyte 475	475	dp52	8870	IER3	immediate early response 3	1	1	1	LUA-1121	epsilon	10.4930	10.4283	9.8963	9.9143	10.3046	9.9466	10.3046	10.1470	10.4327	10.3802
+203787_at	Analyte 475	475	dp53	23635	SSBP2	single-stranded DNA binding protein 2	1	1	1	LUA-3343	epsilon	6.1631	6.1065	6.6670	6.9408	7.3076	6.9632	6.1541	6.5557	5.7266	6.1631
+201579_at	Analyte 476	476	dp52	2195	FAT1	FAT tumor suppressor homolog 1 (Drosophila)	1	1	1	LUA-1327	epsilon	5.5741	7.1143	6.5699	5.1326	7.3861	5.9842	6.7488	5.3943	7.4545	5.0447
+220140_s_at	Analyte 476	476	dp53	29916	SNX11	sorting nexin 11	1	1	1	LUA-2012	epsilon	7.5524	5.5629	4.2303	7.1392	5.2262	7.5499	7.8081	7.1483	5.1602	7.4921
+202683_s_at	Analyte 477	477	dp52	8731	RNMT	RNA (guanine-7-) methyltransferase	1	1	1	LUA-654	epsilon	7.0922	6.7488	6.5366	6.3783	6.8549	6.9390	7.1184	6.9884	7.6699	9.7542
+209260_at	Analyte 477	477	dp53	2810	SFN	stratifin	1	1	1	LUA-2020	epsilon	9.3524	9.7031	8.7948	9.0076	9.7675	9.6334	9.7414	8.6648	10.0251	7.6452
+201984_s_at	Analyte 478	478	dp52	1956	EGFR	epidermal growth factor receptor	1	1	1	LUA-64	epsilon	7.0577	4.7564	3.9300	4.3845	7.0801	6.0469	5.7266	5.9522	5.3378	7.2712
+202963_at	Analyte 478	478	dp53	5993	RFX5	regulatory factor X, 5 (influences HLA class II expression)	1	1	1	LUA-147	epsilon	4.5622	6.8051	6.2969	7.1184	4.4050	4.2569	3.4858	3.1600	3.8997	3.1600
+201829_at	Analyte 479	479	dp52	10276	NET1	neuroepithelial cell transforming 1	1	1	1	LUA-751	epsilon	11.2698	10.8571	11.2822	10.8571	11.2401	11.0206	10.7463	11.1787	10.0775	11.3940
+202732_at	Analyte 479	479	dp53	11142	PKIG	protein kinase (cAMP-dependent, catalytic) inhibitor gamma	1	1	1	LUA-1324	epsilon	7.4921	7.5104	7.4963	7.3335	7.1143	7.8438	7.8282	7.4065	7.4844	6.9684
+202447_at	Analyte 480	480	dp52	1666	DECR1	2,4-dienoyl CoA reductase 1, mitochondrial	1	1	1	LUA-1225	epsilon	10.4371	10.1981	10.3984	10.1470	10.7390	10.4017	10.2086	10.3578	9.8303	10.7026
+219170_at	Analyte 480	480	dp53	79187	FSD1	fibronectin type III and SPRY domain containing 1	1	1	1	LUA-757	epsilon	7.8371	8.4321	8.5458	9.1216	8.7424	8.5100	8.3414	8.2814	8.6648	7.7316
+208898_at	Analyte 481	481	dp53	51382	ATP6V1D	ATPase, H+ transporting, lysosomal 34kDa, V1 subunit D	1	1	1	LUA-1144	epsilon	9.9520	10.2489	9.5601	9.2353	9.5456	9.0925	10.1241	9.6051	10.6057	9.6719
+207143_at	Analyte 481	481	dp52	1021	CDK6	cyclin-dependent kinase 6	1	1	1	LUA-3886	epsilon	3.8679	4.2868	4.2569	4.4050	6.1028	3.6787	4.8574	4.5622	4.1574	3.9148
+204126_s_at	Analyte 482	482	dp53	8318	CDC45	cell division cycle 45 homolog (S. cerevisiae)	1	1	1	LUA-1145	epsilon	8.9461	9.1877	7.8282	8.2084	6.8295	8.4257	8.2140	7.4987	7.8228	8.2434
+202679_at	Analyte 482	482	dp52	4864	NPC1	Niemann-Pick disease, type C1	1	1	1	LUA-1113	epsilon	7.9384	7.8520	8.8728	8.9993	8.8031	9.1466	9.1279	8.7139	9.2285	8.8907
+203279_at	Analyte 483	483	dp53	9695	EDEM1	ER degradation enhancer, mannosidase alpha-like 1	1	1	1	LUA-1345	epsilon	8.3678	8.8766	8.7214	8.6330	9.0879	8.2230	9.1897	8.6936	9.7128	8.9288
+202016_at	Analyte 483	483	dp52	4232	MEST	mesoderm specific transcript homolog (mouse)	1	1	1	LUA-647	epsilon	12.2798	12.9029	13.1028	13.4607	13.2357	13.2844	12.9029	12.8547	12.6866	12.2091
+202555_s_at	Analyte 484	484	dp53	4638	MYLK	myosin light chain kinase	1	1	1	LUA-3071	epsilon	4.0200	4.0335	5.0919	4.4853	9.0943	3.6392	4.4383	3.6787	4.6686	3.5447
+203228_at	Analyte 484	484	dp52	5050	PAFAH1B3	platelet-activating factor acetylhydrolase 1b, catalytic subunit 3 (29kDa)	1	1	1	LUA-724	epsilon	10.3674	10.3278	9.7575	9.7392	10.1981	9.8212	10.4508	10.1981	10.4448	10.2459
+200757_s_at	Analyte 485	485	dp52	813	CALU	calumenin	1	1	1	LUA-769	epsilon	9.6152	9.6719	9.7864	8.7989	9.6580	9.3524	9.6793	9.4229	9.7675	9.8258
+204761_at	Analyte 485	485	dp53	9712	USP6NL	USP6 N-terminal like	1	1	1	LUA-1043	epsilon	7.4638	7.3616	7.2790	8.7728	6.9777	5.9770	7.7133	7.1659	7.3889	7.3023
+208936_x_at	Analyte 486	486	dp52	3964	LGALS8	lectin, galactoside-binding, soluble, 8	1	1	1	LUA-578	epsilon	9.2797	9.8091	9.7864	9.5056	9.6903	9.3944	10.0077	9.5222	10.2615	9.0445
+218051_s_at	Analyte 486	486	dp53	64943	NT5DC2	5'-nucleotidase domain containing 2	1	1	1	LUA-1245	epsilon	7.8862	8.9214	9.1897	9.9331	8.6439	10.0775	9.0625	8.6131	8.8299	9.8091
+204662_at	Analyte 487	487	dp53	9738	CCP110	centriolar coiled coil protein 110kDa	1	1	1	LUA-789	epsilon	7.1112	7.0470	7.4156	7.1743	6.9390	7.5768	7.0118	7.3464	6.5076	7.5617
+201412_at	Analyte 487	487	dp52	26020	LRP10	low density lipoprotein receptor-related protein 10	1	1	1	LUA-86	epsilon	10.9545	10.9545	10.3802	10.3578	10.7672	10.6761	11.3516	10.7463	11.6303	11.0846
+201243_s_at	Analyte 488	488	dp52	481	ATP1B1	ATPase, Na+/K+ transporting, beta 1 polypeptide	1	1	1	LUA-1175	epsilon	11.5005	11.6875	11.5244	10.7463	11.0473	11.2095	11.8702	11.5005	11.9460	11.6372
+203047_at	Analyte 488	488	dp53	6793	STK10	serine/threonine kinase 10	1	1	1	LUA-1226	epsilon	6.6806	5.8077	7.4613	7.4613	7.0299	7.6894	6.1145	7.3545	7.4732	6.7088
+202780_at	Analyte 489	489	dp52	5019	OXCT1	3-oxoacid CoA transferase 1	1	1	1	LUA-815	epsilon	7.4517	7.8622	7.5985	11.7841	7.3658	7.4879	7.2397	7.6439	7.5262	6.7367
+203343_at	Analyte 489	489	dp53	7358	UGDH	UDP-glucose 6-dehydrogenase	1	1	1	LUA-1000	epsilon	12.5548	7.0657	12.2091	7.9150	11.9460	12.1351	12.5856	12.3673	12.1351	12.3673
+202825_at	Analyte 490	490	dp52	291	SLC25A4	solute carrier family 25 (mitochondrial carrier; adenine nucleotide translocator), member 4	1	1	1	LUA-954	epsilon	8.7760	8.9599	8.5875	7.9769	8.4480	8.2803	8.9839	8.9618	9.4753	8.8207
+217995_at	Analyte 490	490	dp53	58472	SQRDL	sulfide quinone reductase-like (yeast)	1	1	1	LUA-591	epsilon	6.2270	6.2470	6.2969	7.1464	6.9260	6.3366	5.5741	7.8587	6.3503	5.6516
+218450_at	Analyte 491	491	dp53	50865	HEBP1	heme binding protein 1	1	1	1	LUA-15	epsilon	7.5785	7.6837	9.0902	9.1558	7.5856	8.0328	7.3821	8.0196	6.9576	8.6648
+202659_at	Analyte 491	491	dp52	5699	PSMB10	proteasome (prosome, macropain) subunit, beta type, 10	1	1	1	LUA-3374	epsilon	8.5392	8.3316	8.4653	8.6418	8.8031	8.7833	8.4459	8.9839	8.8103	8.0828
+212815_at	Analyte 492	492	dp52	10973	ASCC3	activating signal cointegrator 1 complex subunit 3	1	1	1	LUA-4381	epsilon	8.3335	8.2702	8.1533	7.8991	7.5360	7.6595	8.5169	8.1858	8.6517	8.4653
+204579_at	Analyte 492	492	dp53	2264	FGFR4	fibroblast growth factor receptor 4	1	1	1	LUA-4117	epsilon	5.8805	5.1326	5.7837	5.8680	4.6786	5.9202	5.2722	5.3642	6.7025	5.2175
+207039_at	Analyte 493	493	dp53	1029	CDKN2A	cyclin-dependent kinase inhibitor 2A (melanoma, p16, inhibits CDK4)	1	1	1	LUA-3897	epsilon	10.1166	10.2053	10.2459	10.0615	10.3212	10.6667	10.2849	10.2306	10.1792	9.9466
+202368_s_at	Analyte 493	493	dp52	9697	TRAM2	translocation associated membrane protein 2	1	1	1	LUA-1025	epsilon	5.6286	5.4362	5.3790	4.9706	5.5741	5.0534	5.6045	5.6516	5.2811	6.2148
+212536_at	Analyte 494	494	dp53	23200	ATP11B	ATPase, class VI, type 11B	1	1	1	LUA-712	epsilon	8.7045	8.9705	9.4661	7.4178	9.3491	9.3785	8.4011	7.7673	7.7541	7.4415
+202148_s_at	Analyte 494	494	dp52	5831	PYCR1	pyrroline-5-carboxylate reductase 1	1	1	1	LUA-952	epsilon	8.2343	8.6173	7.8438	9.9780	8.6838	7.9197	9.0717	8.9618	9.6011	8.1476
+218529_at	Analyte 495	495	dp53	51293	CD320	CD320 molecule	1	1	1	LUA-2001	epsilon	8.8173	9.2018	8.4753	8.0730	8.1692	8.0546	9.0327	8.6722	8.8997	8.6906
+207700_s_at	Analyte 495	495	dp52	8202	NCOA3	nuclear receptor coactivator 3	1	1	1	LUA-777	epsilon	13.0719	12.9473	12.9473	12.4932	13.1473	12.7232	13.0274	13.1028	12.9251	13.1473
+209112_at	Analyte 496	496	dp53	1027	CDKN1B	cyclin-dependent kinase inhibitor 1B (p27, Kip1)	1	1	1	LUA-3892	epsilon	11.4355	10.2652	11.3174	10.6977	10.2343	11.1088	10.2459	11.2530	9.1411	9.5056
+202996_at	Analyte 496	496	dp52	57804	POLD4	polymerase (DNA-directed), delta 4	1	1	1	LUA-1058	epsilon	10.5787	11.0324	9.9166	10.0390	11.2938	10.5633	10.8230	10.4093	10.9096	10.4410
+204420_at	Analyte 497	497	dp52	8061	FOSL1	FOS-like antigen 1	1	1	1	LUA-4130	epsilon	4.5428	5.5471	5.7393	6.1898	6.1028	6.4621	5.5629	5.9254	6.0948	4.8574
+211071_s_at	Analyte 497	497	dp53	10962	MLLT11	myeloid/lymphoid or mixed-lineage leukemia (trithorax homolog, Drosophila); translocated to, 11	1	1	1	LUA-61	epsilon	3.0717	4.1814	4.4853	4.4383	4.4050	5.8616	4.1694	4.9014	3.9900	6.2762
+203341_at	Analyte 498	498	dp53	10153	CEBPZ	CCAAT/enhancer binding protein (C/EBP), zeta	1	1	1	LUA-876	epsilon	8.5209	8.5609	8.3267	8.3517	8.3794	10.5387	8.7669	8.4506	8.7728	8.7153
+202801_at	Analyte 498	498	dp52	5566	PRKACA	protein kinase, cAMP-dependent, catalytic, alpha	1	1	1	LUA-81	epsilon	10.7390	10.7566	10.7347	11.3383	10.3507	11.2401	10.7672	11.1895	11.3636	10.2849
+217398_x_at	Analyte 499	499	dp53	2597	GAPDH	glyceraldehyde-3-phosphate dehydrogenase	1	1	1	LUA-576	epsilon	15.0000	15.0000	15.0000	14.8071	14.3828	15.0000	15.0000	14.8071	14.6142	15.0000
+205379_at	Analyte 500	500	dp53	874	CBR3	carbonyl reductase 3	1	1	1	LUA-4022	epsilon	4.5079	6.8467	4.3406	6.2937	4.3134	5.1602	6.2421	6.1263	3.1600	5.4271
+203897_at	Analyte 500	500	dp52	57149	LYRM1	LYR motif containing 1	1	1	1	LUA-589	epsilon	5.8680	5.7056	6.0884	5.0060	6.6532	6.6715	5.3569	5.8874	5.7138	7.0470

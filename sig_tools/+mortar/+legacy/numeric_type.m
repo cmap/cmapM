@@ -1,0 +1,9 @@
+function num_type = numeric_type
+% NUMERIC_TYPE Return cell array of all Matlab numeric types.
+% NUM_TYPE = NUMERIC_TYPE
+
+num_type = {'double', 'single', 'int8', ...
+    'uint8', 'int16', 'uint16',...
+    'int32', 'uint32', 'int64', ...
+    'uint64', 'logical'};
+end

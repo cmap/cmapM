@@ -1,0 +1,105 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_collate_tool
+   summary: Merge datasets
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "This tool merges a list of datasets.
+
+    ## Examples
+
+    - Merge a list of files
+
+    #name# --files 'dslist.grp' --row_space 'lm'
+
+    - Merge datasets from a list of folders
+
+    #name# --folders 'folders.grp' --cid 'columns.grp' --row_space 'lm'
+
+    - Merge files names score_n*.gctx from a subfolder zs/ within a list of folders
+
+    #name# --folders 'folders.grp' --file_wildcard 'score_n*.gctx' --sub_path  'zs/'
+
+    "
+## Main args
+-
+   name: --files
+   default: ''
+   help: List of files as a GRP file or cell array
+
+-
+   name: --folders
+   default: ''
+   help: List of parent folders as a GRP file or cell array.
+
+-
+   name: --file_wildcard
+   default: ''
+   help: Wildcard
+
+-
+   name: --parent_folder
+   default: ''
+   help: Parent folder containing files or folders
+
+-
+   name: --sub_folder
+   default: ''
+   help: Sub folder, relative to the parent folder that contains the 
+         target file
+
+-
+  name: --row_space
+  default: ''
+  choices: ['', 'lm', 'bing', 'full', 'custom']
+  help: Filter features or rows to a pre-defined space
+
+-
+  name: --rid
+  default: ''
+  help: List of row ids to include as GRP file or cell array. 
+        The list of ids are excluded if exclude_rid is true
+
+-
+  name: --cid
+  default: ''
+  help: List of column ids to include as GRP file or cell array. 
+        The list of ids are excluded if exclude_cid is true
+
+-
+  name: --exclude_rid
+  default: false
+  help: Exclude features or rows specified by rid or row_space if true
+
+-
+  name: --exclude_cid
+  default: false
+  help: Exclude columns specified by cid or column_space if true
+
+-
+   name: --use_gctx
+   default: true
+   help: Save results in GCTX format if true or GCT otherwise
+
+-
+   name: --use_compression
+   default: true
+   help: Use compression when saving in GCTX format
+
+-
+   name: --block_size
+   default: 25
+   help: Number of files to read before writing output to disk
+
+
+-
+   name: --merge_partial
+   default: false
+   choices: [true, false]
+   help: Merge datasets with partially overlaping ids
+
+-
+   name: --missing_value
+   default: nan
+   help: Number of files to read before writing output to disk

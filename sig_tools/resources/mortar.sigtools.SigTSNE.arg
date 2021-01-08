@@ -1,0 +1,29 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_tsne_tool
+   include: [sigClassOptions.arg, mortar.compute.TSNE.runAnalysis.arg]
+   summary: Run T-SNE on a dataset
+   # Note quotes to allow special chars
+   description: "Applies t-distributed stochastic neighbor embedding (t-SNE) to high
+           dimensional datasets and returns a 2-d mapping of
+           datapoints. t-SNE is a dimensionality reduction technique
+           that is particularly well suited for visualization of high
+           dimensional data in 2 or 3 dimensions.
+
+           For datasets with <= 5000 samples, the standard t-SNE algorithm is used. 
+           For larger datasets the Barnes-HUT algorithm is employed.
+    
+     For details see http://homepage.tudelft.nl/19j49/t-SNE.html
+
+    ## Examples
+
+    - tSNE with default parameters    
+
+        #name# --ds 'x.gctx'
+
+    - tSNE along rows of a large dataset with >5000 rows
+
+        #name# --ds large.gctx, --dim 'row' --algorithm 'barnes-hut'
+
+        "

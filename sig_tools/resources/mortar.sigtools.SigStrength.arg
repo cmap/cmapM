@@ -1,0 +1,35 @@
+-
+   # Preamble
+   ispreamble: true
+   name: sig_strength_tool
+   summary: Compute strength of signatures
+   include: [sigClassOptions.arg]
+   # Note quotes to allow special chars
+   description: "
+
+   ## Examples:
+
+   - Run algorithm on a dataset
+
+    #name# --ds 'raw_data.gctx'
+
+    "
+-
+   name: --ds
+   default: ''
+   help: Input GCT dataset
+
+-
+   name: --cutoff
+   default: 2
+   help: z-score cutoff
+
+-
+   name: --cid
+   default: ''
+   help: Column ids
+
+-
+   name: --rid
+   default: ''
+   help: Row ids

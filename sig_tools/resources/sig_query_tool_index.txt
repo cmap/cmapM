@@ -1,0 +1,11 @@
+group	name	wildcard	action	location	add_dim
+Detailed Results	Preview of top %d connections	tail.result_*.html	view	.	nrow
+Detailed Results	Download full result (%d connections)	result_*.txt	download	.	nrow
+Score Matrices	Connectivity Scores (%dx%d)	*_SPEARMAN_n*.gct*	download	.	ndim
+Score Matrices	Connectivity Scores (%dx%d)	*_PEARSON_n*.gct*	download	.	ndim
+Score Matrices	Connectivity Scores (%dx%d)	*.COMBINED_n*.gct*	download	.	ndim
+Score Matrices	Up Scores (%dx%d)	*.UP_n*.gct*	download	.	ndim
+Score Matrices	Down Scores (%dx%d)	*.DN_n*.gct*	download	.	ndim
+Inputs	Up geneset (%d features)	query_up*.g*	view	.	nrow
+Inputs	Down geneset (%d features)	query_dn*.g*	view	.	nrow
+Inputs	Parameters	config.yaml	view	.	n

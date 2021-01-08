@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/narayan/workspace/mortar/ext/mtocpp/config.h
+
+/Users/narayan/workspace/mortar/ext/mtocpp/postprocess.cc
+config.h
+/Users/narayan/workspace/mortar/ext/mtocpp/config.h
+string
+-
+fstream
+-
+iostream
+-
+cstdlib
+-
+dirent_msvc.h
+-
+dirent.h
+-
+
+src/dirent_msvc.h
+windows.h
+-
+string.h
+-
+stdlib.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+errno.h
+-
+

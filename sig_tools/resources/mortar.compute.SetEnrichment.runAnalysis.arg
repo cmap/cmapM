@@ -1,0 +1,13 @@
+-
+   # Preamble
+   ispreamble: true
+   name: SetEnrichment
+   summary: Assess enrichment of sets within a provided rank matrix
+   # Note quotes to allow special chars
+   description: "The set enrichment tool computes enrichment statistic for a collection of user-supplied sets against a provided rank matrix"
+   include: [mortar.compute.Connectivity.runCmapQuery.arg]
+
+-
+  name: --nperm
+  default: 100
+  help: Number of permutations to run to generate null distributions
