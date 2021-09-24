@@ -1,0 +1,3 @@
+det_plate	cell_id_annot	cell_lineage_annot	cell_id	is_guessed	is_missing	is_lincs	rank	rank_lincs	cell_id_best	best_lineage	cell_id_lincs_best	lincs_best_lineage	selected_ref_db	dactyloscopy_pass	is_ambiguous
+XPR.BASE005_XC_XH_X1_B21	BT549	-666	BT549	0	0	0	1	non-lincs	BT549	breast	HELA	cervix	main	1	0
+XPR.BASE005_XC_XH_X1_B21	BT549_CAS9	-666	BT549	1	0	0	1	non-lincs	BT549	breast	HELA	cervix	main	1	0

@@ -1,0 +1,2 @@
+det_plate	cell_id_annot	cell_lineage_annot	cell_id	is_guessed	is_missing	is_lincs	rank	rank_lincs	cell_id_best	best_lineage	cell_id_lincs_best	lincs_best_lineage	selected_ref_db	dactyloscopy_pass	is_ambiguous
+LJP006_PC3_24H_X3_B19	PC3	prostate	PC3	0	0	1	1	1	PC3	prostate	PC3	prostate	main	1	0
