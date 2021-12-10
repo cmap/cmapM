@@ -10,7 +10,7 @@
     "jsdoc": "~3.3.0-alpha5",
     "ink-docstrap": "~0.3.0-0",
     "docco": "~0.6.3",
-    "uglify-js": "~2.4.13",
+    "uglify-js": ">=2.6.0",
     "babyparse": "~0.4.1"
   },
   "devDependencies": {
